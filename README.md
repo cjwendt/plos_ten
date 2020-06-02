@@ -1,2 +1,2 @@
 # plos_ten
-PLOS: Ten simple rules for selecting an R package
+Developing ten simple rules for selecting an R package for the PLOS journal series.
