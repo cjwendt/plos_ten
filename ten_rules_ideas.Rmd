@@ -1,0 +1,26 @@
+---
+title: "Ten Simple Rules for Selecting an R Package"
+subtitle: "Ideas for PLOS Article" 
+date: "Summer 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Brainstorm
+
+- CRAN
+- documentation, help files, cheatsheets
+- verify the authors' credibility and associations
+- publications introducing package (e.g., *The R Journal*)
+- percentile on CRAN
+- compare number of downloads
+- dates and versions; log of updates; latest version; bug fixes; "orphaned" package
+- check source code to see if authors follow best practices for package development
+- purpose; compare features across multiple packages that accomplish similar tasks
+- dependency checks (strength of other packages it relies upon)
+- unit tests (for each function to see it is working as expected) and full-coverage within unit tests
+
