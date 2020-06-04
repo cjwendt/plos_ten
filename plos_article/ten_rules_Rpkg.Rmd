@@ -28,12 +28,43 @@ _Text based on plos sample manuscript, see [http://journals.plos.org/ploscompbio
 
 # Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+*Explain what R is and how its package ecosystem works.*
 
-A list
+Points: 
 
-- Item 1
-- Item 2
+- Open source project, where many people contribute with their own extensions
+- Large variation in the quality of different extensions (packages)
+- That some R users, particularly new ones, struggle with finding and picking which 
+packages to use.
+
+*Ideas of 10 things*
+
+Finding packages: 
+
+- CRAN task views
+- Textbooks ("[x] with R"). May not be latest...
+- Google searches, social media (#rstats)
+- Conferences (and online streams of those). RStudio, UseR.
+
+Picking a good package:
+
+- On a public repository like CRAN or Bioconductor. Explain more about these repositories
+and what their standards are. Explain their role in the community. Give the alternative
+ways that R packages can be shared (GitHub, zipped file posted somewhere else). How
+these regularly check code and help with managing the web of dependencies.
+- Quality of the documentation. Types of documentation (help files, vignette, 
+packagedown website, bookdown book).
+- Coverage by tests. Explain about unit testing and how it can help control quality.
+- Peer review. ROpenSci. Associated with a peer reviewed paper. Associated with a book
+put out by a scientific publisher?
+- Looking up package authors. Is there role in R development (RStudio, some big bio labs)?
+Is the work part of their work from an academic lab? Do they have a history of a lot
+of R development? GitHub profile. Google scholar profile. Also, is it a team of developers?
+Robust team?
+- Evidence of established package. Lots of version. Clear NEWS providing explanations of
+changes. History of Issues and those being resolved.
+- Exploring the code yourself. How open source framework provides this. GitHub mirror of
+CRAN if you don't want to download the zipped package file yourself.
 
 Here are two sample references: @Feynman1963118 [@Dirac1953888].
 
