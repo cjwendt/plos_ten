@@ -14,10 +14,10 @@ address:
   - code: Colorado State University
     address: Department of Mathematics, Department of Statistics, Fort Collins, Colorado, 80523
 abstract: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+  Write the abstract here.
   
 author_summary: |
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget porta erat. Morbi consectetur est vel gravida pretium. Suspendisse ut dui eu ante cursus gravida non sed sem. Nullam sapien tellus, commodo id velit id, eleifend volutpat quam. Phasellus mauris velit, dapibus finibus elementum vel, pulvinar non tellus. Nunc pellentesque pretium diam, quis maximus dolor faucibus id. Nunc convallis sodales ante, ut ullamcorper est egestas vitae. Nam sit amet enim ultrices, ultrices elit pulvinar, volutpat risus.
+  Write the author summary here.
 
 bibliography: mybibfile.bib
 output: rticles::plos_article
@@ -25,6 +25,7 @@ csl: plos.csl
 ---
 
 _Text based on plos sample manuscript, see [http://journals.plos.org/ploscompbiol/s/latex](http://journals.plos.org/ploscompbiol/s/latex)_
+
 
 # Introduction
 
@@ -66,6 +67,113 @@ changes. History of Issues and those being resolved.
 - Exploring the code yourself. How open source framework provides this. GitHub mirror of
 CRAN if you don't want to download the zipped package file yourself.
 
+
 Here are two sample references: @Feynman1963118 [@Dirac1953888].
+
+
+
+# Introduction
+
+R is a language and environment for statistical computing and graphics that was developed by statisticians and is collaboratively maintained by an international core group of contributors. Unlike many popular proprietary languages (e.g., MATLAB, SAS, SPSS), R is highly extensible, free and open-source software; the user can access and thus change, extend, and share code for desired applications. Accordingly, a vibrant community of R users has emerged, many of which engage in the development of extensions to the functionality of base R software known as packages. A prominent contributor in the R community, Hadley Wickham, views functional programming as analogous to following a recipe; to conceptualize packages, imagine R is the kitchen and packages are the special gadgets which allow you to cook and bake new recipes. R packages are coding delectables that enable the user to perform practical tasks (e.g., wrangling and cleaning data frames, designing interactive apps for visualizing data, performing dimensionality reduction) and solve problems (e.g., training regression and classification models, assessing the beta diversity of a population, analyzing gene expression microarray data) with interesting techniques.
+
+As a natural consequence of the open-source nature of R, there is variation in the quality of different packages among the numerous choices that exist. The advanced R user--having developed an intuition for their workflow--may tend to be relatively confident when searching for and selecting packages. By contrast, a common experience that characterizes learning R at the outset is the struggle to 1) find a package to accomplish a particular task and 2) choose the best package to perform that task. Even so, there remain obscure and complicated problems that morph selecting an R package into a barrier despite experience.
+
+In coding as in life, we endeavor to make choices that optimize outcomes. Just as one may go about shopping for shoes, deciding which graduate program to pursue, or conducting a literature review, there is a science behind selection. We inform our decisions by assessing, comparing, and filtering options based on indicators of quality such as utility, association, and reputation. Likewise, choosing an R package requires attending to similar details. We outline ten simple rules for finding and selecting R packages so that you will spend less time searching for the right tools and more time coding delicious recipes.
+
+
+# List of 10 rules
+## (currently in no particular order and not precisely worded)
+
+1.	**Consider your purpose**
+- What do you want to use the package to accomplish?
+- features
+- functions
+- organization
+- package description
+- compare similar options
+
+2.	**Spend time searching; find and collect options**
+- internet searches (keyword “…in R”)
+- textbooks (“[x] with R” series)
+- tutorials
+- courses
+- social media (#rstats)
+- conferences (e.g., RStudio, useR!)
+- consult collaborators 
+- CRAN task views
+
+3.	**Check the repository association**
+- purpose: mechanisms of quality control that regularly check code and manage webs of dependencies
+- CRAN
+- Bioconductor
+- GitHub
+- collaborators 
+- zipped file
+- alternative ways R packages can be shared
+
+4. **View the documentation**
+- help files 
+- `help()`
+- vignettes
+- `DOCUMENTATION` file
+- “cheatsheets” from RSudio
+- RDocumentation (key word search, task views)
+- websites (e.g., `packagedown`)
+- `bookdown` books
+- compare documentation completeness and resource quality 
+
+5.	**Verify the credibility of the author(s)**
+- team or single author (robust team?)
+- associations (e.g., academia, industry, labs)
+- expertise
+- reputation
+- experience (e.g., portfolio of packages, history of R development)
+- role in R development (e.g., RStudio, regarded bio labs)
+- profiles (e.g., GitHub, Google Scholar, Research Gate, Twitter)
+
+6.	**Investigate the package development**
+- best practices
+- unit testing (manage quality control)
+- dependencies
+- coverage by tests
+- number of versions
+- clarity of NEWS (explain updates and changes)
+- GitHub Issues (history, resolution)
+
+7.	**Read, research literature, seek evidence of peer review**
+- publications
+- package itself
+- papers about the package
+- ROpenSci
+- associations with books or publications from scientific publishers
+
+8.	**Quantify how established the package is**
+- dependencies
+- versions
+- updates
+- number of downloads
+- popularity
+- leaderboard
+- ranking systems
+
+9.	**Put the package to the test**
+- explore code
+- interact with trial and error
+- get a feel for using it in context of your goal
+- open-source framework
+- GitHub mirror of CRAN as an alternative to downloading zipped package file
+
+10.	**Develop your own package**
+- necessity
+- innovative idea
+- novel approach or method
+- unique and specialized purpose
+
+
+
+
+
+
+
 
 # References {#references .unnumbered}
