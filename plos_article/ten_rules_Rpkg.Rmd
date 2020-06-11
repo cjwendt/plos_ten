@@ -1,18 +1,22 @@
 ---
 title: Ten simple rules for selecting an R package
 author:
-  - name: G. Brooke Anderson
-    email: Brooke.Anderson@colostate.edu
-    affiliation: Colorado State University
-    corresponding: Brooke.Anderson@colostate.edu
   - name: Caroline J. Wendt
     email: Caroline.Wendt@rams.colostate.edu
-    affiliation: Colorado State University
+    affiliation: 
+      - Stats
+      - Math
+  - name: G. Brooke Anderson
+    email: Brooke.Anderson@colostate.edu
+    affiliation: ERHS 
+    corresponding: Brooke.Anderson@colostate.edu
 address:
-  - code: Colorado State University
-    address: Department of Environmental & Radiological Health Sciences, 1681 Campus Delivery, Fort Collins, Colorado, 80523
-  - code: Colorado State University
+  - code: Stats
     address: Department of Mathematics, Department of Statistics, Fort Collins, Colorado, 80523
+  - code: Math
+    address: Department of Mathematics, Department of Statistics, Fort Collins, Colorado, 80523
+  - code: ERHS
+    address: Department of Environmental & Radiological Health Sciences, 1681 Campus Delivery, Fort Collins, Colorado, 80523
 abstract: |
   Write the abstract here.
   
