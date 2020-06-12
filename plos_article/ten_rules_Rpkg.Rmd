@@ -12,11 +12,11 @@ author:
     corresponding: Brooke.Anderson@colostate.edu
 address:
   - code: Stats
-    address: Department of Statistics, Fort Collins, Colorado, USA
+    address: Department of Statistics, Colorado State University, Fort Collins, Colorado, United States of America
   - code: Math
-    address: Department of Mathematics, Fort Collins, Colorado, USA
+    address: Department of Mathematics, Colorado State University, Fort Collins, Colorado, United States of America
   - code: ERHS
-    address: Department of Environmental & Radiological Health Sciences, Fort Collins, Colorado, USA 80523
+    address: Department of Environmental & Radiological Health Sciences, Colorado State University, Fort Collins, Colorado, United States of America   
 abstract: |
   Write the abstract here.
   
