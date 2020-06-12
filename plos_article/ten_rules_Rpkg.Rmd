@@ -105,6 +105,13 @@ In coding as in life, we endeavor to make choices that optimize outcomes. Just a
 - conferences (e.g., RStudio, useR!)
 - consult collaborators 
 - CRAN task views
+- Research articles
+  - Check which packages have been used in research in your field (provide suggestions for good Google Scholar search queries to identify papers that have used certain packages or that present a package) Alternatively, check the Methods and References sections of papers in your field.
+  - Related to that, we could talk about how packages can be cited (the `citation` function produces one in the preferred format for any package). You can look up most packages in Google Scholar to see how many times it's been cited by looking at the "Cited by" link with the reference. See for example the first listing at https://scholar.google.com/scholar?hl=en&as_sdt=0%2C6&q=dplyr&btnG=
+- Blogs
+  - posts with overviews of new packages
+  - Joe Rickert of RStudio used to regularly highlight interesting new packages (check to see if he still does). 
+  - Mara Averick of RStudio advertises cool new R things; check if any focus on packages.
 
 3.	**Check how it's shared**
 - check repository association
