@@ -618,6 +618,33 @@ worded)}\label{currently-in-no-particular-order-and-not-precisely-worded}}
 \item
   GitHub mirror of CRAN as an alternative to downloading zipped package
   file
+\item
+  How interoperable it is with other packages that you want to use?
+\item
+  some packages do what they do really well, but it is hard to use them
+  with the tidyverse or other outside packages
+
+  \begin{itemize}
+  \tightlist
+  \item
+    S3 or S4 objects that make it hard to work them into a pipeline
+    where their functions are not the last step
+  \end{itemize}
+\item
+  packages that help with interoperability
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{broom} and \texttt{biobroom}: make it easier to put numerous
+    statistical functions into a larger tidyverse workflow
+  \item
+    Max Kuhn's \texttt{caret} package for machine learning---adds a
+    layer that lets you use the same interface to work with machine
+    learning algorithms from lots of different packages that otherwise
+    all have slightly different interfaces for calling the algorithm and
+    working with the results.
+  \end{itemize}
 \end{itemize}
 
 \begin{enumerate}

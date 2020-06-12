@@ -179,7 +179,13 @@ In coding as in life, we endeavor to make choices that optimize outcomes. Just a
 - get a feel for using it in context of your goal
 - open-source framework
 - GitHub mirror of CRAN as an alternative to downloading zipped package file
-
+- How interoperable it is with other packages that you want to use?
+- some packages do what they do really well, but it is hard to use them with the tidyverse or other outside packages
+  - S3 or S4 objects that make it hard to work them into a pipeline where their functions are not the last step
+- packages that help with interoperability 
+  - `broom` and `biobroom`: make it easier to put numerous statistical functions into a larger tidyverse workflow
+  - Max Kuhn's `caret` package for machine learning---adds a layer that lets you use the same interface to work with machine learning algorithms from lots of different packages that otherwise all have slightly different interfaces for calling the algorithm and working with the results.
+  
 10.	**Develop your own package**
 - necessity
 - innovative idea
