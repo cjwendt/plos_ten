@@ -111,6 +111,9 @@ In coding as in life, we endeavor to make choices that optimize outcomes. Just a
   - CRAN
   - Bioconductor
   - GitHub
+  - GitLab (alternative to GitHub)
+  - ROpenSci (runs its own repository, only includes ones it has peer-reviewed)
+  - Self-hosted repositories (can be made with the `drat` package; see paper)
   - purpose of repositories: mechanisms of quality control that regularly check code and manage webs of dependencies
 - alternative ways R packages can be shared (not repo)
   - zipped file
