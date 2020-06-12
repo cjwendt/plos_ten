@@ -22,7 +22,6 @@ knitr::opts_chunk$set(echo = TRUE)
 - dependency checks (strength of other packages it relies upon)
 - unit tests (for each function to see it is working as expected) and full-coverage within unit tests
 
-
 # Two stages of package selection
 1.	**Exploration:** How do you find a package?
 - Internet searches (…in R)
@@ -54,9 +53,8 @@ knitr::opts_chunk$set(echo = TRUE)
 - Particular interest in R with applications in computational biology
 
 # Questions
-- Why are the author superscripts the same in PLOS template?
 - Is there an issue with indentation of the first paragraph of the introduction?
-- "Open-source" or open source?
-- Language in intro (you, we, one, or the user)?
+- Do we want to have a more conversational voice or style in the writing?
+  - Language in intro (you, we, one, or the user)?
 - Should we add more audience-specific language (tasks, problems, decisions)?
 
