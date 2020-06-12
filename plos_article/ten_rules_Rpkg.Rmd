@@ -115,7 +115,7 @@ In coding as in life, we endeavor to make choices that optimize outcomes. Just a
 - zipped file
 - alternative ways R packages can be shared
 
-4. **View the documentation**
+4. **Explore the availability and quality of help**
 - help files 
 - `help()`
 - vignettes
@@ -125,6 +125,15 @@ In coding as in life, we endeavor to make choices that optimize outcomes. Just a
 - websites (e.g., `packagedown`)
 - `bookdown` books
 - compare documentation completeness and resource quality 
+- find ways to get help beyond initial documentation
+- listservs
+- online communities
+- Stack Overflow (frequency of questions and answers on the topic)
+- See if GitHub repo for the package seems responsive to Issues
+- `Rcpp` is an example of high-quality help
+  - associated book
+  - maintainer, Dirk, is known to be responsive to user questions (listserv)
+  - ample documentation including examples to get started
 
 5.	**Verify the credibility of the author(s)**
 - team or single author (robust team?)
