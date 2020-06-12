@@ -106,14 +106,15 @@ In coding as in life, we endeavor to make choices that optimize outcomes. Just a
 - consult collaborators 
 - CRAN task views
 
-3.	**Check the repository association**
-- purpose: mechanisms of quality control that regularly check code and manage webs of dependencies
-- CRAN
-- Bioconductor
-- GitHub
-- collaborators 
-- zipped file
-- alternative ways R packages can be shared
+3.	**Check how it's shared**
+- check repository association
+  - CRAN
+  - Bioconductor
+  - GitHub
+  - purpose of repositories: mechanisms of quality control that regularly check code and manage webs of dependencies
+- alternative ways R packages can be shared (not repo)
+  - zipped file
+  - collaborators 
 
 4. **Explore the availability and quality of help**
 - help files 
