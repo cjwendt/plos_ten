@@ -18,11 +18,10 @@ address:
   - code: ERHS
     address: Department of Environmental & Radiological Health Sciences, Colorado State University, Fort Collins, Colorado, United States of America   
 abstract: |
-  Write the abstract here.
+  R is an increasingly preferred software environment for data analytics and statistical computing among scientists and practitioners. Packages markedly extend R’s utility and ameliorate inefficient solutions. We outline ten simple rules for finding relevant packages and determining which is optimal for your desired use.
   
 author_summary: |
-  Write the author summary here.
-
+  Write the author summary here. Do we want to include and author summary?
 bibliography: mybibfile.bib
 output: rticles::plos_article
 csl: plos.csl
@@ -31,7 +30,22 @@ csl: plos.csl
 _Text based on plos sample manuscript, see [http://journals.plos.org/ploscompbiol/s/latex](http://journals.plos.org/ploscompbiol/s/latex)_
 
 
-Here are two sample references: @Feynman1963118 [@Dirac1953888].
+
+# Disclaimer?
+
+Do we need to include a disclaimer in the margin like the one from @perez2016ten that states:
+"**Competing Interests**: The authors have no affiliation
+with GitHub, nor with any other commercial entity
+mentioned in this article. The views described here
+reflect their own views without input from any third
+party organization."
+
+- RStudio
+- ROpenSci
+
+# Funding acknowledgment?
+
+Do we need to include a funding acknowledgment in the margin as in the examples?
 
 
 # Introduction
@@ -43,34 +57,100 @@ Are there R packages for wrangling and cleaning data frames, designing interacti
 In coding as in life, we endeavor to make choices that optimize outcomes. Just as one may go about shopping for shoes, deciding which graduate program to pursue, or conducting a literature review, there is a science behind selection. We inform our decisions by assessing, comparing, and filtering options based on indicators of quality such as utility, association, and reputation. Likewise, choosing an R package requires attending to similar details. We outline ten simple rules for finding and selecting R packages so that you will spend less time searching for the right tools and more time coding delicious recipes.
 
 
+# Rule 1: Consider your purpose
+
+There are often several different ways to accomplish a task or arrive at a solution while programming, albeit some ways are more elegant and efficient than others. While there are certainly ways to cook up an algorithm using for loops and conditionals in base R, a relevant package may accomplish the same goal in a more reproducible manner with less code and fewer bugs. If you define your purpose by making observations about and considering limitations of your current toolbox before you start searching for new tools, you will be more likely to recognize what you do (and don’t) need. 
+
+Think about what you are doing (or trying to do) and how you might like to do it. Identify the type of inputs you have and envision working with them; contemplate the desired outputs and corresponding format. Which existing functionalities in base R could be improved in context of your problem? Which new functionalities would you like to add to base R to expand what you can do? You may have a unique or particular task that requires highly specialized functions. Some R packages are simple and have a very specific use. For example, there is a package for converting English letters to numbers as on a telephone keypad @phonenumber. On the other hand, you may be faced with an extensive task that justifies a broader framework with several functions that form a cohesive package. Numerous processes that involve data---although varying in application---are ubiquitous. Data manipulation is one such common task that has been streamlined by packages such as `dplyr` and `data.table` @dplyr[@datatable]. 
+
+In general, the more reasonable it is for your given task to be abstracted away from its context, the more plausible it is that someone has generalized its themes, bundled them up, and branded them in a nice way—often *much* nicer than expected. Nevertheless, there are indeed packages for seemingly singular tasks, which you may be pleasantly surprised to discover. You need not invent the wheel before checking to see if it already exists, but before you sift through options, having some notion of what you need will narrow your search. 
+
+# Rule 2: Spend time searching; find and collect options
+
+# Rule 3: Check how it's shared
+
+# Rule 4: Explore the availability and quality of help
+
+# Rule 5: Verify the credibility of the author(s)
+
+# Rule 6: Investigate the package development
+
+# Rule 7: Read, research literature, seek evidence of peer review
+
+# Rule 8: Quantify how established the package is
+
+# Rule 9: Put the package to the test
+
+# Rule 10: Develop your own package
+
+# Conclusion
+
+Computational reproducibility is surfacing as a central axiom in academia as researchers identify the need for means by which they can implement transparent systems. As a corollary, former approaches are often found to be at odds with productivity and collaboration. The R programming language is increasingly used by researchers in computational biology and bioinformatics, a discipline among many that is generating extensive heterogenous and complex data that demands sophisticated tools and rigorous methods @gentleman2004bioconductor[@holmes2018modern].  
+
+R packages are a defining feature of the language insofar as many are robust and easily learnable. Packages greatly enhance the user experience and enable you to be more efficient and effective at learning from data regardless of prior experience. However, the sheer quantity and potential complexity of available R packages can undermine their collective benefits. Finding and choosing packages, particularly for beginners, can be daunting and convoluted. R users often struggle to sift through the tools at their disposal and wonder how to distinguish appropriate usage. These ten simple rules for navigating the shared code in the R community are intended to serve as a valuable page in your computing cookbook---one that will evolve into intuition yet remain a reliable reference. May searching for and selecting proper tools no longer spoil your appetite and dissuade you from discovering, trying, creating, and sharing new recipes.
+
+
+
+# Supporting information
+
+Do we need to include any supporting information?
+
+# Acknowledgements
+
+Do we need to include any acknowledgements?
+
+
+
+\newpage
 
 # List of 10 rules
 ## (currently in no particular order and not precisely worded)
 
 1.	**Consider your purpose**
-- What do you want to use the package to accomplish?
 - features
 - functions
 - organization
 - package description
 - compare similar options
+- particular task
+- general purpose
+- improve base R (efficiency, elegance)
+- expand base R (do more)
+- What do you want to use the package to accomplish?
+- What functionalities of base R could be improved? 
+- What functionalities would you like to add to base R to expand what you can do?
+- How do you want to work with inputs and what are the desired outputs?
 
 2.	**Spend time searching; find and collect options**
 - internet searches (keyword “…in R”)
 - textbooks (“[x] with R” series)
+  - [RStudio books](https://rstudio.com/resources/books/)
 - tutorials
 - courses
 - social media (#rstats)
 - conferences (e.g., RStudio, useR!)
 - consult collaborators 
-- CRAN task views
+- CRAN task views (based on certain disciplines and methodologies)
 - Research articles
   - Check which packages have been used in research in your field (provide suggestions for good Google Scholar search queries to identify papers that have used certain packages or that present a package) Alternatively, check the Methods and References sections of papers in your field.
   - Related to that, we could talk about how packages can be cited (the `citation` function produces one in the preferred format for any package). You can look up most packages in Google Scholar to see how many times it's been cited by looking at the "Cited by" link with the reference. See for example the first listing at https://scholar.google.com/scholar?hl=en&as_sdt=0%2C6&q=dplyr&btnG=
+
 - Blogs
-  - posts with overviews of new packages
-  - Joe Rickert of RStudio used to regularly highlight interesting new packages (check to see if he still does). 
-  - Mara Averick of RStudio advertises cool new R things; check if any focus on packages.
+  - find posts with overviews of new packages
+  - [RStudio packages](https://rstudio.com/products/rpackages/) developed, maintained, or contributed to by the RStudio team categorized by purpose 
+  - [RStudio webinars](https://rstudio.com/resources/webinars/)
+  - [ROpenSci packages](https://ropensci.org/packages/) site includes links to blogs, tutorials, and examples for using specific packages 
+  - [R-bloggers](https://www.r-bloggers.com/)
+  - [Revolutions](https://blog.revolutionanalytics.com/) daily blog
+  - [R Weekly](https://rweekly.org/) has specific sections for new packages and updated packages
+  
+- People
+  - Joe Rickert of RStudio (Ambassador at Large) used to regularly highlight interesting new packages (check to see if he still does). 
+    - [what makes a great R package](https://rstudio.com/resources/rstudioconf-2018/what-makes-a-great-r-package-joseph-rickert/)
+    - active on Twitter (`@RStudioJoe`)
+  - Mara Averick of RStudio (`tidyverse` developer advocate) advertises cool new R things; check if any focus on packages. 
+    - I cannot find any recent activity or posts by Mara beyond Twitter (`@dataandme`), but some of her sites have interactive info about cool packages and how to use their features. 
+    - There are also several videos and posts from her that relate to conferences and unconfs. 
 
 3.	**Check how it's shared**
 - check repository association
@@ -138,6 +218,7 @@ In coding as in life, we endeavor to make choices that optimize outcomes. Just a
 - popularity
 - leaderboard
 - ranking systems
+- number of citations in Google Scholar
 
 9.	**Put the package to the test**
 - explore code
@@ -155,13 +236,17 @@ In coding as in life, we endeavor to make choices that optimize outcomes. Just a
 10.	**Develop your own package**
 - necessity
 - innovative idea
+- standardize
+- automate
 - novel approach or method
 - unique and specialized purpose
-
-
-
-
-
+- copying and pasting functions repeatedly 
+- collection of functions you use often
+- desire to easily share code, data, documentation, and tests with others
+- ["personal R packages"](https://hilaryparker.com/2013/04/03/personal-r-packages/)
+- suggested package development resources for readers:
+  - [R Packages: Organize, Test, Document, and Share Your Code by Hadley Wickham](http://r-pkgs.had.co.nz/)
+  - [Ten simple rules for making research software more robust (Taschuk & Wilson)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5390961/pdf/pcbi.1005412.pdf)
 
 
 

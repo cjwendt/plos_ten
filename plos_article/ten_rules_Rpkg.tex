@@ -214,13 +214,17 @@ State University, Fort Collins, Colorado, United States of America\\
 \end{flushleft}
 % Please keep the abstract below 300 words
 \section*{Abstract}
-Write the abstract here.
+R is an increasingly preferred software environment for data analytics
+and statistical computing among scientists and practitioners. Packages
+markedly extend R's utility and ameliorate inefficient solutions. We
+outline ten simple rules for finding relevant packages and determining
+which is optimal for your desired use.
 
 % Please keep the Author Summary between 150 and 200 words
 % Use first person. PLOS ONE authors please skip this step.
 % Author Summary not valid for PLOS ONE submissions.
 \section*{Author summary}
-Write the author summary here.
+Write the author summary here. Do we want to include and author summary?
 
 \linenumbers
 
@@ -228,7 +232,28 @@ Write the author summary here.
 \emph{Text based on plos sample manuscript, see
 \url{http://journals.plos.org/ploscompbiol/s/latex}}
 
-Here are two sample references: {[}1,2{]}.
+\hypertarget{disclaimer}{%
+\section{Disclaimer?}\label{disclaimer}}
+
+Do we need to include a disclaimer in the margin like the one from
+{[}1{]} that states: ``\textbf{Competing Interests}: The authors have no
+affiliation with GitHub, nor with any other commercial entity mentioned
+in this article. The views described here reflect their own views
+without input from any third party organization.''
+
+\begin{itemize}
+\tightlist
+\item
+  RStudio
+\item
+  ROpenSci
+\end{itemize}
+
+\hypertarget{funding-acknowledgment}{%
+\section{Funding acknowledgment?}\label{funding-acknowledgment}}
+
+Do we need to include a funding acknowledgment in the margin as in the
+examples?
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -276,6 +301,120 @@ requires attending to similar details. We outline ten simple rules for
 finding and selecting R packages so that you will spend less time
 searching for the right tools and more time coding delicious recipes.
 
+\hypertarget{rule-1-consider-your-purpose}{%
+\section{Rule 1: Consider your
+purpose}\label{rule-1-consider-your-purpose}}
+
+There are often several different ways to accomplish a task or arrive at
+a solution while programming, albeit some ways are more elegant and
+efficient than others. While there are certainly ways to cook up an
+algorithm using for loops and conditionals in base R, a relevant package
+may accomplish the same goal in a more reproducible manner with less
+code and fewer bugs. If you define your purpose by making observations
+about and considering limitations of your current toolbox before you
+start searching for new tools, you will be more likely to recognize what
+you do (and don't) need.
+
+Think about what you are doing (or trying to do) and how you might like
+to do it. Identify the type of inputs you have and envision working with
+them; contemplate the desired outputs and corresponding format. Which
+existing functionalities in base R could be improved in context of your
+problem? Which new functionalities would you like to add to base R to
+expand what you can do? You may have a unique or particular task that
+requires highly specialized functions. Some R packages are simple and
+have a very specific use. For example, there is a package for converting
+English letters to numbers as on a telephone keypad {[}2{]}. On the
+other hand, you may be faced with an extensive task that justifies a
+broader framework with several functions that form a cohesive package.
+Numerous processes that involve data---although varying in
+application---are ubiquitous. Data manipulation is one such common task
+that has been streamlined by packages such as \texttt{dplyr} and
+\texttt{data.table} {[}3,4{]}.
+
+In general, the more reasonable it is for your given task to be
+abstracted away from its context, the more plausible it is that someone
+has generalized its themes, bundled them up, and branded them in a nice
+way---often \emph{much} nicer than expected. Nevertheless, there are
+indeed packages for seemingly singular tasks, which you may be
+pleasantly surprised to discover. You need not invent the wheel before
+checking to see if it already exists, but before you sift through
+options, having some notion of what you need will narrow your search.
+
+\hypertarget{rule-2-spend-time-searching-find-and-collect-options}{%
+\section{Rule 2: Spend time searching; find and collect
+options}\label{rule-2-spend-time-searching-find-and-collect-options}}
+
+\hypertarget{rule-3-check-how-its-shared}{%
+\section{Rule 3: Check how it's
+shared}\label{rule-3-check-how-its-shared}}
+
+\hypertarget{rule-4-explore-the-availability-and-quality-of-help}{%
+\section{Rule 4: Explore the availability and quality of
+help}\label{rule-4-explore-the-availability-and-quality-of-help}}
+
+\hypertarget{rule-5-verify-the-credibility-of-the-authors}{%
+\section{Rule 5: Verify the credibility of the
+author(s)}\label{rule-5-verify-the-credibility-of-the-authors}}
+
+\hypertarget{rule-6-investigate-the-package-development}{%
+\section{Rule 6: Investigate the package
+development}\label{rule-6-investigate-the-package-development}}
+
+\hypertarget{rule-7-read-research-literature-seek-evidence-of-peer-review}{%
+\section{Rule 7: Read, research literature, seek evidence of peer
+review}\label{rule-7-read-research-literature-seek-evidence-of-peer-review}}
+
+\hypertarget{rule-8-quantify-how-established-the-package-is}{%
+\section{Rule 8: Quantify how established the package
+is}\label{rule-8-quantify-how-established-the-package-is}}
+
+\hypertarget{rule-9-put-the-package-to-the-test}{%
+\section{Rule 9: Put the package to the
+test}\label{rule-9-put-the-package-to-the-test}}
+
+\hypertarget{rule-10-develop-your-own-package}{%
+\section{Rule 10: Develop your own
+package}\label{rule-10-develop-your-own-package}}
+
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
+
+Computational reproducibility is surfacing as a central axiom in
+academia as researchers identify the need for means by which they can
+implement transparent systems. As a corollary, former approaches are
+often found to be at odds with productivity and collaboration. The R
+programming language is increasingly used by researchers in
+computational biology and bioinformatics, a discipline among many that
+is generating extensive heterogenous and complex data that demands
+sophisticated tools and rigorous methods {[}5,6{]}.
+
+R packages are a defining feature of the language insofar as many are
+robust and easily learnable. Packages greatly enhance the user
+experience and enable you to be more efficient and effective at learning
+from data regardless of prior experience. However, the sheer quantity
+and potential complexity of available R packages can undermine their
+collective benefits. Finding and choosing packages, particularly for
+beginners, can be daunting and convoluted. R users often struggle to
+sift through the tools at their disposal and wonder how to distinguish
+appropriate usage. These ten simple rules for navigating the shared code
+in the R community are intended to serve as a valuable page in your
+computing cookbook---one that will evolve into intuition yet remain a
+reliable reference. May searching for and selecting proper tools no
+longer spoil your appetite and dissuade you from discovering, trying,
+creating, and sharing new recipes.
+
+\hypertarget{supporting-information}{%
+\section{Supporting information}\label{supporting-information}}
+
+Do we need to include any supporting information?
+
+\hypertarget{acknowledgements}{%
+\section{Acknowledgements}\label{acknowledgements}}
+
+Do we need to include any acknowledgements?
+
+\newpage
+
 \hypertarget{list-of-10-rules}{%
 \section{List of 10 rules}\label{list-of-10-rules}}
 
@@ -293,8 +432,6 @@ worded)}\label{currently-in-no-particular-order-and-not-precisely-worded}}
 \begin{itemize}
 \tightlist
 \item
-  What do you want to use the package to accomplish?
-\item
   features
 \item
   functions
@@ -304,6 +441,23 @@ worded)}\label{currently-in-no-particular-order-and-not-precisely-worded}}
   package description
 \item
   compare similar options
+\item
+  particular task
+\item
+  general purpose
+\item
+  improve base R (efficiency, elegance)
+\item
+  expand base R (do more)
+\item
+  What do you want to use the package to accomplish?
+\item
+  What functionalities of base R could be improved?
+\item
+  What functionalities would you like to add to base R to expand what
+  you can do?
+\item
+  How do you want to work with inputs and what are the desired outputs?
 \end{itemize}
 
 \begin{enumerate}
@@ -320,6 +474,12 @@ worded)}\label{currently-in-no-particular-order-and-not-precisely-worded}}
   internet searches (keyword ``\ldots in R'')
 \item
   textbooks (``{[}x{]} with R'' series)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{https://rstudio.com/resources/books/}{RStudio books}
+  \end{itemize}
 \item
   tutorials
 \item
@@ -331,7 +491,7 @@ worded)}\label{currently-in-no-particular-order-and-not-precisely-worded}}
 \item
   consult collaborators
 \item
-  CRAN task views
+  CRAN task views (based on certain disciplines and methodologies)
 \item
   Research articles
 
@@ -357,13 +517,56 @@ worded)}\label{currently-in-no-particular-order-and-not-precisely-worded}}
   \begin{itemize}
   \tightlist
   \item
-    posts with overviews of new packages
+    find posts with overviews of new packages
   \item
-    Joe Rickert of RStudio used to regularly highlight interesting new
-    packages (check to see if he still does).
+    \href{https://rstudio.com/products/rpackages/}{RStudio packages}
+    developed, maintained, or contributed to by the RStudio team
+    categorized by purpose
   \item
-    Mara Averick of RStudio advertises cool new R things; check if any
-    focus on packages.
+    \href{https://rstudio.com/resources/webinars/}{RStudio webinars}
+  \item
+    \href{https://ropensci.org/packages/}{ROpenSci packages} site
+    includes links to blogs, tutorials, and examples for using specific
+    packages
+  \item
+    \href{https://www.r-bloggers.com/}{R-bloggers}
+  \item
+    \href{https://blog.revolutionanalytics.com/}{Revolutions} daily blog
+  \item
+    \href{https://rweekly.org/}{R Weekly} has specific sections for new
+    packages and updated packages
+  \end{itemize}
+\item
+  People
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Joe Rickert of RStudio (Ambassador at Large) used to regularly
+    highlight interesting new packages (check to see if he still does).
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \href{https://rstudio.com/resources/rstudioconf-2018/what-makes-a-great-r-package-joseph-rickert/}{what
+      makes a great R package}
+    \item
+      active on Twitter (\texttt{@RStudioJoe})
+    \end{itemize}
+  \item
+    Mara Averick of RStudio (\texttt{tidyverse} developer advocate)
+    advertises cool new R things; check if any focus on packages.
+
+    \begin{itemize}
+    \tightlist
+    \item
+      I cannot find any recent activity or posts by Mara beyond Twitter
+      (\texttt{@dataandme}), but some of her sites have interactive info
+      about cool packages and how to use their features.
+    \item
+      There are also several videos and posts from her that relate to
+      conferences and unconfs.
+    \end{itemize}
   \end{itemize}
 \end{itemize}
 
@@ -563,6 +766,8 @@ worded)}\label{currently-in-no-particular-order-and-not-precisely-worded}}
   leaderboard
 \item
   ranking systems
+\item
+  number of citations in Google Scholar
 \end{itemize}
 
 \begin{enumerate}
@@ -630,9 +835,36 @@ worded)}\label{currently-in-no-particular-order-and-not-precisely-worded}}
 \item
   innovative idea
 \item
+  standardize
+\item
+  automate
+\item
   novel approach or method
 \item
   unique and specialized purpose
+\item
+  copying and pasting functions repeatedly
+\item
+  collection of functions you use often
+\item
+  desire to easily share code, data, documentation, and tests with
+  others
+\item
+  \href{https://hilaryparker.com/2013/04/03/personal-r-packages/}{``personal
+  R packages''}
+\item
+  suggested package development resources for readers:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \href{http://r-pkgs.had.co.nz/}{R Packages: Organize, Test,
+    Document, and Share Your Code by Hadley Wickham}
+  \item
+    \href{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5390961/pdf/pcbi.1005412.pdf}{Ten
+    simple rules for making research software more robust (Taschuk \&
+    Wilson)}
+  \end{itemize}
 \end{itemize}
 
 \hypertarget{references}{%
@@ -640,16 +872,35 @@ worded)}\label{currently-in-no-particular-order-and-not-precisely-worded}}
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
-\leavevmode\hypertarget{ref-Feynman1963118}{}%
-1. Feynman RP, Vernon Jr. FL. The theory of a general quantum system
-interacting with a linear dissipative system. Annals of Physics.
-1963;24: 118--173.
-doi:\href{https://doi.org/10.1016/0003-4916(63)90068-X}{10.1016/0003-4916(63)90068-X}
+\leavevmode\hypertarget{ref-perez2016ten}{}%
+1. Perez-Riverol Y, Gatto L, Wang R, Sachsenberg T, Uszkoreit J, Veiga
+Leprevost F da, et al. Ten simple rules for taking advantage of git and
+github. PLoS computational biology. Public Library of Science; 2016;12.
 
-\leavevmode\hypertarget{ref-Dirac1953888}{}%
-2. Dirac PAM. The lorentz transformation and absolute time. Physica.
-1953;19: 888--896.
-doi:\href{https://doi.org/10.1016/S0031-8914(53)80099-6}{10.1016/S0031-8914(53)80099-6}
+\leavevmode\hypertarget{ref-phonenumber}{}%
+2. Myles S. Phonenumber: Convert letters to numbers and back as on a
+telephone keypad {[}Internet{]}. 2015. Available:
+\url{https://CRAN.R-project.org/package=phonenumber}
+
+\leavevmode\hypertarget{ref-dplyr}{}%
+3. Wickham H, François R, Henry L, Müller K. Dplyr: A grammar of data
+manipulation {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=dplyr}
+
+\leavevmode\hypertarget{ref-datatable}{}%
+4. Dowle M, Srinivasan A. Data.table: Extension of `data.frame`
+{[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=data.table}
+
+\leavevmode\hypertarget{ref-gentleman2004bioconductor}{}%
+5. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
+al. Bioconductor: Open software development for computational biology
+and bioinformatics. Genome biology. Springer; 2004;5: R80.
+
+\leavevmode\hypertarget{ref-holmes2018modern}{}%
+6. Holmes S, Huber W. Modern statistics for modern biology
+{[}Internet{]}. Cambridge University Press; 2018. Available:
+\url{https://web.stanford.edu/class/bios221/book/index.html}
 
 \nolinenumbers
 
