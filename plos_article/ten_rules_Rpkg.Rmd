@@ -25,6 +25,21 @@ author_summary: |
 bibliography: mybibfile.bib
 output: rticles::plos_article
 csl: plos.csl
+header-includes:
+- \usepackage{booktabs}
+- \usepackage{longtable}
+- \usepackage{array}
+- \usepackage{multirow}
+- \usepackage{wrapfig}
+- \usepackage{float}
+- \usepackage{colortbl}
+- \usepackage{pdflscape}
+- \usepackage{tabu}
+- \usepackage{threeparttable}
+- \usepackage{threeparttablex}
+- \usepackage[normalem]{ulem}
+- \usepackage{makecell}
+- \usepackage{xcolor}
 ---
 
 _Text based on plos sample manuscript, see [http://journals.plos.org/ploscompbiol/s/latex](http://journals.plos.org/ploscompbiol/s/latex)_
@@ -80,6 +95,14 @@ In general, the more reasonable it is for your given task to be abstracted away 
 # Rule 8: Quantify how established the package is
 
 # Rule 9: Put the package to the test
+
+```{r}
+a <- 1:10
+b <- 1:10
+ex <- data.frame(a, b)
+knitr::kable(ex, format = "latex")
+```
+
 
 # Rule 10: Develop your own package
 
