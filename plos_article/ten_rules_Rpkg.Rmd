@@ -97,9 +97,9 @@ Do we need to include any supporting information?
 
 # Acknowledgements
 
-Do we need to include any acknowledgements?
+[Acknowledgement of people who have helped]
 
-
+[Funding acknowledgement]
 
 
 # References {#references .unnumbered}
