@@ -82,6 +82,8 @@ In general, the more reasonable it is for your given task to be abstracted away 
 
 # Rule 2: Spend time searching; find and collect options
 
+There are three main categories that distinguish various methods for finding R packages: learning, collaboration, and searching. Firstly, packages are essential to venturing beyond base R and thus quickly become an integral aspect of advancing your R skills. In other words, when learning R, you are typically introduced to some of the most commonly used packages. This does not, however, imply that such packages are necessarily the most basic. Online tutorials, courses, and textbooks tend to be reliable resources for acquiring knowledge about packages that are particularly versatile and reliable. We recommend ------------ for interactive learning and --------- textbooks (“[x] with R” series) such as the [RStudio books](https://rstudio.com/resources/books/) for further reading. 
+
 # Rule 3: Check how it's shared
 
 # Rule 4: Explore the availability and quality of help

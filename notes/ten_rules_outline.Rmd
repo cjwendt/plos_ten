@@ -39,7 +39,8 @@ knitr::opts_chunk$set(echo = TRUE)
 - Research articles
   - Check which packages have been used in research in your field (provide suggestions for good Google Scholar search queries to identify papers that have used certain packages or that present a package) Alternatively, check the Methods and References sections of papers in your field.
   - Related to that, we could talk about how packages can be cited (the `citation` function produces one in the preferred format for any package). You can look up most packages in Google Scholar to see how many times it's been cited by looking at the "Cited by" link with the reference. See for example the first listing at https://scholar.google.com/scholar?hl=en&as_sdt=0%2C6&q=dplyr&btnG=
-
+  - maybe this should go into Rule 8
+  
 - Blogs
   - find posts with overviews of new packages
   - [RStudio packages](https://rstudio.com/products/rpackages/) developed, maintained, or contributed to by the RStudio team categorized by purpose 
