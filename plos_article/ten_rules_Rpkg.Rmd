@@ -98,14 +98,6 @@ There are three main categories that distinguish various methods for finding R p
 
 # Rule 9: Put the package to the test
 
-```{r}
-a <- 1:10
-b <- 1:10
-ex <- data.frame(a, b)
-knitr::kable(ex, format = "latex")
-```
-
-
 # Rule 10: Develop your own package
 
 # Conclusion
@@ -114,7 +106,99 @@ Computational reproducibility is surfacing as a central axiom in academia as res
 
 R packages are a defining feature of the language insofar as many are robust and easily learnable. Packages greatly enhance the user experience and enable you to be more efficient and effective at learning from data regardless of prior experience. However, the sheer quantity and potential complexity of available R packages can undermine their collective benefits. Finding and choosing packages, particularly for beginners, can be daunting and convoluted. R users often struggle to sift through the tools at their disposal and wonder how to distinguish appropriate usage. These ten simple rules for navigating the shared code in the R community are intended to serve as a valuable page in your computing cookbook---one that will evolve into intuition yet remain a reliable reference. May searching for and selecting proper tools no longer spoil your appetite and dissuade you from discovering, trying, creating, and sharing new recipes.
 
+# Table 1
 
+```{r}
+library(kableExtra)
+library(knitr)
+```
+
+```{r}
+# general packages data
+gen_pkgs <- data.frame(
+  Package = c("readr[note]", 
+              "dplyr[note]",
+              "tidyr",
+              
+              "broom[note]",
+              "purrr[note]",
+              "caret", 
+              "keras", 
+              
+              "ggplot2[note]", 
+              "kableExtra", 
+              "rmarkdown"),
+  
+  Description = c("read rectangular data (e.g., csv, tsv, and fwf)", 
+                  "grammar of data manipulation",
+                  "create tidy data",
+                  
+                  "tidy model output", 
+                  "functional programming tools",
+                  "train classification and regression models", 
+                  "R interface to a neural network library", 
+                  
+                  "data visualization", 
+                  "tables",
+                  "reports"),
+  
+  Documentation = c("readr", 
+                    "dplyr", 
+                    "tidyr",
+  
+                    "broom",
+                    "purrr",
+                    "caret", 
+                    "keras",
+                    
+                    "ggplot2",
+                    "kableExtra", 
+                    "rmarkdown")
+)
+```
+
+```{r}
+# general packages table
+kable(gen_pkgs, format = "latex", booktabs = TRUE) %>%
+  # scale
+  kable_styling(latex_options = "scale_down") %>%
+  # separate rows by category
+  pack_rows("Data Manipulation", 1, 3) %>% 
+  pack_rows("Statistical Modeling", 4, 7) %>% 
+  pack_rows("Data Visualization", 8, 10) %>%
+  # column wrap
+  column_spec(1, width = "10em") %>% 
+  column_spec(2, width = "20em") %>% 
+  # bold column names
+  row_spec(0, bold = T) %>% 
+  add_footnote(c("See the tidyverse",
+                 "See the tidyverse",
+                 "See the biobroom analog in Bioconductor",
+                 "See the tidyverse",
+                 "See the tidyverse"),
+               notation = "symbol")
+
+
+
+  # trying to separate color; striped by group
+#  row_spec(1:3 - 1, extra_latex_after = "\\rowcolor{gray!6}")
+#  row_spec(0:3, extra_latex_after = "\\rowcolor{orange!6}") %>% 
+#  row_spec(4:6, extra_latex_after = "\\rowcolor{gray!6}") %>% 
+#  row_spec(7:11, extra_latex_after = "\\rowcolor{gray!6}")
+
+# QUESTIONS 
+# Code font for package names in " "? \texttt{}?
+# How do you repeat same symbol on multiple items with one footnote?
+# How do you separate colors and stripe by group?
+# Add title?
+# Add caption?
+# Cite packages in bib and add references in table?
+# Embed url link to package documentation?
+# How do you add link/reference to Table 1 in text in the template?
+# How do you hide code for table in knitted pdf...include=FALSE errors?
+# Title for column 2: description/purpose/usage?
+# Length of description/purpose/usage for each package?
+```
 
 # Supporting information
 
