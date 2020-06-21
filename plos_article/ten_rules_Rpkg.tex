@@ -328,19 +328,19 @@ examples?
 
 R is a language and environment for statistical computing and graphics
 that was developed by statisticians and is collaboratively maintained by
-an international core group of contributors. Unlike many popular
+an international core group of contributors. Unlike several popular
 proprietary languages (e.g., MATLAB, SAS, SPSS), R is highly extensible,
 free and open-source software; the user can access and thus change,
 extend, and share code for desired applications. Accordingly, a vibrant
 community of R users has emerged, many of which engage in the
 development of extensions to the functionality of base R software known
-as packages. There are many analogies in computing that draw comparisons
-between programming and culinary arts: recipe structures, coding
-cookbooks, and the like. To conceptualize packages, imagine you are the
-chef, R is the kitchen, and packages are the special gadgets which allow
-you to cook and bake new recipes. R packages are coding delectables that
-enable the user to perform practical tasks and solve problems with
-interesting techniques.
+as packages. There are plenty of analogies in computing that draw
+comparisons between programming and culinary arts: recipe structures,
+coding cookbooks, and the like. To conceptualize packages, imagine you
+are the chef, R is the kitchen, and packages are the special gadgets
+which allow you to cook and bake new recipes. R packages are coding
+delectables that enable the user to perform practical tasks and solve
+problems with interesting techniques.
 
 Are there R packages for wrangling and cleaning data frames, designing
 interactive apps for data visualization, or performing dimensionality
@@ -375,38 +375,54 @@ purpose}\label{rule-1-consider-your-purpose}}
 
 There are often several different ways to accomplish a task or arrive at
 a solution while programming, albeit some ways are more elegant and
-efficient than others. While there are certainly ways to cook up an
+efficient than others. To optimize your workflow, consider your purpose
+by 1) identifying your task to understand what you are trying to do and
+2) defining the scope of the task to determine how you are going to do
+it. For some tasks, coding your own recipe with existing tools is
+practical, while other tasks benefit from new tools.
+
+If the scope of your task is simple or reasonable given your knowledge
+and skills, using an R package may not be appropriate. There are
+advantages of coding in base R to implement a unique solution for your
+problem. In particular, when you code from scratch, you know precisely
+what you are running; thus, your script may be easier to decipher and
+maintain. Conversely, packages require reliance on shared code with
+features of which you may not be aware.
+
+Packages are valuable when a task has a broad scope or is beyond the
+scope of what you desire to code in base R; a task that is narrow in
+scope is not necessarily simple. While there are ways to cook up an
 algorithm using for loops and conditionals in base R, a relevant package
 may accomplish the same goal in a more reproducible manner with less
-code and fewer bugs. If you define your purpose by making observations
-about and considering limitations of your current toolbox before you
-start searching for new tools, you will be more likely to recognize what
-you do (and don't) need.
+code and fewer bugs. In general, the more reasonable it is for a given
+task to be abstracted away from its context, the more plausible it is
+that someone has generalized its themes, developed efficient algorithms,
+and organized them in an intuitive way to share with other R users.
+Extensive tasks justify sophisticated frameworks with several functions
+that form a cohesive package. Numerous processes that involve
+data---although varying in application---are ubiquitous. Data
+manipulation is one such common task that has been streamlined by
+packages such as \texttt{dplyr} and \texttt{tidyr} {[}2,3{]} (See Table
+1). Nevertheless, there are indeed packages for seemingly singular
+tasks, which you may favor over coding from scratch. Some R packages are
+small and have a specific use conducive to tasks that require highly
+specialized functions. For example, there is a package for converting
+English letters to numbers as on a telephone keypad {[}4{]}.
 
-Think about what you are doing (or trying to do) and how you might like
-to do it. Identify the type of inputs you have and envision working with
-them; contemplate the desired outputs and corresponding format. Which
-existing functionalities in base R could be improved in context of your
-problem? Which new functionalities would you like to add to base R to
-expand what you can do? You may have a unique or particular task that
-requires highly specialized functions. Some R packages are simple and
-have a very specific use. For example, there is a package for converting
-English letters to numbers as on a telephone keypad {[}2{]}. On the
-other hand, you may be faced with an extensive task that justifies a
-broader framework with several functions that form a cohesive package.
-Numerous processes that involve data---although varying in
-application---are ubiquitous. Data manipulation is one such common task
-that has been streamlined by packages such as \texttt{dplyr} and
-\texttt{data.table} {[}3,4{]}.
-
-In general, the more reasonable it is for your given task to be
-abstracted away from its context, the more plausible it is that someone
-has generalized its themes, bundled them up, and branded them in a nice
-way---often \emph{much} nicer than expected. Nevertheless, there are
-indeed packages for seemingly singular tasks, which you may be
-pleasantly surprised to discover. You need not invent the wheel before
-checking to see if it already exists, but before you sift through
-options, having some notion of what you need will narrow your search.
+If you define your purpose by making observations about and considering
+limitations of your current toolbox before you start searching for new
+tools, you will be more likely to recognize what you do (and do not)
+need. Which existing functionalities in base R could be improved in
+context of your problem? Which new functionalities would you like to add
+to base R to expand what you can do? Develop a list of domain-specific
+keywords that relate what you are trying to do to how one may go about
+doing it to narrow your search. Identify the type of inputs you have and
+envision working with them; contemplate the desired outputs and
+corresponding format. For instance, suppose you are using Bioconductor
+packages in analyses and have data you would like to visualize; you must
+consider that the inputs will be of a certain class---namely, S3 or S4
+objects---that impose restrictions when creating graphics. The data
+visualization package you use should address such limitations.
 
 \hypertarget{rule-2-spend-time-searching-find-and-collect-options}{%
 \section{Rule 2: Spend time searching; find and collect
@@ -641,20 +657,19 @@ Do we need to include any supporting information?
 Leprevost F da, et al. Ten simple rules for taking advantage of git and
 github. PLoS computational biology. Public Library of Science; 2016;12.
 
-\leavevmode\hypertarget{ref-phonenumber}{}%
-2. Myles S. Phonenumber: Convert letters to numbers and back as on a
-telephone keypad {[}Internet{]}. 2015. Available:
-\url{https://CRAN.R-project.org/package=phonenumber}
-
 \leavevmode\hypertarget{ref-dplyr}{}%
-3. Wickham H, François R, Henry L, Müller K. Dplyr: A grammar of data
+2. Wickham H, François R, Henry L, Müller K. Dplyr: A grammar of data
 manipulation {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=dplyr}
 
-\leavevmode\hypertarget{ref-datatable}{}%
-4. Dowle M, Srinivasan A. Data.table: Extension of `data.frame`
-{[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=data.table}
+\leavevmode\hypertarget{ref-tidyr}{}%
+3. Wickham H, Henry L. Tidyr: Tidy messy data {[}Internet{]}. 2020.
+Available: \url{https://CRAN.R-project.org/package=tidyr}
+
+\leavevmode\hypertarget{ref-phonenumber}{}%
+4. Myles S. Phonenumber: Convert letters to numbers and back as on a
+telephone keypad {[}Internet{]}. 2015. Available:
+\url{https://CRAN.R-project.org/package=phonenumber}
 
 \leavevmode\hypertarget{ref-gentleman2004bioconductor}{}%
 5. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
