@@ -76,15 +76,31 @@ In coding as in life, we endeavor to make choices that optimize outcomes. Just a
 
 There are often several different ways to accomplish a task or arrive at a solution while programming, albeit some ways are more elegant and efficient than others. To optimize your workflow, consider your purpose by 1) identifying your task to understand what you are trying to do and 2) defining the scope of the task to determine how you are going to do it. For some tasks, coding your own recipe with existing tools is practical, while other tasks benefit from new tools. 
 
-If the scope of your task is simple or reasonable given your knowledge and skills, using an R package may not be appropriate. There are advantages of coding in base R to implement a unique solution for your problem. In particular, when you code from scratch, you know precisely what you are running; thus, your script may be easier to decipher and maintain. Conversely, packages require reliance on shared code with features of which you may not be aware. 
+If the scope of your task is simple or reasonable given your knowledge and skills, using an R package may not be appropriate. That is, some instances do not warrant additional functions, data, and documentation. There are advantages of coding in base R to implement a unique solution for your problem. In particular, when you code from scratch, you know precisely what you are running; thus, your script may be easier to decipher and maintain. Conversely, packages require reliance on shared code with features of which you may not be aware. 
 
 Packages are valuable when a task has a broad scope or is beyond the scope of what you desire to code in base R; a task that is narrow in scope is not necessarily simple. While there are ways to cook up an algorithm using for loops and conditionals in base R, a relevant package may accomplish the same goal in a more reproducible manner with less code and fewer bugs. In general, the more reasonable it is for a given task to be abstracted away from its context, the more plausible it is that someone has generalized its themes, developed efficient algorithms, and organized them in an intuitive way to share with other R users. Extensive tasks justify sophisticated frameworks with several functions that form a cohesive package. Numerous processes that involve data---although varying in application---are ubiquitous. Data manipulation is one such common task that has been streamlined by packages such as `dplyr` and `tidyr` @dplyr[@tidyr] (See Table 1). Nevertheless, there are indeed packages for seemingly singular tasks, which you may favor over coding from scratch. Some R packages are small and have a specific use conducive to tasks that require highly specialized functions. For example, there is a package for converting English letters to numbers as on a telephone keypad @phonenumber. 
 
 If you define your purpose by making observations about and considering limitations of your current toolbox before you start searching for new tools, you will be more likely to recognize what you do (and do not) need. Which existing functionalities in base R could be improved in context of your problem? Which new functionalities would you like to add to base R to expand what you can do? Develop a list of domain-specific keywords that relate what you are trying to do to how one may go about doing it to narrow your search. Identify the type of inputs you have and envision working with them; contemplate the desired outputs and corresponding format. For instance, suppose you are using Bioconductor packages in analyses and have data you would like to visualize; you must consider that the inputs will be of a certain class---namely, S3 or S4 objects---that impose restrictions when creating graphics. The data visualization package you use should address such limitations.
 
+
 # Rule 2: Spend time searching; find and collect options
 
-There are three main categories that distinguish various methods for finding R packages: learning, collaboration, and searching. Firstly, packages are essential to venturing beyond base R and thus quickly become an integral aspect of advancing your R skills. In other words, when learning R, you are typically introduced to some of the most commonly used packages. This does not, however, imply that such packages are necessarily the most basic. Online tutorials, courses, and textbooks tend to be reliable resources for acquiring knowledge about packages that are particularly versatile and reliable. We recommend ------------ for interactive learning and --------- textbooks (“[x] with R” series) such as the [RStudio books](https://rstudio.com/resources/books/) for further reading. 
+Those who have used R packages may know that although leveraging existing tools can be advantageous, the initial challenge of finding a suitable package for a given task can obstruct potential benefits. Relatedly, new R users who are unfamiliar with the structure and syntax of the language may be hindered by the process of finding R packages because they do not know where to search, what to look for, nor how to sift through options. R packages are mentioned in a variety of places online, in print, and elsewhere. You can discover new R packages anytime you learn R-related topics, collaborate with other R users, or browse the internet.
+
+**Learn**
+
+Packages are essential to venturing beyond base R and thus quickly become an integral aspect of advancing your R skills. When learning how to program in R, you are typically introduced to some of the most common packages, which tend to have more general purposes (**Table 1**). In addition, reputable online tutorials, courses, and books are helpful resources for acquiring knowledge about packages that are versatile and reliable---many of which are short, accessible, and either affordable or offered at no cost to the learner. We recommend online R programming courses such as those through [Coursera](https://www.coursera.org/learn/r-programming) and [Codeacademy](https://www.codecademy.com/learn/learn-r) for interactive learning and R book series including the [RStudio books](https://rstudio.com/resources/books/) and Springer titles for further reading. 
+
+**Collaborate**
+
+An inclusive and collaborative community is an overlooked, yet integral aspect of a software’s success @smith_2017. A defining feature of R is the enthusiasm of its users and contributors alike. The R community has a widespread internet presence across various platforms; however, members are markedly active on Twitter, a place where R users seek help, share ideas, and stay informed on `#rstats` happenings including releases of new packages @ellis_2017. Beyond social media, numerous featured pages and R blogs serve as another informal and up-to-date, yet more detailed venue for communicating and promoting R-related information (**Table ?**). Notably, Joseph Rickert, Ambassador at Large for RStudio, writes monthly posts on the [R Views](https://rviews.rstudio.com/) blog highlighting exceptional new R packages in addition to special articles about recently released packages and lists of top packages within certain categories (e.g., Computational Methods, Data, Machine Learning, Medicine, Science, Statistics, Time Series, Utilities, Visualization). 
+
+A developer of an R package may intend for it to be private (exclusively for personal or professional use) or public (free and available for use by anyone) @rickert_2018. If your task is specific to a line of research, consult colleagues to see if they have relevant (private) code they would be willing to share. Alternatively, literature in your field may either introduce R packages developed to solve a unique data science problem or mention packages used during the research process. The former may be published in the *Journal of Statistical Software*, *The R Journal*, or *BMC Bioinformatics*, for example, and search queries that include `"R package"` along with domain keywords will narrow results. The latter requires identifying authors whom have used R in their analyses, hence packages may be mentioned in the Methods and/or References sections of the article. Accordingly, formatted citations for R packages can be obtained in R with `citation(package  = "…")`. You can search for packages directly by name in Google Scholar: the `Cited by` link displays the number of times a package has been cited which connects to a page with those publications. Lastly, conferences are another collaborative environment wherein you can learn about R packages. There are two major annual R conferences, [rstudio::conf](https://rstudio.com/conference/) for industry and useR! for academia; conferences in your field may foster connections with fellow scientists whom use R for similar tasks and help you collect information about packages related to your expertise. Talks and presentations at conferences are often recorded and made available online for playback at a later date.
+
+**Browse**
+
+Based on prior experience---not unlike solution-seeking for many tasks nowadays---you may think that finding R packages relies heavily on internet search queries. Indeed, search engines such as Google return ample pages related to anything `"…in R"`. However, this approach can lead to frustration and confusion when attempting to find a package for your purpose (see Rule 1). Instead, we recommend initially searching for packages in repositories such as the Comprehensive R Archive Network (CRAN), GitHub, or Bioconductor, all of which will be further discussed in Rule 3. In particular, [CRAN Task Views]( https://cran.r-project.org/web/views/) are concentrated topics from certain disciplines and methodologies related to statistical computing that group R packages by the tasks they perform (e.g., Econometrics, Genetics, Optimization, Spatial). You can browse alphabetized subcategories within each Task View and read their concise descriptions to find tools with specific functions. To date, there are 41 Task Views that collectively contain thousands of packages which are curated and regularly tested. Moreover, CRAN Task Views provide tools that enable the user to automatically install all packages within a targeted area of interest. Another place to find well-maintained tools that promote reusable software and reproducibility when working with scientific data in research applications is through [rOpenSci packages](https://ropensci.org/packages/). Packages are organized by name, maintainer, description, and status (i.e., activity, association, review), can be filtered according to purpose, and searched by name, maintainer, or keywords.
+
 
 # Rule 3: Check how it's shared
 
@@ -108,7 +124,7 @@ Computational reproducibility is surfacing as a central axiom in academia as res
 
 R packages are a defining feature of the language insofar as many are robust and easily learnable. Packages greatly enhance the user experience and enable you to be more efficient and effective at learning from data regardless of prior experience. However, the sheer quantity and potential complexity of available R packages can undermine their collective benefits. Finding and choosing packages, particularly for beginners, can be daunting and convoluted. R users often struggle to sift through the tools at their disposal and wonder how to distinguish appropriate usage. These ten simple rules for navigating the shared code in the R community are intended to serve as a valuable page in your computing cookbook---one that will evolve into intuition yet remain a reliable reference. May searching for and selecting proper tools no longer spoil your appetite and dissuade you from discovering, trying, creating, and sharing new recipes.
 
-# Table 1
+# Table 1 (general packages)
 
 ```{r}
 library(kableExtra)
@@ -143,6 +159,32 @@ gen_pkgs <- data.frame(
                   "data visualization", 
                   "tables",
                   "reports"),
+  
+  Year = c("readr",
+           "dplyr",
+           "tidyr",
+  
+           "broom",
+           "purrr",
+           "caret", 
+           "keras",
+                    
+           "ggplot2",
+           "kableExtra", 
+           "rmarkdown"),
+  
+  Author = c("readr Wickham et al.",
+             "dplyr Wickham et al.", 
+             "tidyr Wickham et al.",
+  
+             "broom Robinson et al.",
+             "purrr Henry et al.",
+             "caret Kuhn et al.", 
+             "keras Falbel et al.",
+                    
+             "ggplot2 Wickham et al.",
+             "kableExtra Zhu et al.", 
+             "rmarkdown Allaire et al."),
   
   Documentation = c("readr", 
                     "dplyr", 
@@ -180,27 +222,27 @@ kable(gen_pkgs, format = "latex", booktabs = TRUE) %>%
                  "See the tidyverse"),
                notation = "symbol")
 
-
-
-  # trying to separate color; striped by group
+## trying to separate color; striped by group
 #  row_spec(1:3 - 1, extra_latex_after = "\\rowcolor{gray!6}")
 #  row_spec(0:3, extra_latex_after = "\\rowcolor{orange!6}") %>% 
 #  row_spec(4:6, extra_latex_after = "\\rowcolor{gray!6}") %>% 
 #  row_spec(7:11, extra_latex_after = "\\rowcolor{gray!6}")
 
-# QUESTIONS 
+## QUESTIONS 
 # Code font for package names in " "? \texttt{}?
 # How do you repeat same symbol on multiple items with one footnote?
 # How do you separate colors and stripe by group?
-# Add title?
-# Add caption?
+# Add title
+# Add caption
 # Cite packages in bib and add references in table?
-# Embed url link to package documentation?
+# Embed url link to package documentation? Do we want to link cheatsheets?
 # How do you add link/reference to Table 1 in text in the template?
 # How do you hide code for table in knitted pdf...include=FALSE errors?
 # Title for column 2: description/purpose/usage?
 # Length of description/purpose/usage for each package?
 ```
+
+
 
 # Supporting information
 
@@ -214,3 +256,4 @@ Do we need to include any supporting information?
 
 
 # References {#references .unnumbered}
+

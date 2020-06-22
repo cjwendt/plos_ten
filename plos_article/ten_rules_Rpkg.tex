@@ -382,12 +382,13 @@ it. For some tasks, coding your own recipe with existing tools is
 practical, while other tasks benefit from new tools.
 
 If the scope of your task is simple or reasonable given your knowledge
-and skills, using an R package may not be appropriate. There are
-advantages of coding in base R to implement a unique solution for your
-problem. In particular, when you code from scratch, you know precisely
-what you are running; thus, your script may be easier to decipher and
-maintain. Conversely, packages require reliance on shared code with
-features of which you may not be aware.
+and skills, using an R package may not be appropriate. That is, some
+instances do not warrant additional functions, data, and documentation.
+There are advantages of coding in base R to implement a unique solution
+for your problem. In particular, when you code from scratch, you know
+precisely what you are running; thus, your script may be easier to
+decipher and maintain. Conversely, packages require reliance on shared
+code with features of which you may not be aware.
 
 Packages are valuable when a task has a broad scope or is beyond the
 scope of what you desire to code in base R; a task that is narrow in
@@ -428,18 +429,107 @@ visualization package you use should address such limitations.
 \section{Rule 2: Spend time searching; find and collect
 options}\label{rule-2-spend-time-searching-find-and-collect-options}}
 
-There are three main categories that distinguish various methods for
-finding R packages: learning, collaboration, and searching. Firstly,
-packages are essential to venturing beyond base R and thus quickly
-become an integral aspect of advancing your R skills. In other words,
-when learning R, you are typically introduced to some of the most
-commonly used packages. This does not, however, imply that such packages
-are necessarily the most basic. Online tutorials, courses, and textbooks
-tend to be reliable resources for acquiring knowledge about packages
-that are particularly versatile and reliable. We recommend ------------
-for interactive learning and --------- textbooks (``{[}x{]} with R''
-series) such as the \href{https://rstudio.com/resources/books/}{RStudio
-books} for further reading.
+Those who have used R packages may know that although leveraging
+existing tools can be advantageous, the initial challenge of finding a
+suitable package for a given task can obstruct potential benefits.
+Relatedly, new R users who are unfamiliar with the structure and syntax
+of the language may be hindered by the process of finding R packages
+because they do not know where to search, what to look for, nor how to
+sift through options. R packages are mentioned in a variety of places
+online, in print, and elsewhere. You can discover new R packages anytime
+you learn R-related topics, collaborate with other R users, or browse
+the internet.
+
+\textbf{Learn}
+
+Packages are essential to venturing beyond base R and thus quickly
+become an integral aspect of advancing your R skills. When learning how
+to program in R, you are typically introduced to some of the most common
+packages, which tend to have more general purposes (\textbf{Table 1}).
+In addition, reputable online tutorials, courses, and books are helpful
+resources for acquiring knowledge about packages that are versatile and
+reliable---many of which are short, accessible, and either affordable or
+offered at no cost to the learner. We recommend online R programming
+courses such as those through
+\href{https://www.coursera.org/learn/r-programming}{Coursera} and
+\href{https://www.codecademy.com/learn/learn-r}{Codeacademy} for
+interactive learning and R book series including the
+\href{https://rstudio.com/resources/books/}{RStudio books} and Springer
+titles for further reading.
+
+\textbf{Collaborate}
+
+An inclusive and collaborative community is an overlooked, yet integral
+aspect of a software's success {[}5{]}. A defining feature of R is the
+enthusiasm of its users and contributors alike. The R community has a
+widespread internet presence across various platforms; however, members
+are markedly active on Twitter, a place where R users seek help, share
+ideas, and stay informed on \texttt{\#rstats} happenings including
+releases of new packages {[}6{]}. Beyond social media, numerous featured
+pages and R blogs serve as another informal and up-to-date, yet more
+detailed venue for communicating and promoting R-related information
+(\textbf{Table ?}). Notably, Joseph Rickert, Ambassador at Large for
+RStudio, writes monthly posts on the
+\href{https://rviews.rstudio.com/}{R Views} blog highlighting
+exceptional new R packages in addition to special articles about
+recently released packages and lists of top packages within certain
+categories (e.g., Computational Methods, Data, Machine Learning,
+Medicine, Science, Statistics, Time Series, Utilities, Visualization).
+
+A developer of an R package may intend for it to be private (exclusively
+for personal or professional use) or public (free and available for use
+by anyone) {[}7{]}. If your task is specific to a line of research,
+consult colleagues to see if they have relevant (private) code they
+would be willing to share. Alternatively, literature in your field may
+either introduce R packages developed to solve a unique data science
+problem or mention packages used during the research process. The former
+may be published in the \emph{Journal of Statistical Software},
+\emph{The R Journal}, or \emph{BMC Bioinformatics}, for example, and
+search queries that include \texttt{"R\ package"} along with domain
+keywords will narrow results. The latter requires identifying authors
+whom have used R in their analyses, hence packages may be mentioned in
+the Methods and/or References sections of the article. Accordingly,
+formatted citations for R packages can be obtained in R with
+\texttt{citation(package\ \ =\ "\ldots{}")}. You can search for packages
+directly by name in Google Scholar: the \texttt{Cited\ by} link displays
+the number of times a package has been cited which connects to a page
+with those publications. Lastly, conferences are another collaborative
+environment wherein you can learn about R packages. There are two major
+annual R conferences,
+\href{https://rstudio.com/conference/}{rstudio::conf} for industry and
+useR! for academia; conferences in your field may foster connections
+with fellow scientists whom use R for similar tasks and help you collect
+information about packages related to your expertise. Talks and
+presentations at conferences are often recorded and made available
+online for playback at a later date.
+
+\textbf{Browse}
+
+Based on prior experience---not unlike solution-seeking for many tasks
+nowadays---you may think that finding R packages relies heavily on
+internet search queries. Indeed, search engines such as Google return
+ample pages related to anything \texttt{"\ldots{}in\ R"}. However, this
+approach can lead to frustration and confusion when attempting to find a
+package for your purpose (see Rule 1). Instead, we recommend initially
+searching for packages in repositories such as the Comprehensive R
+Archive Network (CRAN), GitHub, or Bioconductor, all of which will be
+further discussed in Rule 3. In particular,
+\href{https://cran.r-project.org/web/views/}{CRAN Task Views} are
+concentrated topics from certain disciplines and methodologies related
+to statistical computing that group R packages by the tasks they perform
+(e.g., Econometrics, Genetics, Optimization, Spatial). You can browse
+alphabetized subcategories within each Task View and read their concise
+descriptions to find tools with specific functions. To date, there are
+41 Task Views that collectively contain thousands of packages which are
+curated and regularly tested. Moreover, CRAN Task Views provide tools
+that enable the user to automatically install all packages within a
+targeted area of interest. Another place to find well-maintained tools
+that promote reusable software and reproducibility when working with
+scientific data in research applications is through
+\href{https://ropensci.org/packages/}{rOpenSci packages}. Packages are
+organized by name, maintainer, description, and status (i.e., activity,
+association, review), can be filtered according to purpose, and searched
+by name, maintainer, or keywords.
 
 \hypertarget{rule-3-check-how-its-shared}{%
 \section{Rule 3: Check how it's
@@ -483,7 +573,7 @@ often found to be at odds with productivity and collaboration. The R
 programming language is increasingly used by researchers in
 computational biology and bioinformatics, a discipline among many that
 is generating extensive heterogenous and complex data that demands
-sophisticated tools and rigorous methods {[}5,6{]}.
+sophisticated tools and rigorous methods {[}8,9{]}.
 
 R packages are a defining feature of the language insofar as many are
 robust and easily learnable. Packages greatly enhance the user
@@ -500,8 +590,8 @@ reliable reference. May searching for and selecting proper tools no
 longer spoil your appetite and dissuade you from discovering, trying,
 creating, and sharing new recipes.
 
-\hypertarget{table-1}{%
-\section{Table 1}\label{table-1}}
+\hypertarget{table-1-general-packages}{%
+\section{Table 1 (general packages)}\label{table-1-general-packages}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -539,6 +629,32 @@ creating, and sharing new recipes.
                   \StringTok{"data visualization"}\NormalTok{, }
                   \StringTok{"tables"}\NormalTok{,}
                   \StringTok{"reports"}\NormalTok{),}
+  
+  \DataTypeTok{Year =} \KeywordTok{c}\NormalTok{(}\StringTok{"readr"}\NormalTok{,}
+           \StringTok{"dplyr"}\NormalTok{,}
+           \StringTok{"tidyr"}\NormalTok{,}
+  
+           \StringTok{"broom"}\NormalTok{,}
+           \StringTok{"purrr"}\NormalTok{,}
+           \StringTok{"caret"}\NormalTok{, }
+           \StringTok{"keras"}\NormalTok{,}
+                    
+           \StringTok{"ggplot2"}\NormalTok{,}
+           \StringTok{"kableExtra"}\NormalTok{, }
+           \StringTok{"rmarkdown"}\NormalTok{),}
+  
+  \DataTypeTok{Author =} \KeywordTok{c}\NormalTok{(}\StringTok{"readr Wickham et al."}\NormalTok{,}
+             \StringTok{"dplyr Wickham et al."}\NormalTok{, }
+             \StringTok{"tidyr Wickham et al."}\NormalTok{,}
+  
+             \StringTok{"broom Robinson et al."}\NormalTok{,}
+             \StringTok{"purrr Henry et al."}\NormalTok{,}
+             \StringTok{"caret Kuhn et al."}\NormalTok{, }
+             \StringTok{"keras Falbel et al."}\NormalTok{,}
+                    
+             \StringTok{"ggplot2 Wickham et al."}\NormalTok{,}
+             \StringTok{"kableExtra Zhu et al."}\NormalTok{, }
+             \StringTok{"rmarkdown Allaire et al."}\NormalTok{),}
   
   \DataTypeTok{Documentation =} \KeywordTok{c}\NormalTok{(}\StringTok{"readr"}\NormalTok{, }
                     \StringTok{"dplyr"}\NormalTok{, }
@@ -583,51 +699,51 @@ creating, and sharing new recipes.
 \begin{table}[H]
 \centering
 \resizebox{\linewidth}{!}{
-\begin{tabular}{>{\raggedright\arraybackslash}p{10em}>{\raggedright\arraybackslash}p{20em}l}
+\begin{tabular}{>{\raggedright\arraybackslash}p{10em}>{\raggedright\arraybackslash}p{20em}lll}
 \toprule
-\textbf{Package} & \textbf{Description} & \textbf{Documentation}\\
+\textbf{Package} & \textbf{Description} & \textbf{Year} & \textbf{Author} & \textbf{Documentation}\\
 \midrule
 \addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Data Manipulation}}\\
-\hspace{1em}readr\textsuperscript{*} & read rectangular data (e.g., csv, tsv, and fwf) & readr\\
-\hspace{1em}dplyr\textsuperscript{\dag} & grammar of data manipulation & dplyr\\
-\hspace{1em}tidyr & create tidy data & tidyr\\
+\multicolumn{5}{l}{\textbf{Data Manipulation}}\\
+\hspace{1em}readr\textsuperscript{*} & read rectangular data (e.g., csv, tsv, and fwf) & readr & readr Wickham et al. & readr\\
+\hspace{1em}dplyr\textsuperscript{\dag} & grammar of data manipulation & dplyr & dplyr Wickham et al. & dplyr\\
+\hspace{1em}tidyr & create tidy data & tidyr & tidyr Wickham et al. & tidyr\\
 \addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Statistical Modeling}}\\
-\hspace{1em}broom\textsuperscript{\ddag} & tidy model output & broom\\
-\hspace{1em}purrr\textsuperscript{\S} & functional programming tools & purrr\\
-\hspace{1em}caret & train classification and regression models & caret\\
-\hspace{1em}keras & R interface to a neural network library & keras\\
+\multicolumn{5}{l}{\textbf{Statistical Modeling}}\\
+\hspace{1em}broom\textsuperscript{\ddag} & tidy model output & broom & broom Robinson et al. & broom\\
+\hspace{1em}purrr\textsuperscript{\S} & functional programming tools & purrr & purrr Henry et al. & purrr\\
+\hspace{1em}caret & train classification and regression models & caret & caret Kuhn et al. & caret\\
+\hspace{1em}keras & R interface to a neural network library & keras & keras Falbel et al. & keras\\
 \addlinespace[0.3em]
-\multicolumn{3}{l}{\textbf{Data Visualization}}\\
-\hspace{1em}ggplot2\textsuperscript{\P} & data visualization & ggplot2\\
-\hspace{1em}kableExtra & tables & kableExtra\\
-\hspace{1em}rmarkdown & reports & rmarkdown\\
+\multicolumn{5}{l}{\textbf{Data Visualization}}\\
+\hspace{1em}ggplot2\textsuperscript{\P} & data visualization & ggplot2 & ggplot2 Wickham et al. & ggplot2\\
+\hspace{1em}kableExtra & tables & kableExtra & kableExtra Zhu et al. & kableExtra\\
+\hspace{1em}rmarkdown & reports & rmarkdown & rmarkdown Allaire et al. & rmarkdown\\
 \bottomrule
-\multicolumn{3}{l}{\textsuperscript{*} See the tidyverse}\\
-\multicolumn{3}{l}{\textsuperscript{\dag} See the tidyverse}\\
-\multicolumn{3}{l}{\textsuperscript{\ddag} See the biobroom analog in Bioconductor}\\
-\multicolumn{3}{l}{\textsuperscript{\S} See the tidyverse}\\
-\multicolumn{3}{l}{\textsuperscript{\P} See the tidyverse}\\
+\multicolumn{5}{l}{\textsuperscript{*} See the tidyverse}\\
+\multicolumn{5}{l}{\textsuperscript{\dag} See the tidyverse}\\
+\multicolumn{5}{l}{\textsuperscript{\ddag} See the biobroom analog in Bioconductor}\\
+\multicolumn{5}{l}{\textsuperscript{\S} See the tidyverse}\\
+\multicolumn{5}{l}{\textsuperscript{\P} See the tidyverse}\\
 \end{tabular}}
 \end{table}
 
 \begin{Shaded}
 \begin{Highlighting}[]
-  \CommentTok{# trying to separate color; striped by group}
+\CommentTok{## trying to separate color; striped by group}
 \CommentTok{#  row_spec(1:3 - 1, extra_latex_after = "\textbackslash{}\textbackslash{}rowcolor\{gray!6\}")}
 \CommentTok{#  row_spec(0:3, extra_latex_after = "\textbackslash{}\textbackslash{}rowcolor\{orange!6\}") %>% }
 \CommentTok{#  row_spec(4:6, extra_latex_after = "\textbackslash{}\textbackslash{}rowcolor\{gray!6\}") %>% }
 \CommentTok{#  row_spec(7:11, extra_latex_after = "\textbackslash{}\textbackslash{}rowcolor\{gray!6\}")}
 
-\CommentTok{# QUESTIONS }
+\CommentTok{## QUESTIONS }
 \CommentTok{# Code font for package names in " "? \textbackslash{}texttt\{\}?}
 \CommentTok{# How do you repeat same symbol on multiple items with one footnote?}
 \CommentTok{# How do you separate colors and stripe by group?}
-\CommentTok{# Add title?}
-\CommentTok{# Add caption?}
+\CommentTok{# Add title}
+\CommentTok{# Add caption}
 \CommentTok{# Cite packages in bib and add references in table?}
-\CommentTok{# Embed url link to package documentation?}
+\CommentTok{# Embed url link to package documentation? Do we want to link cheatsheets?}
 \CommentTok{# How do you add link/reference to Table 1 in text in the template?}
 \CommentTok{# How do you hide code for table in knitted pdf...include=FALSE errors?}
 \CommentTok{# Title for column 2: description/purpose/usage?}
@@ -671,13 +787,28 @@ Available: \url{https://CRAN.R-project.org/package=tidyr}
 telephone keypad {[}Internet{]}. 2015. Available:
 \url{https://CRAN.R-project.org/package=phonenumber}
 
+\leavevmode\hypertarget{ref-smith_2017}{}%
+5. Smith D. The r community is one of r's best features {[}Internet{]}.
+Revolutions. Microsoft; 2017. Available:
+\url{https://blog.revolutionanalytics.com/2017/06/r-community.html}
+
+\leavevmode\hypertarget{ref-ellis_2017}{}%
+6. Ellis SE. Hey! You there! You are welcome here {[}Internet{]}.
+rOpenSci. NumFOCUS; 2017. Available:
+\url{https://ropensci.org/blog/2017/06/23/community/}
+
+\leavevmode\hypertarget{ref-rickert_2018}{}%
+7. Rickert J. What makes a great r package? {[}Internet{]}. RStudio;
+2018. Available:
+\url{https://rstudio.com/resources/rstudioconf-2018/what-makes-a-great-r-package-joseph-rickert/}
+
 \leavevmode\hypertarget{ref-gentleman2004bioconductor}{}%
-5. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
+8. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
 al. Bioconductor: Open software development for computational biology
 and bioinformatics. Genome biology. Springer; 2004;5: R80.
 
 \leavevmode\hypertarget{ref-holmes2018modern}{}%
-6. Holmes S, Huber W. Modern statistics for modern biology
+9. Holmes S, Huber W. Modern statistics for modern biology
 {[}Internet{]}. Cambridge University Press; 2018. Available:
 \url{https://web.stanford.edu/class/bios221/book/index.html}
 
