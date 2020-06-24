@@ -304,10 +304,10 @@ Write the author summary here. Do we want to include and author summary?
 \section{Disclaimer?}\label{disclaimer}}
 
 Do we need to include a disclaimer in the margin like the one from
-\textbf{???} that states: ``\textbf{Competing Interests}: The authors
-have no affiliation with GitHub, nor with any other commercial entity
-mentioned in this article. The views described here reflect their own
-views without input from any third party organization.''
+{[}1{]} that states: ``\textbf{Competing Interests}: The authors have no
+affiliation with GitHub, nor with any other commercial entity mentioned
+in this article. The views described here reflect their own views
+without input from any third party organization.''
 
 \begin{itemize}
 \tightlist
@@ -403,12 +403,12 @@ Extensive tasks justify sophisticated frameworks with several functions
 that form a cohesive package. Numerous processes that involve
 data---although varying in application---are ubiquitous. Data
 manipulation is one such common task that has been streamlined by
-packages such as \texttt{dplyr} and \texttt{tidyr} {[}1,2{]} (See Table
+packages such as \texttt{dplyr} and \texttt{tidyr} {[}2,3{]} (See Table
 1). Nevertheless, there are indeed packages for seemingly singular
 tasks, which you may favor over coding from scratch. Some R packages are
 small and have a specific use conducive to tasks that require highly
 specialized functions. For example, there is a package for converting
-English letters to numbers as on a telephone keypad {[}3{]}.
+English letters to numbers as on a telephone keypad {[}4{]}.
 
 If you define your purpose by making observations about and considering
 limitations of your current toolbox before you start searching for new
@@ -460,12 +460,12 @@ titles for further reading.
 \textbf{Collaborate}
 
 An inclusive and collaborative community is an overlooked, yet integral
-aspect of a software's success {[}4{]}. A defining feature of R is the
+aspect of a software's success {[}5{]}. A defining feature of R is the
 enthusiasm of its users and contributors alike. The R community has a
 widespread internet presence across various platforms; however, members
 are markedly active on Twitter, a place where R users seek help, share
 ideas, and stay informed on \texttt{\#rstats} happenings including
-releases of new packages {[}5{]}. Beyond social media, numerous featured
+releases of new packages {[}6{]}. Beyond social media, numerous featured
 pages and R blogs serve as another informal and up-to-date, yet more
 detailed venue for communicating and promoting R-related information
 (\textbf{Table ?}). Notably, Joseph Rickert, Ambassador at Large for
@@ -478,7 +478,7 @@ Medicine, Science, Statistics, Time Series, Utilities, Visualization).
 
 A developer of an R package may intend for it to be private (exclusively
 for personal or professional use) or public (free and available for use
-by anyone) {[}6{]}. If your task is specific to a line of research,
+by anyone) {[}7{]}. If your task is specific to a line of research,
 consult colleagues to see if they have relevant (private) code they
 would be willing to share. Alternatively, literature in your field may
 either introduce R packages developed to solve a unique data science
@@ -529,7 +529,7 @@ interest. Ultimately, CRAN Task Views address several major user-end
 issues that have arisen due to the extensive amount of available
 packages by providing task-based organization, easy simultaneous
 installation of related packages, meta-information, ensured maintenance,
-and quality control {[}7{]}. Another place to find well-maintained tools
+and quality control {[}8{]}. Another place to find well-maintained tools
 that promote reusable software and reproducibility when working with
 scientific data in research applications is through
 \href{https://ropensci.org/packages/}{rOpenSci packages}. Packages are
@@ -569,6 +569,49 @@ test}\label{rule-9-put-the-package-to-the-test}}
 \section{Rule 10: Develop your own
 package}\label{rule-10-develop-your-own-package}}
 
+Alternative solutions can be sought when a package to solve your data
+science problem is nonexistent. An R package is the fundamental unit of
+shareable code; rather than exclusively being a user of packages, you
+can create them---more easily than you may think {[}9{]}. Just as there
+are numerous R packages for distinct tasks, the reasons why you might
+want to create a package are abundant: necessity, innovation,
+standardization, automation, specialty, containment, organization,
+sharing, collaboration, extensibility, etc.
+
+Whatever your motivation, R packages are simply toolkits; you can create
+a package out of any collection of specialty functions. Packages need
+not be formal nor entirely cohesive. For instance, personal R packages
+(e.g., \texttt{Hmisc} and \texttt{broman}) are comprised of
+miscellaneous functions which the creator has developed and frequently
+uses {[}10,11{]}. Functions are necessary for efficiency and warranted
+when you repetitiously copy and paste your code while making slight
+modifications after each iteration {[}12{]}. The concept of personal R
+packages demonstrates a unique purpose for packages beyond the
+conventional. R packages are not solely reserved for specific tasks with
+comprehensive methods; rather, package development can help you learn
+how to apply proper coding techniques to writing functions and
+documentation with reproducibility and collaboration in mind {[}13{]}.
+
+Although you may not anticipate that anyone else will use your tools,
+following best practices for package development will yield more
+favorable outcomes. As a consumer of shared packages, you know the
+inherent benefits of robust software development relative to the quality
+of code, data, documentation, versions, and tests {[}14{]}. Similarly,
+creating a valuable package for personal use requires consideration for
+your future self and anticipation of distributing your code should the
+need arise. Consider using version control and take advantage of
+existing resources. Indeed, there are R packages that aid in package
+development (e.g., \texttt{devtools}, \texttt{usethis},
+\texttt{testthat}, \texttt{roxygen2}, \texttt{rlang}, \texttt{drat}).
+There is no dearth of effective organizational frameworks to reference
+in the open source R community; in fact, repositories for many exemplary
+packages are available on GitHub. We recommend consulting resources
+authored by expert R developers including \href{https://r-pkgs.org/}{R
+Packages} by Hadley Wickham and Jennifer Bryan as well as the official
+manual,
+\href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{Writing
+R Extensions}, from CRAN.
+
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
@@ -579,7 +622,10 @@ often found to be at odds with productivity and collaboration. The R
 programming language is increasingly used by researchers in
 computational biology and bioinformatics, a discipline among many that
 is generating extensive heterogenous and complex data that demands
-sophisticated tools and rigorous methods {[}{\textbf{???}}{]}.
+sophisticated tools and rigorous methods {[}15,16{]}. More broadly, as
+the R ecosystem rapidly evolves alongside the burgeoning R community, R
+is exhibiting sustained growth when compared to similar languages,
+particularly in academia, healthcare, and government {[}17{]}.
 
 R packages are a defining feature of the language insofar as many are
 robust and easily learnable. Packages greatly enhance the user
@@ -668,7 +714,7 @@ creating, and sharing new recipes.
   
                     \StringTok{"broom"}\NormalTok{,}
                     \StringTok{"purrr"}\NormalTok{,}
-                    \StringTok{"caret"}\NormalTok{, }
+                    \StringTok{"https://topepo.github.io/caret/index.html"}\NormalTok{, }
                     \StringTok{"keras"}\NormalTok{,}
                     
                     \StringTok{"ggplot2"}\NormalTok{,}
@@ -718,7 +764,7 @@ creating, and sharing new recipes.
 \multicolumn{5}{l}{\textbf{Statistical Modeling}}\\
 \hspace{1em}broom\textsuperscript{\ddag} & tidy model output & broom & broom Robinson et al. & broom\\
 \hspace{1em}purrr\textsuperscript{\S} & functional programming tools & purrr & purrr Henry et al. & purrr\\
-\hspace{1em}caret & train classification and regression models & caret & caret Kuhn et al. & caret\\
+\hspace{1em}caret & train classification and regression models & caret & caret Kuhn et al. & https://topepo.github.io/caret/index.html\\
 \hspace{1em}keras & R interface to a neural network library & keras & keras Falbel et al. & keras\\
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Data Visualization}}\\
@@ -774,37 +820,83 @@ Do we need to include any supporting information?
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
+\leavevmode\hypertarget{ref-perez2016}{}%
+1. Perez-Riverol Y, Gatto L, Wang R, Sachsenberg T, Uszkoreit J, Veiga
+Leprevost F da, et al. Ten simple rules for taking advantage of git and
+github. PLoS computational biology. Public Library of Science; 2016;12.
+
 \leavevmode\hypertarget{ref-dplyr}{}%
-1. Wickham H, François R, Henry L, Müller K. Dplyr: A grammar of data
+2. Wickham H, François R, Henry L, Müller K. Dplyr: A grammar of data
 manipulation {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=dplyr}
 
 \leavevmode\hypertarget{ref-tidyr}{}%
-2. Wickham H, Henry L. Tidyr: Tidy messy data {[}Internet{]}. 2020.
+3. Wickham H, Henry L. Tidyr: Tidy messy data {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=tidyr}
 
 \leavevmode\hypertarget{ref-phonenumber}{}%
-3. Myles S. Phonenumber: Convert letters to numbers and back as on a
+4. Myles S. Phonenumber: Convert letters to numbers and back as on a
 telephone keypad {[}Internet{]}. 2015. Available:
 \url{https://CRAN.R-project.org/package=phonenumber}
 
-\leavevmode\hypertarget{ref-smith_2017}{}%
-4. Smith D. The r community is one of r's best features {[}Internet{]}.
+\leavevmode\hypertarget{ref-smith2017}{}%
+5. Smith D. The r community is one of r's best features {[}Internet{]}.
 Revolutions. Microsoft; 2017. Available:
 \url{https://blog.revolutionanalytics.com/2017/06/r-community.html}
 
-\leavevmode\hypertarget{ref-ellis_2017}{}%
-5. Ellis SE. Hey! You there! You are welcome here {[}Internet{]}.
+\leavevmode\hypertarget{ref-ellis2017}{}%
+6. Ellis SE. Hey! You there! You are welcome here {[}Internet{]}.
 rOpenSci. NumFOCUS; 2017. Available:
 \url{https://ropensci.org/blog/2017/06/23/community/}
 
-\leavevmode\hypertarget{ref-rickert_2018}{}%
-6. Rickert J. What makes a great r package? {[}Internet{]}. RStudio;
+\leavevmode\hypertarget{ref-rickert2018}{}%
+7. Rickert J. What makes a great r package? {[}Internet{]}. RStudio;
 2018. Available:
 \url{https://rstudio.com/resources/rstudioconf-2018/what-makes-a-great-r-package-joseph-rickert/}
 
-\leavevmode\hypertarget{ref-zeileis_2005}{}%
-7. Zeileis A. CRAN task views. R News. 2005;5: 39--40.
+\leavevmode\hypertarget{ref-zeileis2005}{}%
+8. Zeileis A. CRAN task views. R News. 2005;5: 39--40.
+
+\leavevmode\hypertarget{ref-wickham2015}{}%
+9. Wickham H. R packages: Organize, test, document, and share your code.
+"O'Reilly Media, Inc."; 2015.
+
+\leavevmode\hypertarget{ref-Hmisc}{}%
+10. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
+{[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=Hmisc}
+
+\leavevmode\hypertarget{ref-broman}{}%
+11. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
+Available: \url{https://CRAN.R-project.org/package=broman}
+
+\leavevmode\hypertarget{ref-wickham2014}{}%
+12. Wickham H. Advanced r. CRC press; 2014.
+
+\leavevmode\hypertarget{ref-parker2013}{}%
+13. Parker H. Personal r packages {[}Internet{]}. Not So Standard
+Deviations; 2013. Available:
+\url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
+
+\leavevmode\hypertarget{ref-taschuk2017}{}%
+14. Taschuk M, Wilson G. Ten simple rules for making research software
+more robust. PLoS computational biology. Public Library of Science;
+2017;13.
+
+\leavevmode\hypertarget{ref-gentleman2004}{}%
+15. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S,
+et al. Bioconductor: Open software development for computational biology
+and bioinformatics. Genome biology. Springer; 2004;5: R80.
+
+\leavevmode\hypertarget{ref-holmes2018}{}%
+16. Holmes S, Huber W. Modern statistics for modern biology
+{[}Internet{]}. Cambridge University Press; 2018. Available:
+\url{https://web.stanford.edu/class/bios221/book/index.html}
+
+\leavevmode\hypertarget{ref-robinson2017}{}%
+17. Robinson D. The impressive growth of r {[}Internet{]}. Stack
+Overflow; 2017. Available:
+\url{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}
 
 \nolinenumbers
 
