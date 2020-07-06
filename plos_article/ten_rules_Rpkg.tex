@@ -778,6 +778,37 @@ if the collective quality and quantity of resources is lacking.
 \section{Rule 5: Verify the credibility of the
 author(s)}\label{rule-5-verify-the-credibility-of-the-authors}}
 
+Although R is grounded in statistical computing and graphics, there is
+variation in what people use R for, more variation in the skills of the
+people who use R, and thus even more variation in the extensions that
+people create for R. Just as research is a library of shared insight,
+open source software is an amalgam of shared tools. We care about who
+writes the articles we read, so too should we care about who creates the
+tools we use. Associations and reputation are often a proxy for quality;
+in this way, the process of evaluating and comparing R packages is no
+different than other decisions. In fact, as you become more immersed in
+the R community, you will find that name recognition is a crucial factor
+that determines why you blindly trust certain tools and hesitate to use
+others {[}28{]}.
+
+You can assess the credibility of R package developers through direct
+and indirect signals. Who made the package? Consider whether expertise
+in a certain domain is vital to the design and creation of the tool.
+Research the authors' associations (e.g., academia, industry,
+laboratories) and gauge the extent to which they have a primary role in
+R development through, for example, RStudio or esteemed biology
+laboratories. Further, you can learn more about their experience, active
+contributions to the R community, and history related to package
+development by exploring their profiles (e.g., GitHub, Google Scholar,
+Research Gate, Twitter, personal or package websites). If an author has
+such a history, peruse their portfolio of packages to see if any are
+highly regarded or recognizable. Frequent commits and effective
+resolutions of Issues for packages hosted on GitHub reveal the authors'
+commitment. If the package was developed by multiple authors, research
+each of them to evaluate the robustness of the team. By extension, these
+indicators of developer involvement and reputation will help you discern
+whether a package is worthy of your trust and time.
+
 \hypertarget{rule-6-investigate-the-package-development}{%
 \section{Rule 6: Investigate the package
 development}\label{rule-6-investigate-the-package-development}}
@@ -801,7 +832,7 @@ package}\label{rule-10-develop-your-own-package}}
 Alternative solutions can be sought when a package to solve your data
 science problem is nonexistent. An R package is the fundamental unit of
 shareable code; rather than exclusively being a user of packages, you
-can create them---more easily than you may think {[}28{]}. Just as there
+can create them---more easily than you may think {[}29{]}. Just as there
 are numerous R packages for distinct tasks, the reasons why you might
 want to create a package are abundant: necessity, innovation,
 standardization, automation, specialty, containment, organization,
@@ -817,27 +848,27 @@ package out of any collection of specialty functions. Packages need not
 be formal nor entirely cohesive. For instance, personal R packages
 (e.g., \texttt{Hmisc} and \texttt{broman}) are comprised of
 miscellaneous functions which the creator has developed and frequently
-uses {[}29,30{]}. Functions are necessary for efficiency and warranted
+uses {[}30,31{]}. Functions are necessary for efficiency and warranted
 when you repetitiously copy and paste your code while making slight
 modifications after each iteration {[}27{]}. The concept of personal R
 packages demonstrates a unique purpose for packages beyond the
 conventional. R packages are not solely reserved for specific tasks with
 comprehensive methods; rather, package development can help you learn
 how to apply proper coding techniques to writing functions and
-documentation with reproducibility and collaboration in mind {[}31{]}.
+documentation with reproducibility and collaboration in mind {[}32{]}.
 
 Although you may not anticipate that anyone else will use your tools,
 following best practices for package development will yield more
 favorable outcomes. As a consumer of shared packages, you know the
 inherent benefits of robust software development relative to the quality
-of code, data, documentation, versions, and tests {[}32{]}. Similarly,
+of code, data, documentation, versions, and tests {[}33{]}. Similarly,
 creating a valuable package for personal use requires consideration for
 your future self and anticipation of distributing your code should the
 need arise. Consider using version control and take advantage of
 existing resources. Indeed, there are R packages that aid in package
 development (e.g., \texttt{devtools}, \texttt{usethis},
 \texttt{testthat}, \texttt{roxygen2}, \texttt{rlang}, \texttt{drat})
-{[}17,33{]}{[}34{]}{[}35{]}{[}36{]}{[}18{]}. In the case of
+{[}17,34{]}{[}35{]}{[}36{]}{[}37{]}{[}18{]}. In the case of
 collaboration, the R project is compatible with distributed
 development---a feature that couples well with version control. There is
 no lack of effective organizational frameworks to reference in the
@@ -847,25 +878,25 @@ authored by expert R developers including
 \href{https://r-pkgs.org/}{\emph{R Packages}} by Hadley Wickham and
 Jennifer Bryan as well as the official manual,
 \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{\emph{Writing
-R Extensions}}, from CRAN {[}28,37{]}.
+R Extensions}}, from CRAN {[}29,38{]}.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
 Computational reproducibility is surfacing as a central axiom in
 academia as researchers identify the need for means by which they can
-implement transparent systems {[}38,39{]}. It follows that former
+implement transparent systems {[}39,40{]}. It follows that former
 approaches and traditional methods tend to be at odds with productivity
 and collaboration; much of the variability in science can be attributed
 to differences in workflow such that the absence of automation is deemed
-irresponsible {[}40{]}. The open source R language has become the
+irresponsible {[}41{]}. The open source R language has become the
 dominant quantitative programming environment in academic statistics,
 enabling researchers to share workflows and reexecute scripts within and
-across subsets of the scientific community {[}40{]}. R is increasingly
+across subsets of the scientific community {[}41{]}. R is increasingly
 used by researchers in computational biology and bioinformatics, a
 discipline among many that is generating extensive heterogenous and
 complex data that demands standard tools and rigorous methods that beget
-reproducibility {[}12,41{]}. More broadly, as the R ecosystem---in which
+reproducibility {[}12,42{]}. More broadly, as the R ecosystem---in which
 the life of modern data analysis thrives---rapidly evolves alongside the
 burgeoning R community, R is exhibiting sustained growth when compared
 to similar languages, particularly in academia, healthcare, and
@@ -878,7 +909,7 @@ problem into a workflow that can be shared and accompanied by thorough
 descriptions of the process and purpose. In this way, R packages have
 effectively transformed how we interact with data in the modern day in,
 perhaps, a more impactful manner than many revered contributions to
-theoretical statistics {[}40{]}. Packages greatly enhance the user
+theoretical statistics {[}41{]}. Packages greatly enhance the user
 experience and enable you to be more efficient and effective at learning
 from data regardless of prior experience. However, the sheer quantity
 and potential complexity of available R packages can undermine their
@@ -1195,69 +1226,74 @@ http://r4statscom/popularity. 2012;
 \leavevmode\hypertarget{ref-wickham2014}{}%
 27. Wickham H. Advanced r. CRC press; 2014.
 
+\leavevmode\hypertarget{ref-leek2015}{}%
+28. Leek J. How i decide when to trust an r package {[}Internet{]}.
+2015. Available:
+\url{https://simplystatistics.org/2015/11/06/how-i-decide-when-to-trust-an-r-package/}
+
 \leavevmode\hypertarget{ref-wickham2015}{}%
-28. Wickham H. R packages: Organize, test, document, and share your
+29. Wickham H. R packages: Organize, test, document, and share your
 code. "O'Reilly Media, Inc."; 2015.
 
 \leavevmode\hypertarget{ref-Hmisc}{}%
-29. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
+30. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=Hmisc}
 
 \leavevmode\hypertarget{ref-broman}{}%
-30. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
+31. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=broman}
 
 \leavevmode\hypertarget{ref-parker2013}{}%
-31. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
+32. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
 \url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
 
 \leavevmode\hypertarget{ref-taschuk2017}{}%
-32. Taschuk M, Wilson G. Ten simple rules for making research software
+33. Taschuk M, Wilson G. Ten simple rules for making research software
 more robust. PLoS computational biology. Public Library of Science;
 2017;13.
 
 \leavevmode\hypertarget{ref-usethis}{}%
-33. Wickham H, Bryan J. Usethis: Automate package and project setup
+34. Wickham H, Bryan J. Usethis: Automate package and project setup
 {[}Internet{]}. 2019. Available:
 \url{https://CRAN.R-project.org/package=usethis}
 
 \leavevmode\hypertarget{ref-testthat}{}%
-34. Wickham H. Testthat: Get started with testing. The R Journal.
+35. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-roxygen2}{}%
-35. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
+36. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
 documentation for r {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=roxygen2}
 
 \leavevmode\hypertarget{ref-rlang}{}%
-36. Henry L, Wickham H. Rlang: Functions for base types and core r and
+37. Henry L, Wickham H. Rlang: Functions for base types and core r and
 'tidyverse' features {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=rlang}
 
 \leavevmode\hypertarget{ref-Rcore2020}{}%
-37. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
+38. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
 2020. Available:
 \url{https://cran.r-project.org/doc/manuals/R-exts.html}
 
 \leavevmode\hypertarget{ref-peng2011}{}%
-38. Peng RD. Reproducible research in computational science. Science.
+39. Peng RD. Reproducible research in computational science. Science.
 American Association for the Advancement of Science; 2011;334:
 1226--1227.
 
 \leavevmode\hypertarget{ref-goodman2016}{}%
-39. Goodman SN, Fanelli D, Ioannidis JP. What does research
+40. Goodman SN, Fanelli D, Ioannidis JP. What does research
 reproducibility mean? Science translational medicine. American
 Association for the Advancement of Science; 2016;8: 341ps12--341ps12.
 
 \leavevmode\hypertarget{ref-donoho2017}{}%
-40. Donoho D. 50 years of data science. Journal of Computational and
+41. Donoho D. 50 years of data science. Journal of Computational and
 Graphical Statistics. Taylor \& Francis; 2017;26: 745--766.
 
 \leavevmode\hypertarget{ref-holmes2018}{}%
-41. Holmes S, Huber W. Modern statistics for modern biology
+42. Holmes S, Huber W. Modern statistics for modern biology
 {[}Internet{]}. Cambridge University Press; 2018. Available:
 \url{https://web.stanford.edu/class/bios221/book/index.html}
 
