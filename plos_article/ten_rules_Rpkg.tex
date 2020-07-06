@@ -813,6 +813,72 @@ whether a package is worthy of your trust and time.
 \section{Rule 6: Investigate the package
 development}\label{rule-6-investigate-the-package-development}}
 
+You need not be a software engineer to identify strong package
+development. Scientific software developers do not always adhere to best
+practices; indeed, these shortcomings are evident in the tools they
+create {[}29{]}. There are concrete ways to measure a tool's robustness
+beyond whether or not it works for those who did not create it. R
+packages often depend on other R packages; you should check the
+reputations of such \emph{dependencies} when selecting a
+package---quality packages will likely rely on a solid web of quality
+packages. What's more, like other types of software, well-maintained R
+packages have multiple versions corresponding to iterative releases to
+indicate that the package is compatible with dependencies and loyally
+updated (e.g., bug fixes, general improvements, functional additions)
+{[}30{]}. You can explore the version history of a package to see if it
+is up-to-date. As a user, there are two additional development protocols
+that you can further investigate to assess the underlying stability and
+utility of a package: unit tests and version control.
+
+A responsible developer with a consistent and reproducible workflow will
+implement formal testing on their code to examine expected behavior via
+an automated process called unit testing {[}30,31{]}. Although
+inconvenient at the outset, the developer---and by extension, the
+package user---will benefit from unit testing, which results in fewer
+bugs, a well-designed code structure, an efficient workflow, and robust
+code that is not sensitive to major changes in the future {[}30{]}. To
+alleviate the burdens of unit testing, \texttt{testthat} is a popular,
+integrative R package that helps developers create reliable functions,
+minimize error, and visualize progress through automatic code testing
+{[}32{]}. Developers are also interested in quantifying the amount of
+code in their package that has been tested. Test coverage, a measurement
+of the proportion of code that has undergone unit testing, is an
+objective a metric for package developers, contributors, and users to
+evaluate code quality. Many developers use the \texttt{covr} package to
+generate reports and determine the magnitude of coverage on the
+function, script, and package levels {[}33{]}. Relatedly, developers who
+host their packages on GitHub, post status badges in the overview
+(\texttt{README}) section of the repository webpage. GitHub badges are a
+common self-imposed method to signal use of best practices and motivate
+developers to produce a product that is high in quality and transparency
+{[}34{]}. You may see, for example, license, dependency, or style
+badges, all of which are good indicators of package caliber; however,
+particular to this Rule, you should look for code coverage
+(\texttt{codecov}) badges which reveal the percentage of test coverage.
+
+As we mentioned in Rule 3, version control has an essential role in
+package development and computational literacy more broadly {[}30,35{]}.
+Version control is like a time capsule for your workflow because it
+monitors and tracks changes to files as a project evolves, and stores
+them as previous versions to be revisited. In other words, ``version
+control is as fundamental to programming as accurate notes about lab
+procedures are to experimental science'' {[}35{]}. Git is a
+decentralized open-source version control system that is useful
+regardless of whether a project is independent or collaborative
+{[}36{]}. GitHub is an online user interface that functions as a
+collaborative platform for sharing and improving code. GitHub works in
+conjunction with Git to provide a powerful structured system to organize
+and manage components of a project for others and your future self. A
+growing number of scientists have research programs based in GitHub
+(e.g., laboratory repositories, large bioinformatics projects), which
+has become a revolutionary tool for productive team science and
+distributed development efforts {[}1,37{]}. As you may expect, Git
+coupled with GitHub is the version control duo of choice among serious R
+package developers {[}30{]}. Thus, if the package you are interested in
+using is among the thousands hosted on GitHub, this is evidence that the
+developer is at least committed to a logical, open, and reproducible
+workflow, suggestive of more time spent designing their tool.
+
 \hypertarget{rule-7-read-research-literature-seek-evidence-of-peer-review}{%
 \section{Rule 7: Read, research literature, seek evidence of peer
 review}\label{rule-7-read-research-literature-seek-evidence-of-peer-review}}
@@ -832,7 +898,7 @@ package}\label{rule-10-develop-your-own-package}}
 Alternative solutions can be sought when a package to solve your data
 science problem is nonexistent. An R package is the fundamental unit of
 shareable code; rather than exclusively being a user of packages, you
-can create them---more easily than you may think {[}29{]}. Just as there
+can create them---more easily than you may think {[}30{]}. Just as there
 are numerous R packages for distinct tasks, the reasons why you might
 want to create a package are abundant: necessity, innovation,
 standardization, automation, specialty, containment, organization,
@@ -848,27 +914,27 @@ package out of any collection of specialty functions. Packages need not
 be formal nor entirely cohesive. For instance, personal R packages
 (e.g., \texttt{Hmisc} and \texttt{broman}) are comprised of
 miscellaneous functions which the creator has developed and frequently
-uses {[}30,31{]}. Functions are necessary for efficiency and warranted
+uses {[}38,39{]}. Functions are necessary for efficiency and warranted
 when you repetitiously copy and paste your code while making slight
 modifications after each iteration {[}27{]}. The concept of personal R
 packages demonstrates a unique purpose for packages beyond the
 conventional. R packages are not solely reserved for specific tasks with
 comprehensive methods; rather, package development can help you learn
 how to apply proper coding techniques to writing functions and
-documentation with reproducibility and collaboration in mind {[}32{]}.
+documentation with reproducibility and collaboration in mind {[}40{]}.
 
 Although you may not anticipate that anyone else will use your tools,
 following best practices for package development will yield more
 favorable outcomes. As a consumer of shared packages, you know the
 inherent benefits of robust software development relative to the quality
-of code, data, documentation, versions, and tests {[}33{]}. Similarly,
+of code, data, documentation, versions, and tests {[}29{]}. Similarly,
 creating a valuable package for personal use requires consideration for
 your future self and anticipation of distributing your code should the
 need arise. Consider using version control and take advantage of
 existing resources. Indeed, there are R packages that aid in package
 development (e.g., \texttt{devtools}, \texttt{usethis},
 \texttt{testthat}, \texttt{roxygen2}, \texttt{rlang}, \texttt{drat})
-{[}17,34{]}{[}35{]}{[}36{]}{[}37{]}{[}18{]}. In the case of
+{[}17,41{]}{[}42{]}{[}43{]}{[}44{]}{[}18{]}. In the case of
 collaboration, the R project is compatible with distributed
 development---a feature that couples well with version control. There is
 no lack of effective organizational frameworks to reference in the
@@ -878,25 +944,25 @@ authored by expert R developers including
 \href{https://r-pkgs.org/}{\emph{R Packages}} by Hadley Wickham and
 Jennifer Bryan as well as the official manual,
 \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{\emph{Writing
-R Extensions}}, from CRAN {[}29,38{]}.
+R Extensions}}, from CRAN {[}30,45{]}.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
 Computational reproducibility is surfacing as a central axiom in
 academia as researchers identify the need for means by which they can
-implement transparent systems {[}39,40{]}. It follows that former
+implement transparent systems {[}46,47{]}. It follows that former
 approaches and traditional methods tend to be at odds with productivity
 and collaboration; much of the variability in science can be attributed
 to differences in workflow such that the absence of automation is deemed
-irresponsible {[}41{]}. The open source R language has become the
+irresponsible {[}48{]}. The open source R language has become the
 dominant quantitative programming environment in academic statistics,
 enabling researchers to share workflows and reexecute scripts within and
-across subsets of the scientific community {[}41{]}. R is increasingly
+across subsets of the scientific community {[}48{]}. R is increasingly
 used by researchers in computational biology and bioinformatics, a
 discipline among many that is generating extensive heterogenous and
 complex data that demands standard tools and rigorous methods that beget
-reproducibility {[}12,42{]}. More broadly, as the R ecosystem---in which
+reproducibility {[}12,49{]}. More broadly, as the R ecosystem---in which
 the life of modern data analysis thrives---rapidly evolves alongside the
 burgeoning R community, R is exhibiting sustained growth when compared
 to similar languages, particularly in academia, healthcare, and
@@ -909,7 +975,7 @@ problem into a workflow that can be shared and accompanied by thorough
 descriptions of the process and purpose. In this way, R packages have
 effectively transformed how we interact with data in the modern day in,
 perhaps, a more impactful manner than many revered contributions to
-theoretical statistics {[}41{]}. Packages greatly enhance the user
+theoretical statistics {[}48{]}. Packages greatly enhance the user
 experience and enable you to be more efficient and effective at learning
 from data regardless of prior experience. However, the sheer quantity
 and potential complexity of available R packages can undermine their
@@ -1231,69 +1297,100 @@ http://r4statscom/popularity. 2012;
 2015. Available:
 \url{https://simplystatistics.org/2015/11/06/how-i-decide-when-to-trust-an-r-package/}
 
+\leavevmode\hypertarget{ref-taschuk2017}{}%
+29. Taschuk M, Wilson G. Ten simple rules for making research software
+more robust. PLoS computational biology. Public Library of Science;
+2017;13.
+
 \leavevmode\hypertarget{ref-wickham2015}{}%
-29. Wickham H. R packages: Organize, test, document, and share your
+30. Wickham H. R packages: Organize, test, document, and share your
 code. "O'Reilly Media, Inc."; 2015.
 
+\leavevmode\hypertarget{ref-hester2020}{}%
+31. Hester J. How does covr work anyway? {[}Internet{]}. The R
+Foundation; 2020. Available:
+\url{https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html}
+
+\leavevmode\hypertarget{ref-wickham2011}{}%
+32. Wickham H. Testthat: Get started with testing. The R Journal.
+2011;3: 5--10. Available:
+\url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
+
+\leavevmode\hypertarget{ref-covr}{}%
+33. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
+Available: \url{https://CRAN.R-project.org/package=covr}
+
+\leavevmode\hypertarget{ref-barts2018}{}%
+34. Barts C. How to use github badges to stop feeling like a noob
+{[}Internet{]}. freeCodeCamp; 2018. Available:
+\url{https://www.freecodecamp.org/news/how-to-use-badges-to-stop-feeling-like-a-noob-d4e6600d37d2/}
+
+\leavevmode\hypertarget{ref-wilson2006}{}%
+35. Wilson GV. Where's the real bottleneck in scientific computing?
+American Scientist. 2006;94: 5.
+
+\leavevmode\hypertarget{ref-bryan2018}{}%
+36. Bryan J. Excuse me, do you have a moment to talk about version
+control? The American Statistician. Taylor \& Francis; 2018;72: 20--27.
+
+\leavevmode\hypertarget{ref-perkel2016}{}%
+37. Perkel J. Democratic databases: Science on github. Nature News.
+2016;538: 127.
+
 \leavevmode\hypertarget{ref-Hmisc}{}%
-30. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
+38. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=Hmisc}
 
 \leavevmode\hypertarget{ref-broman}{}%
-31. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
+39. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=broman}
 
 \leavevmode\hypertarget{ref-parker2013}{}%
-32. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
+40. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
 \url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
 
-\leavevmode\hypertarget{ref-taschuk2017}{}%
-33. Taschuk M, Wilson G. Ten simple rules for making research software
-more robust. PLoS computational biology. Public Library of Science;
-2017;13.
-
 \leavevmode\hypertarget{ref-usethis}{}%
-34. Wickham H, Bryan J. Usethis: Automate package and project setup
+41. Wickham H, Bryan J. Usethis: Automate package and project setup
 {[}Internet{]}. 2019. Available:
 \url{https://CRAN.R-project.org/package=usethis}
 
 \leavevmode\hypertarget{ref-testthat}{}%
-35. Wickham H. Testthat: Get started with testing. The R Journal.
+42. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-roxygen2}{}%
-36. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
+43. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
 documentation for r {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=roxygen2}
 
 \leavevmode\hypertarget{ref-rlang}{}%
-37. Henry L, Wickham H. Rlang: Functions for base types and core r and
+44. Henry L, Wickham H. Rlang: Functions for base types and core r and
 'tidyverse' features {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=rlang}
 
 \leavevmode\hypertarget{ref-Rcore2020}{}%
-38. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
+45. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
 2020. Available:
 \url{https://cran.r-project.org/doc/manuals/R-exts.html}
 
 \leavevmode\hypertarget{ref-peng2011}{}%
-39. Peng RD. Reproducible research in computational science. Science.
+46. Peng RD. Reproducible research in computational science. Science.
 American Association for the Advancement of Science; 2011;334:
 1226--1227.
 
 \leavevmode\hypertarget{ref-goodman2016}{}%
-40. Goodman SN, Fanelli D, Ioannidis JP. What does research
+47. Goodman SN, Fanelli D, Ioannidis JP. What does research
 reproducibility mean? Science translational medicine. American
 Association for the Advancement of Science; 2016;8: 341ps12--341ps12.
 
 \leavevmode\hypertarget{ref-donoho2017}{}%
-41. Donoho D. 50 years of data science. Journal of Computational and
+48. Donoho D. 50 years of data science. Journal of Computational and
 Graphical Statistics. Taylor \& Francis; 2017;26: 745--766.
 
 \leavevmode\hypertarget{ref-holmes2018}{}%
-42. Holmes S, Huber W. Modern statistics for modern biology
+49. Holmes S, Huber W. Modern statistics for modern biology
 {[}Internet{]}. Cambridge University Press; 2018. Available:
 \url{https://web.stanford.edu/class/bios221/book/index.html}
 
