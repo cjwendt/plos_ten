@@ -56,17 +56,11 @@ What is the relevant context for that problem?
 
 What are the key characters?
 
-- ecological studies
-  
-- empirical evidence
-  
-- conceptual meaning
-  
-- issues
-  
-- approaches
+- ecological fallacy
 
-- researchers
+- coefficient correlations
+
+- epidemiologists
 
 What background information is given to help the reader understand 
 the specific work in the paper?
@@ -130,42 +124,14 @@ manuscript will **not** address?
 
 see manuscript
 
-# After workshop (see manuscript for revisions)
+# After workshop 
+
+see manuscript for revisions and example articles
 
 # 8. Read Chapters 6 and 7 of *Writing Science*
 
-Chapter 6 covers how to move from the Opening of your Introduction to the
-Challenge that you present before moving into other parts of your paper. Chapter
-7 discusses how to end an Introduction with a "Challenge," motivating everything
-you present in the rest of the manuscript.
-
 # 9. Evaluate the Funnel and Challenge of example papers
 
-Re-read the Introductions for the three example papers. Find and write down the
-text in each paper that presents the Challenge of the paper.
-
-Next, re-read the Introduction of the Gall et al. paper. How does the
-Introduction funnel the readers from the Opening to the Challenge at the end of
-the Introduction? What background information does it give readers to help them
-understand and appreciate the Challenge? What examples do they use from the
-literature to convince readers that their Challenge is important?
-
-# 10. Define the Challenge of your manuscript.
-
-In 1--2 sentences, write the Challenge of your manuscript. 
-
-Look at the draft of your Introduction. Is this Challenge clear in the text? If
-so, is it at the end of the Introduction, or somewhere else?
-
-Write down three pieces of background information that you think it is critical
-for your reader to know to believe that your manuscript's Challenge is
-important. Draft a paragraph one each of these explaining and presenting the
-background information to readers.
-
-Write down two examples that you think might help readers understand why your
-Challenge is important. Draft a few sentences presenting each of these examples.
-
-Revise your Introduction to integrate your drafted material on the background
-and examples.
+# 10. Define the Challenge of your manuscript
 
 # 11. Read Chapters 8 and 9 of *Writing Science*
