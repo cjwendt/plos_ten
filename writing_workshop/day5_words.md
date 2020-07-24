@@ -26,7 +26,7 @@ output:
 > \note{We can attribute the development of disease to numerous variables and the complex ways in which they interact. Prevention and intervention efforts are most effective when these variables are clearly identified, teased apart, and well understood. This tends to be a political issue, removed from science. Researchers and policymakers must examine all factors that contribute to disease etiology and synthesize findings from all levels of analysis to gain holistic insight.}
 
 
-> “But \identify{even} more importantly, Twitter culture has exposed \identify{a part} of academia that has \identify{traditionally always} been hidden from view, namely the inception of new research activities. Now, ECRs can observe and \identify{even} join the \identify{process} of creating national or international research projects (for instance, [6] stems from a discussion at Twitter and Bik et al [1] write their work resulted from online interactions). Senior researchers openly share ideas through Twitter and \identify{this can lead to the development of} new concepts which \identify{often move on} to become fully-fledged research projects.”
+> “But \identify{even} more importantly, Twitter culture has exposed \identify{a part} of academia that has \identify{traditionally always} been \identify{hidden from view}, \identify{namely} the \identify{inception of new} research activities. Now, ECRs can observe and \identify{even} join the \identify{process} of creating national or international research projects (for instance, [6] stems from a discussion at Twitter and Bik et al [1] write their work resulted from online interactions). Senior researchers \identify{openly share} ideas through Twitter and \identify{this can lead to the development of new} concepts which \identify{often move on} to become \identify{fully-fledged} research projects.”
 
 > \note{More importantly, Twitter culture has exposed the inception of new research activities---an often overshadowed, yet central aspect of academia. Now, ECRs observe and participate in national or international research projects. For instance, [6] originated from a discussion on Twitter and the work of Bik et al [1] resulted from online interactions. Senior researchers openly share ideas through Twitter, giving rise to innovation that sparks collaborative research projects.}
 
@@ -90,6 +90,8 @@ The continual escalation in hazard losses is thus, in part, a result of advances
 - specific packages and function calls (`tidyverse`, etc.)
 
 - computational reproducibility: implementing transparent systems within the open science framework such as sharing code used in analyses so others can recreate results using stated methods
+
+- repository
 
 # 7. Diagnose and fix jargon in your manuscript
 

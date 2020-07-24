@@ -31,9 +31,9 @@ Do you think it is more conceptual or more practical?
 
 Does the claim include a hedge or qualification?
 
-- hedge: appropriately
+- hedge: appropriately, can be
 
-- qualification: none?
+- qualification: none? or appropriately
 
 - reasons: (1) develop their professional circles, (2) launch new research projects and (3) get helped by the community
 
@@ -53,6 +53,8 @@ Do you think it is more conceptual or more practical?
 Does the claim include a hedge or qualification?
 
 - hedge: subtle
+
+- qualification: This is most apparent in the management of complex events involving multiple hazards versus a singular hazard event.
 
 # 3. Identify and revise a claim in your manuscript
 
