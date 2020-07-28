@@ -795,9 +795,60 @@ previous version---if the problem persists, seek help by finding or
 posting a reproducible example {[}36{]}. Overall, avoid using a package
 if the quality and quantity of related resources is lacking.
 
-\hypertarget{rule-5-find-out-who-developed-it}{%
-\section{Rule 5: Find out who developed
-it}\label{rule-5-find-out-who-developed-it}}
+\hypertarget{rule-5-quantify-how-established-it-is}{%
+\section{Rule 5: Quantify how established it
+is}\label{rule-5-quantify-how-established-it-is}}
+
+Consulting data to inform comparisons is never a bad idea; numerical
+data associated with R packages will give you an impression of how
+regarded the tool is and whether it has stood the test of time. Since
+there are tens of thousands of R packages, you may be wondering how they
+stack up in terms of popularity. On GitHub, a large number of Stars,
+Forks, and Watchers associated with a package implies a substantial
+following and widespread usage {[}37{]}. Likewise, the number of Google
+Scholar citations is a metric of a package's impact on scientific
+research and utility in research contexts (see Rule 2). RDocumentation
+(see Rule 4) is rich with stats on R packages. RDocumentation hosts a
+live \href{https://www.rdocumentation.org/trends}{Leaderboard} with
+trends including the number of indexed packages and indexed functions,
+most downloaded packages, most active maintainers, newest packages, and
+newest updates. What's more, each package is assigned a percentile
+rank---featured on its RDocumentation page---that quantifies the number
+of times a package has been downloaded in a given month. A ranking
+algorithm computes the direct, user-requested monthly downloads by
+accounting for reverse dependencies (indirect downloads) so packages
+that are commonly depended upon, and hence frequently downloaded, do not
+skew the calculation {[}38{]}. You can research stats on corresponding
+dependencies for a more holistic picture. To further determine if a
+package is well-established in the R community, refer to the number of
+versions and updates (more is better) as well as the date of the most
+recent versions and updates (newer is better).
+
+\hypertarget{rule-6-seek-evidence-of-peer-acceptance-and-review}{%
+\section{Rule 6: Seek evidence of peer acceptance and
+review}\label{rule-6-seek-evidence-of-peer-acceptance-and-review}}
+
+Peer review is an important aspect of scientific research, not least
+because it establishes scholarly credibility. You can research
+information about an R package in different forms of literature and
+determine the extent to which it has been validated by the scientific
+community. Some journals publish articles about R packages themselves
+while others feature work that used a particular package (see Rule 2).
+These packages are technically sound and have made a substantial
+contribution to their fields and/or a common data science problem. In
+response to the rising number of researchers creating tools and software
+to work with their data, GitHub has granted developers the ability to
+obtain a Digital Object Identifier (DOI) for any GitHub repository
+archive so that code can be cited in academic literature {[}39{]}. If a
+package has such a DOI, you can explore the network of research
+associated with that package. Many R packages are associated with
+content in books and series from scientific publishers such as Springer.
+More directly, rOpenSci, is a unique example of an ecosystem of open
+source tools with peer reviewed R packages (see Rule 3) {[}27{]}.
+
+\hypertarget{rule-7-find-out-who-developed-it}{%
+\section{Rule 7: Find out who developed
+it}\label{rule-7-find-out-who-developed-it}}
 
 Just as research is a library of shared insight, open source software is
 a collection of shared tools. We care about who writes the articles we
@@ -828,14 +879,14 @@ each of them to evaluate the robustness of the team. By extension, these
 indicators of developer involvement and reputation will help you discern
 whether a package is worthy of your trust and time.
 
-\hypertarget{rule-6-see-how-its-developed}{%
-\section{Rule 6: See how it's
-developed}\label{rule-6-see-how-its-developed}}
+\hypertarget{rule-8-see-how-its-developed}{%
+\section{Rule 8: See how it's
+developed}\label{rule-8-see-how-its-developed}}
 
 You do not need to be a software engineer to identify strong package
 development. Scientific software developers sometimes neglect best
 practices; indeed, these shortcomings are evident in the tools they
-create {[}38{]}. There are concrete ways to measure a tool's robustness
+create {[}40{]}. There are concrete ways to measure a tool's robustness
 beyond whether it works for those who did not create it. R packages
 often depend on other R packages; you should check the reputations of
 such \emph{dependencies} when selecting a package---quality packages
@@ -851,7 +902,7 @@ unit tests and version control.
 
 A responsible developer with a consistent and reproducible workflow will
 implement formal testing on their code to examine expected behavior via
-an automated process called unit testing {[}18,39{]}. Although
+an automated process called unit testing {[}18,41{]}. Although
 inconvenient at the outset, the developer---and by extension, the
 package user---will benefit from unit testing, which results in fewer
 bugs, a well-designed code structure, an efficient workflow, and robust
@@ -859,93 +910,42 @@ code that is not sensitive to major changes in the future {[}18{]}. To
 alleviate the burdens of unit testing, \texttt{testthat} is a popular,
 integrative R package that helps developers create reliable functions,
 minimize error, and visualize progress through automatic code testing
-{[}40{]}. Developers are also interested in quantifying the amount of
+{[}42{]}. Developers are also interested in quantifying the amount of
 code in their package that has been tested. Test coverage, a measurement
 of the proportion of code that has undergone unit testing, is an
 objective metric for package developers, contributors, and users to
 evaluate code quality. Many developers use the \texttt{covr} package to
 generate reports and determine the magnitude of coverage on the
-function, script, and package levels {[}41{]}. Relatedly, developers who
+function, script, and package levels {[}43{]}. Relatedly, developers who
 host their packages on GitHub, post status badges in the overview
 (\texttt{README}) section of the repository webpage. GitHub badges are a
 common self-imposed method to signal use of best practices and motivate
 developers to produce a product that is high in quality and transparency
-{[}42{]}. You may see, for example, license, dependency, or style
+{[}44{]}. You may see, for example, license, dependency, or style
 badges, all of which are good indicators of package caliber; however,
 particular to this Rule, you should look for code coverage
 (\texttt{codecov}) badges which reveal the percentage of test coverage.
 
 As we mentioned in Rule 3, version control has an essential role in
-package development and computational literacy more broadly {[}18,43{]}.
+package development and computational literacy more broadly {[}18,45{]}.
 Version control is like a time capsule for your workflow because it
 monitors and tracks changes to files as a project evolves, and stores
 them as previous versions to be recovered if necessary. In other words,
 ``version control is as fundamental to programming as accurate notes
-about lab procedures are to experimental science'' {[}{[}43{]}; p6{]}.
+about lab procedures are to experimental science'' {[}{[}45{]}; p6{]}.
 Git is a decentralized open source version control system that is useful
 regardless of whether a project is independent or collaborative
-{[}44{]}. GitHub works in conjunction with Git to provide a powerful
+{[}46{]}. GitHub works in conjunction with Git to provide a powerful
 structured system to organize and manage components of a project for
 others and your future self. A growing number of scientists have
 research programs based in GitHub, which has become a revolutionary tool
 for productive team science and distributed development efforts
-{[}1,45{]}. As you may expect, Git coupled with GitHub is the version
+{[}1,47{]}. As you may expect, Git coupled with GitHub is the version
 control duo of choice among serious R package developers {[}18{]}. Thus,
 if the package you are interested in using is among the thousands hosted
 on GitHub, this is evidence that the developer is at least committed to
 a logical, open, and reproducible workflow, suggestive of more time
 spent designing their tool.
-
-\hypertarget{rule-7-seek-evidence-of-peer-acceptance-and-review}{%
-\section{Rule 7: Seek evidence of peer acceptance and
-review}\label{rule-7-seek-evidence-of-peer-acceptance-and-review}}
-
-Peer review is an important aspect of scientific research, not least
-because it establishes scholarly credibility. You can research
-information about an R package in different forms of literature and
-determine the extent to which it has been validated by the scientific
-community. Some journals publish articles about R packages themselves
-while others feature work that used a particular package (see Rule 2).
-These packages are technically sound and have made a substantial
-contribution to their fields and/or a common data science problem. In
-response to the rising number of researchers creating tools and software
-to work with their data, GitHub has granted developers the ability to
-obtain a Digital Object Identifier (DOI) for any GitHub repository
-archive so that code can be cited in academic literature {[}46{]}. If a
-package has such a DOI, you can explore the network of research
-associated with that package. Many R packages are associated with
-content in books and series from scientific publishers such as Springer.
-More directly, rOpenSci, is a unique example of an ecosystem of open
-source tools with peer reviewed R packages (see Rule 3) {[}27{]}.
-
-\hypertarget{rule-8-quantify-how-established-it-is}{%
-\section{Rule 8: Quantify how established it
-is}\label{rule-8-quantify-how-established-it-is}}
-
-Consulting data to inform comparisons is never a bad idea; numerical
-data associated with R packages will give you an impression of how
-regarded the tool is and whether it has stood the test of time. Since
-there are tens of thousands of R packages, you may be wondering how they
-stack up in terms of popularity. On GitHub, a large number of Stars,
-Forks, and Watchers associated with a package implies a substantial
-following and widespread usage {[}37{]}. Likewise, the number of Google
-Scholar citations is a metric of a package's impact on scientific
-research and utility in research contexts (see Rule 2). RDocumentation
-(see Rule 4) is rich with stats on R packages. RDocumentation hosts a
-live \href{https://www.rdocumentation.org/trends}{Leaderboard} with
-trends including the number of indexed packages and indexed functions,
-most downloaded packages, most active maintainers, newest packages, and
-newest updates. What's more, each package is assigned a percentile
-rank---featured on its RDocumentation page---that quantifies the number
-of times a package has been downloaded in a given month. A ranking
-algorithm computes the direct, user-requested monthly downloads by
-accounting for reverse dependencies (indirect downloads) so packages
-that are commonly depended upon, and hence frequently downloaded, do not
-skew the calculation {[}47{]}. You can research stats on corresponding
-dependencies for a more holistic picture. To further determine if a
-package is well-established in the R community, refer to the number of
-versions and updates (more is better) as well as the date of the most
-recent versions and updates (newer is better).
 
 \hypertarget{rule-9-put-it-to-the-test}{%
 \section{Rule 9: Put it to the test}\label{rule-9-put-it-to-the-test}}
@@ -963,7 +963,7 @@ alternative to downloading a large or potentially corrupted zipped file.
 At this point, what you have learned about the package should be quite
 helpful. If the development and documentation are sound, the package
 should come with a test script or working example that you can run after
-installation {[}38{]}. Vignettes include many common data science
+installation {[}40{]}. Vignettes include many common data science
 problems with solutions; you can run the code examples, tweak them, and
 compare the outputs. In general, it is essential to know the behavior of
 different functions within a package, how they interact, and how outputs
@@ -1037,7 +1037,7 @@ Although you may not anticipate that anyone else will use your tools,
 following best practices for package development will yield more
 favorable outcomes. As a consumer of shared packages, you know the
 inherent benefits of robust software development relative to the quality
-of code, data, documentation, versions, and tests {[}38{]}. Similarly,
+of code, data, documentation, versions, and tests {[}40{]}. Similarly,
 creating a valuable package for personal use requires consideration for
 your future self and anticipation of distributing your code, should the
 need arise. Use version control and take advantage of existing
@@ -1431,51 +1431,51 @@ http://r4statscom/popularity. 2012;
 2015. Available:
 \url{https://simplystatistics.org/2015/11/06/how-i-decide-when-to-trust-an-r-package/}
 
+\leavevmode\hypertarget{ref-vannoorenberghe2017}{}%
+38. Vannoorenberghe L. RDocumentation: Scoring and ranking
+{[}Internet{]}. DataCamp; 2017. Available:
+\url{https://www.datacamp.com/community/blog/rdocumentation-ranking-scoring}
+
+\leavevmode\hypertarget{ref-smith2014}{}%
+39. Smith A. Improving github for science {[}Internet{]}. GitHub, Inc.
+2014. Available:
+\url{https://github.blog/2014-05-14-improving-github-for-science/}
+
 \leavevmode\hypertarget{ref-taschuk2017}{}%
-38. Taschuk M, Wilson G. Ten simple rules for making research software
+40. Taschuk M, Wilson G. Ten simple rules for making research software
 more robust. PLoS computational biology. Public Library of Science;
 2017;13.
 
 \leavevmode\hypertarget{ref-hester2020}{}%
-39. Hester J. How does covr work anyway? {[}Internet{]}. The R
+41. Hester J. How does covr work anyway? {[}Internet{]}. The R
 Foundation; 2020. Available:
 \url{https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html}
 
 \leavevmode\hypertarget{ref-wickham2011}{}%
-40. Wickham H. Testthat: Get started with testing. The R Journal.
+42. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-covr}{}%
-41. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
+43. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=covr}
 
 \leavevmode\hypertarget{ref-barts2018}{}%
-42. Barts C. How to use github badges to stop feeling like a noob
+44. Barts C. How to use github badges to stop feeling like a noob
 {[}Internet{]}. freeCodeCamp; 2018. Available:
 \url{https://www.freecodecamp.org/news/how-to-use-badges-to-stop-feeling-like-a-noob-d4e6600d37d2/}
 
 \leavevmode\hypertarget{ref-wilson2006}{}%
-43. Wilson GV. Where's the real bottleneck in scientific computing?
+45. Wilson GV. Where's the real bottleneck in scientific computing?
 American Scientist. 2006;94: 5.
 
 \leavevmode\hypertarget{ref-bryan2018}{}%
-44. Bryan J. Excuse me, do you have a moment to talk about version
+46. Bryan J. Excuse me, do you have a moment to talk about version
 control? The American Statistician. Taylor \& Francis; 2018;72: 20--27.
 
 \leavevmode\hypertarget{ref-perkel2016}{}%
-45. Perkel J. Democratic databases: Science on github. Nature News.
+47. Perkel J. Democratic databases: Science on github. Nature News.
 2016;538: 127.
-
-\leavevmode\hypertarget{ref-smith2014}{}%
-46. Smith A. Improving github for science {[}Internet{]}. GitHub, Inc.
-2014. Available:
-\url{https://github.blog/2014-05-14-improving-github-for-science/}
-
-\leavevmode\hypertarget{ref-vannoorenberghe2017}{}%
-47. Vannoorenberghe L. RDocumentation: Scoring and ranking
-{[}Internet{]}. DataCamp; 2017. Available:
-\url{https://www.datacamp.com/community/blog/rdocumentation-ranking-scoring}
 
 \leavevmode\hypertarget{ref-tidyverse}{}%
 48. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
