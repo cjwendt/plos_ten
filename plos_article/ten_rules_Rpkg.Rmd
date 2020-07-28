@@ -59,10 +59,9 @@ party organization."
 - ROpenSci
 - GitHub
 
-# Funding acknowledgment?
+# Funding acknowledgment
 
-Do we need to include a funding acknowledgment in the margin as in the examples?
-
+[Funding acknowledgement---Add in grant number for R25 and acknowledgment of Honors program if appropriate]
 
 # Introduction
 
@@ -302,9 +301,7 @@ Do we need to include any supporting information?
 
 # Acknowledgements
 
-[Acknowledgement of people who have helped]
-
-[Funding acknowledgement]
+[Acknowledgment of people who have helped; suggestions from colleagues, etc.]
 
 
 # References {#references .unnumbered}
