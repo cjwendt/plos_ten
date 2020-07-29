@@ -80,7 +80,7 @@ In both coding and life, we endeavor to make choices that optimize outcomes. Jus
 
 # Rule 1: Consider your purpose
 
-Usually, there are several ways to accomplish a task while programming, albeit some more elegant and efficient than others. To optimize your workflow, consider your purpose by first identifying your task and goal, and then defining the scope of the task and steps to achieve it. For some tasks, coding your own recipe with existing tools is practical, while other tasks benefit from new tools. 
+Usually, there are several ways to accomplish a task while programming, albeit some more elegant and efficient than others. Before looking for a package to use for a task, consider whether you need one: consider your purpose by first identifying your task and goal, and then defining the scope of the task and steps to achieve it. For some tasks, coding your own recipe with existing tools is practical, while other tasks benefit from new tools. 
 
 If the scope of your task is simple or reasonable, given your knowledge and skills, using an R package may not be appropriate. That is, some instances do not warrant additional functions, datasets, or documentation. There can be advantages of coding in base R to complete your task or solve your problem. In particular, when you code from scratch, you know precisely what you are running; thus, your script may be easier to decipher and maintain over time. Conversely, packages require you to rely on shared code with features or underlying processes of which you may not be aware. 
 
