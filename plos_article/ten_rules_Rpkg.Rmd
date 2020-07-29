@@ -67,7 +67,7 @@ I am an editor at ROpenSci, so we could mention that in the disclaimer. I do not
 
 # Introduction
 
-Computational reproducibility is surfacing as a central axiom in academia, as researchers identify the need for transparency [@peng2011; @goodman2016]. It follows that former approaches and traditional methods tend to be at odds with productivity and collaboration; some variability in scientific outcomes can be attributed to differences in workflow thus the absence of automation is deemed irresponsible [@donoho2017].
+Computational reproducibility is surfacing as a central axiom in academia, as researchers identify the need for transparency [@peng2011; @goodman2016]. Many traditional methods also tend to be at odds with productivity and collaboration; some variability in scientific outcomes can be attributed to differences in workflow thus the absence of automation is deemed irresponsible [@donoho2017].
 
 The open source R language has become a dominant quantitative programming environment in academic data analysis, enabling researchers to share workflows and re-execute scripts within and across subsets of the scientific community [@donoho2017]. R is increasingly popular in computational biology and bioinformatics, two of many disciplines generating extensive, heterogenous, and complex data and so in need of heavy-duty data analysis tools, ideally ones that support reproducibility [@gentleman2004; @holmes2018]. More broadly, as the R ecosystem---in which the life of modern data analysis thrives---rapidly evolves alongside the burgeoning R community, R is exhibiting sustained growth when compared to similar languages, particularly in academia, healthcare, and government [@robinson2017].
 
