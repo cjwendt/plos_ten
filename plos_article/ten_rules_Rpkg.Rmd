@@ -197,70 +197,65 @@ library(knitr)
 ```{r}
 # general packages data
 gen_pkgs <- data.frame(
-  Package = c("readr[note]", 
-              "dplyr[note]",
+  Package = c("readr", 
+              "dplyr",
               "tidyr",
               
               "broom[note]",
-              "purrr[note]",
+              "purrr",
               "caret", 
-              "keras", 
               
-              "ggplot2[note]", 
+              "ggplot2", 
               "kableExtra", 
               "rmarkdown"),
   
-  Description = c("read rectangular data (e.g., csv, tsv, and fwf)", 
-                  "grammar of data manipulation",
-                  "create tidy data",
+  Description = c("Read rectangular data (e.g., csv, tsv, and fwf)", 
+                  "Grammar of tidy data manipulation",
+                  "Tidy messy data",
                   
-                  "tidy model output", 
-                  "functional programming tools",
-                  "train classification and regression models", 
-                  "R interface to a neural network library", 
+                  "Tidy model output; convert statistical objects into tidy tibbles", 
+                  "Functional programming tools for functions and vectors",
+                  "Framework for predictive modeling",
                   
-                  "data visualization", 
-                  "tables",
-                  "reports"),
+                  "System for data visualization", 
+                  "Build complex tables and manipulate styles",
+                  "Authoring framework for data science and reproducible research"),
   
-  Year = c("readr",
-           "dplyr",
-           "tidyr",
+  Year = c("2015",
+           "2014",
+           "2014",
   
-           "broom",
-           "purrr",
-           "caret", 
-           "keras",
+           "2014",
+           "2015",
+           "2007",
                     
-           "ggplot2",
-           "kableExtra", 
-           "rmarkdown"),
+           "2007",
+           "2017", 
+           "2014"),
   
-  Author = c("readr Wickham et al.",
-             "dplyr Wickham et al.", 
-             "tidyr Wickham et al.",
+  Author = c("Wickham et al.",
+             "Wickham et al.", 
+             "Wickham & Henry",
   
-             "broom Robinson et al.",
-             "purrr Henry et al.",
-             "caret Kuhn et al.", 
-             "keras Falbel et al.",
+             "Robinson & Hayes",
+             "Henry & Wickham",
+             "Kuhn", 
                     
-             "ggplot2 Wickham et al.",
-             "kableExtra Zhu et al.", 
-             "rmarkdown Allaire et al."),
+             "Wickham et al.",
+             "Zhu", 
+             "Allaire et al."),
   
-  Documentation = c("readr", 
-                    "dplyr", 
-                    "tidyr",
+  Documentation = c("https://readr.tidyverse.org/", 
+                    "https://dplyr.tidyverse.org/", 
+                    "https://tidyr.tidyverse.org/",
   
-                    "broom",
-                    "purrr",
+                    "https://broom.tidymodels.org/",
+                    "https://purrr.tidyverse.org/",
                     "https://topepo.github.io/caret/index.html", 
-                    "keras",
                     
-                    "ggplot2",
-                    "kableExtra", 
-                    "rmarkdown")
+                    "https://ggplot2.tidyverse.org/",
+                    "https://haozhu233.github.io/kableExtra/", 
+                    "https://rmarkdown.rstudio.com/lesson-1.html")
 )
 ```
 
@@ -271,18 +266,14 @@ kable(gen_pkgs, format = "latex", booktabs = TRUE) %>%
   kable_styling(latex_options = "scale_down") %>%
   # separate rows by category
   pack_rows("Data Manipulation", 1, 3) %>% 
-  pack_rows("Statistical Modeling", 4, 7) %>% 
-  pack_rows("Data Visualization", 8, 10) %>%
+  pack_rows("Statistical Modeling", 4, 6) %>% 
+  pack_rows("Data Visualization", 7, 9) %>%
   # column wrap
   column_spec(1, width = "10em") %>% 
   column_spec(2, width = "20em") %>% 
   # bold column names
   row_spec(0, bold = T) %>% 
-  add_footnote(c("See the tidyverse",
-                 "See the tidyverse",
-                 "See the biobroom analog in Bioconductor",
-                 "See the tidyverse",
-                 "See the tidyverse"),
+  add_footnote("See the biobroom analog in Bioconductor",
                notation = "symbol")
 
 ## trying to separate color; striped by group

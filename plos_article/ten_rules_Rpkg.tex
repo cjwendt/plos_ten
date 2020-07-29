@@ -1095,70 +1095,65 @@ from discovering, trying, creating, and sharing new recipes.
 \begin{Highlighting}[]
 \CommentTok{# general packages data}
 \NormalTok{gen_pkgs <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}
-  \DataTypeTok{Package =} \KeywordTok{c}\NormalTok{(}\StringTok{"readr[note]"}\NormalTok{, }
-              \StringTok{"dplyr[note]"}\NormalTok{,}
+  \DataTypeTok{Package =} \KeywordTok{c}\NormalTok{(}\StringTok{"readr"}\NormalTok{, }
+              \StringTok{"dplyr"}\NormalTok{,}
               \StringTok{"tidyr"}\NormalTok{,}
               
               \StringTok{"broom[note]"}\NormalTok{,}
-              \StringTok{"purrr[note]"}\NormalTok{,}
+              \StringTok{"purrr"}\NormalTok{,}
               \StringTok{"caret"}\NormalTok{, }
-              \StringTok{"keras"}\NormalTok{, }
               
-              \StringTok{"ggplot2[note]"}\NormalTok{, }
+              \StringTok{"ggplot2"}\NormalTok{, }
               \StringTok{"kableExtra"}\NormalTok{, }
               \StringTok{"rmarkdown"}\NormalTok{),}
   
-  \DataTypeTok{Description =} \KeywordTok{c}\NormalTok{(}\StringTok{"read rectangular data (e.g., csv, tsv, and fwf)"}\NormalTok{, }
-                  \StringTok{"grammar of data manipulation"}\NormalTok{,}
-                  \StringTok{"create tidy data"}\NormalTok{,}
+  \DataTypeTok{Description =} \KeywordTok{c}\NormalTok{(}\StringTok{"Read rectangular data (e.g., csv, tsv, and fwf)"}\NormalTok{, }
+                  \StringTok{"Grammar of tidy data manipulation"}\NormalTok{,}
+                  \StringTok{"Tidy messy data"}\NormalTok{,}
                   
-                  \StringTok{"tidy model output"}\NormalTok{, }
-                  \StringTok{"functional programming tools"}\NormalTok{,}
-                  \StringTok{"train classification and regression models"}\NormalTok{, }
-                  \StringTok{"R interface to a neural network library"}\NormalTok{, }
+                  \StringTok{"Tidy model output; convert statistical objects into tidy tibbles"}\NormalTok{, }
+                  \StringTok{"Functional programming tools for functions and vectors"}\NormalTok{,}
+                  \StringTok{"Framework for predictive modeling"}\NormalTok{,}
                   
-                  \StringTok{"data visualization"}\NormalTok{, }
-                  \StringTok{"tables"}\NormalTok{,}
-                  \StringTok{"reports"}\NormalTok{),}
+                  \StringTok{"System for data visualization"}\NormalTok{, }
+                  \StringTok{"Build complex tables and manipulate styles"}\NormalTok{,}
+                  \StringTok{"Authoring framework for data science and reproducible research"}\NormalTok{),}
   
-  \DataTypeTok{Year =} \KeywordTok{c}\NormalTok{(}\StringTok{"readr"}\NormalTok{,}
-           \StringTok{"dplyr"}\NormalTok{,}
-           \StringTok{"tidyr"}\NormalTok{,}
+  \DataTypeTok{Year =} \KeywordTok{c}\NormalTok{(}\StringTok{"2015"}\NormalTok{,}
+           \StringTok{"2014"}\NormalTok{,}
+           \StringTok{"2014"}\NormalTok{,}
   
-           \StringTok{"broom"}\NormalTok{,}
-           \StringTok{"purrr"}\NormalTok{,}
-           \StringTok{"caret"}\NormalTok{, }
-           \StringTok{"keras"}\NormalTok{,}
+           \StringTok{"2014"}\NormalTok{,}
+           \StringTok{"2015"}\NormalTok{,}
+           \StringTok{"2007"}\NormalTok{,}
                     
-           \StringTok{"ggplot2"}\NormalTok{,}
-           \StringTok{"kableExtra"}\NormalTok{, }
-           \StringTok{"rmarkdown"}\NormalTok{),}
+           \StringTok{"2007"}\NormalTok{,}
+           \StringTok{"2017"}\NormalTok{, }
+           \StringTok{"2014"}\NormalTok{),}
   
-  \DataTypeTok{Author =} \KeywordTok{c}\NormalTok{(}\StringTok{"readr Wickham et al."}\NormalTok{,}
-             \StringTok{"dplyr Wickham et al."}\NormalTok{, }
-             \StringTok{"tidyr Wickham et al."}\NormalTok{,}
+  \DataTypeTok{Author =} \KeywordTok{c}\NormalTok{(}\StringTok{"Wickham et al."}\NormalTok{,}
+             \StringTok{"Wickham et al."}\NormalTok{, }
+             \StringTok{"Wickham & Henry"}\NormalTok{,}
   
-             \StringTok{"broom Robinson et al."}\NormalTok{,}
-             \StringTok{"purrr Henry et al."}\NormalTok{,}
-             \StringTok{"caret Kuhn et al."}\NormalTok{, }
-             \StringTok{"keras Falbel et al."}\NormalTok{,}
+             \StringTok{"Robinson & Hayes"}\NormalTok{,}
+             \StringTok{"Henry & Wickham"}\NormalTok{,}
+             \StringTok{"Kuhn"}\NormalTok{, }
                     
-             \StringTok{"ggplot2 Wickham et al."}\NormalTok{,}
-             \StringTok{"kableExtra Zhu et al."}\NormalTok{, }
-             \StringTok{"rmarkdown Allaire et al."}\NormalTok{),}
+             \StringTok{"Wickham et al."}\NormalTok{,}
+             \StringTok{"Zhu"}\NormalTok{, }
+             \StringTok{"Allaire et al."}\NormalTok{),}
   
-  \DataTypeTok{Documentation =} \KeywordTok{c}\NormalTok{(}\StringTok{"readr"}\NormalTok{, }
-                    \StringTok{"dplyr"}\NormalTok{, }
-                    \StringTok{"tidyr"}\NormalTok{,}
+  \DataTypeTok{Documentation =} \KeywordTok{c}\NormalTok{(}\StringTok{"https://readr.tidyverse.org/"}\NormalTok{, }
+                    \StringTok{"https://dplyr.tidyverse.org/"}\NormalTok{, }
+                    \StringTok{"https://tidyr.tidyverse.org/"}\NormalTok{,}
   
-                    \StringTok{"broom"}\NormalTok{,}
-                    \StringTok{"purrr"}\NormalTok{,}
+                    \StringTok{"https://broom.tidymodels.org/"}\NormalTok{,}
+                    \StringTok{"https://purrr.tidyverse.org/"}\NormalTok{,}
                     \StringTok{"https://topepo.github.io/caret/index.html"}\NormalTok{, }
-                    \StringTok{"keras"}\NormalTok{,}
                     
-                    \StringTok{"ggplot2"}\NormalTok{,}
-                    \StringTok{"kableExtra"}\NormalTok{, }
-                    \StringTok{"rmarkdown"}\NormalTok{)}
+                    \StringTok{"https://ggplot2.tidyverse.org/"}\NormalTok{,}
+                    \StringTok{"https://haozhu233.github.io/kableExtra/"}\NormalTok{, }
+                    \StringTok{"https://rmarkdown.rstudio.com/lesson-1.html"}\NormalTok{)}
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -1171,18 +1166,14 @@ from discovering, trying, creating, and sharing new recipes.
 \StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{latex_options =} \StringTok{"scale_down"}\NormalTok{) }\OperatorTok{%>%}
 \StringTok{  }\CommentTok{# separate rows by category}
 \StringTok{  }\KeywordTok{pack_rows}\NormalTok{(}\StringTok{"Data Manipulation"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{pack_rows}\NormalTok{(}\StringTok{"Statistical Modeling"}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{7}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{pack_rows}\NormalTok{(}\StringTok{"Data Visualization"}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{10}\NormalTok{) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{pack_rows}\NormalTok{(}\StringTok{"Statistical Modeling"}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{  }\KeywordTok{pack_rows}\NormalTok{(}\StringTok{"Data Visualization"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{9}\NormalTok{) }\OperatorTok{%>%}
 \StringTok{  }\CommentTok{# column wrap}
 \StringTok{  }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{width =} \StringTok{"10em"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
 \StringTok{  }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{width =} \StringTok{"20em"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
 \StringTok{  }\CommentTok{# bold column names}
 \StringTok{  }\KeywordTok{row_spec}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{bold =}\NormalTok{ T) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{add_footnote}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"See the tidyverse"}\NormalTok{,}
-                 \StringTok{"See the tidyverse"}\NormalTok{,}
-                 \StringTok{"See the biobroom analog in Bioconductor"}\NormalTok{,}
-                 \StringTok{"See the tidyverse"}\NormalTok{,}
-                 \StringTok{"See the tidyverse"}\NormalTok{),}
+\StringTok{  }\KeywordTok{add_footnote}\NormalTok{(}\StringTok{"See the biobroom analog in Bioconductor"}\NormalTok{,}
                \DataTypeTok{notation =} \StringTok{"symbol"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -1196,26 +1187,21 @@ from discovering, trying, creating, and sharing new recipes.
 \midrule
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Data Manipulation}}\\
-\hspace{1em}readr\textsuperscript{*} & read rectangular data (e.g., csv, tsv, and fwf) & readr & readr Wickham et al. & readr\\
-\hspace{1em}dplyr\textsuperscript{\dag} & grammar of data manipulation & dplyr & dplyr Wickham et al. & dplyr\\
-\hspace{1em}tidyr & create tidy data & tidyr & tidyr Wickham et al. & tidyr\\
+\hspace{1em}readr & Read rectangular data (e.g., csv, tsv, and fwf) & 2015 & Wickham et al. & https://readr.tidyverse.org/\\
+\hspace{1em}dplyr & Grammar of tidy data manipulation & 2014 & Wickham et al. & https://dplyr.tidyverse.org/\\
+\hspace{1em}tidyr & Tidy messy data & 2014 & Wickham \& Henry & https://tidyr.tidyverse.org/\\
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Statistical Modeling}}\\
-\hspace{1em}broom\textsuperscript{\ddag} & tidy model output & broom & broom Robinson et al. & broom\\
-\hspace{1em}purrr\textsuperscript{\S} & functional programming tools & purrr & purrr Henry et al. & purrr\\
-\hspace{1em}caret & train classification and regression models & caret & caret Kuhn et al. & https://topepo.github.io/caret/index.html\\
-\hspace{1em}keras & R interface to a neural network library & keras & keras Falbel et al. & keras\\
+\hspace{1em}broom\textsuperscript{*} & Tidy model output; convert statistical objects into tidy tibbles & 2014 & Robinson \& Hayes & https://broom.tidymodels.org/\\
+\hspace{1em}purrr & Functional programming tools for functions and vectors & 2015 & Henry \& Wickham & https://purrr.tidyverse.org/\\
+\hspace{1em}caret & Framework for predictive modeling & 2007 & Kuhn & https://topepo.github.io/caret/index.html\\
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Data Visualization}}\\
-\hspace{1em}ggplot2\textsuperscript{\P} & data visualization & ggplot2 & ggplot2 Wickham et al. & ggplot2\\
-\hspace{1em}kableExtra & tables & kableExtra & kableExtra Zhu et al. & kableExtra\\
-\hspace{1em}rmarkdown & reports & rmarkdown & rmarkdown Allaire et al. & rmarkdown\\
+\hspace{1em}ggplot2 & System for data visualization & 2007 & Wickham et al. & https://ggplot2.tidyverse.org/\\
+\hspace{1em}kableExtra & Build complex tables and manipulate styles & 2017 & Zhu & https://haozhu233.github.io/kableExtra/\\
+\hspace{1em}rmarkdown & Authoring framework for data science and reproducible research & 2014 & Allaire et al. & https://rmarkdown.rstudio.com/lesson-1.html\\
 \bottomrule
-\multicolumn{5}{l}{\textsuperscript{*} See the tidyverse}\\
-\multicolumn{5}{l}{\textsuperscript{\dag} See the tidyverse}\\
-\multicolumn{5}{l}{\textsuperscript{\ddag} See the biobroom analog in Bioconductor}\\
-\multicolumn{5}{l}{\textsuperscript{\S} See the tidyverse}\\
-\multicolumn{5}{l}{\textsuperscript{\P} See the tidyverse}\\
+\multicolumn{5}{l}{\textsuperscript{*} See the biobroom analog in Bioconductor}\\
 \end{tabular}}
 \end{table}
 
