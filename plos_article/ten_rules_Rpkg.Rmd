@@ -107,7 +107,7 @@ In many cases, you may find it more helpful, though, to start from a curated lis
 
 [Add paragraph on Bioconductor Task View-equivalent]
 
-Relatedly, [CRANberries](http://dirk.eddelbuettel.com/cranberries/index.html) is a hub of information about new, updated, and removed packages from the CRAN network. Another place to find well-maintained tools is through [rOpenSci packages](https://ropensci.org/packages/). These filterable and searchable R packages are organized by name, maintainer, description, and status (i.e., activity, association, review).
+Other curated collections or topically-linked lists of packages are also available. [CRANberries](http://dirk.eddelbuettel.com/cranberries/index.html), for example, is a hub of information about new, updated, and removed packages from the CRAN network. Another place to find well-maintained tools is through [rOpenSci packages](https://ropensci.org/packages/). These filterable and searchable R packages are organized by name, maintainer, description, and status (i.e., activity, association, review), and all have passed a peer review process (see Rule 6).
 
 **Use the community**
 
