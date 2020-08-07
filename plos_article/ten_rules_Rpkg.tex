@@ -333,39 +333,53 @@ acknowledgment of Honors program if appropriate{]}
 \section{Introduction}\label{introduction}}
 
 Computational reproducibility is surfacing as a central axiom in
-academia, as researchers identify the need for means by which they can
-implement transparent systems {[}2,3{]}. It follows that former
-approaches and traditional methods tend to be at odds with productivity
-and collaboration; some variability in scientific outcomes can be
-attributed to differences in workflow thus the absence of automation is
-deemed irresponsible {[}4{]}.
+academia, as researchers identify the need for transparency {[}2,3{]}.
+Many traditional methods also tend to be at odds with productivity and
+collaboration; some variability in scientific outcomes can be attributed
+to differences in workflow. Today, the scientific community deems the
+absence of automation to be irresponsible {[}4{]}. While standards for
+disseminating and communicating computational science are evolving with
+digitization, responsible researchers are adopting best practices so
+others can more easily interpret, validate, and extend their published
+knowledge {[}5{]}. Such researchers must therefore rely on accessible
+and robust tools to ensure that their computations are reproducible.
 
 The open source R language has become a dominant quantitative
-programming environment in academic statistics, enabling researchers to
-share workflows and re-execute scripts within and across subsets of the
-scientific community {[}4{]}. R is increasingly used by researchers in
-computational biology and bioinformatics, one of many disciplines that
-is generating extensive heterogenous and complex data that demand
-standard tools and rigorous methods to support reproducibility
-{[}5,6{]}. More broadly, as the R ecosystem---in which the life of
+programming environment in academic data analysis, enabling researchers
+to share workflows and re-execute scripts within and across subsets of
+the scientific community {[}4{]}. R is increasingly popular in
+computational biology and bioinformatics, two of many disciplines
+generating extensive, heterogenous, and complex data wanting for
+heavy-duty data analysis tools that (ideally) support reproducibility
+{[}6,7{]}. More broadly, as the R ecosystem---in which the life of
 modern data analysis thrives---rapidly evolves alongside the burgeoning
 R community, R is exhibiting sustained growth when compared to similar
-languages, particularly in academia, healthcare, and government {[}7{]}.
+languages, particularly in academia, healthcare, and government {[}8{]}.
 
 R was developed by statisticians and is collaboratively maintained by an
-international core group of contributors {[}8{]}. Unlike several popular
+international core group of contributors {[}9{]}. Unlike several popular
 proprietary languages (e.g., MATLAB, SAS, SPSS), R is highly extensible,
 free and open-source software; the user can access and thus change,
 extend, and share code for desired applications. Accordingly, a vibrant
 community of R users has emerged, many of which engage in the
 development of extensions to the functionality of base R software known
-as packages. There are plenty of analogies in computing that draw
-comparisons between programming and culinary arts: recipe structures,
-coding cookbooks, and the like. To conceptualize packages, imagine you
-are the chef, R is the kitchen, and packages are the special gadgets
-which allow you to cook and bake new recipes. R packages are coding
-delectables that enable the user to perform practical tasks and solve
-problems with interesting techniques.
+as packages. Contributed packages comprise the bulk of enhancements made
+to the R environment {[}10{]}. In fact, much of what we know about
+statistical methods and algorithms is wrapped up in R packages---written
+and documented in various ways by R users. There are plenty of analogies
+in computing that draw comparisons between programming and culinary
+arts: recipe structures, coding cookbooks, and the like. To
+conceptualize packages, imagine you are the chef, base R is the kitchen,
+and packages are the special gadgets which allow you to cook and bake
+new recipes. ``R package'' \emph{technically} refers to a collection of
+R functions in a certain structure. Thus, the few tools that come with
+your kitchen (e.g., \texttt{stats}) are indeed R packages, while ``R
+extension'' describes the tools you add to your kitchen. It is important
+to recognize that ``package'' is not synonymous with ``extension'';
+however, since we don't want to keep distinguishing a kitchen sink from
+a mixer, we use ``package'' in the colloquial sense. In essence, R
+packages are coding delectables that enable the user to perform
+practical tasks and solve problems with interesting techniques.
 
 Are there R packages for wrangling and cleaning data frames, designing
 interactive applications for data visualization, or performing
@@ -375,14 +389,23 @@ beta diversity of a population, or analyze gene expression microarray
 data? This answer is not as simple; there are tens of thousands of R
 packages. As a natural consequence of the open source nature of R, there
 is considerable variation in the quality of R packages and nontrivial
-differences among those that provide similar tools. The advanced R
-user---having developed an intuition for their workflow---may be
-relatively confident when searching for and selecting packages. By
-contrast, an obstacle that characterizes learning R at the outset is the
-struggle to (1) find a package to accomplish a particular task or solve
-a problem of interest and (2) choose the best package to perform that
-task. Even so, some obscure and complicated recipes make it difficult
-for an experienced chef to select the best tools.
+differences among those that provide similar tools.
+
+Packages are essential to venturing beyond base R and, thus, quickly
+become an integral aspect of advancing your R skills. Those who have
+used R packages may know that, although leveraging existing tools can be
+advantageous, the initial challenge of finding a suitable package for a
+given task can obstruct potential benefits. The advanced R user---having
+developed an intuition for their workflow---may be relatively confident
+when searching for and selecting packages. By contrast, new R users who
+are unfamiliar with the structure and syntax of the language may be
+hindered by the process of finding packages because they do not know
+where to search, what to look for, or how to sift through options. An
+obstacle that characterizes learning R at the outset is the struggle to
+(1) find a package to accomplish a particular task or solve a problem of
+interest and (2) choose the best package to perform that task. Even so,
+some obscure and complicated recipes make it difficult for an
+experienced chef to select the best tools.
 
 In both coding and life, we endeavor to make choices that optimize
 outcomes. Just as one may go about shopping for shoes, deciding which
@@ -398,134 +421,83 @@ searching for the right tools and more time coding delightful recipes.
 \section{Rule 1: Consider your
 purpose}\label{rule-1-consider-your-purpose}}
 
-Usually, there are several ways to accomplish the same task or arrive at
-the same solution while programming, albeit some ways are more elegant
-and efficient than others. To optimize your workflow, consider your
-purpose by first identifying your task and goal, and then defining the
-scope of the task and steps to achieve it. For some tasks, coding your
-own recipe with existing tools is practical, while other tasks benefit
-from new tools.
+Usually, there are several ways to accomplish a task while programming,
+albeit some more elegant and efficient than others. Before looking for a
+package to use for a task, consider whether you need one. Consider your
+purpose by first identifying your goal and defining the scope and tasks
+to achieve it. For some tasks, coding your own recipe with existing
+tools is practical, while other tasks benefit from new tools.
 
 If the scope of your task is simple or reasonable, given your knowledge
-and skills, using an R package may not be appropriate. That is, some
-instances do not warrant additional functions, datasets, or
-documentation. There can be advantages of coding in base R to complete
-your task or solve your problem. In particular, when you code from
-scratch, you know precisely what you are running; thus, your script may
-be easier to decipher and maintain over time. Conversely, packages
-require you to rely on shared code with features or underlying processes
-of which you may not be aware.
+and skills, using an R package may not be appropriate. There can be
+advantages of coding in base R to complete your task or solve your
+problem. First, when you code from scratch, you know precisely what you
+are running; thus, your script may be easier to decipher and maintain
+over time. Conversely, packages require you to rely on shared code with
+features or underlying processes of which you may not be aware. Second,
+while base R is relatively stable and slow to change, many R packages
+are rapidly evolving, and changes in packages you depend on can
+``break'' parts of your code when they change.
 
 Packages are favorable in the same sense as kitchen tools: when a task
-has a broad or complex scope beyond what you can (or desire) to attempt
-from scratch. While there are ways to cook up an algorithm using for
-loops and conditionals in base R, a relevant package may accomplish the
-same goal in a more reproducible, efficient manner, with less code and
-fewer bugs. The more reasonable it is for a given task to be abstracted
-away from its context, the more plausible it is that someone has
-generalized its themes, developed efficient algorithms, and organized
-them in an intuitive way to share with other R users. Extensive tasks
-justify sophisticated frameworks with several functions that form a
-cohesive package. Many processes that involve data---although varying in
-application---are ubiquitous. Data manipulation is one such common task
-that has been streamlined by packages such as \texttt{dplyr} and
-\texttt{tidyr} {[}9,10{]} (see Table 1). Nevertheless, there are indeed
-packages for seemingly singular tasks, which you may favor over coding
-from scratch. Some R packages are small and have a specific use
-conducive to tasks that require highly specialized functions. For
-example, there is a package for converting English letters to numbers as
-on a telephone keypad {[}11{]}.
+has a broad or complex scope beyond what you can (or desire to) attempt
+from scratch. While there are ways to cook up an algorithm using
+\texttt{for} loops and conditionals in base R, a relevant package may
+accomplish the goal with less code and fewer bugs. The more reasonable
+it is for a given task to be abstracted away from its context, the more
+likely someone has generalized its themes, developed efficient
+algorithms, and intuitively organized them to share with other R users.
+Extensive tasks justify sophisticated frameworks with several functions
+that form a cohesive package or even a suite of related packages. Data
+manipulation is one such common task that has been streamlined by
+packages such as \texttt{dplyr} and \texttt{tidyr} {[}11,12{]}, both
+part of the \texttt{tidyverse} suite (see Table 1). Nevertheless, don't
+be discouraged if you have a task that seems too unusual for a package.
+There are indeed packages for seemingly singular tasks, which you may
+favor over coding from scratch. For example, there is a package for
+converting English letters to numbers as on a telephone keypad {[}13{]}.
 
-Which existing functionalities in base R could be improved in context of
-your problem? Which new functionalities would you like to add to base R
-to expand what you can do? If you define your purpose by making
-observations about and considering limitations of your current toolbox
-before you start searching for new tools, you will be more likely to
-recognize what you do and do not need. Develop a list of domain-specific
-keywords that relate what you are trying to do to how one may go about
-doing it in order to narrow your search. Identify the type of inputs you
-have and envision working with them; contemplate the desired outputs and
+If you do decide you need a package, next ask yourself: Which
+functionalities in base R are restrictive in the context of your task?
+Which new functionalities would expand what you can do? If you identify
+limitations of your current toolbox before searching for new tools, you
+be primed to recognize what you do and do not need. List domain-specific
+keywords on what you are trying to do and how you could do it, so you
+can narrow your search. Identify the type of inputs you have and
+envision working with them; contemplate the desired outputs and
 corresponding format. For instance, suppose you are using Bioconductor
-packages in analyses and have data you want to visualize; you must
-consider that the inputs will be of a certain class---namely, S4
-objects---which impose restrictions when creating graphics {[}12{]}. The
-data visualization package you use should address such limitations.
+packages in analyses and have outputs you want to visualize; you must
+consider that the inputs may be of a certain class---namely, S4
+objects---which impose restrictions when creating graphics {[}14{]}.
+When you pick a package to visualize the data, you want to pick one that
+addresses such restrictions.
 
 \hypertarget{rule-2-find-and-collect-options}{%
 \section{Rule 2: Find and collect
 options}\label{rule-2-find-and-collect-options}}
 
-Those who have used R packages may know that, although leveraging
-existing tools can be advantageous, the initial challenge of finding a
-suitable package for a given task can obstruct potential benefits.
-Relatedly, new R users who are unfamiliar with the structure and syntax
-of the language may be hindered by the process of finding packages
-because they do not know where to search, what to look for, or how to
-sift through options. R packages are mentioned in a variety of places
-online, in print, and elsewhere. You can discover new packages any time
-you learn R-related topics, collaborate with other R users, or browse
-the internet.
+Tips and leads on R packages exist in a variety of places online, in
+print, and elsewhere. While long-time R users have found some favorite
+starting spots, new R often don't know where to start looking for a good
+package for a certain task. You can discover new packages any time you
+learn R-related topics, browse the internet, or tap into the
+international community of R users.
 
 \textbf{Learn}
 
-Packages are essential to venturing beyond base R and, thus, quickly
-become an integral aspect of advancing your R skills. When learning how
-to program in R, you are typically introduced to some of the most common
-packages, which tend to have more general purposes (\textbf{Table 1}).
-In addition, reputable online tutorials, courses, and books are helpful
-resources for acquiring knowledge about packages that are versatile and
-reliable---many of which are short, accessible, and either affordable or
-offered at \href{https://committedtotape.shinyapps.io/freeR/}{no cost}
-to the learner. We recommend online R programming courses such as those
-through \href{https://www.coursera.org/learn/r-programming}{Coursera}
-and \href{https://www.codecademy.com/learn/learn-r}{Codeacademy} for
+When learning how to program in R, you are typically introduced to some
+of the most common packages, which tend to have more general purposes
+(\textbf{Table 1}). In addition, reputable online tutorials, courses,
+and books are helpful resources for acquiring knowledge about packages
+that are versatile and reliable---many of which are short, accessible,
+and either affordable or offered at
+\href{https://committedtotape.shinyapps.io/freeR/}{no cost} to the
+learner. We recommend online R programming courses such as those through
+\href{https://www.coursera.org/learn/r-programming}{Coursera} and
+\href{https://www.codecademy.com/learn/learn-r}{Codeacademy} for
 interactive learning and R book series including the
 \href{https://rstudio.com/resources/books/}{RStudio books} and Springer
 titles for further reading.
-
-\textbf{Collaborate}
-
-An inclusive and collaborative community is an overlooked, yet integral,
-aspect of a software's success {[}13{]}. A defining feature of R is the
-enthusiasm of its users and developers alike. The R community has a
-widespread internet presence across various platforms; however, members
-are markedly active on Twitter, a place where R users seek help, share
-ideas, and stay informed on \texttt{\#rstats} happenings, including
-releases of new packages {[}14{]}. Beyond social media, featured pages
-and R blogs serve as another informal, up-to-date, and more detailed
-avenue for communicating and promoting R-related information
-(\textbf{Table ?}). Notably, Joseph Rickert, Ambassador at Large for
-RStudio, writes monthly posts on the
-\href{https://rviews.rstudio.com/}{R Views} blog highlighting
-exceptional new R packages. Rickert also features special articles about
-recently released packages and lists of top packages within certain
-categories, including Computational Methods, Data, Machine Learning,
-Medicine, Science, Statistics, Time Series, Utilities, Visualization.
-
-A developer of an R package may intend for it to be private (exclusively
-for personal or professional use) or public (at no cost and available
-for use by anyone) {[}15{]}. If your task is specific to a line of
-research, consult colleagues to see if they have relevant (private) code
-they would be willing to share. Alternatively, literature in your field
-may either introduce R packages developed to solve a unique data science
-problem or mention packages used during the research process. The former
-may be published in the \emph{Journal of Statistical Software},
-\emph{The R Journal}, or \emph{BMC Bioinformatics}, for example, and
-search queries that include \texttt{"R\ package"} with domain keywords
-will narrow results. The latter requires identifying authors who used R
-in their analyses; useful packages may be mentioned in the Methods
-and/or References sections. You can search for packages directly by name
-in Google Scholar: the \texttt{Cited\ by} link displays the number of
-times a package has been cited and connects to a page with those
-publications. Lastly, you can attend conferences to learn about recent R
-package developments and applications. There are two major annual R
-conferences: \href{https://rstudio.com/conference/}{rstudio::conf} for
-industry and \href{https://www.r-consortium.org/}{useR!} (not
-exclusively) for academia. Conferences in your field may foster
-connections with fellow scientists who use R for similar tasks and help
-you collect information about packages related to your expertise. Talks
-and presentations at conferences are often recorded and made available
-online for playback.
 
 \textbf{Browse}
 
@@ -534,122 +506,183 @@ you to think that finding R packages relies heavily on internet search
 queries. Indeed, search engines such as Google return ample pages
 related to anything \texttt{"\ldots{}in\ R"}. However, this approach can
 lead to frustration and confusion when attempting to find a package
-tailored to your purpose (see Rule 1). Instead, we recommend initially
-searching for packages in repositories such as the Comprehensive R
-Archive Network (CRAN), GitHub, or Bioconductor, all of which will be
-further discussed in Rule 3. In particular,
-\href{https://cran.r-project.org/web/views/}{CRAN Task Views} are
-concentrated topics from certain disciplines and methodologies related
-to statistical computing that categorize R packages by the tasks they
-perform (e.g., Econometrics, Genetics, Optimization, Spatial). In the
-HTML version, you can browse alphabetized subcategories within each Task
-View and read concise descriptions to find tools with specific
-functions. Alternatively, you can access Task Views directly from the R
-console with \texttt{ctv::CRAN.views()}. To date, there are 41 Task
-Views that collectively contain thousands of packages which are curated
-and regularly tested. Moreover, CRAN Task Views provide tools that
-enable you to automatically install all packages within a targeted area
-of interest. Ultimately, by providing task-based organization, easy
-simultaneous installation of related packages, meta-information, ensured
-maintenance, and quality control, CRAN Task Views address several major
-user-end issues that have arisen due to the sheer quantity of available
-packages {[}16{]}. Relatedly,
-\href{http://dirk.eddelbuettel.com/cranberries/index.html}{CRANberries}
-is a hub of information about new, updated, and removed packages from
-the CRAN network. Another place to find well-maintained tools is through
-\href{https://ropensci.org/packages/}{rOpenSci packages}. These
-filterable and searchable R packages are organized by name, maintainer,
-description, and status (i.e., activity, association, review).
+tailored to your purpose (see Rule 1). You can also do a more directed
+search by searching through package lists for repositories including
+Comprehensive R Archive Network (CRAN) and Bioconductor, or through
+packages available in code-sharing sites like GitHub and GitLab, all of
+which will be further discussed in Rule 3.
+
+In many cases, you may find it more helpful, though, to start from a
+curated list of R packages on a particular topic. There are several
+available. First, \href{https://cran.r-project.org/web/views/}{CRAN Task
+Views} are concentrated topics from certain disciplines and
+methodologies related to statistical computing that categorize R
+packages by the tasks they perform (e.g., Econometrics, Genetics,
+Optimization, Spatial). In the HTML version, you can browse alphabetized
+subcategories within each Task View and read concise descriptions to
+find tools with specific functions. Alternatively, you can access Task
+Views directly from the R console with \texttt{ctv::CRAN.views()}. To
+date, there are 41 Task Views that collectively contain thousands of
+packages which are curated and regularly tested. Moreover, CRAN Task
+Views provide tools that enable you to automatically install all
+packages within a targeted area of interest. Ultimately, by providing
+task-based organization, easy simultaneous installation of related
+packages, meta-information, ensured maintenance, and quality control,
+CRAN Task Views address several major user-end issues that have arisen
+due to the sheer quantity of available packages {[}15{]}.
+
+{[}Add paragraph on Bioconductor Task View-equivalent{]}
+
+Other curated collections or topically-linked lists of packages are also
+available.
+\href{http://dirk.eddelbuettel.com/cranberries/index.html}{CRANberries},
+for example, is a hub of information about new, updated, and removed
+packages from the CRAN network. Another place to find well-maintained
+tools is through \href{https://ropensci.org/packages/}{rOpenSci
+packages}. These filterable and searchable R packages are organized by
+name, maintainer, description, and status (i.e., activity, association,
+review), and all have passed a peer review process (see Rule 6).
+
+\textbf{Use the community}
+
+An inclusive and collaborative community is an overlooked, yet integral,
+aspect of a software's success {[}16{]}. A defining feature of R is the
+enthusiasm of its users and developers alike. The R community has a
+widespread internet presence across various platforms; however, members
+are markedly active on Twitter, a place where R users seek help, share
+ideas, and stay informed on \texttt{\#rstats} happenings, including
+releases of new packages {[}17{]}. R-related blogs serve as another
+informal, up-to-date, and more detailed avenue for communicating and
+promoting R-related information (\textbf{Table ?}). For example, Joseph
+Rickert, Ambassador at Large for RStudio, writes monthly posts on the
+\href{https://rviews.rstudio.com/}{R Views} blog highlighting
+interesting new R packages. Rickert also features special articles about
+recently released packages and lists of top packages within certain
+categories, including Computational Methods, Data, Machine Learning,
+Medicine, Science, Statistics, Time Series, Utilities, Visualization.
+
+You can also attend---or re-watch---conferences to learn about recent R
+package developments and applications. Two large annual R conferences
+are \href{https://rstudio.com/conference/}{rstudio::conf} for industry
+and \href{https://www.r-consortium.org/}{useR!} (not exclusively) for
+academia. Talks and presentations at both these conferences are often
+recorded and made available online for playback if you can't attend in
+person or wish to revisit past conferences. Conferences in your field
+may foster connections with fellow scientists who use R for similar
+tasks and help you collect information about packages related to your
+expertise.
+
+Finally, a developer of an R package may intend for it to be private
+(exclusively for personal or professional use) or public (at no cost and
+available for use by anyone) {[}18{]}. If your task is specific to a
+line of research, consult colleagues to see if they have a relevant
+(private) package they would be willing to share.
 
 \hypertarget{rule-3-check-how-its-shared}{%
 \section{Rule 3: Check how it's
 shared}\label{rule-3-check-how-its-shared}}
 
-Packages can be shared through a variety of platforms; a single package
-is often available in multiple places. While repositories are the
-primary way in which developers share packages for both public and
-private use, there are alternatives. In lieu of making packages
-accessible to everyone via internet repositories, some developers share
-their code in zipped files or directly with collaborators. As far as R
-packages are concerned, a repository is essentially a warehouse for
-tools before they enter your kitchen; in computing terms, a repository
-is analogous to a cloud because it is a central location in which data
-is stored and managed. There is growing concern about whether there are
-too many R packages and a simultaneous call for quality control
-{[}17{]}. Some repositories impose vetting mechanisms that tame unwieldy
+Packages can be shared through a variety of platforms. Repositories are
+a primary way in which developers share packages for both public and
+private use, but there are alternatives. As far as R packages are
+concerned, a repository is essentially a warehouse for tools before they
+enter your kitchen; in computing terms, a repository is analogous to a
+cloud because it is a central location in which data is stored and
+managed. Some repositories impose vetting mechanisms that tame unwieldy
 aspects of the R ecosystem by regularly checking underlying code and
-managing corresponding webs of dependencies. The traditional
-repositories for R packages are CRAN, Bioconductor, and GitHub; however,
-there are lesser-known remote repositories that have unique properties.
+managing corresponding webs of dependencies. Two traditional
+repositories for R packages are CRAN and Bioconductor; however, there
+are lesser-known remote repositories that have unique properties.
+Developers can also share their R packages through large code-sharing
+sites, including public version control platforms like GitHub and
+GitLab; these have fewer restrictions on the format or content of shared
+code compared to repositories. At the least public level, in lieu of
+making packages accessible to everyone via internet repositories, some
+developers share their code in zipped files directly with collaborators
+(see Rule 2).
 
-Much of what we know about statistical methods and algorithms is wrapped
-up in R packages---written and documented in various ways by R users.
 The CRAN package repository is the most established and primary source
-from which you can install R packages. You can simply use the
-\texttt{install.packages()} function to install a package from CRAN;
-source and/or binary code are automatically saved to your computer in a
-designated package library {[}18{]}. When you want to use a particular
-package, you load it to your R session via the \texttt{library()}
-function from base R. Due to its longevity and historical role, Rickert
-asserts that ``CRAN is the greatest open source repository for
-statistical computing knowledge in the world'' {[}15{]}. Evidently, much
-of what we know about statistics is housed in CRAN where people share
-such information. The R Foundation manages CRAN and imposes strict
-regulatory practices for the selection and maintenance of the packages
-they host. A package must pass a series of stability tests in accordance
-with the CRAN Repository Policy before obtaining publication privileges
-{[}19{]}. As such, CRAN only considers packages that make a substantial
-contribution to statistical computing and graphics. CRAN maintainers
-actively monitor source and contributed packages to ensure they are
-compatible with the latest version of R and modify or remove packages
-that do not uphold publication quality.
+from which you can install R packages. CRAN hosts a huge collection of R
+packages ({[}current \# of CRAN packages{]} as of August 2020) on almost
+any conceivable topic, from {[}example{]} to {[}example{]}. Due to its
+longevity and historical role, Rickert asserts that ``CRAN is the
+greatest open source repository for statistical computing knowledge in
+the world'' {[}18{]}. A key advantage of picking a package from CRAN is
+that the repository integrates very easily with a user's base R
+installation. You can simply use the \texttt{install.packages()}
+function to install a package from CRAN; source and/or binary code are
+automatically saved to your computer in a designated package library
+{[}19{]}. When you want to use a particular package, you load it to your
+R session via the \texttt{library()} function from base R. The R
+Foundation manages CRAN and imposes strict regulatory practices for the
+selection and maintenance of the packages they host. A package must pass
+a series of stability tests in accordance with the CRAN Repository
+Policy before obtaining publication privileges {[}20{]}. As such, CRAN
+only considers packages that make a substantial contribution to
+statistical computing and graphics. CRAN maintainers actively monitor
+source and contributed packages to ensure they are compatible with the
+latest version of R and modify or remove packages that do not uphold
+publication quality.
 
-The Bioconductor project was motivated by a need for transparent,
-reproducible, and efficient software in computational biology and
-bioinformatics and supports the integration of computational rigor and
-reproducibility in research on biological processes {[}5{]}. The R
-environment and its package system is fundamental to the implementation
-of Bioconductor's interoperable and object-oriented (S4) infrastructure.
-Bioconductor software is in the form of coordinated, peer-reviewed R
-packages. Bioconductor boasts a modularized design, wherein data
-structures, functions, and the packages that contain them have distinct
-roles that are accompanied by thorough documentation. Accessibility is a
-pillar of the Bioconductor project, thus all forms of documentation,
-including courses, vignettes, and interactive documents, are curated for
-individuals with expertise in adjacent disciplines and minimal
-experience with R (see Rule 4) {[}5{]}. Similar to CRAN, Bioconductor
-has strict criteria for package submissions: a package must be relevant
-to high-throughput genomic analysis, interoperable with other
-Bioconductor packages, well-documented, supported in the long-term,
-exclusive to Bioconductor, and comply with additional package guidelines
-{[}20{]}. Bioconductor packages facilitate the analysis and
+If you are looking for tools related to high-throughput genomic data,
+the Bioconductor repository is a more specialized repository than CRAN
+that is worth investigating. The Bioconductor project was motivated by a
+need for transparent, reproducible, and efficient software in
+computational biology and bioinformatics and supports the integration of
+computational rigor and reproducibility in research on biological
+processes {[}6{]}. Bioconductor packages facilitate the analysis and
 comprehension of biological data and help users solve problems that
 arise when working with high-throughput genomic data such as those
 related to microarrays, sequencing, flow cytometry, mass spectrometry,
-and image analysis. As a subset of the R community, Bioconductor has a
-supportive and innovative community that hosts annual meetings and
-conferences.
+and image analysis. The R environment and its package system is
+fundamental to the implementation of Bioconductor's interoperable and
+object-oriented (S4) infrastructure. Bioconductor software is in the
+form of coordinated, peer-reviewed R packages. Bioconductor boasts a
+modularized design, wherein data structures, functions, and the packages
+that contain them have distinct roles that are accompanied by thorough
+documentation. Similar to CRAN, Bioconductor has strict criteria for
+package submissions: a package must be relevant to high-throughput
+genomic analysis, interoperable with other Bioconductor packages,
+well-documented, supported in the long-term, exclusive to Bioconductor,
+and comply with additional package guidelines {[}21{]}.
+
+There are also more specialized, smaller repositories that share R
+packages. The non-profit organization, rOpenSci, for example, runs a
+repository as part of their commitment to promote open science practices
+through technical and social infrastructure for the R community
+{[}22{]}. The repository only includes packages that have passed their
+open review process and that are within a scope that ROpenSci defines
+and that focuses on \ldots{} . R package maintainers can even create and
+host their own personalized repository using the \texttt{drat} package
+{[}add citation to drat package{]}. In some cases, this might be done to
+host a package that does not meet certain restrictions from other
+repositories (e.g., to share data through a package that is larger than
+CRAN's usual size limit on packages {[}add citation to ``Hosting Data
+Packages via drat: A Case Study with Hurricane Exposure Data'' paper by
+me and Dirk Eddelbuettel{]}). There are other platforms strictly for the
+development, rather than distribution, of R packages such as R-Forge and
+Omegahat, which are beyond the scope of this paper {[}23,24{]}.
 
 The rapid uptick in package development and subsequent inter-repository
 dependencies has sparked an ongoing debate on whether regulated
 repositories such as CRAN and Bioconductor are preferable to other
 distribution platforms, namely public version control systems like
-GitHub {[}15,21,22{]}. While there are practical downsides to their
+GitHub {[}18,25,26{]}. While there are practical downsides to their
 restrictive practices, the benefits of exclusive repositories are
 evident. Nevertheless, there are considerable advantages to hosting a
-package on GitHub {[}15,21{]}. GitHub is a popular online user interface
+package on GitHub {[}18,25{]}. GitHub is a popular online user interface
 and multi-purpose development platform that is also effective in
 distributing R packages. An increasing number of packages are hosted on
 GitHub during the development stages; if developers choose not to
 distribute their package through GitHub, the stable release versions of
-such packages are often published on CRAN or Bioconductor {[}23{]}.
+such packages are often published on CRAN or Bioconductor {[}27{]}.
 GitHub provides R users with open access to package code, a timeline of
 help resources (see Rule 4), a direct line of communication to
 developers, and permits discovery of up-and-coming packages (see Rule
 2). You can install the latest version of packages from GitHub via
 \texttt{devtools::install\_github()}; however, the decentralized nature
 of GitHub is not conducive to a tool that automatically locates and
-installs corresponding dependencies {[}24{]}. For developers, GitHub
+installs corresponding dependencies {[}28{]}. For developers, GitHub
 provides a convenient means by which anyone can share and contribute
 public or private code without barriers to entry. Authors collaborate
 within a version-controlled system to develop and distribute packages,
@@ -657,24 +690,15 @@ including those with dependencies that are not on CRAN or Bioconductor.
 Further, the \texttt{drat} (Drat R Archive Template) package enables
 developers to design individual repositories and suites of coordinated
 repositories for packages that are stored in and/or distributed through
-GitHub {[}25,26{]}. Both R users and package developers benefit from
+GitHub {[}29,30{]}. Both R users and package developers benefit from
 interactive feedback channels through GitHub Issues and the Star rating
-system.
+system. Further, GitLab is git-based version control and collaborative
+cloud for package production and deployment. It is an alternative to
+GitHub for production of large-scale packages that require continuous
+integration and continuous deployment for testing data and code to
+ensure a stable end-product.
 
-Most novice R users will rarely encounter packages that are not shared
-through the abovementioned platforms. The non-profit organization,
-rOpenSci, runs a repository as part of their commitment to promote open
-science practices through technical and social infrastructure for the R
-community {[}27{]}. The repository only includes packages that have
-passed their open review process, which is compliant with GitHub
-infrastructure. Further, GitLab is git-based version control and
-collaborative cloud for package production and deployment. It is an
-alternative to GitHub for production of large-scale packages that
-require continuous integration and continuous deployment for testing
-data and code to ensure a stable end-product. There are platforms
-strictly for the development, rather than distribution, of R packages
-such as R-Forge and Omegahat, which are beyond the scope of this paper
-{[}28,29{]}.
+Finally, a single package is often available in multiple places.
 
 \hypertarget{rule-4-explore-the-availability-and-quality-of-help}{%
 \section{Rule 4: Explore the availability and quality of
@@ -684,7 +708,7 @@ There has been a call for the development of centralized resources in
 statistical computing to enable a common understanding of software
 quality and reliability: software information specified in publications,
 domain-specific semantic dictionaries, and a single metadata resource
-for statistical software {[}17{]}. No such resources have been
+for statistical software {[}10{]}. No such resources have been
 consolidated to serve these purposes and, given the decentralized nature
 of today's information society, it is questionable whether they will
 emerge. Current sources of information related to R packages are
@@ -746,9 +770,9 @@ use to publish books about their package is through \texttt{bookdown}, a
 relatively new extension of R Markdown that is structured in such a way
 that integrates code, text, links, graphics, videos, and other content
 in a format that can be published as a free, open, interactive, and
-downloadable online book {[}30{]}. The \texttt{bookdown} package itself
+downloadable online book {[}31{]}. The \texttt{bookdown} package itself
 has an \href{https://bookdown.org/yihui/bookdown/}{online book} that
-details usage of the package {[}31{]}. \texttt{Rccp} is another package
+details usage of the package {[}32{]}. \texttt{Rccp} is another package
 with notable documentation and first-rate help resources; the developers
 maintain both a \href{http://www.rcpp.org/}{main} and
 \href{http://dirk.eddelbuettel.com/code/rcpp.html}{additional} website
@@ -759,7 +783,7 @@ books, talks, a mailing list, and links to other resources with
 developer, further information about some R packages is available in
 video tutorials, webinars, and code demonstrations (i.e., ``demos''). As
 of RStudio v1.3, you can access tutorials powered by the \texttt{learnr}
-package from the Tutorial pane in the IDE {[}32{]}. Finally, keep in
+package from the Tutorial pane in the IDE {[}33{]}. Finally, keep in
 mind that RStudio creates cheatsheets of concise usage information for
 popular packages through code and graphics organized by purpose.
 Cheatsheets can be accessed directly via the RStudio Menu (Help
@@ -774,12 +798,12 @@ documentation. In this case, you will use resources that involve
 assured that you will find a satisfactory answer. In the past, the
 antiquated R-help mailing list was the only way to seek assistance;
 since, the R community has formed, with inclusion and creative
-problem-solving as hallmarks of its online presence {[}33{]}. The modern
+problem-solving as hallmarks of its online presence {[}34{]}. The modern
 R-help mailing list to which you can subscribe and send questions is
 moderated by the R Core Development Team and includes additional facets
 for major announcements about the development of R and availability of
 new code (R-announce) and new or enhanced contributed packages
-(R-packages) {[}34{]}. Certain packages have independent listservs;
+(R-packages) {[}35{]}. Certain packages have independent listservs;
 \texttt{statnet} is an example of a suite of packages that has its own
 \href{http://statnet.org/}{community listserv}. If a package has a
 development repository on GitHub, check the Issues to verify that the
@@ -789,10 +813,10 @@ Validated, and Talk Stats to assess the activity associated with the
 package in question. Analyses of the popularity of comparable data
 analysis software in email and discussion traffic suggest that R is
 rapidly becoming more prevalent and is the leading language by these
-metrics {[}7,35{]}. When you encounter a problem, it is good practice to
+metrics {[}8,36{]}. When you encounter a problem, it is good practice to
 first update the package to see if the problem is due to a bug in a
 previous version---if the problem persists, seek help by finding or
-posting a reproducible example {[}36{]}. Overall, avoid using a package
+posting a reproducible example {[}37{]}. Overall, avoid using a package
 if the quality and quantity of related resources is lacking.
 
 \hypertarget{rule-5-quantify-how-established-it-is}{%
@@ -805,7 +829,7 @@ regarded the tool is and whether it has stood the test of time. Since
 there are tens of thousands of R packages, you may be wondering how they
 stack up in terms of popularity. On GitHub, a large number of Stars,
 Forks, and Watchers associated with a package implies a substantial
-following and widespread usage {[}37{]}. Likewise, the number of Google
+following and widespread usage {[}38{]}. Likewise, the number of Google
 Scholar citations is a metric of a package's impact on scientific
 research and utility in research contexts (see Rule 2). RDocumentation
 (see Rule 4) is rich with stats on R packages. RDocumentation hosts a
@@ -818,7 +842,7 @@ of times a package has been downloaded in a given month. A ranking
 algorithm computes the direct, user-requested monthly downloads by
 accounting for reverse dependencies (indirect downloads) so packages
 that are commonly depended upon, and hence frequently downloaded, do not
-skew the calculation {[}38{]}. You can research stats on corresponding
+skew the calculation {[}39{]}. You can research stats on corresponding
 dependencies for a more holistic picture. To further determine if a
 package is well-established in the R community, refer to the number of
 versions and updates (more is better) as well as the date of the most
@@ -833,18 +857,30 @@ because it establishes scholarly credibility. You can research
 information about an R package in different forms of literature and
 determine the extent to which it has been validated by the scientific
 community. Some journals publish articles about R packages themselves
-while others feature work that used a particular package (see Rule 2).
+while others feature work that used a particular package. Literature in
+your field may either introduce R packages developed to solve a unique
+data science problem or mention packages used during the research
+process. The former may be published in the \emph{Journal of Statistical
+Software}, \emph{The R Journal}, or \emph{BMC Bioinformatics}, for
+example, and search queries that include \texttt{"R\ package"} with
+domain keywords will narrow results. The latter requires identifying
+authors who used R in their analyses; useful packages may be mentioned
+in the Methods and/or References sections. You can search for packages
+directly by name in Google Scholar: the \texttt{Cited\ by} link displays
+the number of times a package has been cited and connects to a page with
+those publications.
+
 These packages are technically sound and have made a substantial
 contribution to their fields and/or a common data science problem. In
 response to the rising number of researchers creating tools and software
 to work with their data, GitHub has granted developers the ability to
 obtain a Digital Object Identifier (DOI) for any GitHub repository
-archive so that code can be cited in academic literature {[}39{]}. If a
+archive so that code can be cited in academic literature {[}40{]}. If a
 package has such a DOI, you can explore the network of research
 associated with that package. Many R packages are associated with
 content in books and series from scientific publishers such as Springer.
 More directly, rOpenSci, is a unique example of an ecosystem of open
-source tools with peer reviewed R packages (see Rule 3) {[}27{]}.
+source tools with peer reviewed R packages (see Rule 3) {[}22{]}.
 
 \hypertarget{rule-7-find-out-who-developed-it}{%
 \section{Rule 7: Find out who developed
@@ -862,7 +898,7 @@ reputation can be a proxy for quality; in this way, the process of
 evaluating and comparing R packages is no different than other
 decisions. In fact, as you become more immersed in the R community, you
 will find that name recognition is a factor, among many, that helps you
-establish trust in certain tools more quickly than others {[}37{]}.
+establish trust in certain tools more quickly than others {[}38{]}.
 
 You can assess the credibility and commitment of R package developers
 through direct and indirect signals. Who made the package? Consider
@@ -889,7 +925,7 @@ developed}\label{rule-8-see-how-its-developed}}
 You do not need to be a software engineer to identify strong package
 development. Scientific software developers sometimes neglect best
 practices; indeed, these shortcomings are evident in the tools they
-create {[}40{]}. There are concrete ways to measure a tool's robustness
+create {[}41{]}. There are concrete ways to measure a tool's robustness
 beyond whether it works for those who did not create it. R packages
 often depend on other R packages; you should check the reputations of
 such \emph{dependencies} when selecting a package---quality packages
@@ -897,7 +933,7 @@ will rely on a solid web of quality packages. What's more, like other
 types of software, well-maintained R packages have multiple versions
 corresponding to iterative releases to indicate that the package is
 compatible with dependencies and loyally updated (e.g., bug fixes,
-general improvements, new functionality) {[}1,18{]}. You can explore the
+general improvements, new functionality) {[}1,19{]}. You can explore the
 version history of a package to see if it is up-to-date. As a user,
 there are two additional development protocols that you can further
 investigate to assess the underlying stability and utility of a package:
@@ -905,46 +941,46 @@ unit tests and version control.
 
 A responsible developer with a consistent and reproducible workflow will
 implement formal testing on their code to examine expected behavior via
-an automated process called unit testing {[}18,41{]}. Although
+an automated process called unit testing {[}19,42{]}. Although
 inconvenient at the outset, the developer---and by extension, the
 package user---will benefit from unit testing, which results in fewer
 bugs, a well-designed code structure, an efficient workflow, and robust
-code that is not sensitive to major changes in the future {[}18{]}. To
+code that is not sensitive to major changes in the future {[}19{]}. To
 alleviate the burdens of unit testing, \texttt{testthat} is a popular,
 integrative R package that helps developers create reliable functions,
 minimize error, and visualize progress through automatic code testing
-{[}42{]}. Developers are also interested in quantifying the amount of
+{[}43{]}. Developers are also interested in quantifying the amount of
 code in their package that has been tested. Test coverage, a measurement
 of the proportion of code that has undergone unit testing, is an
 objective metric for package developers, contributors, and users to
 evaluate code quality. Many developers use the \texttt{covr} package to
 generate reports and determine the magnitude of coverage on the
-function, script, and package levels {[}43{]}. Relatedly, developers who
+function, script, and package levels {[}44{]}. Relatedly, developers who
 host their packages on GitHub, post status badges in the overview
 (\texttt{README}) section of the repository webpage. GitHub badges are a
 common self-imposed method to signal use of best practices and motivate
 developers to produce a product that is high in quality and transparency
-{[}44{]}. You may see, for example, license, dependency, or style
+{[}45{]}. You may see, for example, license, dependency, or style
 badges, all of which are good indicators of package caliber; however,
 particular to this Rule, you should look for code coverage
 (\texttt{codecov}) badges which reveal the percentage of test coverage.
 
 As we mentioned in Rule 3, version control has an essential role in
-package development and computational literacy more broadly {[}18,45{]}.
+package development and computational literacy more broadly {[}19,46{]}.
 Version control is like a time capsule for your workflow because it
 monitors and tracks changes to files as a project evolves, and stores
 them as previous versions to be recovered if necessary. In other words,
 ``version control is as fundamental to programming as accurate notes
-about lab procedures are to experimental science'' {[}{[}45{]}; p6{]}.
+about lab procedures are to experimental science'' {[}{[}46{]}; p6{]}.
 Git is a decentralized open source version control system that is useful
 regardless of whether a project is independent or collaborative
-{[}46{]}. GitHub works in conjunction with Git to provide a powerful
+{[}47{]}. GitHub works in conjunction with Git to provide a powerful
 structured system to organize and manage components of a project for
 others and your future self. A growing number of scientists have
 research programs based in GitHub, which has become a revolutionary tool
 for productive team science and distributed development efforts
-{[}1,47{]}. As you may expect, Git coupled with GitHub is the version
-control duo of choice among serious R package developers {[}18{]}. Thus,
+{[}1,48{]}. As you may expect, Git coupled with GitHub is the version
+control duo of choice among serious R package developers {[}19{]}. Thus,
 if the package you are interested in using is among the thousands hosted
 on GitHub, this is evidence that the developer is at least committed to
 a logical, open, and reproducible workflow, suggestive of more time
@@ -966,7 +1002,7 @@ alternative to downloading a large or potentially corrupted zipped file.
 At this point, what you have learned about the package should be quite
 helpful. If the development and documentation are sound, the package
 should come with a test script or working example that you can run after
-installation {[}40{]}. Vignettes include many common data science
+installation {[}41{]}. Vignettes include many common data science
 problems with solutions; you can run the code examples, tweak them, and
 compare the outputs. In general, it is essential to know the behavior of
 different functions within a package, how they interact, and how outputs
@@ -990,20 +1026,20 @@ yet incongruous with other packages. Such packages might, for example,
 use S3 or S4 objects, which are two main approaches developers use to
 implement object-oriented programming in R. Many packages for spatial
 analysis as well as those from Bioconductor tend to use S4 objects to
-represent data {[}5{]}. On the other hand, the \texttt{tidyverse}, a
+represent data {[}6{]}. On the other hand, the \texttt{tidyverse}, a
 unified suite of packages with an grammatical structure employed within
-a ``pipeline'', expects data frame objects {[}48{]}. Thus, when you are
+a ``pipeline'', expects data frame objects {[}49{]}. Thus, when you are
 working in the \texttt{tidyverse}, you cannot incorporate S3 and S4
 objects into the framework unless their corresponding functions are the
 final step in the pipeline. The \texttt{broom} package, and the
 bioinformatics analog, \texttt{biobroom}, aim to alleviate these
 disruptions by converting untidy objects into tidy data, thereby making
 it easier to integrate statistical functions into the structure of the
-\texttt{tidyverse} workflow {[}49,50{]}. Furthermore, the \texttt{caret}
+\texttt{tidyverse} workflow {[}50,51{]}. Furthermore, the \texttt{caret}
 package facilitates interoperability for machine learning packages by
 providing a uniform interface for modeling with various algorithms from
 different packages that would otherwise have independent syntax
-{[}51{]}.
+{[}52{]}.
 
 \hypertarget{rule-10-develop-your-own-package}{%
 \section{Rule 10: Develop your own
@@ -1012,7 +1048,7 @@ package}\label{rule-10-develop-your-own-package}}
 Alternative solutions can be sought when a package to solve your data
 science problem is nonexistent. An R package is the fundamental unit of
 shareable code; rather than exclusively being a user of packages, you
-can create them---more easily than you may think {[}18{]}. The reasons
+can create them---more easily than you may think {[}19{]}. The reasons
 why you might want to create a package are abundant, including
 necessity, innovation, standardization, automation, specialty,
 containment, organization, sharing, collaboration, and extensibility.
@@ -1027,26 +1063,26 @@ package out of any collection of specialty functions. Packages need not
 be formal nor entirely cohesive. For instance, personal R packages such
 as \texttt{Hmisc} and \texttt{broman}, are comprised of miscellaneous
 functions which the creator has developed and frequently uses
-{[}52,53{]}. Functions are necessary for efficiency and warranted when
+{[}53,54{]}. Functions are necessary for efficiency and warranted when
 you repetitiously copy and paste your code while making slight
-modifications after each iteration {[}36{]}. The concept of personal R
+modifications after each iteration {[}37{]}. The concept of personal R
 packages demonstrates a unique purpose for packages beyond the
 conventional. R packages are not solely reserved for specific tasks with
 comprehensive methods; rather, package development can help you learn
 how to apply proper coding techniques to writing functions and
-documentation with reproducibility and collaboration in mind {[}54{]}.
+documentation with reproducibility and collaboration in mind {[}55{]}.
 
 Although you may not anticipate that anyone else will use your tools,
 following best practices for package development will yield more
 favorable outcomes. As a consumer of shared packages, you know the
 inherent benefits of robust software development relative to the quality
-of code, data, documentation, versions, and tests {[}40{]}. Similarly,
+of code, data, documentation, versions, and tests {[}41{]}. Similarly,
 creating a valuable package for personal use requires consideration for
 your future self and anticipation of distributing your code, should the
 need arise. Use version control and take advantage of existing
 resources. Indeed, there are R packages that aid in package development
 (e.g., \texttt{devtools}, \texttt{usethis}, \texttt{testthat},
-\texttt{roxygen2}, \texttt{rlang}, \texttt{drat}) {[}24,25,55--58{]}. In
+\texttt{roxygen2}, \texttt{rlang}, \texttt{drat}) {[}28,29,56--59{]}. In
 the case of collaboration, the R project within RStudio IDE, is
 compatible with distributed development---a feature that couples well
 with version control. There is no lack of effective organizational
@@ -1056,7 +1092,7 @@ recommend consulting resources authored by expert R developers including
 \href{https://r-pkgs.org/}{\emph{R Packages}} by Hadley Wickham and the
 official manual,
 \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{\emph{Writing
-R Extensions}}, from CRAN {[}18,59{]}.
+R Extensions}}, from CRAN {[}19,60{]}.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -1266,262 +1302,267 @@ Association for the Advancement of Science; 2016;8: 341ps12--341ps12.
 4. Donoho D. 50 years of data science. Journal of Computational and
 Graphical Statistics. Taylor \& Francis; 2017;26: 745--766.
 
+\leavevmode\hypertarget{ref-stodden2013}{}%
+5. Stodden V, Miguez S. Best practices for computational science:
+Software infrastructure and environments for reproducible and extensible
+research. Available at SSRN 2322276. 2013;
+
 \leavevmode\hypertarget{ref-gentleman2004}{}%
-5. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
+6. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
 al. Bioconductor: Open software development for computational biology
 and bioinformatics. Genome biology. Springer; 2004;5: R80.
 
 \leavevmode\hypertarget{ref-holmes2018}{}%
-6. Holmes S, Huber W. Modern statistics for modern biology
+7. Holmes S, Huber W. Modern statistics for modern biology
 {[}Internet{]}. Cambridge University Press; 2018. Available:
 \url{https://web.stanford.edu/class/bios221/book/index.html}
 
 \leavevmode\hypertarget{ref-robinson2017}{}%
-7. Robinson D. The impressive growth of r {[}Internet{]}. Stack
+8. Robinson D. The impressive growth of r {[}Internet{]}. Stack
 Overflow; 2017. Available:
 \url{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}
 
 \leavevmode\hypertarget{ref-Rproject2020}{}%
-8. Team RC. The r project for statistical computing {[}Internet{]}. The
+9. Team RC. The r project for statistical computing {[}Internet{]}. The
 R Foundation; 2020. Available: \url{https://www.r-project.org/}
 
+\leavevmode\hypertarget{ref-hornik2012}{}%
+10. Hornik K. Are there too many r packages? Austrian Journal of
+Statistics. 2012;41: 59--66.
+
 \leavevmode\hypertarget{ref-dplyr}{}%
-9. Wickham H, François R, Henry L, Müller K. Dplyr: A grammar of data
+11. Wickham H, François R, Henry L, Müller K. Dplyr: A grammar of data
 manipulation {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=dplyr}
 
 \leavevmode\hypertarget{ref-tidyr}{}%
-10. Wickham H, Henry L. Tidyr: Tidy messy data {[}Internet{]}. 2020.
+12. Wickham H, Henry L. Tidyr: Tidy messy data {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=tidyr}
 
 \leavevmode\hypertarget{ref-phonenumber}{}%
-11. Myles S. Phonenumber: Convert letters to numbers and back as on a
+13. Myles S. Phonenumber: Convert letters to numbers and back as on a
 telephone keypad {[}Internet{]}. 2015. Available:
 \url{https://CRAN.R-project.org/package=phonenumber}
 
 \leavevmode\hypertarget{ref-bioCproject}{}%
-12. Huber W, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS, et
+14. Huber W, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS, et
 al. Orchestrating high-throughput genomic analysis with Bioconductor.
 Nature Methods. 2015;12: 115--121. Available:
 \url{http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html}
 
+\leavevmode\hypertarget{ref-zeileis2005}{}%
+15. Zeileis A. CRAN task views. R News. 2005;5: 39--40.
+
 \leavevmode\hypertarget{ref-smith2017}{}%
-13. Smith D. The r community is one of r's best features {[}Internet{]}.
+16. Smith D. The r community is one of r's best features {[}Internet{]}.
 Revolutions. Microsoft; 2017. Available:
 \url{https://blog.revolutionanalytics.com/2017/06/r-community.html}
 
 \leavevmode\hypertarget{ref-ellis2017}{}%
-14. Ellis SE. Hey! You there! You are welcome here {[}Internet{]}.
+17. Ellis SE. Hey! You there! You are welcome here {[}Internet{]}.
 rOpenSci. NumFOCUS; 2017. Available:
 \url{https://ropensci.org/blog/2017/06/23/community/}
 
 \leavevmode\hypertarget{ref-rickert2018}{}%
-15. Rickert J. What makes a great r package? {[}Internet{]}. RStudio;
+18. Rickert J. What makes a great r package? {[}Internet{]}. RStudio;
 2018. Available:
 \url{https://rstudio.com/resources/rstudioconf-2018/what-makes-a-great-r-package-joseph-rickert/}
 
-\leavevmode\hypertarget{ref-zeileis2005}{}%
-16. Zeileis A. CRAN task views. R News. 2005;5: 39--40.
-
-\leavevmode\hypertarget{ref-hornik2012}{}%
-17. Hornik K. Are there too many r packages? Austrian Journal of
-Statistics. 2012;41: 59--66.
-
 \leavevmode\hypertarget{ref-wickham2015}{}%
-18. Wickham H. R packages: Organize, test, document, and share your
+19. Wickham H. R packages: Organize, test, document, and share your
 code. "O'Reilly Media, Inc."; 2015.
 
 \leavevmode\hypertarget{ref-cranpolicy2020}{}%
-19. CRAN repository policy {[}Internet{]}. The R Foundation; 2020.
+20. CRAN repository policy {[}Internet{]}. The R Foundation; 2020.
 Available:
 \url{https://cran.r-project.org/web/packages/policies.html\#Submission}
 
 \leavevmode\hypertarget{ref-biocpkgsub2020}{}%
-20. Package submission {[}Internet{]}. Bioconductor; 2020. Available:
+21. Package submission {[}Internet{]}. Bioconductor; 2020. Available:
 \url{https://www.bioconductor.org/developers/package-submission/}
 
+\leavevmode\hypertarget{ref-ropensci2020}{}%
+22. Transforming science through open data and software {[}Internet{]}.
+rOpenSci; 2020. Available: \url{https://ropensci.org/}
+
+\leavevmode\hypertarget{ref-theussl2009}{}%
+23. Theußl S, Zeileis A. Collaborative software development using
+r-forge. Special invited paper on" the future of r". The R Journal. The
+R Foundation for Statistical Computing; 2009;1: 9--14.
+
+\leavevmode\hypertarget{ref-lang2000}{}%
+24. Lang DT. The omegahat environment: New possibilities for statistical
+computing. Journal of Computational and Graphical Statistics. Taylor \&
+Francis; 2000;9: 423--451.
+
 \leavevmode\hypertarget{ref-mcelreath2020}{}%
-21. McElreath R. Statistical rethinking: A bayesian course with examples
+25. McElreath R. Statistical rethinking: A bayesian course with examples
 in r and stan. CRC press; 2020.
 
 \leavevmode\hypertarget{ref-decan2016}{}%
-22. Decan A, Mens T, Claes M, Grosjean P. When github meets cran: An
+26. Decan A, Mens T, Claes M, Grosjean P. When github meets cran: An
 analysis of inter-repository package dependency problems. 2016 ieee 23rd
 international conference on software analysis, evolution, and
 reengineering (saner). IEEE; 2016. pp. 493--504.
 
 \leavevmode\hypertarget{ref-decan2015}{}%
-23. Decan A, Mens T, Claes M, Grosjean P. On the development and
+27. Decan A, Mens T, Claes M, Grosjean P. On the development and
 distribution of r packages: An empirical analysis of the r ecosystem.
 Proceedings of the 2015 european conference on software architecture
 workshops. 2015. pp. 1--6.
 
 \leavevmode\hypertarget{ref-devtools}{}%
-24. Wickham H, Hester J, Chang W. Devtools: Tools to make developing r
+28. Wickham H, Hester J, Chang W. Devtools: Tools to make developing r
 packages easier {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=devtools}
 
 \leavevmode\hypertarget{ref-drat}{}%
-25. Carl Boettiger DE with contributions by, Fultz N, Gibb S, Gillespie
+29. Carl Boettiger DE with contributions by, Fultz N, Gibb S, Gillespie
 C, Górecki J, Jones M, et al. Drat: 'Drat' r archive template
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=drat}
 
 \leavevmode\hypertarget{ref-anderson2017}{}%
-26. Anderson GB, Eddelbuettel D. Hosting data packages via drat: A case
+30. Anderson GB, Eddelbuettel D. Hosting data packages via drat: A case
 study with hurricane exposure data. R Journal. 2017;9.
 
-\leavevmode\hypertarget{ref-ropensci2020}{}%
-27. Transforming science through open data and software {[}Internet{]}.
-rOpenSci; 2020. Available: \url{https://ropensci.org/}
-
-\leavevmode\hypertarget{ref-theussl2009}{}%
-28. Theußl S, Zeileis A. Collaborative software development using
-r-forge. Special invited paper on" the future of r". The R Journal. The
-R Foundation for Statistical Computing; 2009;1: 9--14.
-
-\leavevmode\hypertarget{ref-lang2000}{}%
-29. Lang DT. The omegahat environment: New possibilities for statistical
-computing. Journal of Computational and Graphical Statistics. Taylor \&
-Francis; 2000;9: 423--451.
-
 \leavevmode\hypertarget{ref-bookdown}{}%
-30. Xie Y. Bookdown: Authoring books and technical documents with r
+31. Xie Y. Bookdown: Authoring books and technical documents with r
 markdown {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=bookdown}
 
 \leavevmode\hypertarget{ref-xie2016}{}%
-31. Xie Y. Bookdown: Authoring books and technical documents with r
+32. Xie Y. Bookdown: Authoring books and technical documents with r
 markdown. Chapman; Hall/CRC; 2016.
 
 \leavevmode\hypertarget{ref-ushey2020}{}%
-32. Ushey K. RStudio 1.3 preview: Integrated tutorials {[}Internet{]}.
+33. Ushey K. RStudio 1.3 preview: Integrated tutorials {[}Internet{]}.
 RStudio; 2020. Available:
 \url{https://blog.rstudio.com/2020/02/25/rstudio-1-3-integrated-tutorials/}
 
 \leavevmode\hypertarget{ref-chase2020}{}%
-33. Chase W. Dataviz and the 20th anniversary of r, an interview with
+34. Chase W. Dataviz and the 20th anniversary of r, an interview with
 hadley wickham {[}Internet{]}. Medium; 2020. Available:
 \url{https://medium.com/nightingale/dataviz-and-the-20th-anniversary-of-r-an-interview-with-hadley-wickham-ea245078fc8a}
 
 \leavevmode\hypertarget{ref-Rmail2020}{}%
-34. Team RC. Mailing lists {[}Internet{]}. The R Foundation; 2020.
+35. Team RC. Mailing lists {[}Internet{]}. The R Foundation; 2020.
 Available: \url{https://www.r-project.org/mail.html}
 
 \leavevmode\hypertarget{ref-muenchen2012}{}%
-35. Muenchen RA. The popularity of data analysis software. URL
+36. Muenchen RA. The popularity of data analysis software. URL
 http://r4statscom/popularity. 2012;
 
 \leavevmode\hypertarget{ref-wickham2014}{}%
-36. Wickham H. Advanced r. CRC press; 2014.
+37. Wickham H. Advanced r. CRC press; 2014.
 
 \leavevmode\hypertarget{ref-leek2015}{}%
-37. Leek J. How i decide when to trust an r package {[}Internet{]}.
+38. Leek J. How i decide when to trust an r package {[}Internet{]}.
 2015. Available:
 \url{https://simplystatistics.org/2015/11/06/how-i-decide-when-to-trust-an-r-package/}
 
 \leavevmode\hypertarget{ref-vannoorenberghe2017}{}%
-38. Vannoorenberghe L. RDocumentation: Scoring and ranking
+39. Vannoorenberghe L. RDocumentation: Scoring and ranking
 {[}Internet{]}. DataCamp; 2017. Available:
 \url{https://www.datacamp.com/community/blog/rdocumentation-ranking-scoring}
 
 \leavevmode\hypertarget{ref-smith2014}{}%
-39. Smith A. Improving github for science {[}Internet{]}. GitHub, Inc.
+40. Smith A. Improving github for science {[}Internet{]}. GitHub, Inc.
 2014. Available:
 \url{https://github.blog/2014-05-14-improving-github-for-science/}
 
 \leavevmode\hypertarget{ref-taschuk2017}{}%
-40. Taschuk M, Wilson G. Ten simple rules for making research software
+41. Taschuk M, Wilson G. Ten simple rules for making research software
 more robust. PLoS computational biology. Public Library of Science;
 2017;13.
 
 \leavevmode\hypertarget{ref-hester2020}{}%
-41. Hester J. How does covr work anyway? {[}Internet{]}. The R
+42. Hester J. How does covr work anyway? {[}Internet{]}. The R
 Foundation; 2020. Available:
 \url{https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html}
 
 \leavevmode\hypertarget{ref-wickham2011}{}%
-42. Wickham H. Testthat: Get started with testing. The R Journal.
+43. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-covr}{}%
-43. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
+44. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=covr}
 
 \leavevmode\hypertarget{ref-barts2018}{}%
-44. Barts C. How to use github badges to stop feeling like a noob
+45. Barts C. How to use github badges to stop feeling like a noob
 {[}Internet{]}. freeCodeCamp; 2018. Available:
 \url{https://www.freecodecamp.org/news/how-to-use-badges-to-stop-feeling-like-a-noob-d4e6600d37d2/}
 
 \leavevmode\hypertarget{ref-wilson2006}{}%
-45. Wilson GV. Where's the real bottleneck in scientific computing?
+46. Wilson GV. Where's the real bottleneck in scientific computing?
 American Scientist. 2006;94: 5.
 
 \leavevmode\hypertarget{ref-bryan2018}{}%
-46. Bryan J. Excuse me, do you have a moment to talk about version
+47. Bryan J. Excuse me, do you have a moment to talk about version
 control? The American Statistician. Taylor \& Francis; 2018;72: 20--27.
 
 \leavevmode\hypertarget{ref-perkel2016}{}%
-47. Perkel J. Democratic databases: Science on github. Nature News.
+48. Perkel J. Democratic databases: Science on github. Nature News.
 2016;538: 127.
 
 \leavevmode\hypertarget{ref-tidyverse}{}%
-48. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
+49. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
 al. Welcome to the tidyverse. Journal of Open Source Software. 2019;4:
 1686.
 doi:\href{https://doi.org/10.21105/joss.01686}{10.21105/joss.01686}
 
 \leavevmode\hypertarget{ref-broom}{}%
-49. Robinson D, Hayes A. Broom: Convert statistical analysis objects
+50. Robinson D, Hayes A. Broom: Convert statistical analysis objects
 into tidy tibbles {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=broom}
 
 \leavevmode\hypertarget{ref-biobroom}{}%
-50. Andrew J. Bass SL David G. Robinson. Biobroom: Turn bioconductor
+51. Andrew J. Bass SL David G. Robinson. Biobroom: Turn bioconductor
 objects into tidy data frames {[}Internet{]}. 2020. Available:
 \url{https://github.com/StoreyLab/biobroom}
 
 \leavevmode\hypertarget{ref-caret}{}%
-51. Kuhn M. Caret: Classification and regression training
+52. Kuhn M. Caret: Classification and regression training
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=caret}
 
 \leavevmode\hypertarget{ref-Hmisc}{}%
-52. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
+53. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=Hmisc}
 
 \leavevmode\hypertarget{ref-broman}{}%
-53. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
+54. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=broman}
 
 \leavevmode\hypertarget{ref-parker2013}{}%
-54. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
+55. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
 \url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
 
 \leavevmode\hypertarget{ref-usethis}{}%
-55. Wickham H, Bryan J. Usethis: Automate package and project setup
+56. Wickham H, Bryan J. Usethis: Automate package and project setup
 {[}Internet{]}. 2019. Available:
 \url{https://CRAN.R-project.org/package=usethis}
 
 \leavevmode\hypertarget{ref-testthat}{}%
-56. Wickham H. Testthat: Get started with testing. The R Journal.
+57. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-roxygen2}{}%
-57. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
+58. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
 documentation for r {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=roxygen2}
 
 \leavevmode\hypertarget{ref-rlang}{}%
-58. Henry L, Wickham H. Rlang: Functions for base types and core r and
+59. Henry L, Wickham H. Rlang: Functions for base types and core r and
 'tidyverse' features {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=rlang}
 
 \leavevmode\hypertarget{ref-Rcore2020}{}%
-59. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
+60. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
 2020. Available:
 \url{https://cran.r-project.org/doc/manuals/R-exts.html}
 
