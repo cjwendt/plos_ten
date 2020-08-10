@@ -334,47 +334,49 @@ acknowledgment of Honors program if appropriate{]}
 
 Computational reproducibility is surfacing as a central axiom in
 academia, as researchers identify the need for transparency {[}2,3{]}.
-Many traditional methods also tend to be at odds with productivity and
-collaboration; some variability in scientific outcomes can be attributed
-to differences in workflow. Today, the scientific community deems the
-absence of automation to be irresponsible {[}4{]}. While standards for
+The Methods section of scholarly work is not sufficient to convey the
+complex data analysis methods and powerful tools of our time---data and
+code must be shared. Some variability in scientific outcomes can be
+attributed to differences in workflow and, today, the scientific
+community deems the absence of automation to be irresponsible {[}4{]}.
+Many traditional approaches that produce such inconsistencies also tend
+to be at odds with productivity and collaboration. While standards for
 disseminating and communicating computational science are evolving with
 digitization, responsible researchers are adopting best practices so
 others can more easily interpret, validate, and extend their published
-knowledge {[}5{]}. Such researchers must therefore rely on accessible
-and robust tools to ensure that their computations are reproducible.
+knowledge {[}5{]}. These researchers rely on accessible and robust tools
+to ensure their computations are reproducible.
 
-The open source R language has become a dominant quantitative
-programming environment in academic data analysis, enabling researchers
-to share workflows and re-execute scripts within and across subsets of
-the scientific community {[}4{]}. R is increasingly popular in
-computational biology and bioinformatics, two of many disciplines
-generating extensive, heterogenous, and complex data wanting for
-heavy-duty data analysis tools that (ideally) support reproducibility
-{[}6,7{]}. More broadly, as the R ecosystem---in which the life of
-modern data analysis thrives---rapidly evolves alongside the burgeoning
-R community, R is exhibiting sustained growth when compared to similar
-languages, particularly in academia, healthcare, and government {[}8{]}.
+As the R ecosystem---in which the life of modern data analysis
+thrives---rapidly evolves alongside the burgeoning R community, R is
+exhibiting sustained growth when compared to similar languages,
+particularly in academia, healthcare, and government {[}6{]}. The open
+source R language has become a dominant quantitative programming
+environment in academic data analysis, enabling researchers to share
+workflows and re-execute scripts within and across subsets of the
+scientific community {[}4{]}. R is increasingly popular in computational
+biology and bioinformatics, two of many disciplines generating
+extensive, heterogenous, and complex data wanting for heavy-duty data
+analysis tools that (ideally) support reproducibility {[}7,8{]}.
 
 R was developed by statisticians and is collaboratively maintained by an
-international core group of contributors {[}9{]}. Unlike several popular
-proprietary languages (e.g., MATLAB, SAS, SPSS), R is highly extensible,
-free and open-source software; the user can access and thus change,
-extend, and share code for desired applications. Accordingly, a vibrant
-community of R users has emerged, many of which engage in the
-development of extensions to the functionality of base R software known
-as packages. Contributed packages comprise the bulk of enhancements made
-to the R environment {[}10{]}. In fact, much of what we know about
-statistical methods and algorithms is wrapped up in R packages---written
-and documented in various ways by R users. There are plenty of analogies
-in computing that draw comparisons between programming and culinary
-arts: recipe structures, coding cookbooks, and the like. To
+international group of core contributors {[}9{]}. Unlike several popular
+proprietary languages such as MATLAB or SAS, R is freely available, open
+source, and easily extensible software; the user can access, alter,
+extend, and share code in various applications. Accordingly, a vibrant
+community of R users has emerged, many of whom develop R packages to
+complement and extend the functionality of base R. Contributed packages
+comprise the bulk of enhancements made to the R environment {[}10{]}. In
+fact, much of what we know about statistical methods and algorithms is
+wrapped up in R packages---written and documented in various ways by R
+users. There are numerous analogies in computing between programming and
+culinary arts: recipe structures, coding cookbooks, and the like. To
 conceptualize packages, imagine you are the chef, base R is the kitchen,
 and packages are the special gadgets which allow you to cook and bake
 new recipes. ``R package'' \emph{technically} refers to a collection of
-R functions in a certain structure. Thus, the few tools that come with
-your kitchen (e.g., \texttt{stats}) are indeed R packages, while ``R
-extension'' describes the tools you add to your kitchen. It is important
+R functions in a certain structure. The few tools that come with your
+kitchen (e.g., \texttt{stats}) are indeed R packages, whereas ``R
+extension'' describes the tools you add to your kitchen. It's important
 to recognize that ``package'' is not synonymous with ``extension'';
 however, since we don't want to keep distinguishing a kitchen sink from
 a mixer, we use ``package'' in the colloquial sense. In essence, R
@@ -383,12 +385,12 @@ practical tasks and solve problems with interesting techniques.
 
 Are there R packages for wrangling and cleaning data frames, designing
 interactive applications for data visualization, or performing
-dimensionality reduction? Yes! How do you \emph{find} an R package that
-will help you train regression and classification models, assess the
-beta diversity of a population, or analyze gene expression microarray
-data? This answer is not as simple; there are tens of thousands of R
-packages. As a natural consequence of the open source nature of R, there
-is considerable variation in the quality of R packages and nontrivial
+dimensionality reduction? Yes! How do you \emph{find} an R package to
+help you train regression and classification models, assess the beta
+diversity of a population, or analyze gene expression microarray data?
+This answer is not as simple; there are tens of thousands of R packages.
+As a natural consequence of the open source nature of R, there is
+considerable variation in the quality of R packages and nontrivial
 differences among those that provide similar tools.
 
 Packages are essential to venturing beyond base R and, thus, quickly
@@ -630,7 +632,7 @@ that is worth investigating. The Bioconductor project was motivated by a
 need for transparent, reproducible, and efficient software in
 computational biology and bioinformatics and supports the integration of
 computational rigor and reproducibility in research on biological
-processes {[}6{]}. Bioconductor packages facilitate the analysis and
+processes {[}7{]}. Bioconductor packages facilitate the analysis and
 comprehension of biological data and help users solve problems that
 arise when working with high-throughput genomic data such as those
 related to microarrays, sequencing, flow cytometry, mass spectrometry,
@@ -813,7 +815,7 @@ Validated, and Talk Stats to assess the activity associated with the
 package in question. Analyses of the popularity of comparable data
 analysis software in email and discussion traffic suggest that R is
 rapidly becoming more prevalent and is the leading language by these
-metrics {[}8,36{]}. When you encounter a problem, it is good practice to
+metrics {[}6,36{]}. When you encounter a problem, it is good practice to
 first update the package to see if the problem is due to a bug in a
 previous version---if the problem persists, seek help by finding or
 posting a reproducible example {[}37{]}. Overall, avoid using a package
@@ -1026,7 +1028,7 @@ yet incongruous with other packages. Such packages might, for example,
 use S3 or S4 objects, which are two main approaches developers use to
 implement object-oriented programming in R. Many packages for spatial
 analysis as well as those from Bioconductor tend to use S4 objects to
-represent data {[}6{]}. On the other hand, the \texttt{tidyverse}, a
+represent data {[}7{]}. On the other hand, the \texttt{tidyverse}, a
 unified suite of packages with an grammatical structure employed within
 a ``pipeline'', expects data frame objects {[}49{]}. Thus, when you are
 working in the \texttt{tidyverse}, you cannot incorporate S3 and S4
@@ -1307,20 +1309,20 @@ Graphical Statistics. Taylor \& Francis; 2017;26: 745--766.
 Software infrastructure and environments for reproducible and extensible
 research. Available at SSRN 2322276. 2013;
 
+\leavevmode\hypertarget{ref-robinson2017}{}%
+6. Robinson D. The impressive growth of r {[}Internet{]}. Stack
+Overflow; 2017. Available:
+\url{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}
+
 \leavevmode\hypertarget{ref-gentleman2004}{}%
-6. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
+7. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
 al. Bioconductor: Open software development for computational biology
 and bioinformatics. Genome biology. Springer; 2004;5: R80.
 
 \leavevmode\hypertarget{ref-holmes2018}{}%
-7. Holmes S, Huber W. Modern statistics for modern biology
+8. Holmes S, Huber W. Modern statistics for modern biology
 {[}Internet{]}. Cambridge University Press; 2018. Available:
 \url{https://web.stanford.edu/class/bios221/book/index.html}
-
-\leavevmode\hypertarget{ref-robinson2017}{}%
-8. Robinson D. The impressive growth of r {[}Internet{]}. Stack
-Overflow; 2017. Available:
-\url{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}
 
 \leavevmode\hypertarget{ref-Rproject2020}{}%
 9. Team RC. The r project for statistical computing {[}Internet{]}. The
