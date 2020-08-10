@@ -485,12 +485,15 @@ people approach similar tasks, and potential challenges that may arise.
 \section{Rule 2: Find and collect
 options}\label{rule-2-find-and-collect-options}}
 
-Tips and leads on R packages exist in a variety of places online, in
-print, and elsewhere. While long-time R users have found some favorite
-starting spots, new R often don't know where to start looking for a good
-package for a certain task. You can discover new packages any time you
-learn R-related topics, browse the internet, or tap into the
-international community of R users.
+Tips and leads for finding R packages exist in a variety of places
+online, in print, and elsewhere. If you've searched for packages a lot,
+you likely have a shortlist of tried and true starting points---a perk
+of being a long-time R user. On the other hand, new R users who haven't
+developed an internal compass to navigate the initial ins and outs of
+finding a package, don't know where to start looking for a package to
+suit their task. Here are a few directions to head in: You can discover
+new packages any time you learn R-related topics, browse the internet,
+or connect with the international community of R users.
 
 \textbf{Learn}
 
@@ -513,15 +516,17 @@ titles for further reading.
 The solution-seeking tactics we employ for many tasks nowadays may lead
 you to think that finding R packages relies heavily on internet search
 queries. Indeed, search engines such as Google return ample pages
-related to anything \texttt{"\ldots{}in\ R"}. However, this approach can
-lead to frustration and confusion when attempting to find a package
-tailored to your purpose (see Rule 1). You can also do a more directed
-search by searching through package lists for repositories including
-Comprehensive R Archive Network (CRAN) and Bioconductor, or through
-packages available in code-sharing sites like GitHub and GitLab, all of
-which will be further discussed in Rule 3.
+related to anything \texttt{"\ldots{}in\ R"}. Keep in mind, however,
+this approach sometimes leads to frustration and confusion when
+attempting to find a package tailored to your purpose (see Rule 1). For
+a more directed approach, you can search the package lists on
+repositories including the Comprehensive R Archive Network (CRAN),
+Bioconductor, and rOpenSci or browse packages available on code-sharing
+websites, with language filters for finding repositories that heavily
+rely on R code, like GitHub and GitLab---all of which will be further
+discussed in Rule 3.
 
-In many cases, you may find it more helpful, though, to start from a
+That said, in many cases, you may find it more helpful to start from a
 curated list of R packages on a particular topic. There are several
 available. First, \href{https://cran.r-project.org/web/views/}{CRAN Task
 Views} are concentrated topics from certain disciplines and
@@ -530,29 +535,40 @@ packages by the tasks they perform (e.g., Econometrics, Genetics,
 Optimization, Spatial). In the HTML version, you can browse alphabetized
 subcategories within each Task View and read concise descriptions to
 find tools with specific functions. Alternatively, you can access Task
-Views directly from the R console with \texttt{ctv::CRAN.views()}. To
-date, there are 41 Task Views that collectively contain thousands of
-packages which are curated and regularly tested. Moreover, CRAN Task
-Views provide tools that enable you to automatically install all
-packages within a targeted area of interest. Ultimately, by providing
-task-based organization, easy simultaneous installation of related
-packages, meta-information, ensured maintenance, and quality control,
-CRAN Task Views address several major user-end issues that have arisen
-due to the sheer quantity of available packages {[}17{]}.
+Views directly from the R console with \texttt{ctv::CRAN.views()}, which
+is compact notation of the form \texttt{package::function()}. To date,
+there are 41 Task Views that collectively contain thousands of packages
+which are curated and regularly tested. Moreover, CRAN Task Views
+provide tools that enable you to automatically install all packages
+within a targeted area of interest. Ultimately, by providing task-based
+organization, easy simultaneous installation of related packages,
+meta-information, ensured maintenance, and quality control, CRAN Task
+Views address several major user-end issues that have arisen due to the
+sheer quantity of available packages {[}17{]}.
 
-{[}Add paragraph on Bioconductor Task View-equivalent{]}
+The computational biology and bioinformatics analog of CRAN Task Views,
+\href{https://www.bioconductor.org/packages/release/BiocViews.html\#___Software}{biocViews},
+is a list of packages, available through the Bioconductor website, that
+provide tools for analyzing biological data. Your keywords from Rule 1
+will come in handy here; for instance, you can search ``RNA-seq'' to
+find all packages related to high-throughput sequencing methods for
+analyzing RNA populations. You can also browse the biocViews tree menu
+to narrow your search based on which general and specific categories
+describe your task. The list includes each package's name linked to
+information and documentation, its maintainer, a short description, and
+its rank relative to other Bioconductor packages.
 
-Other curated collections or topically-linked lists of packages are also
-available.
+Other curated collections and topically-linked lists of packages are
+also available.
 \href{http://dirk.eddelbuettel.com/cranberries/index.html}{CRANberries},
 for example, is a hub of information about new, updated, and removed
-packages from the CRAN network. Another place to find well-maintained
-tools is through \href{https://ropensci.org/packages/}{rOpenSci
-packages}. These filterable and searchable R packages are organized by
-name, maintainer, description, and status (i.e., activity, association,
-review), and all have passed a peer review process (see Rule 6).
+packages from CRAN. Another place to find well-maintained tools is
+\href{https://ropensci.org/packages/}{rOpenSci packages}. These
+filterable and searchable peer-reviewed (see Rule 6) R packages are
+organized by name, maintainer, description, and status markers based on
+activity, association, and review.
 
-\textbf{Use the community}
+\textbf{Embrace the community}
 
 An inclusive and collaborative community is an overlooked, yet integral,
 aspect of a software's success {[}18{]}. A defining feature of R is the
@@ -568,23 +584,39 @@ Rickert, Ambassador at Large for RStudio, writes monthly posts on the
 interesting new R packages. Rickert also features special articles about
 recently released packages and lists of top packages within certain
 categories, including Computational Methods, Data, Machine Learning,
-Medicine, Science, Statistics, Time Series, Utilities, Visualization.
+Medicine, Science, Statistics, Time Series, Utilities, and
+Visualization.
 
-You can also attend---or re-watch---conferences to learn about recent R
-package developments and applications. Two large annual R conferences
-are \href{https://rstudio.com/conference/}{rstudio::conf} for industry
-and \href{https://www.r-consortium.org/}{useR!} (not exclusively) for
-academia. Talks and presentations at both these conferences are often
-recorded and made available online for playback if you can't attend in
-person or wish to revisit past conferences. Conferences in your field
-may foster connections with fellow scientists who use R for similar
-tasks and help you collect information about packages related to your
-expertise.
+You can also attend---or access content from---conferences to learn
+about improved, recently released, or up-and-coming R package
+developments and applications. Two large annual R conferences are
+\href{https://rstudio.com/conference/}{rstudio::conf} for industry and
+\href{https://www.r-consortium.org/}{useR!} (not exclusively) for
+academia. As supportive and innovative subsets of the R community, some
+boutique industries that use R host smaller conferences:
+\href{https://rinpharma.com/}{R/Pharma} (pharmaceutical development),
+\href{https://www.rinfinance.com/}{R/Finance} (applied finance), and
+\href{https://www.bioconductor.org/help/events/}{BioC} (open source
+software for bioinformatics). Conferences in your field may foster
+connections with fellow scientists who use R for similar tasks and help
+you collect information about packages related to your expertise. Talks
+and presentations at conferences are often recorded and made available
+online for playback if you can't attend in person or wish to revisit
+content from past conferences. For instance, R Studio has a
+\href{https://rstudio.com/resources/rstudioconf-2020/}{webpage} devoted
+to videos of past conferences by year and the talks from useR! are
+posted on the R Consortium
+\href{https://www.youtube.com/channel/UC_R5smHVXRYGhZYDJsnXTwg/featured}{YouTube
+channel}. Of late, the R community and rOpenSci have popularized
+nontraditional Unconferences and R Collaboratives at which people
+interact and share ideas in a collegial and unstructured atmosphere; as
+you may imagine, R packages are a hot topic of conversation at these
+events.
 
-Finally, a developer of an R package may intend for it to be private
-(exclusively for personal or professional use) or public (at no cost and
-available for use by anyone) {[}20{]}. If your task is specific to a
-line of research, consult colleagues to see if they have a relevant
+Don't forget, a developer of an R package may intend for it to be
+private (exclusively for personal or professional use) or public (at no
+cost and available for use by anyone) {[}20{]}. If your task is specific
+to a line of research, consult colleagues to see if they have a relevant
 (private) package they would be willing to share.
 
 \hypertarget{rule-3-check-how-its-shared}{%
