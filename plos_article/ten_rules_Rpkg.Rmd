@@ -163,7 +163,7 @@ One example of a package---mentioned a few times already---with notable document
 
 # Rule 5: Quantify how established it is
 
-Consulting data to inform comparisons is never a bad idea; numerical data associated with R packages will give you an impression of how popular the tool is and whether it has stood the test of time. Since there are tens of thousands of R packages, you may be wondering how they stack up in terms of popularity. There are a number of metrics that you can use to determine the popularity of an R package, as well as how long its been around and how often (and recently) it is updated through new versions. 
+Consulting data to inform comparisons is never a bad idea; numerical data associated with R packages will give you an impression of how popular the tool is and whether it has stood the test of time. Since there are tens of thousands of R packages, you may be wondering how they stack up in terms of popularity. There are metrics that you can use to determine the popularity of an R package, as well as how long its been around and how often (and recently) it is updated through new versions. 
 
 On GitHub, a large number of Stars, Forks, and Watchers associated with a package implies a substantial following and widespread usage [@leek2015]. Likewise, the number of Google Scholar citations is a metric of a package’s impact on scientific research and utility in research contexts (see Rule 2). To further determine if a package is well-established in the R community, refer to the number of versions and updates (more is better) as well as the date of the most recent versions and updates (newer is better).
 
