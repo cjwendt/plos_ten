@@ -1037,36 +1037,40 @@ is}\label{rule-5-quantify-how-established-it-is}}
 
 Consulting data to inform comparisons is never a bad idea; numerical
 data associated with R packages will give you an impression of how
-popular the tool is and whether it has stood the test of time. Since
-there are tens of thousands of R packages, you may be wondering how they
-stack up in terms of popularity. There are metrics that you can use to
-determine how often an R package has been downloaded, as well as how
-long its been around and how often (and recently) it is updated through
-new versions.
+popular a tool is and whether it has stood the test of time. Since there
+are tens of thousands of R packages, you may be wondering how they stack
+up in terms of popularity. There are metrics that you can use to
+determine how often an R package has been downloaded, how long it's been
+around, and how often (and recently) it's updated through new versions.
 
-You can find several of these metrics on the site(s) used to share the
-package (see Rule 3). If a package is shared through a GitHub
-repository, for example, that page for the repository will list the
-number of Stars, Forks, and Watchers for that repository. {[}add a
-sentence explaining what Stars, Forks, and Watchers are{]} A large
-number of Stars, Forks, and Watchers associated with a package implies a
-substantial following and widespread usage {[}56{]}. If a package is
-posted on CRAN or Bioconductor, its page on that site will include the
-date its latest version was released as well as a link to ``old
-sources''---previous versions of the package and the release date of
-each. The page also provides a link to a ``NEWS'' file, where you can
-see a list of all published versions as well as the major changes made
-from one version to the next. To further determine if a package is
-well-established in the R community, refer to the number of versions and
-updates (more is better) as well as the date of the most recent versions
-and updates (newer is better). You can also see, on the packages CRAN or
-GitHub page, the number of reverse dependencies it has. These are cases
-where other R packages use the functions from this package within their
-own code, and can be an indication that other R developers find the
-package useful.
+You can find several of these metrics by visiting the site(s) on which a
+package is shared (see Rule 3). If a package is shared through a GitHub
+repository, the homepage for the repository will list the number of
+GitHub Stars, Forks, and Watchers for that particular repository. As
+proxies for a repository's overall following, and possibly indirect
+measures of quality and impact, Stars indicate that people like or are
+interested in a project, Forks reveal the number times a repository has
+been copied, and Watchers represent GitHub users who are subscribed to
+updates on a repository's activity {[}56{]}. Although not a definitively
+unbiased metric, a large number of Stars, Forks, and Watchers associated
+with a package implies a substantial following and widespread usage
+{[}57{]}. If a package is posted on CRAN or Bioconductor, its page on
+that site will include the date on which its latest version was released
+as well as a link to ``Old sources''---previous versions of the package
+and the release date of each. The page also provides a link to a
+\texttt{NEWS} file, where you can see a list of all published versions
+as well as the major changes made from one version to the next. To
+further determine if a package is well-established in the R community,
+refer to the number of versions and updates (more is better) in addition
+to the date of the most recent versions and updates (newer is better).
+You can also see, on a package's CRAN or GitHub page, the number of
+reverse dependencies it has. When a package has numerous reverse
+dependencies, the code underlying many other R packages incorporates
+functions from that package, which can indicate that other R developers
+find that package useful.
 
-RDocumentation (see Rule 4) is rich with stats on R packages, bringing
-together many of the metrics mentioned above, as well as providing
+RDocumentation (see Rule 4) is rich with stats on R packages, uniting
+many of the previously discussed metrics, while also providing
 cross-package summaries. RDocumentation hosts a live
 \href{https://www.rdocumentation.org/trends}{Leaderboard} with trends
 including the number of indexed packages and indexed functions, most
@@ -1078,18 +1082,18 @@ algorithm computes the direct, user-requested monthly downloads by
 accounting for reverse dependencies (indirect downloads) so packages
 that are commonly used within other packages, and hence frequently
 downloaded as automatic downloads with those packages, do not skew the
-calculation {[}57{]}. You can research stats on corresponding
+calculation {[}58{]}. You can research stats on corresponding
 dependencies for a more holistic picture.
 
-Many of the above-mentioned resources will help you learn more about
+Most of the above-mentioned resources will help you learn more about
 packages on an individual basis. Wouldn't it be nice if you could
 compare related packages that may have features that overlap? Wouldn't
 it be even nicer if you could use an R package to easily do so? You're
 in luck; rOpenSci developed
 \href{https://docs.ropensci.org/packagemetrics/}{\texttt{packagemetrics}:
-A Package for Helping You Choose Which Package to Use} {[}58{]}. Fun
+A Package for Helping You Choose Which Package to Use} {[}59{]}. Fun
 fact: the \texttt{packagemetrics} project was born at an Unconference
-{[}59{]}. You can install \texttt{packagemetrics} via
+{[}60{]}. You can install \texttt{packagemetrics} via
 \texttt{devtools::install\_github("ropenscilabs/packagemetrics")} and
 run the \texttt{package\_list\_metrics()} function where the input is a
 vector of packages of interest, by name. Then, you can use
@@ -1101,15 +1105,17 @@ you decide which package is most established and widely used
 a Box to show an example of running the code you just described and the
 resulting output.{]}}).
 
-An important caveat is that several of the metrics mentioned in this
-rule are based on how often a package is downloaded, but a user can
-download a package to explore it but ultimately decide it's not useful.
-Therefore, these can provide a first pass at identifying popular
-packages---and in particular will help in distinguishing popular
-packages for common general tasks, like data wrangling and
-visualization---but may be less helpful in selecting a package for a
-very specialized task. For this, evidence of peer accepatance and review
-(Rule 6) will often be more helpful.
+An important caveat to consider: several of the metrics introduced in
+this Rule are based on how often a package is downloaded; however, it is
+not uncommon for users to download a package to explore its
+functionality and ultimately decide against using it for their task.
+Therefore, these suggested metrics can provide a first pass at
+identifying popular packages---and will, in particular, help you
+distinguish popular packages for common general tasks, like data
+wrangling and visualization---but may be less helpful when you are
+selecting a package for a very specialized task. In this case, evidence
+of peer acceptance and review will usually be more instructive, which
+brings us to our next Rule.
 
 \hypertarget{rule-6-seek-evidence-of-peer-acceptance-and-review}{%
 \section{Rule 6: Seek evidence of peer acceptance and
@@ -1135,6 +1141,9 @@ Discipline-specific journals for your field, like \emph{BMC
 Bioinformatics}, may also publish articles that introduce R packages
 useful for the research process. Try searching the websites for key
 journals in your field with queries that include \texttt{"R\ package"}.
+The number of Google Scholar citations for a package or, similarly, an
+article about a package, serves as a metric for a package's impact on
+scientific research and utility in research contexts (see Rule 5).
 
 For R packages featured in peer-reviewed journal articles, you can be
 assured that the ideas and principles behind the package have been
@@ -1163,7 +1172,7 @@ for the package. Further, in response to the rising number of
 researchers creating tools and software to work with their data, GitHub
 has granted developers the ability to obtain a Digital Object Identifier
 (DOI) for any GitHub repository archive so that code can be cited in
-academic literature {[}60{]}. You can search for packages directly by
+academic literature {[}61{]}. You can search for packages directly by
 name in Google Scholar: the \texttt{Cited\ by} link displays the number
 of times a package has been cited and connects to a page with those
 publications base on citations using these formats. Further, if a
@@ -1198,7 +1207,7 @@ reputation can be a proxy for quality; in this way, the process of
 evaluating and comparing R packages is no different than other
 decisions. In fact, as you become more immersed in the R community, you
 will find that name recognition is a factor, among many, that helps you
-establish trust in certain tools more quickly than others {[}56{]}.
+establish trust in certain tools more quickly than others {[}57{]}.
 
 Information about the package authors can be found in the metadata of
 the package. If you are looking at the source code of the package, there
@@ -1247,7 +1256,7 @@ developed}\label{rule-8-see-how-its-developed}}
 You do not need to be a software engineer to identify strong package
 development. Scientific software developers sometimes neglect best
 practices; indeed, these shortcomings are evident in the tools they
-create {[}61{]}. There are concrete ways to measure a tool's robustness
+create {[}62{]}. There are concrete ways to measure a tool's robustness
 beyond whether it works for those who did not create it. R packages
 often depend on other R packages; you should check the reputations of
 such \emph{dependencies} when selecting a package---quality packages
@@ -1256,14 +1265,14 @@ types of software, well-maintained R packages have multiple versions
 corresponding to iterative releases to indicate that the package is
 compatible with dependencies and loyally updated (e.g., bug fixes,
 general improvements, new functionality) {[}1,24{]}. You can explore the
-version history of a package to see if it is up-to-date. As a user,
-there are two additional development protocols that you can further
-investigate to assess the underlying stability and utility of a package:
-unit tests and version control.
+version history of a package to see if it is up-to-date (See Rule 5). As
+a user, there are two additional development protocols that you can
+further investigate to assess the underlying stability and utility of a
+package: unit tests and version control.
 
 A responsible developer with a consistent and reproducible workflow will
 implement formal testing on their code to examine expected behavior via
-an automated process called unit testing {[}24,62{]}. Although
+an automated process called unit testing {[}24,63{]}. Although
 inconvenient at the outset, the developer---and by extension, the
 package user---will benefit from unit testing, which results in fewer
 bugs, a well-designed code structure, an efficient workflow, and robust
@@ -1271,37 +1280,37 @@ code that is not sensitive to major changes in the future {[}24{]}. To
 alleviate the burdens of unit testing, \texttt{testthat} is a popular,
 integrative R package that helps developers create reliable functions,
 minimize error, and visualize progress through automatic code testing
-{[}63{]}. Developers are also interested in quantifying the amount of
+{[}64{]}. Developers are also interested in quantifying the amount of
 code in their package that has been tested. Test coverage, a measurement
 of the proportion of code that has undergone unit testing, is an
 objective metric for package developers, contributors, and users to
 evaluate code quality. Many developers use the \texttt{covr} package to
 generate reports and determine the magnitude of coverage on the
-function, script, and package levels {[}64{]}. Relatedly, developers who
+function, script, and package levels {[}65{]}. Relatedly, developers who
 host their packages on GitHub, post status badges in the overview
 (\texttt{README}) section of the repository webpage. GitHub badges are a
 common self-imposed method to signal use of best practices and motivate
 developers to produce a product that is high in quality and transparency
-{[}65{]}. You may see, for example, license, dependency, or style
+{[}66{]}. You may see, for example, license, dependency, or style
 badges, all of which are good indicators of package caliber; however,
 particular to this Rule, you should look for code coverage
 (\texttt{codecov}) badges which reveal the percentage of test coverage.
 
 As we mentioned in Rule 3, version control has an essential role in
-package development and computational literacy more broadly {[}24,66{]}.
+package development and computational literacy more broadly {[}24,67{]}.
 Version control is like a time capsule for your workflow because it
 monitors and tracks changes to files as a project evolves, and stores
 them as previous versions to be recovered if necessary. In other words,
 ``version control is as fundamental to programming as accurate notes
-about lab procedures are to experimental science'' {[}{[}66{]}; p6{]}.
+about lab procedures are to experimental science'' {[}{[}67{]}; p6{]}.
 Git is a decentralized open source version control system that is useful
 regardless of whether a project is independent or collaborative
-{[}67{]}. GitHub works in conjunction with Git to provide a powerful
+{[}68{]}. GitHub works in conjunction with Git to provide a powerful
 structured system to organize and manage components of a project for
 others and your future self. A growing number of scientists have
 research programs based in GitHub, which has become a revolutionary tool
 for productive team science and distributed development efforts
-{[}1,68{]}. As you may expect, Git coupled with GitHub is the version
+{[}1,69{]}. As you may expect, Git coupled with GitHub is the version
 control duo of choice among serious R package developers {[}24{]}. Thus,
 if the package you are interested in using is among the thousands hosted
 on GitHub, this is evidence that the developer is at least committed to
@@ -1324,7 +1333,7 @@ alternative to downloading a large or potentially corrupted zipped file.
 At this point, what you have learned about the package should be quite
 helpful. If the development and documentation are sound, the package
 should come with a test script or working example that you can run after
-installation {[}61{]}. Vignettes include many common data science
+installation {[}62{]}. Vignettes include many common data science
 problems with solutions; you can run the code examples, tweak them, and
 compare the outputs. In general, it is essential to know the behavior of
 different functions within a package, how they interact, and how outputs
@@ -1350,18 +1359,18 @@ implement object-oriented programming in R. Many packages for spatial
 analysis as well as those from Bioconductor tend to use S4 objects to
 represent data {[}7{]}. On the other hand, the \texttt{tidyverse}, a
 unified suite of packages with an grammatical structure employed within
-a ``pipeline'', expects data frame objects {[}69{]}. Thus, when you are
+a ``pipeline'', expects data frame objects {[}70{]}. Thus, when you are
 working in the \texttt{tidyverse}, you cannot incorporate S3 and S4
 objects into the framework unless their corresponding functions are the
 final step in the pipeline. The \texttt{broom} package, and the
 bioinformatics analog, \texttt{biobroom}, aim to alleviate these
 disruptions by converting untidy objects into tidy data, thereby making
 it easier to integrate statistical functions into the structure of the
-\texttt{tidyverse} workflow {[}70,71{]}. Furthermore, the \texttt{caret}
+\texttt{tidyverse} workflow {[}71,72{]}. Furthermore, the \texttt{caret}
 package facilitates interoperability for machine learning packages by
 providing a uniform interface for modeling with various algorithms from
 different packages that would otherwise have independent syntax
-{[}72{]}.
+{[}73{]}.
 
 \hypertarget{rule-10-develop-your-own-package}{%
 \section{Rule 10: Develop your own
@@ -1385,26 +1394,26 @@ package out of any collection of specialty functions. Packages need not
 be formal nor entirely cohesive. For instance, personal R packages such
 as \texttt{Hmisc} and \texttt{broman}, are comprised of miscellaneous
 functions which the creator has developed and frequently uses
-{[}73,74{]}. Functions are necessary for efficiency and warranted when
+{[}74,75{]}. Functions are necessary for efficiency and warranted when
 you repetitiously copy and paste your code while making slight
 modifications after each iteration {[}54{]}. The concept of personal R
 packages demonstrates a unique purpose for packages beyond the
 conventional. R packages are not solely reserved for specific tasks with
 comprehensive methods; rather, package development can help you learn
 how to apply proper coding techniques to writing functions and
-documentation with reproducibility and collaboration in mind {[}75{]}.
+documentation with reproducibility and collaboration in mind {[}76{]}.
 
 Although you may not anticipate that anyone else will use your tools,
 following best practices for package development will yield more
 favorable outcomes. As a consumer of shared packages, you know the
 inherent benefits of robust software development relative to the quality
-of code, data, documentation, versions, and tests {[}61{]}. Similarly,
+of code, data, documentation, versions, and tests {[}62{]}. Similarly,
 creating a valuable package for personal use requires consideration for
 your future self and anticipation of distributing your code, should the
 need arise. Use version control and take advantage of existing
 resources. Indeed, there are R packages that aid in package development
 (e.g., \texttt{devtools}, \texttt{usethis}, \texttt{testthat},
-\texttt{roxygen2}, \texttt{rlang}, \texttt{drat}) {[}32,38,76--79{]}. In
+\texttt{roxygen2}, \texttt{rlang}, \texttt{drat}) {[}32,38,77--80{]}. In
 the case of collaboration, the R project within RStudio IDE, is
 compatible with distributed development---a feature that couples well
 with version control. There is no lack of effective organizational
@@ -1414,7 +1423,7 @@ recommend consulting resources authored by expert R developers including
 \href{https://r-pkgs.org/}{\emph{R Packages}} by Hadley Wickham and the
 official manual,
 \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{\emph{Writing
-R Extensions}}, from CRAN {[}24,80{]}.
+R Extensions}}, from CRAN {[}24,81{]}.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -1864,124 +1873,128 @@ http://r4statscom/popularity. 2012;
 55. Eddelbuettel D. Seamless r and c++ integration with rcpp. Springer;
 2013.
 
+\leavevmode\hypertarget{ref-githubdocs}{}%
+56. GitHub docs {[}Internet{]}. GitHub, Inc. 2020. Available:
+\url{https://docs.github.com/en}
+
 \leavevmode\hypertarget{ref-leek2015}{}%
-56. Leek J. How i decide when to trust an r package {[}Internet{]}.
+57. Leek J. How i decide when to trust an r package {[}Internet{]}.
 2015. Available:
 \url{https://simplystatistics.org/2015/11/06/how-i-decide-when-to-trust-an-r-package/}
 
 \leavevmode\hypertarget{ref-vannoorenberghe2017}{}%
-57. Vannoorenberghe L. RDocumentation: Scoring and ranking
+58. Vannoorenberghe L. RDocumentation: Scoring and ranking
 {[}Internet{]}. DataCamp; 2017. Available:
 \url{https://www.datacamp.com/community/blog/rdocumentation-ranking-scoring}
 
 \leavevmode\hypertarget{ref-packagemetrics}{}%
-58. Firke S, Krouse B, Grand E, Shepherd L, Ampeh W, Frick H.
+59. Firke S, Krouse B, Grand E, Shepherd L, Ampeh W, Frick H.
 Packagemetrics: A package for helping you choose which package to use
 {[}Internet{]}. 2017. Available:
 \url{https://github.com/ropenscilabs/packagemetrics}
 
 \leavevmode\hypertarget{ref-packagemetricsblog}{}%
-59. Becca Krouse HF Erin Grand. Packagemetrics - helping you choose a
+60. Becca Krouse HF Erin Grand. Packagemetrics - helping you choose a
 package since runconf17 {[}Internet{]}. rOpenSci; 2017. Available:
 \url{https://ropensci.org/blog/2017/06/27/packagemetrics/}
 
 \leavevmode\hypertarget{ref-smith2014}{}%
-60. Smith A. Improving github for science {[}Internet{]}. GitHub, Inc.
+61. Smith A. Improving github for science {[}Internet{]}. GitHub, Inc.
 2014. Available:
 \url{https://github.blog/2014-05-14-improving-github-for-science/}
 
 \leavevmode\hypertarget{ref-taschuk2017}{}%
-61. Taschuk M, Wilson G. Ten simple rules for making research software
+62. Taschuk M, Wilson G. Ten simple rules for making research software
 more robust. PLoS computational biology. Public Library of Science;
 2017;13.
 
 \leavevmode\hypertarget{ref-hester2020}{}%
-62. Hester J. How does covr work anyway? {[}Internet{]}. The R
+63. Hester J. How does covr work anyway? {[}Internet{]}. The R
 Foundation; 2020. Available:
 \url{https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html}
 
 \leavevmode\hypertarget{ref-wickham2011}{}%
-63. Wickham H. Testthat: Get started with testing. The R Journal.
+64. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-covr}{}%
-64. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
+65. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=covr}
 
 \leavevmode\hypertarget{ref-barts2018}{}%
-65. Barts C. How to use github badges to stop feeling like a noob
+66. Barts C. How to use github badges to stop feeling like a noob
 {[}Internet{]}. freeCodeCamp; 2018. Available:
 \url{https://www.freecodecamp.org/news/how-to-use-badges-to-stop-feeling-like-a-noob-d4e6600d37d2/}
 
 \leavevmode\hypertarget{ref-wilson2006}{}%
-66. Wilson GV. Where's the real bottleneck in scientific computing?
+67. Wilson GV. Where's the real bottleneck in scientific computing?
 American Scientist. 2006;94: 5.
 
 \leavevmode\hypertarget{ref-bryan2018}{}%
-67. Bryan J. Excuse me, do you have a moment to talk about version
+68. Bryan J. Excuse me, do you have a moment to talk about version
 control? The American Statistician. Taylor \& Francis; 2018;72: 20--27.
 
 \leavevmode\hypertarget{ref-perkel2016}{}%
-68. Perkel J. Democratic databases: Science on github. Nature News.
+69. Perkel J. Democratic databases: Science on github. Nature News.
 2016;538: 127.
 
 \leavevmode\hypertarget{ref-tidyverse}{}%
-69. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
+70. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
 al. Welcome to the tidyverse. Journal of Open Source Software. 2019;4:
 1686.
 doi:\href{https://doi.org/10.21105/joss.01686}{10.21105/joss.01686}
 
 \leavevmode\hypertarget{ref-broom}{}%
-70. Robinson D, Hayes A. Broom: Convert statistical analysis objects
+71. Robinson D, Hayes A. Broom: Convert statistical analysis objects
 into tidy tibbles {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=broom}
 
 \leavevmode\hypertarget{ref-biobroom}{}%
-71. Andrew J. Bass SL David G. Robinson. Biobroom: Turn bioconductor
+72. Andrew J. Bass SL David G. Robinson. Biobroom: Turn bioconductor
 objects into tidy data frames {[}Internet{]}. 2020. Available:
 \url{https://github.com/StoreyLab/biobroom}
 
 \leavevmode\hypertarget{ref-caret}{}%
-72. Kuhn M. Caret: Classification and regression training
+73. Kuhn M. Caret: Classification and regression training
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=caret}
 
 \leavevmode\hypertarget{ref-Hmisc}{}%
-73. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
+74. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=Hmisc}
 
 \leavevmode\hypertarget{ref-broman}{}%
-74. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
+75. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=broman}
 
 \leavevmode\hypertarget{ref-parker2013}{}%
-75. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
+76. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
 \url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
 
 \leavevmode\hypertarget{ref-usethis}{}%
-76. Wickham H, Bryan J. Usethis: Automate package and project setup
+77. Wickham H, Bryan J. Usethis: Automate package and project setup
 {[}Internet{]}. 2019. Available:
 \url{https://CRAN.R-project.org/package=usethis}
 
 \leavevmode\hypertarget{ref-testthat}{}%
-77. Wickham H. Testthat: Get started with testing. The R Journal.
+78. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-roxygen2}{}%
-78. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
+79. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
 documentation for r {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=roxygen2}
 
 \leavevmode\hypertarget{ref-rlang}{}%
-79. Henry L, Wickham H. Rlang: Functions for base types and core r and
+80. Henry L, Wickham H. Rlang: Functions for base types and core r and
 'tidyverse' features {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=rlang}
 
 \leavevmode\hypertarget{ref-Rcore2020}{}%
-80. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
+81. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
 2020. Available:
 \url{https://cran.r-project.org/doc/manuals/R-exts.html}
 
