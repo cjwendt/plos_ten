@@ -643,31 +643,33 @@ internet repositories, some developers share their code in zipped files
 directly with collaborators (see Rule 2).
 
 The CRAN package repository is the most established and primary source
-from which you can install R packages. CRAN hosts a huge collection of R
-packages (over 16,000 as of August 2020) on almost any conceivable
-topic, from random forests to multidimensional maps {[}21,22{]}. Due to
-its longevity and historical role, Rickert asserts that ``CRAN is the
+from which you can install R packages. Volunteers from the R Core Team
+(est. 1997) host and maintain a monumental collection of R packages on
+CRAN (over 16,000 as of August 2020) on almost any conceivable topic,
+from random forests to multidimensional maps {[}9,21,22{]}. Due to its
+longevity and historical role, Rickert asserts that ``CRAN is the
 greatest open source repository for statistical computing knowledge in
 the world'' {[}20{]}. A key advantage of using a package from CRAN is
 that the repository integrates easily with your base R installation
 {[}23{]}. You can simply use the \texttt{install.packages()} function to
-install a package from CRAN; source and/or binary code are automatically
-saved to your computer in a designated package library {[}24{]}. When
-you want to use a particular package, you load it to your R session via
-the \texttt{library()} function from base R. The R Foundation manages
-CRAN and imposes some strict regulatory practices for the selection and
-maintenance of the packages they host, particularly as standards pertain
-to the structure of a package. CRAN is more or less mechanical in their
-approach to accepting and keeping a package as it evolves in the R
-ecosystem. CRAN is not as concerned with content or substance because
-they do not have a peer review process (see Rule 3 and Rule 6). At
-worst, a CRAN package might have a solid framework with help files for
-each function, but its underlying code might not necessarily do what it
-claims. A package must pass a series of initial stability tests in
-accordance with the CRAN Repository Policy before obtaining publication
-privileges {[}25{]}. A number of CRAN packages make impactful
-contributions to certain subject areas including statistical computing
-and graphics; however, some CRAN packages, such as
+install a package from CRAN, along with all of the packages it depends
+on; source and/or binary code are automatically saved to your computer
+in a designated package library {[}24{]}. These features silently enable
+seamless ease of use. When you want to use a particular package, you
+load it to your R session via the \texttt{library()} function from base
+R. The R Foundation manages CRAN and imposes some strict regulatory
+practices for the selection and maintenance of the packages they host,
+particularly as standards pertain to the structure of a package. CRAN is
+more or less mechanical in their approach to accepting and keeping a
+package as it evolves in the R ecosystem. CRAN is not as concerned with
+content or substance because they do not have a peer review process (see
+Rule 3 and Rule 6). At worst, a CRAN package might have a solid
+framework with help files for each function, but its underlying code
+might not necessarily do what it claims. A package must pass a series of
+initial stability tests in accordance with the CRAN Repository Policy
+before obtaining publication privileges {[}25{]}. A number of CRAN
+packages make impactful contributions to certain subject areas including
+statistical computing and graphics; however, some CRAN packages, such as
 \texttt{weathermetrics} for converting between weather metrics, are more
 convenient than substantial {[}26{]}. Volunteer CRAN maintainers
 actively monitor portions of code (e.g., vignettes, help files, test
@@ -694,24 +696,25 @@ interactive documents, are curated for individuals with expertise in
 adjacent disciplines and minimal experience with R (see Rule 4) {[}7{]}.
 Bioconductor packages integrate well with base R by different means than
 CRAN packages; you should use \texttt{BiocManager::install()} to install
-Bioconductor packages. Bioconductor has a structured release schedule
-and thus a unique package management system which automatically loads
-your Bioconductor packages in versions that are all from the same
-release cycle and compatible with your current version of R. The R
-environment and its package system is fundamental to the implementation
-of Bioconductor's interoperable and object-oriented (S4) infrastructure.
-The tasks for which Bioconductor packages provide tools generally
-involve large and complex datasets that need to leverage R's object
-oriented programming functionalities---a set of specific object classes
-in particular (e.g., ExpressionSet class) {[}28{]}. This helps, among
-other things, keep metadata properly aligned with sample data. Similar
-to CRAN, Bioconductor has strict criteria for package submissions: a
-package must be relevant to high-throughput genomic analysis,
-interoperable with other Bioconductor packages, well-documented,
-supported in the long-term, and comply with additional package
-guidelines {[}29{]}. Unlike CRAN, however, to ensure Bioconductor
-software maintains a centralized content focus, their packages are
-coordinated and peer-reviewed.
+Bioconductor packages with their corresponding dependencies.
+Bioconductor has a structured release schedule and thus a unique package
+management system which automatically loads your Bioconductor packages
+in versions that are all from the same release cycle and compatible with
+your current version of R {[}27{]}. The R environment and its package
+system is fundamental to the implementation of Bioconductor's
+interoperable and object-oriented (S4) infrastructure. The tasks for
+which Bioconductor packages provide tools generally involve large and
+complex datasets that need to leverage R's object oriented programming
+functionalities---a set of specific object classes in particular (e.g.,
+ExpressionSet class) {[}28{]}. This helps, among other things, keep
+metadata properly aligned with sample data. Similar to CRAN,
+Bioconductor has strict criteria for package submissions: a package must
+be relevant to high-throughput genomic analysis, interoperable with
+other Bioconductor packages, well-documented, supported in the
+long-term, and comply with additional package guidelines {[}29{]}.
+Unlike CRAN, however, to ensure Bioconductor software maintains a
+centralized content focus, their packages are coordinated and
+peer-reviewed.
 
 Additionally, there are smaller, specialized repositories that share R
 packages. The non-profit organization, rOpenSci, for example, runs a
@@ -753,20 +756,22 @@ changes for the next stable version that the developer plans to publish.
 GitHub provides R users with open access to package code, a timeline of
 help resources (see Rule 4), and a direct line of communication to
 developers. It is simple to install the latest version of a package you
-want to use from GitHub via \texttt{devtools::install\_github()};
+want to use from GitHub via
+\texttt{devtools::install\_github("DeveloperName/PackageName")};
 however, the decentralized nature of GitHub is not conducive to a tool
-that automatically locates and installs corresponding dependencies
-{[}38{]}. In fact, the rapid uptick in package development and ensuing
-inter-repository dependencies has sparked an ongoing debate on whether
-regulated repositories such as CRAN and Bioconductor are preferable to
-distribution platforms like GitHub for this reason {[}20,36,39{]}.
-Further, when a package is installed from GitHub, typically only the
-source code is available, not binaries pre-built for your computers
-operating systems. This means that the installation process will need to
-build the package from source on your computer, which may require
-certain compilers and other tools (e.g., XCode for macOS, Rtools for
-Windows). Both R users and package developers benefit from interactive
-feedback channels through GitHub Issues and the Star rating system.
+that automatically locates and installs corresponding dependencies that
+are not on CRAN {[}38{]}. In fact, the rapid uptick in package
+development and ensuing inter-repository dependencies has sparked an
+ongoing debate on whether regulated repositories such as CRAN and
+Bioconductor are preferable to distribution platforms like GitHub due to
+this complication {[}20,36,39{]}. Further, when a package is installed
+from GitHub, typically only the source code is available, not binaries
+pre-built for your computers operating systems. This means that the
+installation process will need to build the package from source on your
+computer, which may require certain compilers and other tools (e.g.,
+XCode for macOS, Rtools for Windows). Both R users and package
+developers benefit from interactive feedback channels through GitHub
+Issues and the Star rating system.
 
 When you are searching for and selecting packages, it is important to
 note that a single package is often available in multiple places.
@@ -826,9 +831,9 @@ code. The documentation that ships with the package can consist of help
 files, vignettes, \texttt{README} files, tutorials, and \texttt{pkgdown}
 documentation. Broader help resources can include webpages or online
 books whose content is hosted outside the package source, online
-tutorials, mailing lists, and large and vocal communities of users.
-Implicitly, if an author has taken the time to provide copious and
-useful help documentation---within package code, outside of it, or
+tutorials, electronic mailing lists, and large and vocal communities of
+users. Implicitly, if an author has taken the time to provide copious
+and useful help documentation---within package code, outside of it, or
 both---this indicates that the authors are at least serious about their
 package development and adds confidence that they know what they (and
 their package) are doing. Exemplary documentation can signify an
@@ -998,9 +1003,9 @@ announcements about the development of R and availability of new code
 seek direct assistance; since, the R community has evolved to make
 asking for help more widespread and accessible, with inclusion and
 creative problem-solving as hallmarks of its online presence {[}52{]}.
-Certain packages have independent listservs; \texttt{statnet} is an
+Certain packages have independent mailing lists; \texttt{statnet} is an
 example of a suite of packages that has its own
-\href{http://statnet.org/}{community listserv}. If a package has a
+\href{http://statnet.org/}{community mailing list}. If a package has a
 development repository on GitHub, check the Issues to verify that the
 maintainer is responsive to posts and fixes bugs in a timely manner. In
 addition, you can search discussion forums such as Stack Overflow, Cross
@@ -1032,28 +1037,49 @@ is}\label{rule-5-quantify-how-established-it-is}}
 
 Consulting data to inform comparisons is never a bad idea; numerical
 data associated with R packages will give you an impression of how
-regarded the tool is and whether it has stood the test of time. Since
+popular the tool is and whether it has stood the test of time. Since
 there are tens of thousands of R packages, you may be wondering how they
-stack up in terms of popularity. On GitHub, a large number of Stars,
-Forks, and Watchers associated with a package implies a substantial
-following and widespread usage {[}56{]}. Likewise, the number of Google
-Scholar citations is a metric of a package's impact on scientific
-research and utility in research contexts (see Rule 2). RDocumentation
-(see Rule 4) is rich with stats on R packages. RDocumentation hosts a
-live \href{https://www.rdocumentation.org/trends}{Leaderboard} with
-trends including the number of indexed packages and indexed functions,
-most downloaded packages, most active maintainers, newest packages, and
+stack up in terms of popularity. There are metrics that you can use to
+determine how often an R package has been downloaded, as well as how
+long its been around and how often (and recently) it is updated through
+new versions.
+
+You can find several of these metrics on the site(s) used to share the
+package (see Rule 3). If a package is shared through a GitHub
+repository, for example, that page for the repository will list the
+number of Stars, Forks, and Watchers for that repository. {[}add a
+sentence explaining what Stars, Forks, and Watchers are{]} A large
+number of Stars, Forks, and Watchers associated with a package implies a
+substantial following and widespread usage {[}56{]}. If a package is
+posted on CRAN or Bioconductor, its page on that site will include the
+date its latest version was released as well as a link to ``old
+sources''---previous versions of the package and the release date of
+each. The page also provides a link to a ``NEWS'' file, where you can
+see a list of all published versions as well as the major changes made
+from one version to the next. To further determine if a package is
+well-established in the R community, refer to the number of versions and
+updates (more is better) as well as the date of the most recent versions
+and updates (newer is better). You can also see, on the packages CRAN or
+GitHub page, the number of reverse dependencies it has. These are cases
+where other R packages use the functions from this package within their
+own code, and can be an indication that other R developers find the
+package useful.
+
+RDocumentation (see Rule 4) is rich with stats on R packages, bringing
+together many of the metrics mentioned above, as well as providing
+cross-package summaries. RDocumentation hosts a live
+\href{https://www.rdocumentation.org/trends}{Leaderboard} with trends
+including the number of indexed packages and indexed functions, most
+downloaded packages, most active maintainers, newest packages, and
 newest updates. What's more, each package is assigned a percentile
 rank---featured on its RDocumentation page---that quantifies the number
 of times a package has been downloaded in a given month. A ranking
 algorithm computes the direct, user-requested monthly downloads by
 accounting for reverse dependencies (indirect downloads) so packages
-that are commonly depended upon, and hence frequently downloaded, do not
-skew the calculation {[}57{]}. You can research stats on corresponding
-dependencies for a more holistic picture. To further determine if a
-package is well-established in the R community, refer to the number of
-versions and updates (more is better) as well as the date of the most
-recent versions and updates (newer is better).
+that are commonly used within other packages, and hence frequently
+downloaded as automatic downloads with those packages, do not skew the
+calculation {[}57{]}. You can research stats on corresponding
+dependencies for a more holistic picture.
 
 Many of the above-mentioned resources will help you learn more about
 packages on an individual basis. Wouldn't it be nice if you could
@@ -1071,41 +1097,90 @@ vector of packages of interest, by name. Then, you can use
 each package's respective number of downloads, GitHub Star rating,
 \texttt{tidyverse} compatibility, and several more indicators to help
 you decide which package is most established and widely used
-(\textbf{Figure of table output ?}).
+(\textbf{Figure of table output {[}BA: That could be great, or even use
+a Box to show an example of running the code you just described and the
+resulting output.{]}}).
+
+An important caveat is that several of the metrics mentioned in this
+rule are based on how often a package is downloaded, but a user can
+download a package to explore it but ultimately decide it's not useful.
+Therefore, these can provide a first pass at identifying popular
+packages---and in particular will help in distinguishing popular
+packages for common general tasks, like data wrangling and
+visualization---but may be less helpful in selecting a package for a
+very specialized task. For this, evidence of peer accepatance and review
+(Rule 6) will often be more helpful.
 
 \hypertarget{rule-6-seek-evidence-of-peer-acceptance-and-review}{%
 \section{Rule 6: Seek evidence of peer acceptance and
 review}\label{rule-6-seek-evidence-of-peer-acceptance-and-review}}
 
 Peer review is an important aspect of scientific research, not least
-because it establishes scholarly credibility. You can research
-information about an R package in different forms of literature and
-determine the extent to which it has been validated by the scientific
-community. Some journals publish articles about R packages themselves
-while others feature work that used a particular package. Literature in
-your field may either introduce R packages developed to solve a unique
-data science problem or mention packages used during the research
-process. The former may be published in the \emph{Journal of Statistical
-Software}, \emph{The R Journal}, or \emph{BMC Bioinformatics}, for
-example, and search queries that include \texttt{"R\ package"} with
-domain keywords will narrow results. The latter requires identifying
-authors who used R in their analyses; useful packages may be mentioned
-in the Methods and/or References sections. You can search for packages
-directly by name in Google Scholar: the \texttt{Cited\ by} link displays
-the number of times a package has been cited and connects to a page with
-those publications.
+because it establishes scholarly credibility. While scientific articles
+go through a peer review process that is fairly standardized across
+disciplines, R packages have a fuller range of possibilities for peer
+review or other evidence of acceptance by members of the scientific
+community. You can research information about an R package in different
+forms of literature and determine the extent to which it has been
+validated by the scientific community.
 
-These packages are technically sound and have made a substantial
-contribution to their fields and/or a common data science problem. In
-response to the rising number of researchers creating tools and software
-to work with their data, GitHub has granted developers the ability to
-obtain a Digital Object Identifier (DOI) for any GitHub repository
-archive so that code can be cited in academic literature {[}60{]}. If a
+First, there are some packages for which the maintainers have written an
+article describing the package and its algorithms, and this article has
+gone through the traditional peer-review process. Some journals publish
+articles about R packages themselves while others feature work that used
+a particular package. There are some journals targeted to focus on R
+packages and other open-source scientific software, including the
+\emph{Journal of Statistical Software} and \emph{The R Journal}.
+Discipline-specific journals for your field, like \emph{BMC
+Bioinformatics}, may also publish articles that introduce R packages
+useful for the research process. Try searching the websites for key
+journals in your field with queries that include \texttt{"R\ package"}.
+
+For R packages featured in peer-reviewed journal articles, you can be
+assured that the ideas and principles behind the package have been
+evaluated by outside reviewers. However, such a review may not have
+included a close peer review of the code in the package itself. There is
+movement toward direct peer review of R packages at the level of the
+code. More directly, rOpenSci is a unique example of an ecosystem of
+open source tools with peer reviewed R packages (see Rule 3) {[}30{]}.
+The rOpenSci organization oversees peer review of R packages at this
+detailed level, and so packages published through their repository has
+passed external review at the level of the code itself. They limit their
+scope to packages that {[}add something here about the rOpenSci
+scope---see \href{https://devguide.ropensci.org/}{their book} for more,
+especially section 5.2{]}. Their review process is conducted openly on
+GitHub, so you can also see the discussion between package maintainers
+and peer reviewers that form this process.
+
+You can also find evidence of peer acceptance of a package by seeing how
+often researchers have used it within scientific papers describing
+research, rather than package-focused papers. Useful packages may be
+mentioned in the Methods and/or References sections of such papers.
+Packages hosted on CRAN or Bioconductor have a standardized format for
+citation, and a call to \texttt{citation(...)} with the package's name
+replacing \texttt{...} will print out the suggested citation to be used
+for the package. Further, in response to the rising number of
+researchers creating tools and software to work with their data, GitHub
+has granted developers the ability to obtain a Digital Object Identifier
+(DOI) for any GitHub repository archive so that code can be cited in
+academic literature {[}60{]}. You can search for packages directly by
+name in Google Scholar: the \texttt{Cited\ by} link displays the number
+of times a package has been cited and connects to a page with those
+publications base on citations using these formats. Further, if a
 package has such a DOI, you can explore the network of research
-associated with that package. Many R packages are associated with
-content in books and series from scientific publishers such as Springer.
-More directly, rOpenSci, is a unique example of an ecosystem of open
-source tools with peer reviewed R packages (see Rule 3) {[}30{]}.
+associated with that package. While it is best practice to cite R
+packages using these citation formats, occasionally R packages will be
+mentioned in the ``Methods'' section of a paper without formal citation.
+
+Finally, many R packages are associated with content in books and series
+from scientific publishers. For example, Springer has a
+\href{https://www.springer.com/series/6991}{``Use R!'' series} with
+books covering specialized topics like {[}add some examples---finance?
+environmental epidemiology? chemometrics? MRI? click on the ``Titles in
+this Series'' link on the link I added to see them all and pick some of
+your favorites{]}. {[}Add some similar text about ``The R Series'' at
+Chapman \& Hall/CRC:
+https://www.routledge.com/Chapman--HallCRC-The-R-Series/book-series/CRCTHERSER{]}.
 
 \hypertarget{rule-7-find-out-who-developed-it}{%
 \section{Rule 7: Find out who developed
