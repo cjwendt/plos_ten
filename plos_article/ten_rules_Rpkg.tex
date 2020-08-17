@@ -748,15 +748,15 @@ deployment for testing data and code to ensure a stable end-product. One
 particularly popular platform when it comes to sharing R packages is
 GitHub. An increasing number of packages are hosted on GitHub during the
 development stages, and so it will often be the first place you can find
-up-and-coming packages (see Rule 2). Further, even if developers choose
-not to distribute their package through GitHub, the stable release
-versions of such packages are often published on CRAN or Bioconductor
-{[}37{]}, and for these GitHub can be a place to check out planned
-changes for the next stable version that the developer plans to publish.
-GitHub provides R users with open access to package code, a timeline of
-help resources (see Rule 4), and a direct line of communication to
-developers. It is simple to install the latest version of a package you
-want to use from GitHub via
+up-and-coming packages (see Rule 2). Even if developers choose not to
+distribute their package through GitHub, the stable release versions of
+such packages are often published on CRAN or Bioconductor {[}37{]}, and
+for these GitHub can be a place to check out planned changes for the
+next stable version that the developer plans to publish. GitHub provides
+R users with open access to package code, a timeline of help resources
+(see Rule 4), and a direct line of communication to developers. It is
+simple to install the latest version of a package you want to use from
+GitHub via
 \texttt{devtools::install\_github("DeveloperName/PackageName")};
 however, the decentralized nature of GitHub is not conducive to a tool
 that automatically locates and installs corresponding dependencies that
@@ -779,28 +779,28 @@ Packages that are on CRAN, Bioconductor, or rOpenSci are usually on
 GitHub. There is an unofficial read-only GitHub mirror at CRAN,
 \href{https://github.com/cran}{METACRAN}, in which \emph{all} CRAN
 packages have their own GitHub repositories with all versions, original
-dates, and authors. Further, package developers often use their personal
-GitHub accounts to publicize a package while it is being developed and
-continue to host development versions after it has been published on
-formal repositories such as CRAN. In this case, CRAN would host a
-``stable'' version of the package, which may simultaneously be in the
-``master'' branch of the developer's GitHub repository for the package;
-forthcoming package updates would remain in a ``development'' branch in
-the same GitHub repository. Although less relevant to new R users, this
-means that you can access and test upcoming versions of a package
-through GitHub, which may be particularly helpful if you're developing a
-package with dependencies and want to know if upcoming changes to a
-package that your code depends on will cause issues. Lastly, there are
-some instances where a packages is posted on CRAN---not only because
-CRAN is its main repository, but also to ease its connection with base
-R---then also published in a specialized repository like rOpenSci. As
-part of their review process, rOpenSci asks authors of submitted
-packages if they plan to publish on CRAN (or Bioconductor) and many
-times packages become available in both places. If you want a package
-that more or less guarantees that it does what it says it will do,
-consider packages that have been peer reviewed. Knowing this, you might
-start by searching ROpenSci's repository website rather than CRAN Task
-Views or biocViews.
+dates, and authors. Additionally, package developers often use their
+personal GitHub accounts to publicize a package while it is being
+developed and continue to host development versions after it has been
+published on formal repositories such as CRAN. In this case, CRAN would
+host a ``stable'' version of the package, which may simultaneously be in
+the ``master'' branch of the developer's GitHub repository for the
+package; forthcoming package updates would remain in a ``development''
+branch in the same GitHub repository. Although less relevant to new R
+users, this means that you can access and test upcoming versions of a
+package through GitHub, which may be particularly helpful if you're
+developing a package with dependencies and want to know if upcoming
+changes to a package that your code depends on will cause issues.
+Lastly, there are some instances where a packages is posted on
+CRAN---not only because CRAN is its main repository, but also to ease
+its connection with base R---then also published in a specialized
+repository like rOpenSci. As part of their review process, rOpenSci asks
+authors of submitted packages if they plan to publish on CRAN (or
+Bioconductor) and many times packages become available in both places.
+If you want a package that more or less guarantees that it does what it
+says it will do, consider packages that have been peer reviewed. Knowing
+this, you might start by searching ROpenSci's repository website rather
+than CRAN Task Views or biocViews.
 
 \hypertarget{rule-4-explore-the-availability-and-quality-of-help}{%
 \section{Rule 4: Explore the availability and quality of
@@ -1207,8 +1207,8 @@ it}\label{rule-7-find-out-who-developed-it}}
 Just as research is a library of shared insight, open source software is
 a collection of shared tools. We care about who writes the articles we
 read; we should also care about who creates the tools we use. Although R
-is grounded in statistical computing and graphics, there is variation R
-users' backgrounds and skills, and the same is true for R developers.
+is grounded in statistical computing and graphics, there is variation in
+R users' backgrounds and skills, and the same is true for R developers.
 That said, the R community prides itself on embracing newcomers at all
 levels of involvement. This Rule does not imply that worthwhile packages
 are exclusively written by well-known authors. Rather, associations and
@@ -1223,40 +1223,82 @@ the package. If you are looking at the source code of the package, there
 should always be a \texttt{DESCRIPTION} file with metadata. The
 \texttt{DESCRIPTION} is a succinct record of the package's purpose,
 dependencies, version, date, license, associations, authors, and other
-technical details. In the ``Authors'' field of this file, you determine
-both the ``Maintainer'' of the package (a similar role to that of the
-corresponding author for an article) as well as other authors or
+technical details. In the ``Author'' field of this file, you can
+identify both the ``Maintainer'' of the package (a similar role to that
+of the corresponding author for an article) as well as other authors or
 contributors. For packages hosted solely on a platform like GitHub, this
-might be the only way to discover a package's author; however, for
-packages hosted on repositories, this package data is often also posted
-somewhere online by the repository. Packages on CRAN have a page of
-metadata that is accessible through a standard web address. For example,
-to see the metadata page for the \texttt{ggplot2} package, you can go to
-https://CRAN.R-project.org/package=ggplot2; replace the package name at
-the end of the web address with the name of any other CRAN package to
-get to analogous package-specific metadata. Similarly, Bioconductor
-packages each have their own webpage, with some metadata at the top of
-the page, including the maintainer and other authors. For example, the
-page for the package \texttt{DESeq2} can be found at
-https://bioconductor.org/packages/release/bioc/html/DESeq2.html.
+might be the only way to discover a package's author. On the other hand,
+for packages hosted on repositories, this package data is usually also
+posted by the repository somewhere online. Packages on CRAN have a page
+of metadata that is accessible through a standard web address. For
+example, to see the metadata page for the \texttt{ggplot2} package, you
+can go to \url{https://CRAN.R-project.org/package=ggplot2}; replace the
+package name at the end of the web address with the name of any other
+CRAN package to access analogous package-specific metadata. Here, you
+will notice various abbreviations associated with the names in the
+``Author'' and Maintainer" fields that denote roles such as author
+\texttt{{[}aut{]}}, creator/maintainer \texttt{{[}cre{]}}, contributor
+\texttt{{[}ctb{]}}, and funder \texttt{{[}fnd{]}}. Similarly,
+Bioconductor packages each have their own webpage, with some metadata at
+the top of the page, including the maintainer and other authors. For
+example, the page for the package \texttt{DESeq2} can be found at
+\url{https://bioconductor.org/packages/release/bioc/html/DESeq2.html};
+you can view pages corresponding to other Bioconductor packages by
+altering the web address as previously described.
 
 You can assess the credibility and commitment of R package developers
 through direct and indirect signals. Who made the package? Consider
 whether expertise in a certain domain is vital to the design and
 creation of the tool. Research the authors' associations in academia,
 industry, and/or laboratories and gauge the extent to which they have a
-primary role in R development. Further, you can learn more about their
-experience, active contributions to the R community, and history related
-to package development by exploring their profiles on GitHub, Google
-Scholar, Research Gate, Twitter, or personal or package websites. If an
-author has such a history, peruse their portfolio of packages to see if
-any are highly regarded or recognizable. Frequent commits and effective
-resolutions of GitHub Issues can reveal the authors' priorities and
-commitment. If the package was developed by multiple authors, research
-each of them to evaluate the robustness of the team. By extension, these
-indicators of developer involvement and reputation will help you discern
-whether a package is worthy of your trust or requires evaluation based
-on other Rules.
+primary role in R development. If the package was developed by multiple
+authors, research each of them to evaluate the robustness of the team.
+You can learn more about their experience, active contributions to the R
+community, and history related to package development by exploring their
+profiles on GitHub, Google Scholar, Research Gate, Twitter, or personal
+or package websites. Frequent commits and effective resolutions of
+GitHub Issues can be a testament to the authors' priorities and
+commitment. If an author has a history of package development, peruse
+their portfolio of packages to see if any are highly regarded,
+recognizable, or impressive at first glance. When you use a great tool
+in your kitchen, you consider buying more tools from that brand. If, in
+the past, you found a package that you like to use and is helpful for
+your work, it can be worthwhile to research other packages made by that
+author and/or maintainer. You might benefit from making a habit of
+paying attention to who makes tools that work well for your needs and
+are designed in a way that seems intuitive to you---take note of these
+``favorite'' package authors.
+
+As you may know, the R community values collaboration---it is not
+uncommon for packages to be created and maintained by more than one
+person and, in many cases, large teams. Roles within these teams can
+shift as the package evolves. As an example, \texttt{ggplot2} has no
+small team of authors and its original maintainer is not the same as its
+current one. Oftentimes, existence of a large team can give you clues
+(although not guaranteed) about how the package is evolving in the R
+ecosystem. For one, it could indicate that a package is very useful and
+has generated rich community involvement, as is the case for
+\texttt{ggplot2}---many of its authors were added after the first
+release. This might reveal that a package is part of a larger-scale and
+more organized project. Also, a sizeable team could imply that the
+package grew out of a substantial collaboration, like a funded grant
+with a multi-person team; this happens a lot for specific methods
+packages. The \texttt{flowCore} package is one example of such a case
+{[}62,63{]}. This might suggest that a package has a certain level of
+review and investment from several R programmers (the authors), not just
+one, as in a solo-authored project. It's also useful to examine the full
+list of authors (even if it's long) because you might not recognize the
+maintainer's name, but you might recognize another author's name. This
+can happen if the maintainer is a student or someone else that's
+up-and-coming; sometimes, more senior authors do not assume the role of
+maintainer, even though they are quite invested in the project. It's
+worth looking to see, for example, if someone who is well-known for
+excellence in methods development is one of the non-maintaining authors,
+which may help you gauge the quality of the fundamental algorithms and
+techniques in the package code. By extension, the indicators of
+developer involvement and reputation mentioned in this Rule will help
+you discern whether a package is worthy of your trust or requires
+evaluation based on other Rules.
 
 \hypertarget{rule-8-see-how-its-developed}{%
 \section{Rule 8: See how it's
@@ -1265,7 +1307,7 @@ developed}\label{rule-8-see-how-its-developed}}
 You do not need to be a software engineer to identify strong package
 development. Scientific software developers sometimes neglect best
 practices; indeed, these shortcomings are evident in the tools they
-create {[}62{]}. There are concrete ways to measure a tool's robustness
+create {[}64{]}. There are concrete ways to measure a tool's robustness
 beyond whether it works for those who did not create it. R packages
 often depend on other R packages; you should check the reputations of
 such \emph{dependencies} when selecting a package---quality packages
@@ -1281,7 +1323,7 @@ package: unit tests and version control.
 
 A responsible developer with a consistent and reproducible workflow will
 implement formal testing on their code to examine expected behavior via
-an automated process called unit testing {[}24,63{]}. Although
+an automated process called unit testing {[}24,65{]}. Although
 inconvenient at the outset, the developer---and by extension, the
 package user---will benefit from unit testing, which results in fewer
 bugs, a well-designed code structure, an efficient workflow, and robust
@@ -1289,37 +1331,37 @@ code that is not sensitive to major changes in the future {[}24{]}. To
 alleviate the burdens of unit testing, \texttt{testthat} is a popular,
 integrative R package that helps developers create reliable functions,
 minimize error, and visualize progress through automatic code testing
-{[}64{]}. Developers are also interested in quantifying the amount of
+{[}66{]}. Developers are also interested in quantifying the amount of
 code in their package that has been tested. Test coverage, a measurement
 of the proportion of code that has undergone unit testing, is an
 objective metric for package developers, contributors, and users to
 evaluate code quality. Many developers use the \texttt{covr} package to
 generate reports and determine the magnitude of coverage on the
-function, script, and package levels {[}65{]}. Relatedly, developers who
+function, script, and package levels {[}67{]}. Relatedly, developers who
 host their packages on GitHub, post status badges in the overview
 (\texttt{README}) section of the repository webpage. GitHub badges are a
 common self-imposed method to signal use of best practices and motivate
 developers to produce a product that is high in quality and transparency
-{[}66{]}. You may see, for example, license, dependency, or style
+{[}68{]}. You may see, for example, license, dependency, or style
 badges, all of which are good indicators of package caliber; however,
 particular to this Rule, you should look for code coverage
 (\texttt{codecov}) badges which reveal the percentage of test coverage.
 
 As we mentioned in Rule 3, version control has an essential role in
-package development and computational literacy more broadly {[}24,67{]}.
+package development and computational literacy more broadly {[}24,69{]}.
 Version control is like a time capsule for your workflow because it
 monitors and tracks changes to files as a project evolves, and stores
 them as previous versions to be recovered if necessary. In other words,
 ``version control is as fundamental to programming as accurate notes
-about lab procedures are to experimental science'' {[}{[}67{]}; p6{]}.
+about lab procedures are to experimental science'' {[}{[}69{]}; p6{]}.
 Git is a decentralized open source version control system that is useful
 regardless of whether a project is independent or collaborative
-{[}68{]}. GitHub works in conjunction with Git to provide a powerful
+{[}70{]}. GitHub works in conjunction with Git to provide a powerful
 structured system to organize and manage components of a project for
 others and your future self. A growing number of scientists have
 research programs based in GitHub, which has become a revolutionary tool
 for productive team science and distributed development efforts
-{[}1,69{]}. As you may expect, Git coupled with GitHub is the version
+{[}1,71{]}. As you may expect, Git coupled with GitHub is the version
 control duo of choice among serious R package developers {[}24{]}. Thus,
 if the package you are interested in using is among the thousands hosted
 on GitHub, this is evidence that the developer is at least committed to
@@ -1342,7 +1384,7 @@ alternative to downloading a large or potentially corrupted zipped file.
 At this point, what you have learned about the package should be quite
 helpful. If the development and documentation are sound, the package
 should come with a test script or working example that you can run after
-installation {[}62{]}. Vignettes include many common data science
+installation {[}64{]}. Vignettes include many common data science
 problems with solutions; you can run the code examples, tweak them, and
 compare the outputs. In general, it is essential to know the behavior of
 different functions within a package, how they interact, and how outputs
@@ -1368,18 +1410,18 @@ implement object-oriented programming in R. Many packages for spatial
 analysis as well as those from Bioconductor tend to use S4 objects to
 represent data {[}7{]}. On the other hand, the \texttt{tidyverse}, a
 unified suite of packages with an grammatical structure employed within
-a ``pipeline'', expects data frame objects {[}70{]}. Thus, when you are
+a ``pipeline'', expects data frame objects {[}72{]}. Thus, when you are
 working in the \texttt{tidyverse}, you cannot incorporate S3 and S4
 objects into the framework unless their corresponding functions are the
 final step in the pipeline. The \texttt{broom} package, and the
 bioinformatics analog, \texttt{biobroom}, aim to alleviate these
 disruptions by converting untidy objects into tidy data, thereby making
 it easier to integrate statistical functions into the structure of the
-\texttt{tidyverse} workflow {[}71,72{]}. Furthermore, the \texttt{caret}
+\texttt{tidyverse} workflow {[}73,74{]}. Furthermore, the \texttt{caret}
 package facilitates interoperability for machine learning packages by
 providing a uniform interface for modeling with various algorithms from
 different packages that would otherwise have independent syntax
-{[}73{]}.
+{[}75{]}.
 
 \hypertarget{rule-10-develop-your-own-package}{%
 \section{Rule 10: Develop your own
@@ -1403,26 +1445,26 @@ package out of any collection of specialty functions. Packages need not
 be formal nor entirely cohesive. For instance, personal R packages such
 as \texttt{Hmisc} and \texttt{broman}, are comprised of miscellaneous
 functions which the creator has developed and frequently uses
-{[}74,75{]}. Functions are necessary for efficiency and warranted when
+{[}76,77{]}. Functions are necessary for efficiency and warranted when
 you repetitiously copy and paste your code while making slight
 modifications after each iteration {[}54{]}. The concept of personal R
 packages demonstrates a unique purpose for packages beyond the
 conventional. R packages are not solely reserved for specific tasks with
 comprehensive methods; rather, package development can help you learn
 how to apply proper coding techniques to writing functions and
-documentation with reproducibility and collaboration in mind {[}76{]}.
+documentation with reproducibility and collaboration in mind {[}78{]}.
 
 Although you may not anticipate that anyone else will use your tools,
 following best practices for package development will yield more
 favorable outcomes. As a consumer of shared packages, you know the
 inherent benefits of robust software development relative to the quality
-of code, data, documentation, versions, and tests {[}62{]}. Similarly,
+of code, data, documentation, versions, and tests {[}64{]}. Similarly,
 creating a valuable package for personal use requires consideration for
 your future self and anticipation of distributing your code, should the
 need arise. Use version control and take advantage of existing
 resources. Indeed, there are R packages that aid in package development
 (e.g., \texttt{devtools}, \texttt{usethis}, \texttt{testthat},
-\texttt{roxygen2}, \texttt{rlang}, \texttt{drat}) {[}32,38,77--80{]}. In
+\texttt{roxygen2}, \texttt{rlang}, \texttt{drat}) {[}32,38,79--82{]}. In
 the case of collaboration, the R project within RStudio IDE, is
 compatible with distributed development---a feature that couples well
 with version control. There is no lack of effective organizational
@@ -1432,7 +1474,7 @@ recommend consulting resources authored by expert R developers including
 \href{https://r-pkgs.org/}{\emph{R Packages}} by Hadley Wickham and the
 official manual,
 \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{\emph{Writing
-R Extensions}}, from CRAN {[}24,81{]}.
+R Extensions}}, from CRAN {[}24,83{]}.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -1912,98 +1954,108 @@ package since runconf17 {[}Internet{]}. rOpenSci; 2017. Available:
 2014. Available:
 \url{https://github.blog/2014-05-14-improving-github-for-science/}
 
+\leavevmode\hypertarget{ref-flowCore}{}%
+62. Ellis B, Haaland P, Hahne F, Le Meur N, Gopalakrishnan N, Spidlen J,
+et al. FlowCore: FlowCore: Basic structures for flow cytometry data.
+2019.
+
+\leavevmode\hypertarget{ref-hahne2009}{}%
+63. Hahne F, LeMeur N, Brinkman RR, Ellis B, Haaland P, Sarkar D, et al.
+FlowCore: A bioconductor package for high throughput flow cytometry. BMC
+bioinformatics. BioMed Central; 2009;10: 1--8.
+
 \leavevmode\hypertarget{ref-taschuk2017}{}%
-62. Taschuk M, Wilson G. Ten simple rules for making research software
+64. Taschuk M, Wilson G. Ten simple rules for making research software
 more robust. PLoS computational biology. Public Library of Science;
 2017;13.
 
 \leavevmode\hypertarget{ref-hester2020}{}%
-63. Hester J. How does covr work anyway? {[}Internet{]}. The R
+65. Hester J. How does covr work anyway? {[}Internet{]}. The R
 Foundation; 2020. Available:
 \url{https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html}
 
 \leavevmode\hypertarget{ref-wickham2011}{}%
-64. Wickham H. Testthat: Get started with testing. The R Journal.
+66. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-covr}{}%
-65. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
+67. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=covr}
 
 \leavevmode\hypertarget{ref-barts2018}{}%
-66. Barts C. How to use github badges to stop feeling like a noob
+68. Barts C. How to use github badges to stop feeling like a noob
 {[}Internet{]}. freeCodeCamp; 2018. Available:
 \url{https://www.freecodecamp.org/news/how-to-use-badges-to-stop-feeling-like-a-noob-d4e6600d37d2/}
 
 \leavevmode\hypertarget{ref-wilson2006}{}%
-67. Wilson GV. Where's the real bottleneck in scientific computing?
+69. Wilson GV. Where's the real bottleneck in scientific computing?
 American Scientist. 2006;94: 5.
 
 \leavevmode\hypertarget{ref-bryan2018}{}%
-68. Bryan J. Excuse me, do you have a moment to talk about version
+70. Bryan J. Excuse me, do you have a moment to talk about version
 control? The American Statistician. Taylor \& Francis; 2018;72: 20--27.
 
 \leavevmode\hypertarget{ref-perkel2016}{}%
-69. Perkel J. Democratic databases: Science on github. Nature News.
+71. Perkel J. Democratic databases: Science on github. Nature News.
 2016;538: 127.
 
 \leavevmode\hypertarget{ref-tidyverse}{}%
-70. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
+72. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
 al. Welcome to the tidyverse. Journal of Open Source Software. 2019;4:
 1686.
 doi:\href{https://doi.org/10.21105/joss.01686}{10.21105/joss.01686}
 
 \leavevmode\hypertarget{ref-broom}{}%
-71. Robinson D, Hayes A. Broom: Convert statistical analysis objects
+73. Robinson D, Hayes A. Broom: Convert statistical analysis objects
 into tidy tibbles {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=broom}
 
 \leavevmode\hypertarget{ref-biobroom}{}%
-72. Andrew J. Bass SL David G. Robinson. Biobroom: Turn bioconductor
+74. Andrew J. Bass SL David G. Robinson. Biobroom: Turn bioconductor
 objects into tidy data frames {[}Internet{]}. 2020. Available:
 \url{https://github.com/StoreyLab/biobroom}
 
 \leavevmode\hypertarget{ref-caret}{}%
-73. Kuhn M. Caret: Classification and regression training
+75. Kuhn M. Caret: Classification and regression training
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=caret}
 
 \leavevmode\hypertarget{ref-Hmisc}{}%
-74. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
+76. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=Hmisc}
 
 \leavevmode\hypertarget{ref-broman}{}%
-75. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
+77. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=broman}
 
 \leavevmode\hypertarget{ref-parker2013}{}%
-76. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
+78. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
 \url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
 
 \leavevmode\hypertarget{ref-usethis}{}%
-77. Wickham H, Bryan J. Usethis: Automate package and project setup
+79. Wickham H, Bryan J. Usethis: Automate package and project setup
 {[}Internet{]}. 2019. Available:
 \url{https://CRAN.R-project.org/package=usethis}
 
 \leavevmode\hypertarget{ref-testthat}{}%
-78. Wickham H. Testthat: Get started with testing. The R Journal.
+80. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-roxygen2}{}%
-79. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
+81. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
 documentation for r {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=roxygen2}
 
 \leavevmode\hypertarget{ref-rlang}{}%
-80. Henry L, Wickham H. Rlang: Functions for base types and core r and
+82. Henry L, Wickham H. Rlang: Functions for base types and core r and
 'tidyverse' features {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=rlang}
 
 \leavevmode\hypertarget{ref-Rcore2020}{}%
-81. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
+83. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
 2020. Available:
 \url{https://cran.r-project.org/doc/manuals/R-exts.html}
 
