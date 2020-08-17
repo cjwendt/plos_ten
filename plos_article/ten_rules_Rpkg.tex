@@ -1304,48 +1304,80 @@ evaluation based on other Rules.
 \section{Rule 8: See how it's
 developed}\label{rule-8-see-how-its-developed}}
 
-You do not need to be a software engineer to identify strong package
+You don't need to be a software engineer to identify strong package
 development. Scientific software developers sometimes neglect best
 practices; indeed, these shortcomings are evident in the tools they
 create {[}64{]}. There are concrete ways to measure a tool's robustness
-beyond whether it works for those who did not create it. R packages
-often depend on other R packages; you should check the reputations of
-such \emph{dependencies} when selecting a package---quality packages
-will rely on a solid web of quality packages. What's more, like other
-types of software, well-maintained R packages have multiple versions
-corresponding to iterative releases to indicate that the package is
-compatible with dependencies and loyally updated (e.g., bug fixes,
-general improvements, new functionality) {[}1,24{]}. You can explore the
-version history of a package to see if it is up-to-date (See Rule 5). As
-a user, there are two additional development protocols that you can
-further investigate to assess the underlying stability and utility of a
-package: unit tests and version control.
+beyond whether it works for those who did not create it. As a user,
+there are four main relevant package development protocols---in addition
+to some related indicators---that you can investigate to assess the
+underlying stability and utility of a package: dependencies, unit
+testing, version control, and continuous integration.
+
+R packages often depend on other R packages; you should check the
+reputations of such dependencies when selecting a package---quality
+packages will rely on a solid web of quality packages. What's more, like
+other types of software, well-maintained R packages have multiple
+versions corresponding to iterative releases to indicate that the
+package is compatible with dependencies and loyally updated (e.g., bug
+fixes, general improvements, new functionality) {[}1,24{]}. You can
+explore the version history of a package to see if it is up-to-date (See
+Rule 5). Package dependencies are not only important to establish
+stability, but might also give you a hint as to whether a package will
+fit well into your workflow. This is an especially critical
+consideration if you're using a ``tidy'' workflow or working with
+special object types in, for example, a Bioconductor workflow. You can
+review the list of dependencies for a package in question to check if it
+depends on some or many of the packages in your workflow. If this is the
+case, you can be fairly confident that the package uses the same (or at
+least similar) style and conventions as those you want to use.
 
 A responsible developer with a consistent and reproducible workflow will
 implement formal testing on their code to examine expected behavior via
-an automated process called unit testing {[}24,65{]}. Although
-inconvenient at the outset, the developer---and by extension, the
-package user---will benefit from unit testing, which results in fewer
-bugs, a well-designed code structure, an efficient workflow, and robust
-code that is not sensitive to major changes in the future {[}24{]}. To
-alleviate the burdens of unit testing, \texttt{testthat} is a popular,
-integrative R package that helps developers create reliable functions,
-minimize error, and visualize progress through automatic code testing
-{[}66{]}. Developers are also interested in quantifying the amount of
-code in their package that has been tested. Test coverage, a measurement
-of the proportion of code that has undergone unit testing, is an
-objective metric for package developers, contributors, and users to
-evaluate code quality. Many developers use the \texttt{covr} package to
-generate reports and determine the magnitude of coverage on the
-function, script, and package levels {[}67{]}. Relatedly, developers who
-host their packages on GitHub, post status badges in the overview
-(\texttt{README}) section of the repository webpage. GitHub badges are a
-common self-imposed method to signal use of best practices and motivate
-developers to produce a product that is high in quality and transparency
-{[}68{]}. You may see, for example, license, dependency, or style
-badges, all of which are good indicators of package caliber; however,
-particular to this Rule, you should look for code coverage
-(\texttt{codecov}) badges which reveal the percentage of test coverage.
+an automated process called unit testing {[}24,65{]}. This helps assure
+the developer (and you) that the package's underlying units of code do
+what they intend to do. Although inconvenient at the outset, the
+developer---and by extension, the package user---will benefit from unit
+testing, which results in fewer bugs, a well-designed code structure, an
+efficient workflow, and robust code that is not sensitive to major
+changes in the future {[}24{]}. To alleviate the burdens of unit
+testing, \texttt{testthat} is a popular, integrative R package that
+helps developers create reliable functions, minimize error, and
+visualize progress through automatic code testing {[}66{]}. Developers
+are also interested in quantifying the amount of code in their package
+that has been tested. Test coverage, a measurement of the proportion of
+code that has undergone unit testing, is an objective metric for package
+developers, contributors, and users to evaluate code quality. Many
+developers use the \texttt{covr} package to generate reports and
+determine the magnitude of coverage on the function, script, and package
+levels {[}67{]}. You can look at the source code for a package to
+confirm it has a testing suite; for instance, if you are on a package's
+GitHub page, you can navigate to the main Code page and look for a
+folder labeled \texttt{tests} or something similar.
+
+Relatedly, developers who host their packages on GitHub, post status
+badges, most often, in the overview (\texttt{README}) section of the
+repository webpage for the master branch. GitHub badges are a common
+self-imposed method to signal use of best practices and motivate
+developers to produce software that is high in quality and transparency
+{[}68{]}. They are easily visible, interactive, and increase readability
+of the \texttt{README}. You may see, for example, license
+(\texttt{license}), version (\texttt{release}), dependency
+(\texttt{dependencies}), code coverage (\texttt{codecov}), or build
+status (\texttt{build}) badges, all of which are good indicators of
+package caliber. What's more, badges have dynamic status tags to
+indicate the current status of the particular part of a workflow to
+which the badge refers; as an example, a \texttt{build} badge with a
+\texttt{passing} status tag could be telling you that the package is
+passing continuous integration tests, which you will learn more about
+soon {[}56{]}. Badges are also clickable buttons that link to a page
+that describes and displays detailed aspects of the metric associated
+with the badge. For instance, when you click on a \texttt{codecov}
+badge, you'll likely end up on a page with a timeline, graphics, and
+information about the percentage and distribution of test coverage for
+the package. You can refer to special badges like \texttt{CRAN},
+\texttt{Bioconductor}, or \texttt{rOpenSci} to determine which
+repository (or repositories) a package is shared on (See Rule 3).
 
 As we mentioned in Rule 3, version control has an essential role in
 package development and computational literacy more broadly {[}24,69{]}.
@@ -1367,6 +1399,20 @@ if the package you are interested in using is among the thousands hosted
 on GitHub, this is evidence that the developer is at least committed to
 a logical, open, and reproducible workflow, suggestive of more time
 spent designing their tool.
+
+Lastly, developers often implement continuous integration (CI) in
+conjunction with using a version control hosting platform like GitHub.
+CI refers to a process by which developers frequently update and commit
+their contributions to a shared repository and routinely merge all
+authors' working copies/branches of a project into the master (main)
+branch to monitor compatibility---without permanently merging
+everything. Just as you are happy to know that a manufacturer guarantees
+their kitchen tool is a unified realization of many working parts, you
+should be impressed when a package is set up to use CI. This is
+particularly important for packages with a large development team. Use
+of CI is a good sign that the components of the package are regularly
+checked to ensure that code passes tests and the package builds without
+failures {[}72{]}.
 
 \hypertarget{rule-9-put-it-to-the-test}{%
 \section{Rule 9: Put it to the test}\label{rule-9-put-it-to-the-test}}
@@ -1410,18 +1456,18 @@ implement object-oriented programming in R. Many packages for spatial
 analysis as well as those from Bioconductor tend to use S4 objects to
 represent data {[}7{]}. On the other hand, the \texttt{tidyverse}, a
 unified suite of packages with an grammatical structure employed within
-a ``pipeline'', expects data frame objects {[}72{]}. Thus, when you are
+a ``pipeline'', expects data frame objects {[}73{]}. Thus, when you are
 working in the \texttt{tidyverse}, you cannot incorporate S3 and S4
 objects into the framework unless their corresponding functions are the
 final step in the pipeline. The \texttt{broom} package, and the
 bioinformatics analog, \texttt{biobroom}, aim to alleviate these
 disruptions by converting untidy objects into tidy data, thereby making
 it easier to integrate statistical functions into the structure of the
-\texttt{tidyverse} workflow {[}73,74{]}. Furthermore, the \texttt{caret}
+\texttt{tidyverse} workflow {[}74,75{]}. Furthermore, the \texttt{caret}
 package facilitates interoperability for machine learning packages by
 providing a uniform interface for modeling with various algorithms from
 different packages that would otherwise have independent syntax
-{[}75{]}.
+{[}76{]}.
 
 \hypertarget{rule-10-develop-your-own-package}{%
 \section{Rule 10: Develop your own
@@ -1445,14 +1491,14 @@ package out of any collection of specialty functions. Packages need not
 be formal nor entirely cohesive. For instance, personal R packages such
 as \texttt{Hmisc} and \texttt{broman}, are comprised of miscellaneous
 functions which the creator has developed and frequently uses
-{[}76,77{]}. Functions are necessary for efficiency and warranted when
+{[}77,78{]}. Functions are necessary for efficiency and warranted when
 you repetitiously copy and paste your code while making slight
 modifications after each iteration {[}54{]}. The concept of personal R
 packages demonstrates a unique purpose for packages beyond the
 conventional. R packages are not solely reserved for specific tasks with
 comprehensive methods; rather, package development can help you learn
 how to apply proper coding techniques to writing functions and
-documentation with reproducibility and collaboration in mind {[}78{]}.
+documentation with reproducibility and collaboration in mind {[}79{]}.
 
 Although you may not anticipate that anyone else will use your tools,
 following best practices for package development will yield more
@@ -1464,7 +1510,7 @@ your future self and anticipation of distributing your code, should the
 need arise. Use version control and take advantage of existing
 resources. Indeed, there are R packages that aid in package development
 (e.g., \texttt{devtools}, \texttt{usethis}, \texttt{testthat},
-\texttt{roxygen2}, \texttt{rlang}, \texttt{drat}) {[}32,38,79--82{]}. In
+\texttt{roxygen2}, \texttt{rlang}, \texttt{drat}) {[}32,38,80--83{]}. In
 the case of collaboration, the R project within RStudio IDE, is
 compatible with distributed development---a feature that couples well
 with version control. There is no lack of effective organizational
@@ -1474,7 +1520,7 @@ recommend consulting resources authored by expert R developers including
 \href{https://r-pkgs.org/}{\emph{R Packages}} by Hadley Wickham and the
 official manual,
 \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{\emph{Writing
-R Extensions}}, from CRAN {[}24,83{]}.
+R Extensions}}, from CRAN {[}24,84{]}.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -2000,62 +2046,66 @@ control? The American Statistician. Taylor \& Francis; 2018;72: 20--27.
 71. Perkel J. Democratic databases: Science on github. Nature News.
 2016;538: 127.
 
+\leavevmode\hypertarget{ref-peng2016}{}%
+72. Mastering software development in r {[}Internet{]}. 2016. Available:
+\url{https://rdpeng.github.io/RProgDA/}
+
 \leavevmode\hypertarget{ref-tidyverse}{}%
-72. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
+73. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
 al. Welcome to the tidyverse. Journal of Open Source Software. 2019;4:
 1686.
 doi:\href{https://doi.org/10.21105/joss.01686}{10.21105/joss.01686}
 
 \leavevmode\hypertarget{ref-broom}{}%
-73. Robinson D, Hayes A. Broom: Convert statistical analysis objects
+74. Robinson D, Hayes A. Broom: Convert statistical analysis objects
 into tidy tibbles {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=broom}
 
 \leavevmode\hypertarget{ref-biobroom}{}%
-74. Andrew J. Bass SL David G. Robinson. Biobroom: Turn bioconductor
+75. Andrew J. Bass SL David G. Robinson. Biobroom: Turn bioconductor
 objects into tidy data frames {[}Internet{]}. 2020. Available:
 \url{https://github.com/StoreyLab/biobroom}
 
 \leavevmode\hypertarget{ref-caret}{}%
-75. Kuhn M. Caret: Classification and regression training
+76. Kuhn M. Caret: Classification and regression training
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=caret}
 
 \leavevmode\hypertarget{ref-Hmisc}{}%
-76. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
+77. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=Hmisc}
 
 \leavevmode\hypertarget{ref-broman}{}%
-77. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
+78. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=broman}
 
 \leavevmode\hypertarget{ref-parker2013}{}%
-78. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
+79. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
 \url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
 
 \leavevmode\hypertarget{ref-usethis}{}%
-79. Wickham H, Bryan J. Usethis: Automate package and project setup
+80. Wickham H, Bryan J. Usethis: Automate package and project setup
 {[}Internet{]}. 2019. Available:
 \url{https://CRAN.R-project.org/package=usethis}
 
 \leavevmode\hypertarget{ref-testthat}{}%
-80. Wickham H. Testthat: Get started with testing. The R Journal.
+81. Wickham H. Testthat: Get started with testing. The R Journal.
 2011;3: 5--10. Available:
 \url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-roxygen2}{}%
-81. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
+82. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
 documentation for r {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=roxygen2}
 
 \leavevmode\hypertarget{ref-rlang}{}%
-82. Henry L, Wickham H. Rlang: Functions for base types and core r and
+83. Henry L, Wickham H. Rlang: Functions for base types and core r and
 'tidyverse' features {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=rlang}
 
 \leavevmode\hypertarget{ref-Rcore2020}{}%
-83. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
+84. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
 2020. Available:
 \url{https://cran.r-project.org/doc/manuals/R-exts.html}
 
