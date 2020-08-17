@@ -1123,73 +1123,82 @@ review}\label{rule-6-seek-evidence-of-peer-acceptance-and-review}}
 
 Peer review is an important aspect of scientific research, not least
 because it establishes scholarly credibility. While scientific articles
-go through a peer review process that is fairly standardized across
-disciplines, R packages have a fuller range of possibilities for peer
+undergo a peer review process that is fairly standardized across
+disciplines, R packages have a broader range of possibilities for peer
 review or other evidence of acceptance by members of the scientific
 community. You can research information about an R package in different
 forms of literature and determine the extent to which it has been
 validated by the scientific community.
 
-First, there are some packages for which the maintainers have written an
-article describing the package and its algorithms, and this article has
-gone through the traditional peer-review process. Some journals publish
-articles about R packages themselves while others feature work that used
-a particular package. There are some journals targeted to focus on R
-packages and other open-source scientific software, including the
-\emph{Journal of Statistical Software} and \emph{The R Journal}.
-Discipline-specific journals for your field, like \emph{BMC
-Bioinformatics}, may also publish articles that introduce R packages
-useful for the research process. Try searching the websites for key
-journals in your field with queries that include \texttt{"R\ package"}.
-The number of Google Scholar citations for a package or, similarly, an
-article about a package, serves as a metric for a package's impact on
-scientific research and utility in research contexts (see Rule 5).
+First, some maintainers of select packages have written an article
+describing their package and its algorithms; such articles must go
+through the traditional peer-review process in order to be published.
+Certain journals publish articles about R packages themselves while
+others feature work that used a particular package. Journals with a
+targeted and technical focus on R packages and other open-source
+scientific software include the
+\href{https://joss.theoj.org/}{\emph{Journal of Open Source Software}},
+the \href{https://www.jstatsoft.org/index}{\emph{Journal of Statistical
+Software}}, and \href{https://journal.r-project.org/}{\emph{The R
+Journal}}. Discipline-specific journals like
+\href{https://bmcbioinformatics.biomedcentral.com/}{\emph{BMC
+Bioinformatics}}, may also publish articles to introduce R packages that
+have proven to be useful for aspects of the bioinformatics research
+process, for example. Try searching various websites for prominent
+journals in your field with queries that include \texttt{"R\ package"}
+to find these types of articles. Note, the number of Google Scholar
+citations for a package or, similarly, an article about a package,
+serves as a metric for a package's impact on scientific research and
+utility in research contexts (see Rule 5).
 
-For R packages featured in peer-reviewed journal articles, you can be
+For an R package featured in a peer-reviewed journal article, you can be
 assured that the ideas and principles behind the package have been
 evaluated by outside reviewers. However, such a review may not have
-included a close peer review of the code in the package itself. There is
-movement toward direct peer review of R packages at the level of the
-code. More directly, rOpenSci is a unique example of an ecosystem of
-open source tools with peer reviewed R packages (see Rule 3) {[}30{]}.
-The rOpenSci organization oversees peer review of R packages at this
-detailed level, and so packages published through their repository has
-passed external review at the level of the code itself. They limit their
-scope to packages that {[}add something here about the rOpenSci
-scope---see \href{https://devguide.ropensci.org/}{their book} for more,
-especially section 5.2{]}. Their review process is conducted openly on
-GitHub, so you can also see the discussion between package maintainers
-and peer reviewers that form this process.
+included a fine-grained peer review of the underlying code in the
+package itself. There is an expanding movement toward direct peer review
+of R packages at the code level. More specifically, rOpenSci is a unique
+example of an ecosystem of open source tools with peer reviewed R
+packages (see Rule 3) {[}30{]}. The rOpenSci organization oversees peer
+review of R packages at a highly detailed level that is increasingly
+desired by scientists; packages published through their repository have
+passed external review of the code. They limit their scope to packages
+that help scientists implement reproducible research practices and
+manage the data lifecycle {[}31{]}. Their review process is conducted
+openly on GitHub and, as a result, the scientific community can view the
+discussions between package maintainers and peer reviewers that form
+this transparent process.
 
-You can also find evidence of peer acceptance of a package by seeing how
-often researchers have used it within scientific papers describing
-research, rather than package-focused papers. Useful packages may be
-mentioned in the Methods and/or References sections of such papers.
-Packages hosted on CRAN or Bioconductor have a standardized format for
-citation, and a call to \texttt{citation(...)} with the package's name
-replacing \texttt{...} will print out the suggested citation to be used
-for the package. Further, in response to the rising number of
-researchers creating tools and software to work with their data, GitHub
-has granted developers the ability to obtain a Digital Object Identifier
-(DOI) for any GitHub repository archive so that code can be cited in
-academic literature {[}61{]}. You can search for packages directly by
-name in Google Scholar: the \texttt{Cited\ by} link displays the number
-of times a package has been cited and connects to a page with those
-publications base on citations using these formats. Further, if a
-package has such a DOI, you can explore the network of research
-associated with that package. While it is best practice to cite R
-packages using these citation formats, occasionally R packages will be
-mentioned in the ``Methods'' section of a paper without formal citation.
+You can also seek evidence of peer acceptance of a package by finding
+out how often researchers have used it within scientific papers
+describing research, rather than package-focused papers. Useful packages
+may be mentioned in the Methods and/or References sections of such
+papers. Packages hosted on CRAN or Bioconductor have a standardized
+format for citation, and a call to \texttt{citation("PackageName")} will
+print the suggested BibTex citation for the package. Further, in
+response to the rising number of researchers creating tools and software
+to work with their data, GitHub has granted developers the ability to
+obtain a Digital Object Identifier (DOI) for any GitHub repository
+archive so that code can be cited in academic literature {[}61{]}. You
+can search for packages directly by name in Google Scholar: the
+\texttt{Cited\ by} link displays the number of times a package has been
+cited and connects to a page with those publications base on citations
+using these formats. Further, if a package has such a DOI, you can
+explore the network of research associated with that package. While it
+is best practice to cite R packages using these citation formats,
+occasionally R packages will be mentioned in the Methods section of a
+paper without a formal citation.
 
 Finally, many R packages are associated with content in books and series
 from scientific publishers. For example, Springer has a
-\href{https://www.springer.com/series/6991}{``Use R!'' series} with
-books covering specialized topics like {[}add some examples---finance?
-environmental epidemiology? chemometrics? MRI? click on the ``Titles in
-this Series'' link on the link I added to see them all and pick some of
-your favorites{]}. {[}Add some similar text about ``The R Series'' at
-Chapman \& Hall/CRC:
-https://www.routledge.com/Chapman--HallCRC-The-R-Series/book-series/CRCTHERSER{]}.
+\href{https://www.springer.com/series/6991}{\emph{Use R!} series} with
+books covering specialized topics from finance to marketing, from
+chemometrics to brain imaging, and more. Additionally, consider reading
+titles from
+\href{https://www.routledge.com/Chapman--HallCRC-The-R-Series/book-series/CRCTHERSER}{\emph{The
+R Series} at Chapman \& Hall/CRC}. The books in this series span topics
+related to R in terms of its applications (e.g., epidemiology,
+engineering, social sciences), uses (e.g., statistical methods), and
+development (e.g., creating packages).
 
 \hypertarget{rule-7-find-out-who-developed-it}{%
 \section{Rule 7: Find out who developed
