@@ -1,0 +1,109 @@
+---
+title: "Comparing R packages"
+subtitle: "`packagemetrics` figure"
+author: "Caroline Wendt"
+date: "8/21/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE, error = FALSE, warning = FALSE)
+```
+
+## Installation
+```{r}
+#devtools::install_github("ropenscilabs/packagemetrics")
+```
+
+## Packages
+```{r}
+library(packagemetrics)
+```
+
+## Comparing packages for data visualization and graphics
+*Note:* One main use for packagemetrics is to compare similar/overlapping packages. So we demonstrate an example.
+
+```{r}
+# get info on packages
+pkgs <- package_list_metrics(c("ggplot2",
+                                    "ggforce",
+                                    "RGraphics",
+                              "misc3d",
+                              "scatterplot3d",
+                              "rgl",
+                              "onion",
+                               "plotly", 
+                               "flexdashboard",
+                               "shiny",
+                               "dygraphs", 
+                               "leaflet", 
+                               "patchwork",
+                               "colourpicker",
+                               "RColorBrewer",
+                               "paletteer",
+                               "colorspace",
+                               "vcd",
+                               "dichromat",
+                               "highcharter",
+                               "echarts4r",
+                               "geofacet",
+                               "quantmod",
+                               "tidyquant",
+                               "patchwork"))
+dplyr::glimpse(pkgs)
+```
+
+## Create a nice `metrics_table`
+
+We will use this figure as an example in the Ten Rules paper.
+
+```{r}
+# data frame
+pkg_df <- package_list_metrics(list("ggplot2",
+                                    "ggforce",
+                                    "RGraphics",
+                              "misc3d",
+                              "scatterplot3d",
+                              "rgl",
+                              "onion",
+                               "plotly", 
+                               "flexdashboard",
+                               "shiny",
+                               "dygraphs", 
+                               "leaflet", 
+                               "patchwork",
+                               "colourpicker",
+                               "RColorBrewer",
+                               "paletteer",
+                               "colorspace",
+                               "vcd",
+                               "dichromat",
+                               "highcharter",
+                               "echarts4r",
+                               "geofacet",
+                               "quantmod",
+                               "tidyquant",
+                               "patchwork")) 
+table <- metrics_table(pkg_df)
+```
+
+```{r}
+# html table widget
+table_html <- formattable::as.htmlwidget(table, width = 1200, height = NULL)
+
+path <- htmltools::html_print(table_html, background = "white", viewer = NULL)
+
+url <- paste0("file:///", gsub("\\\\", "/", normalizePath(path)))
+
+webshot::webshot(url,
+                 file = "inst/image/table.png",
+                 selector = ".formattable_widget",
+                 delay = 0.2)
+```
+
+## Refreshing data sources
+
+If the cached CRAN data gets out of date, call `get_cran(forget = TRUE)` to force refreshing.  This will fetch the latest results from CRAN and cache them for use going forward.
+
+GitHub data is scraped at the time of the call to `package_list_metrics`.
