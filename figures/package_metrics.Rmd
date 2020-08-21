@@ -89,6 +89,14 @@ table <- metrics_table(pkg_df)
 ```
 
 ```{r}
+# export as EPS file for journal requirements
+setEPS()
+postscript("package_metrics.eps")
+table
+dev.off()
+```
+
+```{r}
 # html table widget
 table_html <- formattable::as.htmlwidget(table, width = 1200, height = NULL)
 
