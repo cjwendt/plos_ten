@@ -321,7 +321,9 @@ without input from any third party organization.''
 
 I am an editor at ROpenSci, so we could mention that in the disclaimer.
 I do not have any financial interests from that position (it's
-volunteer, as are many journal editing positions in academics).
+volunteer, as are many journal editing positions in academics). If we
+keep in mention of Coursera (and even if not), we should probably also
+add in my links with Coursera and Leanpub.
 
 \hypertarget{funding-acknowledgment}{%
 \section{Funding acknowledgment}\label{funding-acknowledgment}}
@@ -332,61 +334,64 @@ acknowledgment of Honors program if appropriate{]}
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Computational reproducibility is surfacing as a central axiom in
-academia, as researchers identify the need for transparency {[}2,3{]}.
-The Methods section of scholarly work is not sufficient to convey the
-complex data analysis methods and powerful tools of our time---data and
-code must be shared. Some variability in scientific outcomes can be
-attributed to differences in workflow and, today, the scientific
-community deems the absence of automation to be irresponsible {[}4{]}.
-Many traditional approaches that produce such inconsistencies also tend
-to be at odds with productivity and collaboration. While standards for
-disseminating and communicating computational science are evolving with
-digitization, responsible researchers are adopting best practices so
-others can more easily interpret, validate, and extend their published
-knowledge {[}5{]}. These researchers rely on accessible and robust tools
-to ensure their computations are reproducible.
+A surfacing central axiom in academic research is computational
+reproducibility {[}2,3{]}. The Methods section of scholarly work is
+often no longer sufficient to convey data analysis workflows that are
+long and complex---data and code must be shared to allow others to fully
+understand and replicate many studies. While standards for disseminating
+and communicating computational science are evolving with digitization,
+responsible researchers are adopting best practices so others can more
+easily interpret, validate, and extend their published knowledge
+{[}4{]}. These researchers rely on accessible and robust tools to ensure
+their computations are reproducible. By meeting the standards of
+computational reproducibility, researchers also benefit in other
+ways---they can reduce variability in scientific outcomes that results
+from differences in workflows and, today, the scientific community deems
+the absence of automation to be irresponsible {[}5{]} and can improve
+productivity and collaboration.
 
-As the R ecosystem---in which the life of modern data analysis
-thrives---rapidly evolves alongside the burgeoning R community, R is
-exhibiting sustained growth when compared to similar languages,
-particularly in academia, healthcare, and government {[}6{]}. The open
-source R language has become a dominant quantitative programming
-environment in academic data analysis, enabling researchers to share
-workflows and re-execute scripts within and across subsets of the
-scientific community {[}4{]}. R is increasingly popular in computational
-biology and bioinformatics, two of many disciplines generating
-extensive, heterogenous, and complex data wanting for heavy-duty data
-analysis tools that (ideally) support reproducibility {[}7,8{]}.
+A key tool in meeting the standards of computational reproducibility is
+a scriptable programming language, and the R programming language is a
+popular choice. This open source language has become a dominant
+quantitative programming environment in academic data analysis, enabling
+researchers to share workflows and re-execute scripts within and across
+subsets of the scientific community {[}5{]}. As the R ecosystem---in
+which the life of modern data analysis thrives---rapidly evolves
+alongside the burgeoning R community, R is exhibiting sustained growth
+when compared to similar languages, particularly in academia,
+healthcare, and government {[}6{]}. In particular, R is increasingly
+popular in computational biology and bioinformatics, two of many
+disciplines generating extensive, heterogenous, and complex data wanting
+for heavy-duty data analysis tools that (ideally) support
+reproducibility {[}7,8{]}.
 
-R was developed by statisticians and is collaboratively maintained by an
-international group of core contributors {[}9{]}. Unlike several popular
-proprietary languages such as MATLAB or SAS, R is freely available, open
-source, and easily extensible software; the user can access, alter,
-extend, and share code in various applications. Accordingly, a vibrant
-community of R users has emerged, many of whom develop R packages to
-complement and extend the functionality of base R. Contributed packages
-comprise the bulk of enhancements made to the R environment {[}10{]}. In
-fact, much of what we know about statistical methods and algorithms is
-wrapped up in R packages---written and documented in various ways by R
-users. There are numerous analogies in computing between programming and
-culinary arts: recipe structures, coding cookbooks, and the like. To
-conceptualize packages, imagine you are the chef, base R is the kitchen,
-and packages are the special gadgets which allow you to cook and bake
-new recipes. ``R package'' \emph{technically} refers to a collection of
-R functions in a certain structure. The few tools that come with your
-kitchen (e.g., \texttt{stats}) are indeed R packages, whereas ``R
-extension'' describes the tools you add to your kitchen. It's important
-to recognize that ``package'' is not synonymous with ``extension'';
-however, since we don't want to keep distinguishing a kitchen sink from
-a mixer, we use ``package'' in the colloquial sense. In essence, R
-packages are coding delectables that enable the user to perform
-practical tasks and solve problems with interesting techniques.
+R was developed by statisticians, and its base software is
+collaboratively maintained by an international group of core
+contributors {[}9{]}. The language also has an ecosystem of extensions
+beyond this base software---unlike several popular proprietary languages
+such as MATLAB or SAS, an R user can access, alter, and extend the base
+R software, and then share their work with other users in a formalized
+way through extensions that are commonly called \emph{packages} (as a
+note, ``package'' is not perfectly synonymous with ``extension'', as
+some packages also come with base R and so are not extending the base
+software, but we will use ``package'' as throughout as the more commonly
+recognized colloquial term). An R package is a fundamental unit of
+shareable code. There are numerous analogies in computing between
+programming and culinary arts: recipe structures, coding cookbooks, and
+the like. To conceptualize packages, imagine you are the chef, base R is
+the kitchen, and packages are the special gadgets which allow you to
+cook and bake new recipes. In essence, R packages are coding delectables
+that enable the user to perform practical tasks and solve problems with
+interesting techniques.
 
-Are there R packages for wrangling and cleaning data frames, designing
+These user-contributed packages comprise the bulk of enhancements made
+to the R environment {[}10{]}. In fact, much of what we know about
+statistical methods, visualization, and data analysis is wrapped up in R
+packages---written and documented by R users from around the world. Are
+there R packages for wrangling and cleaning data frames, designing
 interactive applications for data visualization, or performing
-dimensionality reduction? Yes! How do you \emph{find} an R package to
-help you train regression and classification models, assess the beta
+dimensionality reduction? Yes! But how do you \emph{find} an R package
+to help you train regression and classification models, assess the beta
 diversity of a population, or analyze gene expression microarray data?
 This answer is not as simple; there are tens of thousands of R packages.
 As a natural consequence of the open source nature of R, there is
@@ -394,29 +399,27 @@ considerable variation in the quality of R packages and nontrivial
 differences among those that provide similar tools.
 
 Packages are essential to venturing beyond base R and, thus, quickly
-become an integral aspect of advancing your R skills. Those who have
-used R packages may know that, although leveraging existing tools can be
-advantageous, the initial challenge of finding a suitable package for a
-given task can obstruct potential benefits. The advanced R user---having
-developed an intuition for their workflow---may be relatively confident
-when searching for and selecting packages. By contrast, new R users who
-are unfamiliar with the structure and syntax of the language may be
-hindered by the process of finding packages because they do not know
-where to search, what to look for, or how to sift through options. An
-obstacle that characterizes learning R at the outset is the struggle to
-(1) find a package to accomplish a particular task or solve a problem of
-interest and (2) choose the best package to perform that task. Even so,
-some obscure and complicated recipes make it difficult for an
-experienced chef to select the best tools.
+become an integral aspect of advancing your R capabilities. Those who
+have used R packages may know that, although leveraging existing tools
+can be advantageous, it can be challenging to find a suitable package
+for a given task, which can obstruct potential benefits. The advanced R
+user---having developed an intuition for their workflow---may be
+relatively confident when searching for and selecting packages. By
+contrast, new R users who are unfamiliar with the structure and syntax
+of the language may struggle to find packages because they do not know
+where to search, what to look for, or how to sift through options. When
+first learning R, two key obstacles are figuring out how to (1) find a
+package to accomplish a particular task or solve a problem of interest
+and (2) choose the best package to perform that task.
 
-In both coding and life, we endeavor to make choices that optimize
-outcomes. Just as one may go about shopping for shoes, deciding which
-graduate program to pursue, or conducting a literature review, there is
-a science behind selection. We inform our decisions by assessing,
-comparing, and filtering options based on indicators of quality such as
-utility, association, and reputation. Likewise, choosing an R package
-requires attending to similar details. We outline ten simple rules for
-finding and selecting R packages, so that you will spend less time
+However, new users don't need to struggle alone in figuring this out.
+Just as one may go about shopping for shoes, deciding which graduate
+program to pursue, or conducting a literature review, there is a science
+behind selection. We inform our decisions by assessing, comparing, and
+filtering options based on indicators of quality such as utility,
+association, and reputation. Likewise, choosing an R package requires
+attending to similar details. In this paper, we outline ten simple rules
+for finding and selecting R packages, so that you will spend less time
 searching for the right tools and more time coding delightful recipes.
 
 \hypertarget{rule-1-consider-your-purpose}{%
@@ -427,8 +430,9 @@ Usually, there are several ways to accomplish a task while programming,
 albeit some more elegant and efficient than others. Before looking for a
 package to use for a task, determine whether you need one. Consider your
 purpose by first identifying your goal then defining the scope and tasks
-to achieve it. For some tasks and workflows, coding your own recipe with
-existing tools is practical, while others benefit from new tools.
+to achieve it. For some tasks and workflows, it is practical to code
+your own recipe with base R or with packages you're already using, while
+other tasks benefit from new tools.
 
 If the scope of your task is simple or reasonable, given your knowledge
 and skills, using an R package may not be appropriate. There can be
@@ -438,28 +442,25 @@ are running; thus, your script may be easier to decipher and maintain
 over time. Conversely, packages require you to rely on shared code with
 features or underlying processes of which you may not be aware. Second,
 although base R is relatively stable and slow to change, many R packages
-evolve rapidly; unbeknown changes made to packages can cause defects in
-portions of your code affected by these changes.
+evolve rapidly; changes made to packages can cause defects in portions
+of your code that can be hard to diagnose.
 
-Packages are favorable in the same sense as kitchen tools: when a task
-has a broad or complex scope beyond what you can (or desire to) attempt
-from scratch. While there are ways to cook up an algorithm using
-\texttt{for} loops and conditionals in base R, a relevant package may
-accomplish your goal with less code and fewer bugs. The more reasonable
-it is for a given task to be abstracted away from its context, the more
-likely someone has generalized its themes, developed efficient
-algorithms, and intuitively organized them to share with other R users.
-Extensive tasks justify sophisticated frameworks with several functions
-that form a cohesive package or even a suite of related packages. Data
-manipulation is one such common task that has been streamlined by
-packages such as \texttt{dplyr} and \texttt{tidyr} {[}11,12{]}, both
-part of the \texttt{tidyverse} suite (see Table 1). Nevertheless, don't
-be discouraged if you have a task that seems too unusual for a package.
+Packages are favorable in the same sense as kitchen tools: they are
+great to turn to when a task has a broad or complex scope beyond what
+you can (or desire to) attempt from scratch. While there are ways to
+cook up an algorithm in base R, a relevant package may accomplish your
+goal with less code and fewer bugs. Extensive tasks justify
+sophisticated frameworks with several functions that form a cohesive
+package or even a suite of related packages. Data manipulation is one
+such common task that has been streamlined by packages such as
+\texttt{dplyr} and \texttt{tidyr} {[}11,12{]}, both part of the
+\texttt{tidyverse} suite (see Table 1). Nevertheless, don't be
+discouraged if you have a task that seems too unusual for a package.
 There are indeed packages for seemingly singular tasks, which you may
-favor over coding from scratch. Surprisingly, you can use an R package
-to access the Twitter API, send emails from R, and there is even a
-package for converting English letters to numbers as on a telephone
-keypad {[}13--15{]}.
+favor over coding from scratch. You can use an R package to access the
+Twitter API, send emails from R, and there is even a package for
+converting English letters to numbers as on a telephone keypad
+{[}13--15{]}.
 
 If you decide you need a package, next ask yourself: Which
 functionalities in base R are restrictive in context of your task? Which
@@ -471,15 +472,17 @@ you could do it, so you narrow your search. Identify the type of inputs
 you have and envision working with them; contemplate the desired outputs
 and corresponding format. Suppose you are using Bioconductor packages in
 analyses and have outputs you want to visualize; you must consider that
-the inputs may be of a certain class---namely, S4 objects---which impose
-restrictions when creating graphics {[}16{]}. When you look for a
-package to visualize the data, you will want to choose one that
-addresses such restrictions. If, however, you don't quite know (or have
-a difficult time articulating) what you need, don't hesitate to search
-the internet for examples that capture your purpose. Sometimes, for
-instance, it's helpful to search Google Images for plots and figures to
-identify the terminology that describes what you are trying to do, how
-people approach similar tasks, and potential challenges that may arise.
+the inputs may be of a certain class---a type of S4 object, for example
+{[}16{]}. When you look for a package to visualize the data, you will
+want to choose one that gracefully handles this type of object as an
+input.
+
+If you don't quite know (or have a difficult time articulating) what you
+need, don't hesitate to search the internet for examples that capture
+your purpose. It can be helpful to search with Google (and with Google
+Images for plots and figures) to identify the terminology that describes
+what you are trying to do, how people approach similar tasks, and
+potential challenges that may arise.
 
 \hypertarget{rule-2-find-and-collect-options}{%
 \section{Rule 2: Find and collect
@@ -1428,14 +1431,27 @@ can use a GitHub mirror of CRAN via
 alternative to downloading a large or potentially corrupted zipped file.
 
 At this point, what you have learned about the package should be quite
-helpful. If the development and documentation are sound, the package
-should come with a test script or working example that you can run after
-installation {[}64{]}. Vignettes include many common data science
-problems with solutions; you can run the code examples, tweak them, and
-compare the outputs. In general, it is essential to know the behavior of
-different functions within a package, how they interact, and how outputs
-respond to changes in inputs. Suppose you are testing a package with
-sparse documentation such that function descriptions often include
+helpful. If the package has a vignette, this is a great place to start.
+Vignettes include many common data science problems with solutions; you
+can run the code examples, tweak them, and compare the outputs. First
+try out the examples with example data provided by the package, and then
+see if you can work in your own data. Sometimes, package functions will
+require inputs to be in a specific data type (e.g., a dataframe, or a
+certain type of S4 object) or to have a specific format (e.g., if it's
+in a dataframe, to have certain columns with certain names). By moving
+from the example data to your own, you can see how much work it will be
+to move your data into these formats. You can also see if certain
+characteristics of your data (e.g., missing values in some fields) cause
+complications when using the package's functions.
+
+You can move on to looking through the collection of help files for the
+package. Help files often include executable examples, and you can again
+start by testing these with the example data provided by the package,
+and then move on to trying them with your own data and within your own
+workflow. In general, it is essential to know the behavior of different
+functions within a package, how they interact, and how outputs respond
+to changes in inputs. Suppose you are testing a package with sparse
+documentation such that function descriptions often include
 ``\texttt{\ldots{}}'' and the argument descriptions seem incomplete.
 This will be problematic if making a reasonable change to an argument
 results in an incomprehensible error for which you cannot find help.
@@ -1457,70 +1473,96 @@ analysis as well as those from Bioconductor tend to use S4 objects to
 represent data {[}7{]}. On the other hand, the \texttt{tidyverse}, a
 unified suite of packages with an grammatical structure employed within
 a ``pipeline'', expects data frame objects {[}73{]}. Thus, when you are
-working in the \texttt{tidyverse}, you cannot incorporate S3 and S4
-objects into the framework unless their corresponding functions are the
-final step in the pipeline. The \texttt{broom} package, and the
-bioinformatics analog, \texttt{biobroom}, aim to alleviate these
-disruptions by converting untidy objects into tidy data, thereby making
-it easier to integrate statistical functions into the structure of the
-\texttt{tidyverse} workflow {[}74,75{]}. Furthermore, the \texttt{caret}
-package facilitates interoperability for machine learning packages by
-providing a uniform interface for modeling with various algorithms from
-different packages that would otherwise have independent syntax
-{[}76{]}.
+working in the \texttt{tidyverse}, you may have to take extra steps to
+extract components from S3 and S4 objects to re-frame the data into a
+dataframe. Some packages already exist to help with this interfacing
+task between S3/S4 objects and \texttt{tidyverse} tools. The
+\texttt{broom} package, and the bioinformatics analog,
+\texttt{biobroom}, aim to alleviate these disruptions by converting
+``untidy'' objects in S3/S4 objects into ``tidy'' data in dataframes,
+thereby making it easier to integrate statistical functions into the
+structure of the \texttt{tidyverse} workflow {[}74,75{]}. Furthermore,
+the \texttt{caret} package facilitates interoperability for machine
+learning packages by providing a uniform interface for modeling with
+various algorithms from different packages that would otherwise have
+independent syntax {[}76{]}.
 
 \hypertarget{rule-10-develop-your-own-package}{%
 \section{Rule 10: Develop your own
 package}\label{rule-10-develop-your-own-package}}
 
-Alternative solutions can be sought when a package to solve your data
-science problem is nonexistent. An R package is the fundamental unit of
-shareable code; rather than exclusively being a user of packages, you
-can create them---more easily than you may think {[}24{]}. The reasons
-why you might want to create a package are abundant, including
-necessity, innovation, standardization, automation, specialty,
-containment, organization, sharing, collaboration, and extensibility.
-The essence of an R package is a self-contained piece of statistical
-knowledge that can be used in combination with other self-contained
-pieces of statistical knowledge of different shapes and sizes; the
-uniquely structured functions within a package help us implement that
-knowledge and weave it into novel scientific work.
+What if you can't find a package to solve your data science problem?
+Rather than exclusively being a user of packages, you can create
+them---more easily than you may think {[}24{]}. If you decide to write
+your own R code to perform your task (see Rule 1), a natural next step
+is to wrap this into a function that can be re-used; an R package is
+essentially just a collection of one or more of these functions. The
+essence of an R package is a self-contained set of algorithms---encoded
+as functions---that can be used in combination with other self-contained
+sets of algorithms of different shapes and sizes, including the set of
+algorithms shared through base R. The uniquely structured functions
+within a package help us implement that knowledge and weave it into
+novel scientific work. The reasons why you might want to create a
+package are abundant, including necessity, innovation, standardization,
+automation, specialty, containment, organization, sharing,
+collaboration, and extensibility.
 
-Whatever your motivation, packages are simply tools; you can create a
-package out of any collection of specialty functions. Packages need not
-be formal nor entirely cohesive. For instance, personal R packages such
-as \texttt{Hmisc} and \texttt{broman}, are comprised of miscellaneous
-functions which the creator has developed and frequently uses
-{[}77,78{]}. Functions are necessary for efficiency and warranted when
-you repetitiously copy and paste your code while making slight
-modifications after each iteration {[}54{]}. The concept of personal R
-packages demonstrates a unique purpose for packages beyond the
-conventional. R packages are not solely reserved for specific tasks with
-comprehensive methods; rather, package development can help you learn
-how to apply proper coding techniques to writing functions and
-documentation with reproducibility and collaboration in mind {[}79{]}.
+Whatever your motivation, packages are simply sets of tools; you can
+create a package out of any collection of specialty functions. A key
+tenant of efficient programming is the ``DRY'' principle---Do not Repeat
+Yourself. Functions help you replace copy-and-pasted code with a defined
+piece of code in one place in a script that can be called throughout in
+shorthand. They help with efficiency and are warranted when you
+repetitiously copy and paste your code while making slight modifications
+after each iteration {[}54{]}. Since R packages are just sets of these
+functions, they are not solely reserved for large-scale, comprehensive
+methods; rather, package development can also help you learn how to
+apply proper coding techniques to writing functions and documentation
+with reproducibility and collaboration in mind {[}77{]}. Packages need
+not be formal nor entirely cohesive. For instance, personal R packages
+such as \texttt{Hmisc} and \texttt{broman}, are comprised of
+miscellaneous functions which the creator has developed and frequently
+uses {[}78,79{]}.
 
 Although you may not anticipate that anyone else will use your tools,
-following best practices for package development will yield more
-favorable outcomes. As a consumer of shared packages, you know the
+following best practices for package development is still a good idea.
+Even if you are the only person who will use your package, be kind to
+your future self---as a consumer of shared packages, you know the
 inherent benefits of robust software development relative to the quality
-of code, data, documentation, versions, and tests {[}64{]}. Similarly,
-creating a valuable package for personal use requires consideration for
-your future self and anticipation of distributing your code, should the
-need arise. Use version control and take advantage of existing
-resources. Indeed, there are R packages that aid in package development
-(e.g., \texttt{devtools}, \texttt{usethis}, \texttt{testthat},
-\texttt{roxygen2}, \texttt{rlang}, \texttt{drat}) {[}32,38,80--83{]}. In
-the case of collaboration, the R project within RStudio IDE, is
-compatible with distributed development---a feature that couples well
-with version control. There is no lack of effective organizational
-frameworks to reference in the open source R community; in fact,
-repositories for many exemplary packages are available on GitHub. We
-recommend consulting resources authored by expert R developers including
-\href{https://r-pkgs.org/}{\emph{R Packages}} by Hadley Wickham and the
-official manual,
+of code, data, documentation, versions, and tests {[}64{]}. There's also
+no reason not to take advantage of existing resources when coding your
+package. There are R packages that aid in package development (e.g.,
+\texttt{devtools}, \texttt{usethis}, \texttt{testthat},
+\texttt{roxygen2}, \texttt{rlang}, \texttt{drat})
+{[}32,38,80--83{]}---while these packages provide
+``industrial-strength'' support for developing large and complex
+packages, they also prove useful even in developing small, private
+packages. They make it easier and more efficient, for example, to write
+help documentation and unit tests for functions in the package.
+RStudio's IDE has a framework called ``Projects'', and this framework
+can be used when developing an R package to \ldots{} . Tips on using
+many of these package development tools are available through resources
+authored by expert R developers, like \href{https://r-pkgs.org/}{\emph{R
+Packages}} by Hadley Wickham {[}24{]}, while the official resource on
+writing packages to share through CRAN is the manual,
 \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{\emph{Writing
-R Extensions}}, from CRAN {[}24,84{]}.
+R Extensions}} {[}84{]}.
+
+Finally, even if you are only writing a package for your own use and
+don't plan to publish it through a repository, consider using version
+control. {[}Add something about why---could include that it would make
+it easier to pass along to collaborators if you ever decide to, it
+allows you to keep a clean directory of code while being able to
+``rewind'' changes if you decide you don't like them, let's you create
+branches to try new things, and only bring them back into the main
+branch if they work out, etc.{]} If you decide to collaborate on a
+package, even if you plan for the package to remain a resource just
+among your group of collarborators, the Project framework is compatible
+with distributed development---a feature that couples well with version
+control and online platforms for version controlled repositories, like
+GitHub. There is no lack of effective organizational frameworks to
+reference in the open source R community; in fact, repositories for many
+exemplary packages are available on GitHub.
 
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
@@ -1533,7 +1575,7 @@ shared and accompanied by thorough descriptions of the process and
 purpose. In this way, R packages have effectively transformed how we
 interact with data in the modern day in, perhaps, a more impactful
 manner than several revered contributions to theoretical statistics
-{[}4{]}. Packages greatly enhance the user experience and enable you to
+{[}5{]}. Packages greatly enhance the user experience and enable you to
 be more efficient and effective at learning from data, regardless of
 prior experience.
 
@@ -1726,14 +1768,14 @@ American Association for the Advancement of Science; 2011;334:
 reproducibility mean? Science translational medicine. American
 Association for the Advancement of Science; 2016;8: 341ps12--341ps12.
 
-\leavevmode\hypertarget{ref-donoho2017}{}%
-4. Donoho D. 50 years of data science. Journal of Computational and
-Graphical Statistics. Taylor \& Francis; 2017;26: 745--766.
-
 \leavevmode\hypertarget{ref-stodden2013}{}%
-5. Stodden V, Miguez S. Best practices for computational science:
+4. Stodden V, Miguez S. Best practices for computational science:
 Software infrastructure and environments for reproducible and extensible
 research. Available at SSRN 2322276. 2013;
+
+\leavevmode\hypertarget{ref-donoho2017}{}%
+5. Donoho D. 50 years of data science. Journal of Computational and
+Graphical Statistics. Taylor \& Francis; 2017;26: 745--766.
 
 \leavevmode\hypertarget{ref-robinson2017}{}%
 6. Robinson D. The impressive growth of r {[}Internet{]}. Stack
@@ -2071,18 +2113,18 @@ objects into tidy data frames {[}Internet{]}. 2020. Available:
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=caret}
 
+\leavevmode\hypertarget{ref-parker2013}{}%
+77. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
+\url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
+
 \leavevmode\hypertarget{ref-Hmisc}{}%
-77. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
+78. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
 {[}Internet{]}. 2020. Available:
 \url{https://CRAN.R-project.org/package=Hmisc}
 
 \leavevmode\hypertarget{ref-broman}{}%
-78. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
+79. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
 Available: \url{https://CRAN.R-project.org/package=broman}
-
-\leavevmode\hypertarget{ref-parker2013}{}%
-79. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
-\url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
 
 \leavevmode\hypertarget{ref-usethis}{}%
 80. Wickham H, Bryan J. Usethis: Automate package and project setup
