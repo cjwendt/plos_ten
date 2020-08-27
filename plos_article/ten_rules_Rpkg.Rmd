@@ -59,7 +59,7 @@ party organization."
 - ROpenSci
 - GitHub
 
-I am an editor at ROpenSci, so we could mention that in the disclaimer. I do not have any financial interests from that position (it's volunteer, as are many journal editing positions in academics).
+I am an editor at ROpenSci, so we could mention that in the disclaimer. I do not have any financial interests from that position (it's volunteer, as are many journal editing positions in academics). If we keep in mention of Coursera (and even if not), we should probably also add in my links with Coursera and Leanpub.
 
 # Funding acknowledgment
 
