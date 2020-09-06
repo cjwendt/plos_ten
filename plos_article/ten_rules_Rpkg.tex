@@ -169,46 +169,6 @@
 \newcommand{\lorem}{{\bf LOREM}}
 \newcommand{\ipsum}{{\bf IPSUM}}
 
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 
 
 \usepackage{booktabs}
@@ -384,7 +344,7 @@ a kitchen sink from a mixer, we use ``package'' in the colloquial sense.
 In essence, R packages are coding delectables that enable the user to
 perform practical tasks and solve problems with interesting techniques.
 
-Are there R packages for wrangling and cleaning data frames, designing
+Are there R packages for wrangling and cleaning dataframes, designing
 interactive applications for data visualization, or performing
 dimensionality reduction? Yes! How do you \emph{find} an R package to
 help you train regression and classification models, assess the beta
@@ -758,24 +718,23 @@ such packages are often published on CRAN or Bioconductor {[}41{]}, and
 for these GitHub can be a place to check out planned changes for the
 next stable version that the developer plans to publish. GitHub provides
 R users with open access to package code, a timeline of help resources
-(see Rule 4), and a direct line of communication to developers. It's
-simple to install the latest version of a package you want to use from
-GitHub via
-\texttt{devtools::install\_github("DeveloperName/PackageName")};
-however, the decentralized nature of GitHub isn't conducive to a tool
-that automatically locates and installs corresponding dependencies that
-are not on CRAN {[}42{]}. In fact, the rapid uptick in package
-development and ensuing inter-repository dependencies has sparked an
-ongoing debate on whether regulated repositories such as CRAN and
-Bioconductor are preferable to distribution platforms like GitHub due to
-this complication {[}23,40,43{]}. Further, when a package is installed
-from GitHub, typically only the source code is available, not binaries
+(see Rule 4), and a direct line of communication to developers. Both R
+users and package developers benefit from interactive feedback channels
+through GitHub Issues and the Star rating system. It's simple to install
+the latest version of a package you want to use from GitHub via
+\texttt{devtools::install\_github("developer/package")}; however, the
+decentralized nature of GitHub isn't conducive to a tool that
+automatically locates and installs corresponding dependencies that are
+not on CRAN {[}42{]}. In fact, the rapid uptick in package development
+and ensuing inter-repository dependencies has sparked an ongoing debate
+on whether regulated repositories such as CRAN and Bioconductor are
+preferable to distribution platforms like GitHub due to this
+complication {[}23,40,43{]}. Further, when a package is installed from
+GitHub, typically only the source code is available, not binaries
 pre-built for your computers operating systems. This means that the
 installation process will need to build the package from source on your
 computer, which may require certain compilers and other tools (e.g.,
-XCode for macOS, Rtools for Windows). Both R users and package
-developers benefit from interactive feedback channels through GitHub
-Issues and the Star rating system.
+XCode for macOS, Rtools for Windows).
 
 When you're searching for and selecting packages, it's important to note
 that a single package is often available in multiple places. Packages
@@ -1005,7 +964,8 @@ announcements about the development of R and availability of new code
 (R-announce) and new or enhanced contributed packages (R-packages)
 {[}67{]}. In the early days, the R-help mailing list was the only way to
 seek direct assistance; since, the R community (e.g.,
-\href{https://community.rstudio.com/}{the RStudio Community}) has
+\href{https://community.rstudio.com/}{RStudio Community},
+\href{https://support.bioconductor.org/}{Bioconductor Support}) has
 evolved to make asking for help more widespread and accessible, with
 inclusion and creative problem-solving as hallmarks of its online
 presence {[}68{]}. Certain packages have independent mailing lists;
@@ -1140,7 +1100,7 @@ describing their package and its algorithms; such articles must go
 through the traditional peer-review process in order to be published.
 Certain journals publish articles about R packages themselves while
 others feature work that used a particular package. Journals with a
-targeted and technical focus on R packages and other open-source
+targeted and technical focus on R packages and other open source
 scientific software include the
 \href{https://joss.theoj.org/}{\emph{Journal of Open Source Software}},
 the \href{https://www.jstatsoft.org/index}{\emph{Journal of Statistical
@@ -1178,7 +1138,7 @@ out how often researchers have used it within scientific papers
 describing research, rather than package-focused papers. Useful packages
 may be mentioned in the Methods and/or References sections of such
 papers. Packages hosted on CRAN or Bioconductor have a standardized
-format for citation, and a call to \texttt{citation("PackageName")} will
+format for citation, and a call to \texttt{citation("package")} will
 print the suggested BibTex citation for the package {[}11{]}. Further,
 in response to the rising number of researchers creating tools and
 software to work with their data, GitHub has granted developers the
@@ -1653,100 +1613,6 @@ from discovering, trying, creating, and sharing new recipes.
 \hypertarget{table-1-general-packages}{%
 \section{Table 1 (general packages)}\label{table-1-general-packages}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{library}\NormalTok{(kableExtra)}
-\KeywordTok{library}\NormalTok{(knitr)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# general packages data}
-\NormalTok{gen_pkgs <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}
-  \DataTypeTok{Package =} \KeywordTok{c}\NormalTok{(}\StringTok{"readr"}\NormalTok{, }
-              \StringTok{"dplyr"}\NormalTok{,}
-              \StringTok{"tidyr"}\NormalTok{,}
-              
-              \StringTok{"broom[note]"}\NormalTok{,}
-              \StringTok{"purrr"}\NormalTok{,}
-              \StringTok{"caret"}\NormalTok{, }
-              
-              \StringTok{"ggplot2"}\NormalTok{, }
-              \StringTok{"kableExtra"}\NormalTok{, }
-              \StringTok{"rmarkdown"}\NormalTok{),}
-  
-  \DataTypeTok{Description =} \KeywordTok{c}\NormalTok{(}\StringTok{"Read rectangular data (e.g., csv, tsv, and fwf)"}\NormalTok{, }
-                  \StringTok{"Grammar of tidy data manipulation"}\NormalTok{,}
-                  \StringTok{"Tidy messy data"}\NormalTok{,}
-                  
-                  \StringTok{"Tidy model output; convert statistical objects into tidy tibbles"}\NormalTok{, }
-                  \StringTok{"Functional programming tools for functions and vectors"}\NormalTok{,}
-                  \StringTok{"Framework for predictive modeling"}\NormalTok{,}
-                  
-                  \StringTok{"System for data visualization"}\NormalTok{, }
-                  \StringTok{"Build complex tables and manipulate styles"}\NormalTok{,}
-                  \StringTok{"Authoring framework for data science and reproducible research"}\NormalTok{),}
-  
-  \DataTypeTok{Year =} \KeywordTok{c}\NormalTok{(}\StringTok{"2015"}\NormalTok{,}
-           \StringTok{"2014"}\NormalTok{,}
-           \StringTok{"2014"}\NormalTok{,}
-  
-           \StringTok{"2014"}\NormalTok{,}
-           \StringTok{"2015"}\NormalTok{,}
-           \StringTok{"2007"}\NormalTok{,}
-                    
-           \StringTok{"2007"}\NormalTok{,}
-           \StringTok{"2017"}\NormalTok{, }
-           \StringTok{"2014"}\NormalTok{),}
-  
-  \DataTypeTok{Author =} \KeywordTok{c}\NormalTok{(}\StringTok{"Wickham et al."}\NormalTok{,}
-             \StringTok{"Wickham et al."}\NormalTok{, }
-             \StringTok{"Wickham & Henry"}\NormalTok{,}
-  
-             \StringTok{"Robinson & Hayes"}\NormalTok{,}
-             \StringTok{"Henry & Wickham"}\NormalTok{,}
-             \StringTok{"Kuhn"}\NormalTok{, }
-                    
-             \StringTok{"Wickham et al."}\NormalTok{,}
-             \StringTok{"Zhu"}\NormalTok{, }
-             \StringTok{"Allaire et al."}\NormalTok{),}
-  
-  \DataTypeTok{Documentation =} \KeywordTok{c}\NormalTok{(}\StringTok{"https://readr.tidyverse.org/"}\NormalTok{, }
-                    \StringTok{"https://dplyr.tidyverse.org/"}\NormalTok{, }
-                    \StringTok{"https://tidyr.tidyverse.org/"}\NormalTok{,}
-  
-                    \StringTok{"https://broom.tidymodels.org/"}\NormalTok{,}
-                    \StringTok{"https://purrr.tidyverse.org/"}\NormalTok{,}
-                    \StringTok{"https://topepo.github.io/caret/index.html"}\NormalTok{, }
-                    
-                    \StringTok{"https://ggplot2.tidyverse.org/"}\NormalTok{,}
-                    \StringTok{"https://haozhu233.github.io/kableExtra/"}\NormalTok{, }
-                    \StringTok{"https://rmarkdown.rstudio.com/lesson-1.html"}\NormalTok{)}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# general packages table}
-\KeywordTok{kable}\NormalTok{(gen_pkgs, }\DataTypeTok{format =} \StringTok{"latex"}\NormalTok{, }\DataTypeTok{booktabs =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{%>%}
-\StringTok{  }\CommentTok{# scale}
-\StringTok{  }\KeywordTok{kable_styling}\NormalTok{(}\DataTypeTok{latex_options =} \StringTok{"scale_down"}\NormalTok{) }\OperatorTok{%>%}
-\StringTok{  }\CommentTok{# separate rows by category}
-\StringTok{  }\KeywordTok{pack_rows}\NormalTok{(}\StringTok{"Data Manipulation"}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{3}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{pack_rows}\NormalTok{(}\StringTok{"Statistical Modeling"}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{6}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{pack_rows}\NormalTok{(}\StringTok{"Data Visualization"}\NormalTok{, }\DecValTok{7}\NormalTok{, }\DecValTok{9}\NormalTok{) }\OperatorTok{%>%}
-\StringTok{  }\CommentTok{# column wrap}
-\StringTok{  }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DataTypeTok{width =} \StringTok{"10em"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{column_spec}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DataTypeTok{width =} \StringTok{"20em"}\NormalTok{) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\CommentTok{# bold column names}
-\StringTok{  }\KeywordTok{row_spec}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DataTypeTok{bold =}\NormalTok{ T) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{add_footnote}\NormalTok{(}\StringTok{"See the biobroom analog in Bioconductor"}\NormalTok{,}
-               \DataTypeTok{notation =} \StringTok{"symbol"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{table}[H]
 \centering
 \resizebox{\linewidth}{!}{
@@ -1773,29 +1639,6 @@ from discovering, trying, creating, and sharing new recipes.
 \multicolumn{5}{l}{\textsuperscript{*} See the biobroom analog in Bioconductor}\\
 \end{tabular}}
 \end{table}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{## trying to separate color; striped by group}
-\CommentTok{#  row_spec(1:3 - 1, extra_latex_after = "\textbackslash{}\textbackslash{}rowcolor\{gray!6\}")}
-\CommentTok{#  row_spec(0:3, extra_latex_after = "\textbackslash{}\textbackslash{}rowcolor\{orange!6\}") %>% }
-\CommentTok{#  row_spec(4:6, extra_latex_after = "\textbackslash{}\textbackslash{}rowcolor\{gray!6\}") %>% }
-\CommentTok{#  row_spec(7:11, extra_latex_after = "\textbackslash{}\textbackslash{}rowcolor\{gray!6\}")}
-
-\CommentTok{## QUESTIONS }
-\CommentTok{# Code font for package names in " "? \textbackslash{}texttt\{\}?}
-\CommentTok{# How do you repeat same symbol on multiple items with one footnote?}
-\CommentTok{# How do you separate colors and stripe by group?}
-\CommentTok{# Add title}
-\CommentTok{# Add caption}
-\CommentTok{# Cite packages in bib and add references in table?}
-\CommentTok{# Embed url link to package documentation? Do we want to link cheatsheets?}
-\CommentTok{# How do you add link/reference to Table 1 in text in the template?}
-\CommentTok{# How do you hide code for table in knitted pdf...include=FALSE errors?}
-\CommentTok{# Title for column 2: description/purpose/usage?}
-\CommentTok{# Length of description/purpose/usage for each package?}
-\end{Highlighting}
-\end{Shaded}
 
 \hypertarget{supporting-information}{%
 \section{Supporting information}\label{supporting-information}}
