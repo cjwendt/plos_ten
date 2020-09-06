@@ -247,12 +247,12 @@ Nonetheless, the sheer quantity and potential complexity of available R packages
 
 # Table 1 (general packages)
 
-```{r}
+```{r echo = FALSE}
 library(kableExtra)
 library(knitr)
 ```
 
-```{r}
+```{r echo = FALSE}
 # general packages data
 gen_pkgs <- data.frame(
   Package = c("readr", 
@@ -317,7 +317,7 @@ gen_pkgs <- data.frame(
 )
 ```
 
-```{r}
+```{r echo = FALSE}
 # general packages table
 kable(gen_pkgs, format = "latex", booktabs = TRUE) %>%
   # scale

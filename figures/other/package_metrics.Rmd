@@ -92,7 +92,7 @@ table <- metrics_table(pkg_df)
 # export as EPS file for journal requirements
 setEPS()
 postscript("package_metrics.eps")
-table
+print(table)
 dev.off()
 ```
 
