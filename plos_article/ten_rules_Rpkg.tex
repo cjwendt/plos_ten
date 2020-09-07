@@ -446,7 +446,7 @@ challenges that may arise.
 \section{Rule 2: Find and collect
 options}\label{rule-2-find-and-collect-options}}
 
-You can find Tips and leads for finding R packages in various places
+You'll encounter tips and leads for finding R packages in various places
 online, in print, and elsewhere. If you've searched for packages a lot,
 you likely have a shortlist of tried and true starting points---a perk
 of being a long-time R user. On the other hand, new R users haven't yet
@@ -460,33 +460,35 @@ When learning how to program in R, you are typically introduced to some
 of the most common packages, which tend to have more general purposes.
 \textbf{Table 1} gives some examples of popular packages you may have
 learned about in an introductory R course or book, particularly if it
-focused on the ``tidyverse'' approach to coding in R. In addition,
+focused on the \texttt{tidyverse} approach to coding in R. In addition,
 reputable online tutorials, courses, and books are helpful resources for
 acquiring knowledge about packages that are versatile and
-reliable---many of which are short, accessible, and either affordable or
+reliable---they tend to be concise, accessible, and either affordable or
 offered at \href{https://committedtotape.shinyapps.io/freeR/}{no cost}
 to the learner. For example,
 \href{https://www.codecademy.com/learn/learn-r}{Codeacademy},
-\href{https://www.coursera.org/learn/r-programming}{Coursera}, and other
-Massive Open Online Course platform provide courses for interactive
-learning, while numerous R programming books are available freely
-online, many of which are highlighted on the
-\href{https://bookdown.org/}{bookdown.org site} or available through
-\href{https://rstudio.com/resources/books/}{RStudio's books}, or in
-print books through series like the Springer UseR! Series and the
-Chapman \& Hall/CRC R Series.
+\href{https://www.coursera.org/learn/r-programming}{Coursera}, while
+other Massive Open Online Courses provide platforms for interactive
+learning, and numerous R programming books are available freely
+online---many of which are highlighted on the
+\href{https://bookdown.org/}{bookdown.org site} or obtainable through
+\href{https://rstudio.com/resources/books/}{RStudio's books}---or in
+print series like the Springer UseR! Series and the Chapman \& Hall/CRC
+R Series.
 
 You can also browse online to look for R packages. Search engines such
 as Google return ample pages related to anything
-\texttt{"\ldots{}\ in\ R"}. This cn be a good place to start, especially
-if you use the list of terms you developed for Rule 1. For a more
-directed approach, you can search the package lists on repositories
-including the Comprehensive R Archive Network (CRAN), Bioconductor, and
-rOpenSci {[}add links to these{]} or browse packages available on
-code-sharing websites like GitHub and GitLab (see Rule 3), with language
+\texttt{"\ldots{}\ in\ R"}. This can be a good place to start,
+especially if you use the list of terms you developed for Rule 1. For a
+more directed approach, you can search the package lists on repositories
+including the \href{https://cran.r-project.org/}{Comprehensive R Archive
+Network (CRAN)}, \href{https://www.bioconductor.org/}{Bioconductor}, and
+\href{https://ropensci.org/}{rOpenSci} or browse packages available on
+code-sharing websites like \href{https://github.com/}{GitHub} and
+\href{https://about.gitlab.com/}{GitLab} (see Rule 3), with language
 filters for finding repositories that heavily rely on R code.
 
-You can also search with a more targeted approach, starting from a
+You can also search with a more targeted approach by starting from a
 curated list of R packages on a particular topic.
 \href{https://cran.r-project.org/web/views/}{CRAN Task Views}
 concentrate on topics from certain disciplines or methodological
@@ -495,28 +497,28 @@ HTML version, you can browse alphabetized subcategories of packages
 within each Task View and read concise descriptions to find tools with
 specific functionality. Alternatively, you can access Task Views
 directly from the R console with \texttt{ctv::CRAN.views()} {[}18{]}
-(note that here and throughout we use this compact notation of
-\texttt{package::function()} to indicate a function from a specific
-package). There are currently 41 Task Views that collectively contain
-thousands of packages, all curated and regularly tested. Moreover, CRAN
-Task Views provide tools that enable you to automatically install all
-packages within a targeted area of interest. Ultimately, by providing
-task-based organization, easy simultaneous installation of related
-packages, meta-information, ensured maintenance, and quality control,
-CRAN Task Views address several major user-end issues that have arisen
-due to the sheer quantity of available packages {[}19{]}.
+(note that here and throughout, we use this compact
+\texttt{package::function()} notation to indicate a function from a
+specific package). There are currently 41 Task Views that collectively
+contain thousands of packages, all curated and regularly tested.
+Moreover, CRAN Task Views provide tools that enable you to automatically
+install all packages within a targeted area of interest. Ultimately, by
+providing task-based organization, easy simultaneous installation of
+related packages, meta-information, ensured maintenance, and quality
+control, CRAN Task Views address several major user-end issues that have
+arisen due to the sheer quantity of available packages {[}19{]}.
 
 The computational biology and bioinformatics analogs of CRAN Task Views,
 \href{https://www.bioconductor.org/packages/release/BiocViews.html\#___Software}{biocViews},
-are lists of packages available through the Bioconductor respository
-that provide tools for analyzing biological data. Your keywords from
-Rule 1 will come in handy here, too; for instance, you can search
-``RNA-seq'' to find all packages related to high-throughput sequencing
-methods for analyzing RNA populations. You can also browse the biocViews
-tree menu to narrow your search based on which general and specific
-categories describe your task. The list includes each package's name
-linked to information and documentation, its maintainer, a short
-description, and its rank relative to other Bioconductor packages.
+are lists of packages available through the Bioconductor repository that
+provide tools for analyzing biological data. Your keywords from Rule 1
+will come in handy here, too; for instance, you can search ``RNA-seq''
+to find all packages related to high-throughput sequencing methods for
+analyzing RNA populations. You can also browse the biocViews tree menu
+to narrow your search based on which general and specific categories
+describe your task. The list includes each package's name linked to
+information and documentation, its maintainer, a short description, and
+its rank relative to other Bioconductor packages.
 
 Other curated collections and topically-linked lists of packages are
 also available.
@@ -536,16 +538,16 @@ however, members are markedly active on Twitter, a place where R users
 seek help, share ideas, and stay informed on \texttt{\#rstats}
 happenings, including releases of new packages {[}21{]}. R-related blogs
 serve as another informal, up-to-date, and more detailed avenue for
-communicating and promoting R-related information (\textbf{Table ?}).
-For example, Joseph Rickert, Ambassador at Large for RStudio, writes
-monthly posts on the \href{https://rviews.rstudio.com/}{R Views} blog
-highlighting interesting new R packages. Rickert also features special
-articles about recently released packages and lists of top packages
-within certain categories, including Computational Methods, Data,
-Machine Learning, Medicine, Science, Statistics, Time Series, Utilities,
-and Visualization.
+communicating and promoting R-related information. For example, Joseph
+Rickert, Ambassador at Large for RStudio, writes monthly posts on the
+\href{https://rviews.rstudio.com/}{R Views} blog highlighting
+interesting new R packages. Rickert also features special articles about
+recently released packages and lists of top packages within certain
+categories, including: Computational Methods, Data, Machine Learning,
+Medicine, Science, Statistics, Time Series, Utilities, and
+Visualization.
 
-Members of the R community also gather regularly at conferences to share
+Members of the R community gather regularly at conferences to share
 their latest work. You can attend---or access content from---these
 conferences to learn about improved, recently released, or up-and-coming
 R package developments and applications. Two large annual R conferences
