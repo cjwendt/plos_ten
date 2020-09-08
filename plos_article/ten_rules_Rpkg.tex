@@ -1322,7 +1322,7 @@ repository webpage for the master branch. GitHub badges are a common
 self-imposed method to signal use of best practices and motivate
 developers to produce software that's high in quality and transparency
 {[}86{]}. They're easily visible, interactive, and increase readability
-of the \texttt{README}. You may see, for example, license
+of the \texttt{README}. You might see, for example, license
 (\texttt{license}), version (\texttt{release}), dependency
 (\texttt{dependencies}), code coverage (\texttt{codecov}), or build
 status (\texttt{build}) badges, all of which are good indicators of
@@ -1330,16 +1330,15 @@ package caliber. What's more, badges have dynamic status tags to
 indicate the current status of the particular part of a workflow to
 which the badge refers; as an example, a \texttt{build} badge with a
 \texttt{passing} status tag could be telling you that the package is
-passing continuous integration tests (continuous integration is
-explained in more detail later in this rule) {[}71{]}. Badges are also
-clickable buttons that link to a page that describes and displays
-detailed aspects of the metric associated with the badge. For instance,
-when you click on a \texttt{codecov} badge, you'll likely end up on a
-page with a timeline, graphics, and information about the percentage and
-distribution of test coverage for the package. You can refer to special
-badges like \texttt{CRAN}, \texttt{Bioconductor}, or \texttt{rOpenSci}
-to determine which repository (or repositories) a package is shared on
-(See Rule 3).
+passing continuous integration (CI) tests (CI is explained later in this
+Rule) {[}71{]}. Badges are also clickable buttons that link to a page
+that describes and displays detailed aspects of the metric associated
+with the badge. For instance, when you click on a \texttt{codecov}
+badge, you'll likely end up on a page with a timeline, graphics, and
+information about the percentage and distribution of test coverage for
+the package. You can refer to special badges like \texttt{CRAN},
+\texttt{Bioconductor}, or \texttt{rOpenSci} to determine which
+repository (or repositories) a package is shared on (See Rule 3).
 
 As we mentioned in Rule 3, version control has an essential role in
 package development and computational literacy more broadly {[}26,87{]}.
@@ -1362,28 +1361,20 @@ on GitHub, this is evidence that the developer is at least committed to
 a logical, open, and reproducible workflow, suggestive of more time
 spent designing their tool.
 
-Lastly, developers often implement continuous integration (CI) in
-conjunction with using a version control hosting platform like GitHub.
-{[}CI refers to a process by which developers frequently update and
-commit their contributions to a shared repository and routinely merge
-all authors' working copies/branches of a project into the master (main)
-branch to monitor compatibility---without permanently merging
-everything.{]}{[}Let's work on this definition some. For R packages, I
-tend to think of CI more as using an outside service, like Travis CI, to
-run unit tests and CRAN checks on your package code every time you push
-to GitHub. Let's see if there's a description we could reference from
-the R Packages book or the ROpenSci book that will capture the point of
-CI specifically for R packages---the current one I think might be too
-general to software, rather than specific to R package. It is wonderful
-that we're talking about how CI can help in multi-person development
-teams, but it's also a sign of quality for single-author packages, so it
-would be helpful if we could explain that.{]} Just as you're happy to
-know that a manufacturer guarantees their kitchen tool is a unified
-realization of many working parts, you should be impressed when a
-package is set up to use CI. This is particularly important for packages
-with a large development team. Use of CI is a good sign that the
-components of the package are regularly checked to ensure that code
-passes tests and the package builds without failures {[}90{]}.
+Lastly, developers often implement CI in conjunction with using a
+version control hosting platform like GitHub. For R package developers,
+CI typically involves using an outside service, like
+\href{https://travis-ci.org/}{Travis CI}, to run automated tests (e.g.,
+unit tests, CRAN checks) on package code every time they push new
+contributions and changes to their (potentially shared) GitHub
+repository {[}26,33{]}. Just as you're happy to know that a manufacturer
+guarantees their kitchen tool is a unified realization of many working
+parts, you should be impressed when a package is set up to use CI. This
+is particularly important for packages with a multi-person development
+team, but also an indicator of quality for single-author packages. Use
+of CI is a strong sign that the components of the package are regularly
+checked to ensure that code passes tests and the package builds without
+failures {[}90{]}.
 
 \hypertarget{rule-9-put-it-to-the-test}{%
 \section{Rule 9: Put it to the test}\label{rule-9-put-it-to-the-test}}
