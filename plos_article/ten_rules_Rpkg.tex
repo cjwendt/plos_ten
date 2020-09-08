@@ -1398,50 +1398,37 @@ have certain columns with certain names). By moving from the example
 data to your own, you can gauge the effort it will take to transform
 your data to fit these formats. You can also be on the lookout for
 whether certain characteristics of your data (e.g., fields with missing
-values) cause complications when using the package's functions.
-
-You can continue on to looking through the collection of help files for
-the package. Help files often include executable examples, and you can
-again start by testing these with the example data provided by the
-package, then move on to trying them with your own data and within your
-own workflow. In general, it's essential to know the behavior of
-different functions within a package, how they interact, and how outputs
-respond to changes in inputs. Suppose you're testing a package with
-sparse documentation such that function descriptions often include
-``\texttt{\ldots{}}'' and the argument descriptions seem incomplete.
-This will be problematic if making a reasonable change to an argument
-results in an incomprehensible error for which you cannot find help.
-When this happens, you may not want to use the package for your task.
+values) cause complications when using the package's functions. You can
+continue by looking through the collection of help files for the
+package. Help files often include executable examples, and you can again
+start by testing these with the example data provided by the package,
+then move on to trying them with your own data and within your own
+workflow.
 
 Sometimes packages don't interact well with other packages; a recipe
-prepared with an odd combination of tools won't turn out. If you're
-interested in working with a certain package but are already using other
-packages in your workflow, you'll need to verify that they work
-together. More precisely, you should check the \emph{interoperability}
-of all the packages you want to use. A given package may be highly
-specialized and incompatible with certain packages in general, or simply
-have a few tolerable quirks for which you can develop workarounds. There
-are some packages that are masterful at doing what they're made to do,
-yet incongruous with other packages. Such packages might, for example,
-use S3 or S4 objects, which are two main approaches developers use to
-implement object-oriented programming in R. Many packages for spatial
-analysis, as well as those from Bioconductor, tend to use S4 objects to
-represent data {[}8{]}. On the other hand, the \texttt{tidyverse}, a
-unified suite of packages with an grammatical structure employed within
-a ``pipeline'', expects dataframe objects {[}76{]}. Because of this,
-when you're working in the \texttt{tidyverse}, you may have to take
-extra steps to extract components from S3/S4 objects to re-frame the
-data into a dataframe. Some packages already exist to help with this
-interfacing task between S3/S4 objects and \texttt{tidyverse} tools. The
-\texttt{broom} package, and the bioinformatics analog,
-\texttt{biobroom}, aim to alleviate these disruptions by converting
-``untidy'' objects in S3/S4 objects into ``tidy'' data in dataframes,
-thereby making it easier to integrate statistical functions into the
-structure of the \texttt{tidyverse} workflow {[}76,91,92{]}.
-Furthermore, the \texttt{caret} package facilitates interoperability for
-machine learning packages by providing a uniform interface for modeling
-with various algorithms from different packages that would otherwise
-have independent syntax {[}59{]}.
+prepared with an odd combination of tools won't turn out. You should
+therefore test the \emph{interoperability} of all the packages you want
+to use. There are some packages that are masterful at doing what they're
+made to do, yet incongruous with other packages. Such packages might,
+for example, use S3 or S4 objects, which are two main approaches
+developers use to implement object-oriented programming in R. Many
+packages for spatial analysis, as well as those from Bioconductor, tend
+to use S4 objects to represent data {[}8{]}. On the other hand, the
+\texttt{tidyverse}, a unified suite of packages with an grammatical
+structure employed within a ``pipeline'', expects dataframe objects
+{[}76{]}. Because of this, when you're working in the
+\texttt{tidyverse}, you may need to take extra steps to extract
+components from S3/S4 objects to re-frame the data into a dataframe.
+Some packages already exist to help with this interfacing task between
+S3/S4 objects and \texttt{tidyverse} tools. The \texttt{broom} package,
+and the bioinformatics analog, \texttt{biobroom}, aim to alleviate these
+disruptions by converting ``untidy'' objects in S3/S4 objects into
+``tidy'' data in dataframes, thereby making it easier to integrate
+statistical functions into the structure of the \texttt{tidyverse}
+workflow {[}76,91,92{]}. Similarly, the \texttt{caret} package
+facilitates interoperability for machine learning packages by providing
+a uniform interface for modeling with various algorithms from different
+packages that would otherwise have independent syntax {[}59{]}.
 
 \hypertarget{rule-10-develop-your-own-package}{%
 \section{Rule 10: Develop your own
@@ -1455,26 +1442,19 @@ them---more easily than you may think {[}26{]}.
 
 If you decide to write your own R code to perform your task (see Rule
 1), a natural next step is to wrap this code into a function that can be
-re-used; an R package is basically just a collection of one or more of
-these functions. The essence of an R package is a self-contained set of
-algorithms---encoded as functions---that can be used in combination with
-other self-contained sets of algorithms of different shapes and sizes,
-including the set of algorithms shared through base R. The uniquely
-structured functions within a package help us implement that knowledge
-and weave it into novel scientific work. The reasons why you might want
-to create a package are abundant: necessity, innovation,
-standardization, automation, specialty, containment, organization,
-sharing, collaboration, extensibility, and more.
-
-Whatever your motivation, packages are simply sets of tools; you can
-create a package out of any collection of specialty functions. A key
+re-used; an R package is basically a collection of one or more of these
+functions. The reasons why you might want to create a package are
+abundant: necessity, innovation, standardization, automation, specialty,
+containment, organization, sharing, collaboration, extensibility, and
+more. Whatever your motivation, packages are simply sets of tools; you
+can create a package out of any collection of specialty functions. A key
 tenant of efficient programming is the ``DRY'' principle---Don't Repeat
 Yourself. Functions help you replace copied and pasted code with a
 defined, compact piece of code in a single place in a script, which you
 ca call throughout in shorthand. They help with efficiency and are
 warranted when you repetitiously copy and paste your code while making
 slight modifications after each iteration {[}69{]}. Since R packages are
-just sets of these functions, the're not solely reserved for
+just sets of these functions, they're not solely reserved for
 large-scale, comprehensive methods; rather, package development can also
 help you learn how to apply proper coding techniques to writing
 functions and documentation with reproducibility and collaboration in
@@ -1554,7 +1534,7 @@ controlled repositories, like GitHub. Version control also helps you
 maintain a clean directory of code without limiting the process of
 making changes to files. All changes are trackable and rewindable so
 earlier versions are restorable. You can create offshoots of your main
-project (branches) to try new things and incorporate (some or all of)
+project (branches) to try new things and incorporate some (or all) of
 the changes into the main branch. As you work, keep in mind that within
 the open source R community, there's no lack of effective organizational
 frameworks to reference; in fact, repositories for many exemplary
@@ -1563,14 +1543,14 @@ packages are readily available on GitHub.
 \hypertarget{conclusion}{%
 \section{Conclusion}\label{conclusion}}
 
-The open source movement is the heartbeat of R; it sustains and enlivens
-the growth and improvement of the R ecosystem. Anyone, whether they're
-motivated to propel a research program or interested in learning from
-data in other contexts, can be an R user---without significant barriers
-to entry. A number of R users don't stop there, however. They become R
-makers by adding their own contributions so not only they, but new and
-existing users and makers, can do more in R. This plays an essential
-role in the lifecycle of R's beloved shared tools.
+The open source framework is the heartbeat of R; it sustains and
+enlivens the growth and improvement of the R ecosystem. Anyone, whether
+they're motivated to propel a research program or interested in learning
+from data in other contexts, can be an R user---without significant
+barriers to entry. A number of R users don't stop there, however. They
+become R makers by adding their own contributions so not only they, but
+new and existing users and makers, can do more in R. This plays an
+essential role in the lifecycle of R's beloved shared tools.
 
 R packages are a defining feature of the language insofar as many are
 robust, user-friendly, and richly extend R's core functionality. Some of
