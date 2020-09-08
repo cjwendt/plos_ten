@@ -1003,8 +1003,8 @@ You can find several of these metrics by visiting the site(s) on which a
 package is shared (see Rule 3). If a package is shared through a GitHub
 repository, the homepage for the repository will list the number of
 GitHub Stars, Forks, and Watchers for that particular repository. As
-proxies for a repository's overall following, and possibly indirect
-measures of quality and impact, Stars indicate that people like or are
+proxies for a repository's overall following---and possibly indirect
+measures of quality and impact---Stars indicate that people like or are
 interested in a project, Forks reveal the number times a repository has
 been copied, and Watchers represent GitHub users who are subscribed to
 updates on a repository's activity {[}71{]}. Although not a definitively
@@ -1049,18 +1049,16 @@ compare related packages that may have features that overlap? Some
 clever R users at an Unconference thought so, too, and developed a
 package called
 \href{https://docs.ropensci.org/packagemetrics/}{\texttt{packagemetrics}:
-A Package for Helping You Choose Which Package to Use}, hosted bat
+A Package for Helping You Choose Which Package to Use}, hosted at
 rOpenSci {[}74,75{]}. You can install \texttt{packagemetrics} via
 \texttt{devtools::install\_github("ropenscilabs/packagemetrics")} and
-run the \texttt{packagemetrics::package\_list\_metrics()} function where
-the input is a vector of packages of interest, by name {[}40,74{]}.
-Then, you can use \texttt{packagemetrics::metrics\_table()} to obtain a
-table of information that includes each package's respective number of
-downloads, GitHub Star rating, \texttt{tidyverse} compatibility, and
-several more indicators to help you decide which package is most
-established and widely used (\textbf{Figure of table output {[}BA: That
-could be great, or even use a Box to show an example of running the code
-you just described and the resulting output.{]}}) {[}74,76{]}.
+run \texttt{packagemetrics::package\_list\_metrics()} where the input is
+a vector of packages of interest, by name {[}40,74{]}. Then, you can use
+\texttt{packagemetrics::metrics\_table()} to obtain a table of
+information that includes each package's respective number of downloads,
+GitHub Star rating, \texttt{tidyverse} compatibility, and several more
+indicators to help you decide which package is most established and
+widely used (\textbf{Figure of table output}) {[}74,76{]}.
 
 An important caveat to consider: several of the metrics introduced in
 this Rule are based on how often a package is downloaded; however, it's
