@@ -593,60 +593,54 @@ stored and managed. Some repositories provide vetting mechanisms that
 tame unwieldy aspects of the R ecosystem by regularly checking
 underlying code and managing corresponding webs of dependencies. Two
 traditional repositories for R packages are CRAN and Bioconductor;
-however, there are also lesser-known repositories to explore. Developers
-can also share their R packages through large code-sharing sites,
-including public version control platforms like GitHub and GitLab; these
-have fewer restrictions on the format or content of shared code compared
-to repositories. For more private sharing, rather than making packages
+however, there are lesser-known repositories to explore. Developers can
+also share their R packages through large code-sharing sites, including
+public version control platforms like GitHub and GitLab; these have
+fewer restrictions on the format or content of shared code compared to
+repositories. For more private sharing, rather than making packages
 accessible to everyone via internet repositories, some developers share
 their code in zipped files directly with collaborators (see Rule 2).
 
 The CRAN repository is the most established R package repository, and it
 serves as the primary source from which you'll likely install R
-packages. Volunteers {[}Let's double-check that they're all actually
-volunteers. I think they started out that way, but maybe now some are
-funded through the R Foundation or something else to do their work?{]}
-from the R Core Team (established in 1997) host and maintain a
-monumental collection of R packages on CRAN (over 16,000 as of August
-2020) on almost any conceivable topic, from random forests to
-multidimensional maps {[}10,23,24{]}. Due to its longevity and
-historical role, Rickert asserts that ``CRAN is the greatest open source
-repository for statistical computing knowledge in the world'' {[}22{]}.
-A key advantage of using a package from CRAN is that the repository
-integrates easily with your base R installation {[}25{]}. You can simply
-use the \texttt{install.packages()} function with default values to
-install a package from CRAN, along with all of the packages it depends
-on; source and/or binary code are automatically saved to your computer
-in a designated package library {[}26,27{]}. When you want to use a
-particular package, you load it to your R session via the
-\texttt{library()} function from base R {[}27{]}. These features ensure
-that integration of a new package with your version of the base R
+packages. The Institute for Statistics and Mathematics of
+Wirtschaftsuniversität Wien hosts the CRAN server and Contributors from
+the R Core Team (established in 1997) maintain its monumental collection
+of R packages (over 16,000 as of August 2020) on almost any conceivable
+topic, from random forests to multidimensional maps {[}10,23,24{]}. Due
+to its longevity and historical role, Rickert asserts that ``CRAN is the
+greatest open source repository for statistical computing knowledge in
+the world'' {[}22{]}. A key advantage of using a package from CRAN is
+that the repository integrates easily with your base R installation
+{[}25{]}. You can simply use the \texttt{install.packages()} function
+with default values to install a package from CRAN, along with all of
+the packages it depends on; source and/or binary code are automatically
+saved to your computer in a designated package library {[}26,27{]}. When
+you want to use a particular package, you load it to your R session via
+the \texttt{library()} function from base R {[}27{]}. These features
+ensure that integration of a new package with your version of the base R
 software is typically silent and seamless.
 
-The R Foundation {[}double-check this---I thought that it was the R Core
-team? The R Foundation might fund it, but I think the R Foundation is
-more of a funding organization rather than one with volunteer
-developers{]} manages CRAN and imposes some regulations for the
-submission and maintenance of the packages they host. For example, a
-package must pass a series of initial stability tests in accordance with
-the CRAN Repository Policy before obtaining publication privileges
-{[}28{]}. CRAN does not, however, have a peer-review process (see Rule 3
-and Rule 6), and so these checks do not extend to the substance of the
-package, in terms of ensuring it works as advertised in the
-documentation. At worst, then, a CRAN package might have a solid
-framework with help files for each outward-facing function, but its
-underlying code might not necessarily do what it claims. Volunteer CRAN
-maintainers {[}double-check that these are still all volunteer roles{]}
-actively monitor contributed packages to ensure compatibility with the
-latest version of R and dependencies; they aks for modifications or
-remove packages that don't uphold these publication quality standards.
+CRAN imposes some regulations on the submission and maintenance of its
+hosted packages. For example, a package must pass a series of initial
+stability tests in accordance with the CRAN Repository Policy before
+obtaining publication privileges {[}28{]}. CRAN does not, however, have
+a peer-review process (see Rule 3 and Rule 6), and so these checks do
+not extend to the substance of the package, in terms of ensuring it
+works as advertised in the documentation. At worst, then, a CRAN package
+might have a solid framework with help files for each outward-facing
+function, but its underlying code might not necessarily do what it
+claims. CRAN maintainers actively monitor contributed packages to ensure
+compatibility with the latest version of R and dependencies; they ask
+for modifications or remove packages that don't uphold these publication
+quality standards.
 
 If you're looking for tools specifically designed for high-throughput
 genomic data, the Bioconductor repository is a more specialized
 repository than CRAN that's worth investigating {[}29{]}. The
 Bioconductor project was motivated by a need for transparent,
 reproducible, and efficient software in computational biology and
-bioinformatics and supports the integration of computational rigor and
+bioinformatics; it supports the integration of computational rigor and
 reproducibility in research on biological processes {[}8{]}.
 Bioconductor packages facilitate the analysis and comprehension of
 biological data and help users solve problems that arise when working
@@ -654,8 +648,8 @@ with high-throughput genomic data such as those related to microarrays,
 sequencing, flow cytometry, mass spectrometry, and image analysis
 {[}29{]}. Bioconductor boasts a modularized design, wherein data
 structures, functions, and the packages that contain them have distinct
-roles that are accompanied by thorough documentation. Accessibility is a
-pillar of the Bioconductor project; all forms of documentation,
+roles that are accompanied by comprehensive documentation. Accessibility
+is a pillar of the Bioconductor project; all forms of documentation,
 including courses, vignettes, and interactive documents, are curated for
 individuals with expertise in adjacent disciplines and minimal
 experience with R (see Rule 4) {[}8{]}. Bioconductor packages also
@@ -699,25 +693,25 @@ strictly for the development, rather than distribution, of R packages
 such as R-Forge and Omegahat, which are beyond the scope of this paper
 {[}36,37{]}.
 
-Packages can also be hosted on online code sharing platforms like GitHub
-or GitLab, both of which are online hosting platforms for repositories
+Packages can also be hosted on online code sharing sites like GitHub or
+GitLab, both of which are online hosting platforms for repositories
 tracked via git version control. While there are evident benefits of
 exclusive R package repositories, there are also considerable advantages
 to hosting a package on these online platforms {[}22,38{]}. First,
 package developers can post the directory with all source code for their
 package as they develop it, from the earliest stages, rather than
-waiting until the package is publication-ready. Further, the platforms
-allow for continuous integration and continuous deployment for testing
-data and code to ensure a stable end-product.
+waiting until the package is publication-ready. What's more, these
+platforms allow for continuous integration and continuous deployment for
+testing data and code to ensure a stable end-product.
 
-One particularly popular platform when it comes to sharing R packages is
-GitHub. An increasing number of packages are hosted on GitHub during the
-development stages, and so it will often be the first place you can find
+One particularly popular and effective platform for sharing R packages
+is GitHub. An increasing number of packages are hosted on GitHub during
+the development stages---it will often be the first place you can find
 up-and-coming packages (see Rule 2). If stable release versions of these
-packages are published on CRAN or Bioconductor {[}39{]}, GitHub can
-still be a place to check out planned changes for the next version that
-the developer plans to release. GitHub provides R users with open access
-to package code, a timeline of help resources (see Rule 4), and a direct
+packages are published on CRAN or Bioconductor {[}39{]}, GitHub is still
+a good place to explore planned changes for the next version that the
+developer will soon release. GitHub provides R users with open access to
+package code, a timeline of help resources (see Rule 4), and a direct
 line of communication to developers. Both R users and package developers
 benefit from interactive feedback channels through GitHub Issues and the
 Star rating system.
@@ -742,26 +736,26 @@ When you're searching for and selecting packages, it's important to note
 that a single package is often available in multiple places. Packages
 that are on CRAN, Bioconductor, and/or rOpenSci are usually on GitHub.
 There's an unofficial, read-only GitHub mirror at CRAN,
-\href{https://github.com/cran}{METACRAN}, in which \emph{all} CRAN
+\href{https://github.com/cran}{METACRAN}, on which \emph{all} CRAN
 packages have their own GitHub repositories with all versions, original
-dates, and authors. Additionally, package developers often use their
-personal GitHub accounts to publicize a package while it's being
+dates, and authors. Additionally, package developers frequently use
+their personal GitHub accounts to publicize a package while it's being
 developed and continue to host development versions after it's been
 published on formal repositories such as CRAN. In this case, CRAN would
 host a ``stable'' version of the package, which may simultaneously be in
 the ``master'' branch of the developer's GitHub repository for the
-package; forthcoming package updates would remain in other branches (for
-example, a ``development'' branch) in the same GitHub repository.
-Although less relevant to new R users, this means that you can access
-and test upcoming versions of a package through GitHub, which may be
-particularly helpful if you're developing a package with dependencies
-and want to know if upcoming changes to a package that your code depends
-on will cause issues. Lastly, there are some instances where a packages
-is posted on CRAN---not only because CRAN is its main repository, but
-also to ease its connection with base R---then also published in a
+package; forthcoming package updates would remain in other branches
+(e.g., a ``development'' branch) in the same GitHub repository. Although
+less relevant to new R users, this means that you can access and test
+upcoming versions of a package through GitHub, which may be particularly
+helpful if you're developing a package with dependencies and want to
+know if upcoming changes to a package that your code depends on will
+cause issues. Lastly, there are some instances where a packages is
+posted on CRAN---not only because CRAN is its main repository, but also
+to ease its connection with base R---then also published in a
 specialized repository. As part of their review process, for example,
 rOpenSci asks authors of submitted packages if they plan to publish on
-CRAN (or Bioconductor), and often packages become available in both
+CRAN (or Bioconductor), and packages often become available in both
 places.
 
 \hypertarget{rule-4-explore-the-availability-and-quality-of-help}{%
