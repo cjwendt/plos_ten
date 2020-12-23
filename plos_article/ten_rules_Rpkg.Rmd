@@ -18,7 +18,18 @@ address:
   - code: ERHS
     address: Department of Environmental & Radiological Health Sciences, Colorado State University, Fort Collins, Colorado, United States of America   
 abstract: |
-  R is an increasingly preferred software environment for data analytics and statistical computing among scientists and practitioners. Packages markedly extend R’s utility and ameliorate inefficient solutions. We outline ten simple rules for finding relevant packages and determining which package is best for your desired use.
+  R is an increasingly preferred software environment for data analytics and statistical computing among scientists and practitioners. Packages markedly extend R’s utility and ameliorate inefficient solutions. We outline ten simple rules for finding relevant packages and determining which package is best for your desired use:
+  
+  1. Consider your purpose
+  2. Find and collect options
+  3. Check how it's shared
+  4. Explore the availability and quality of help
+  5. Quantify how established it is
+  6. Seek evidence of peer acceptance and review
+  7. Find out who developed it
+  8. See how it's developed
+  9. Put it to the test
+  10. Develop your own package
   
 author_summary: |
   Write the author summary here. Do we want to include and author summary?
@@ -244,7 +255,7 @@ Nonetheless, the sheer quantity and potential complexity of available R packages
 
 
 
-# Table 1 (general packages)
+# Table 1 
 
 ```{r echo = FALSE}
 library(kableExtra)
@@ -318,7 +329,8 @@ gen_pkgs <- data.frame(
 
 ```{r pkg_table, echo = FALSE}
 # general packages table
-pkg_table <- kable(gen_pkgs, format = "latex", booktabs = TRUE) %>%
+pkg_table <- kable(gen_pkgs, format = "latex", booktabs = TRUE,
+                   caption = "Common R packages for general purposes") %>%
   # scale
   kable_styling(latex_options = "scale_down") %>%
   # separate rows by category
@@ -352,45 +364,45 @@ pkg_table
 - Cite packages in bib and add references in table?
 - Embed url link to package documentation? Do we want to link cheatsheets?
 - How do you add link/reference to Table 1 in text in the template?
-- How do you hide code for table in knitted pdf...include=FALSE errors?
 - Title for column 2: description/purpose/usage?
 - Length of description/purpose/usage for each package?
 
 # Figures
 
-```{r bioc_deseq2, echo=FALSE, fig.cap = "Add caption", out.width = "100%"}
-knitr::include_graphics("../figures/bioc_deseq2.png")
-```
-
-```{r biocViews, echo=FALSE, fig.cap = "Add caption", out.width = "100%"}
-knitr::include_graphics("../figures/biocViews.png")
-```
-
-```{r cran_ggplot2, echo=FALSE, fig.cap = "Add caption", out.width = "100%"}
-knitr::include_graphics("../figures/cran_ggplot2.png")
-```
-
-```{r cran_task_views, echo=FALSE, fig.cap = "Add caption", out.width = "100%"}
+```{r cran_task_views, echo=FALSE, fig.cap = "A snapshot of CRAN Task Views", out.width = "100%"}
 knitr::include_graphics("../figures/cran_task_views.png")
 ```
 
-```{r github_bookdown, echo=FALSE, fig.cap = "Add caption", out.width = "100%"}
+```{r biocViews, echo=FALSE, fig.cap = "A snapshot of biocViews", out.width = "100%"}
+knitr::include_graphics("../figures/biocViews.png")
+```
+
+```{r cran_ggplot2, echo=FALSE, fig.cap = "An example of the CRAN page for the ggplot2 package", out.width = "100%"}
+knitr::include_graphics("../figures/cran_ggplot2.png")
+```
+
+```{r bioc_deseq2, echo=FALSE, fig.cap = "An example of the Bioconductor page for the DESeq2 package", out.width = "100%"}
+knitr::include_graphics("../figures/bioc_deseq2.png")
+```
+
+```{r github_bookdown, echo=FALSE, fig.cap = "An example of the GitHub page for the bookdown package", out.width = "100%"}
 knitr::include_graphics("../figures/github_bookdown.png")
 ```
 
-```{r ropensci_imgproc, echo=FALSE, fig.cap = "Add caption", out.width = "100%"}
+```{r ropensci_imgproc, echo=FALSE, fig.cap = "An example of the rOpenSci package search page, filtered to image processing packages", out.width = "100%"}
 knitr::include_graphics("../figures/ropensci_imgproc.png")
 ```
 
-```{r packagemetrics, echo=FALSE, fig.cap = "Add caption", out.width = "100%"}
+```{r packagemetrics, echo=FALSE, fig.cap = "Output from the packagemetrics package, used here to compare data visualization packages", out.width = "100%"}
 knitr::include_graphics("../figures/packagemetrics.png")
 ```
 
 # Figure questions
 
 - References to figures won't knit properly
-- (See Figure \@ref(fig:biocViews))
+- (See Figure `\@ref(fig:biocViews)`)
 - Do we need to add a YAML?
+- `\@ref(fig:chunk-label)`
 
 # Supporting information
 
@@ -402,6 +414,7 @@ Do we want to include any supporting information?
 
 - Therese Kondash
 - Matthew Hughes
+- Bailey Fosdick
 
 # References {#references .unnumbered}
 
