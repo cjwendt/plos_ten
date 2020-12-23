@@ -440,8 +440,8 @@ frameworks with several functions that form a cohesive package or even a
 suite of related packages. Data manipulation is one such common task
 that has been streamlined by packages such as \texttt{dplyr} and
 \texttt{tidyr} {[}12,13{]}, both part of the \texttt{tidyverse} suite
-(see Table 1). Nevertheless, don't be discouraged if you have a task
-that seems too unusual for a package. There are indeed packages for
+(see \textbf{Table 1}). Nevertheless, don't be discouraged if you have a
+task that seems too unusual for a package. There are indeed packages for
 seemingly singular tasks, which you may favor over coding from scratch.
 You can use an R package to access the Twitter API, send emails from R,
 and there is even a package for converting English letters to numbers as
@@ -520,30 +520,32 @@ concentrate on topics from certain disciplines or methodological
 approaches (e.g., Econometrics, Genetics, Optimization, Spatial). In the
 HTML version, you can browse alphabetized subcategories of packages
 within each Task View and read concise descriptions to find tools with
-specific functionality. Alternatively, you can access Task Views
-directly from the R console with \texttt{ctv::CRAN.views()} {[}18{]}
-(note that here and throughout, we use this compact
-\texttt{package::function()} notation to indicate a function from a
-specific package). There are currently 41 Task Views that collectively
-contain thousands of packages, all curated and regularly tested.
-Moreover, CRAN Task Views provide tools that enable you to automatically
-install all packages within a targeted area of interest. Ultimately, by
-providing task-based organization, easy simultaneous installation of
-related packages, meta-information, ensured maintenance, and quality
-control, CRAN Task Views address several major user-end issues that have
-arisen due to the sheer quantity of available packages {[}19{]}.
+specific functionality (see \textbf{Figure 1}). Alternatively, you can
+access Task Views directly from the R console with
+\texttt{ctv::CRAN.views()} {[}18{]} (note that here and throughout, we
+use this compact \texttt{package::function()} notation to indicate a
+function from a specific package). There are currently 41 Task Views
+that collectively contain thousands of packages, all curated and
+regularly tested. Moreover, CRAN Task Views provide tools that enable
+you to automatically install all packages within a targeted area of
+interest. Ultimately, by providing task-based organization, easy
+simultaneous installation of related packages, meta-information, ensured
+maintenance, and quality control, CRAN Task Views address several major
+user-end issues that have arisen due to the sheer quantity of available
+packages {[}19{]}.
 
 The computational biology and bioinformatics analogs of CRAN Task Views,
 \href{https://www.bioconductor.org/packages/release/BiocViews.html\#___Software}{biocViews},
 are lists of packages available through the Bioconductor repository that
-provide tools for analyzing biological data. Your keywords from Rule 1
-will come in handy here, too; for instance, you can search ``RNA-seq''
-to find all packages related to high-throughput sequencing methods for
-analyzing RNA populations. You can also browse the biocViews tree menu
-to narrow your search based on which general and specific categories
-describe your task. The list includes each package's name linked to
-information and documentation, its maintainer, a short description, and
-its rank relative to other Bioconductor packages.
+provide tools for analyzing biological data (see \textbf{Figure 2}).
+Your keywords from Rule 1 will come in handy here, too; for instance,
+you can search ``RNA-seq'' to find all packages related to
+high-throughput sequencing methods for analyzing RNA populations. You
+can also browse the biocViews tree menu to narrow your search based on
+which general and specific categories describe your task. The list
+includes each package's name linked to information and documentation,
+its maintainer, a short description, and its rank relative to other
+Bioconductor packages.
 
 Other curated collections and topically-linked lists of packages are
 also available.
@@ -553,7 +555,7 @@ packages from CRAN. Another place to find well-maintained tools is
 \href{https://ropensci.org/packages/}{rOpenSci packages}. These
 filterable and searchable peer-reviewed (see Rule 6) R packages are
 organized by name, maintainer, description, and status markers based on
-activity, association, and review.
+activity, association, and review (see \textbf{Figure 3}).
 
 You'll also find tips on R packages by joining in R's vibrant
 international community. An inclusive and collaborative community is an
@@ -681,14 +683,15 @@ roles that are accompanied by comprehensive documentation. For example,
 the page for the package \texttt{DESeq2} can be found at
 \url{https://bioconductor.org/packages/release/bioc/html/DESeq2.html};
 you can view pages corresponding to other Bioconductor packages by
-altering the web address as previously described {[}31{]}. Accessibility
-is a pillar of the Bioconductor project; all forms of documentation,
-including courses, vignettes, and interactive documents, are curated for
-individuals with expertise in adjacent disciplines and minimal
-experience with R (see Rule 4) {[}8{]}. Bioconductor packages also
-integrate well with base R by different means than CRAN packages; you
-should use \texttt{BiocManager::install()} to install Bioconductor
-packages with their corresponding dependencies {[}32{]}.
+altering the web address as previously described (see \textbf{Figure 5})
+{[}31{]}. Accessibility is a pillar of the Bioconductor project; all
+forms of documentation, including courses, vignettes, and interactive
+documents, are curated for individuals with expertise in adjacent
+disciplines and minimal experience with R (see Rule 4) {[}8{]}.
+Bioconductor packages also integrate well with base R by different means
+than CRAN packages; you should use \texttt{BiocManager::install()} to
+install Bioconductor packages with their corresponding dependencies
+{[}32{]}.
 
 Bioconductor has a structured release schedule and thus a unique package
 management system that automatically loads your Bioconductor packages in
@@ -738,16 +741,16 @@ platforms allow for continuous integration and continuous deployment for
 testing data and code to ensure a stable end-product.
 
 One particularly popular and effective platform for sharing R packages
-is GitHub. An increasing number of packages are hosted on GitHub during
-the development stages---it will often be the first place you can find
-up-and-coming packages (see Rule 2). If stable release versions of these
-packages are published on CRAN or Bioconductor {[}41{]}, GitHub is still
-a good place to explore planned changes for the next version that the
-developer will soon release. GitHub provides R users with open access to
-package code, a timeline of help resources (see Rule 4), and a direct
-line of communication to developers. Both R users and package developers
-benefit from interactive feedback channels through GitHub Issues and the
-Star rating system.
+is GitHub (see \textbf{Figure 6}). An increasing number of packages are
+hosted on GitHub during the development stages---it will often be the
+first place you can find up-and-coming packages (see Rule 2). If stable
+release versions of these packages are published on CRAN or Bioconductor
+{[}41{]}, GitHub is still a good place to explore planned changes for
+the next version that the developer will soon release. GitHub provides R
+users with open access to package code, a timeline of help resources
+(see Rule 4), and a direct line of communication to developers. Both R
+users and package developers benefit from interactive feedback channels
+through GitHub Issues and the Star rating system.
 
 It's straightforward to install the latest version of a package you want
 to use from GitHub via
@@ -1091,7 +1094,7 @@ a vector of packages of interest, by name {[}42,75{]}. Then, you can use
 information that includes each package's respective number of downloads,
 GitHub Star rating, \texttt{tidyverse} compatibility, and several more
 indicators to help you decide which package is most established and
-widely used (\textbf{Figure of table output}) {[}75,77{]}.
+widely used (see \textbf{Figure 7}) {[}75,77{]}.
 
 An important caveat to consider: several of the metrics introduced in
 this Rule are based on how often a package is downloaded; however, it's
