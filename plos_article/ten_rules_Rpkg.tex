@@ -354,15 +354,14 @@ heavy-duty data analysis tools that (ideally) support reproducibility
 
 R was developed by statisticians, and its base software is
 collaboratively maintained by an international group of core
-contributors {[}10{]}. \textbf{(BEGIN KEEP)} The language has an
-ecosystem of extensions beyond this base software; unlike several
-classic proprietary languages such as MATLAB and SAS, an R user can
-access, alter, and extend base R software, then share their work with
-other users in a formalized way through extensions called
-\emph{packages} (as a note, ``package'' is not perfectly synonymous with
-``extension'' because some packages come with base R and technically
-aren't extending the base software, but we'll use ``package'' throughout
-as the commonly recognized colloquial term). \textbf{(END KEEP)} An R
+contributors {[}10{]}. The language has an ecosystem of extensions
+beyond this base software; unlike several classic proprietary languages
+such as MATLAB and SAS, an R user can access, alter, and extend base R
+software, then share their work with other users in a formalized way
+through extensions called \emph{packages} (as a note, ``package'' is not
+perfectly synonymous with ``extension'' because some packages come with
+base R and technically aren't extending the base software, but we'll use
+``package'' throughout as the commonly recognized colloquial term). An R
 package is a fundamental unit of shareable code. There are numerous
 analogies in computing between programming and culinary arts: recipe
 structures, coding cookbooks, and the like. To conceptualize packages,
@@ -556,17 +555,16 @@ filterable and searchable peer-reviewed (see Rule 6) R packages are
 organized by name, maintainer, description, and status markers based on
 activity, association, and review.
 
-\textbf{(BEGIN KEEP)} You'll also find tips on R packages by joining in
-R's vibrant international community. An inclusive and collaborative
-community is an overlooked, yet integral, aspect of a software's success
-{[}20{]}. The R community has a widespread internet presence across
-various platforms; however, members are markedly active on Twitter, a
-place where R users seek help, share ideas, and stay informed on
-\texttt{\#rstats} happenings, including releases of new packages
-{[}21{]}. R-related blogs serve as another informal, up-to-date, and
-more detailed avenue for communicating and promoting R-related
-information. For example, Joseph Rickert, Ambassador at Large for
-RStudio, writes monthly posts on the
+You'll also find tips on R packages by joining in R's vibrant
+international community. An inclusive and collaborative community is an
+overlooked, yet integral, aspect of a software's success {[}20{]}. The R
+community has a widespread internet presence across various platforms;
+however, members are markedly active on Twitter, a place where R users
+seek help, share ideas, and stay informed on \texttt{\#rstats}
+happenings, including releases of new packages {[}21{]}. R-related blogs
+serve as another informal, up-to-date, and more detailed avenue for
+communicating and promoting R-related information. For example, Joseph
+Rickert, Ambassador at Large for RStudio, writes monthly posts on the
 \href{https://rviews.rstudio.com/}{R Views} blog highlighting
 interesting new R packages. Rickert also features special articles about
 recently released packages and lists of top packages within certain
@@ -605,7 +603,7 @@ Don't forget, a developer of an R package may intend for it to be
 private (exclusively for personal or professional use) or public (at no
 cost and available for use by anyone) {[}22{]}. If your task is specific
 to a line of research, consult colleagues to see if they have a relevant
-(private) package they'd be willing to share. \textbf{(END KEEP)}
+(private) package they'd be willing to share.
 
 \hypertarget{rule-3-check-how-its-shared}{%
 \section{Rule 3: Check how it's
@@ -618,16 +616,15 @@ before they are shipped to your kitchen; in computing terms, a
 repository provides a central online location in which packages are
 stored and managed. Some repositories provide vetting mechanisms that
 tame unwieldy aspects of the R ecosystem by regularly checking
-underlying code and managing corresponding webs of dependencies.
-\textbf{(BEGIN KEEP)} Two traditional repositories for R packages are
-CRAN and Bioconductor; however, there are lesser-known repositories to
-explore. Developers can also share their R packages through large
-code-sharing sites, including public version control platforms like
-GitHub and GitLab; these have fewer restrictions on the format or
-content of shared code compared to repositories. For more private
-sharing, rather than making packages accessible to everyone via internet
-repositories, some developers share their code in zipped files directly
-with collaborators (see Rule 2). \textbf{(END KEEP)}
+underlying code and managing corresponding webs of dependencies. Two
+traditional repositories for R packages are CRAN and Bioconductor;
+however, there are lesser-known repositories to explore. Developers can
+also share their R packages through large code-sharing sites, including
+public version control platforms like GitHub and GitLab; these have
+fewer restrictions on the format or content of shared code compared to
+repositories. For more private sharing, rather than making packages
+accessible to everyone via internet repositories, some developers share
+their code in zipped files directly with collaborators (see Rule 2).
 
 The CRAN repository is the most established R package repository, and it
 serves as the primary source from which you'll likely install R
@@ -743,14 +740,14 @@ testing data and code to ensure a stable end-product.
 One particularly popular and effective platform for sharing R packages
 is GitHub. An increasing number of packages are hosted on GitHub during
 the development stages---it will often be the first place you can find
-up-and-coming packages (see Rule 2). \textbf{(BEGIN KEEP)} If stable
-release versions of these packages are published on CRAN or Bioconductor
-{[}41{]}, GitHub is still a good place to explore planned changes for
-the next version that the developer will soon release. GitHub provides R
-users with open access to package code, a timeline of help resources
-(see Rule 4), and a direct line of communication to developers. Both R
-users and package developers benefit from interactive feedback channels
-through GitHub Issues and the Star rating system. \textbf{(END KEEP)}
+up-and-coming packages (see Rule 2). If stable release versions of these
+packages are published on CRAN or Bioconductor {[}41{]}, GitHub is still
+a good place to explore planned changes for the next version that the
+developer will soon release. GitHub provides R users with open access to
+package code, a timeline of help resources (see Rule 4), and a direct
+line of communication to developers. Both R users and package developers
+benefit from interactive feedback channels through GitHub Issues and the
+Star rating system.
 
 It's straightforward to install the latest version of a package you want
 to use from GitHub via
@@ -851,14 +848,13 @@ accompanies functions within packages is critical; the fact that anyone
 can read it anytime and use it to guide their own work facilitates
 extensibility. The extent and quality of content in these help files
 will vary; ideally, packages should have thorough documentation at the
-function level. \textbf{(BEGIN KEEP)} If the help pages alone leave you
-wanting, it may be less likely that the package has further (quality)
-documentation and therefore you might reconsider whether that package
-should be your first choice, if comparable options exist. In short, if
-the developer cannot initially communicate how their tool works, then
-you probably won't want to use it in your kitchen (read: if the
-instruction manual is useless, don't use the blender). \textbf{(END
-KEEP)}
+function level. If the help pages alone leave you wanting, it may be
+less likely that the package has further (quality) documentation and
+therefore you might reconsider whether that package should be your first
+choice, if comparable options exist. In short, if the developer cannot
+initially communicate how their tool works, then you probably won't want
+to use it in your kitchen (read: if the instruction manual is useless,
+don't use the blender).
 
 Fortunately, plenty of R packages include additional documentation
 beyond this minimum. While the function-level help files can be rather
@@ -869,18 +865,17 @@ then illustrates applications through clear examples of code with
 coordination of functions and explanations of outcomes. See, for
 example, the extensive vignette for the
 \href{https://cran.r-project.org/web/packages/sf/vignettes/sf1.html}{\texttt{sf}
-package}{[}45{]}. \textbf{(BEGIN KEEP)} Packages can have multiple
-vignettes; you can view or edit a specific vignette or obtain a list of
-all vignettes for a package via the \texttt{vignette()} function from
-base R {[}27{]}. For a package shared through CRAN or Bioconductor, a
-list of the package's vignettes can also be found on the respective
-homepage for the package. \textbf{(END KEEP)} Particularly for packages
-hosted on GitHub, developers often create a mini-vignette in the
-\texttt{README} to provide a high-level overview of their package and
-its components, along with a basic introduction and short tutorial for
-its usage. This mini-vignette, displayed on the package repository's
-main page, should simply tell you why you should use it, how to use it,
-and how to install it {[}26{]}.
+package}{[}45{]}. Packages can have multiple vignettes; you can view or
+edit a specific vignette or obtain a list of all vignettes for a package
+via the \texttt{vignette()} function from base R {[}27{]}. For a package
+shared through CRAN or Bioconductor, a list of the package's vignettes
+can also be found on the respective homepage for the package.
+Particularly for packages hosted on GitHub, developers often create a
+mini-vignette in the \texttt{README} to provide a high-level overview of
+their package and its components, along with a basic introduction and
+short tutorial for its usage. This mini-vignette, displayed on the
+package repository's main page, should simply tell you why you should
+use it, how to use it, and how to install it {[}26{]}.
 
 Interactive tutorials, most commonly those powered by the
 \href{https://rstudio.github.io/learnr/}{\texttt{learnr} package}, are
@@ -1059,11 +1054,11 @@ refer to the number of versions and updates (more is better) in addition
 to the date of the most recent versions and updates (newer is typically
 better, as an indication of active maintenance, although in some cases a
 package with a stable algorithm and few dependencies may not need many
-updates). \textbf{(BEGIN KEEP)} You can also see, on a package's CRAN or
-GitHub page, the number of reverse dependencies it has. When a package
-has numerous reverse dependencies, the code underlying many other R
-packages incorporates functions from that package, which can indicate
-that other R developers find that package useful. \textbf{(END KEEP)}
+updates). You can also see, on a package's CRAN or GitHub page, the
+number of reverse dependencies it has. When a package has numerous
+reverse dependencies, the code underlying many other R packages
+incorporates functions from that package, which can indicate that other
+R developers find that package useful.
 
 RDocumentation (see Rule 4) is rich with stats on R packages, uniting
 many of the previously discussed metrics, while also providing
@@ -1081,11 +1076,11 @@ downloaded as automatic downloads with those packages, don't skew the
 calculation {[}74{]}. You can research stats on corresponding
 dependencies for a more holistic picture.
 
-\textbf{(BEGIN KEEP)} Most of the above-mentioned resources will help
-you learn more about packages on an individual basis. Wouldn't it be
-nice if you could compare related packages that may have features that
-overlap? Some clever R users at an Unconference thought so, too, and
-developed a package called
+Most of the above-mentioned resources will help you learn more about
+packages on an individual basis. Wouldn't it be nice if you could
+compare related packages that may have features that overlap? Some
+clever R users at an Unconference thought so, too, and developed a
+package called
 \href{https://docs.ropensci.org/packagemetrics/}{\texttt{packagemetrics}:
 A Package for Helping You Choose Which Package to Use}, hosted at
 rOpenSci {[}75,76{]}. You can install \texttt{packagemetrics} via
@@ -1096,8 +1091,7 @@ a vector of packages of interest, by name {[}42,75{]}. Then, you can use
 information that includes each package's respective number of downloads,
 GitHub Star rating, \texttt{tidyverse} compatibility, and several more
 indicators to help you decide which package is most established and
-widely used (\textbf{Figure of table output}) {[}75,77{]}.\textbf{(END
-KEEP)}
+widely used (\textbf{Figure of table output}) {[}75,77{]}.
 
 An important caveat to consider: several of the metrics introduced in
 this Rule are based on how often a package is downloaded; however, it's
@@ -1145,23 +1139,23 @@ for a package or, similarly, an article about a package, can also help
 serve as a metric for a package's impact on scientific research and
 utility in research contexts (see Rule 5).
 
-\textbf{(BEGIN KEEP)} For an R package featured in a peer-reviewed
-journal article, you can be assured that the ideas and principles behind
-the package have been evaluated by outside reviewers. However, such a
-review may not have included a fine-grained peer review of the
-underlying code in the package itself. \textbf{(END KEEP)} There's an
-expanding movement toward direct peer review of R packages and other
-open-source scientific software at the code level. More specifically,
-rOpenSci is a unique example of an ecosystem of open source tools with
-peer reviewed R packages (see Rule 3) {[}34{]}. The rOpenSci
-organization oversees peer review of R packages at a highly detailed
-level that's increasingly desired by scientists; packages published
-through their repository have passed external review of the code. They
-limit their scope to packages that help scientists implement
-reproducible research practices and manage the data lifecycle {[}35{]}.
-Their review process is conducted openly on GitHub and, as a result, the
-scientific community can view the discussions between package
-maintainers and peer reviewers that form this transparent process.
+For an R package featured in a peer-reviewed journal article, you can be
+assured that the ideas and principles behind the package have been
+evaluated by outside reviewers. However, such a review may not have
+included a fine-grained peer review of the underlying code in the
+package itself. There's an expanding movement toward direct peer review
+of R packages and other open-source scientific software at the code
+level. More specifically, rOpenSci is a unique example of an ecosystem
+of open source tools with peer reviewed R packages (see Rule 3)
+{[}34{]}. The rOpenSci organization oversees peer review of R packages
+at a highly detailed level that's increasingly desired by scientists;
+packages published through their repository have passed external review
+of the code. They limit their scope to packages that help scientists
+implement reproducible research practices and manage the data lifecycle
+{[}35{]}. Their review process is conducted openly on GitHub and, as a
+result, the scientific community can view the discussions between
+package maintainers and peer reviewers that form this transparent
+process.
 
 You can also seek evidence of a package's peer acceptance by determining
 how often researchers have used it within scientific papers describing
@@ -1202,12 +1196,12 @@ There's variation in R users' backgrounds and skills, and the same is
 true for R developers. That said, the R community prides itself on
 embracing newcomers at all levels of involvement. This Rule doesn't
 imply that worthwhile packages are exclusively written by well-known
-authors. \textbf{(BEGIN KEEP)} Rather, associations and reputation can
-be a proxy for quality; in this way, the process of evaluating and
-comparing R packages is no different than other decisions. In fact, as
-you become more immersed in the R community, you'll find that name
-recognition is a factor, among many, that helps you establish trust in
-certain tools more quickly than others {[}73{]}. \textbf{(END KEEP)}
+authors. Rather, associations and reputation can be a proxy for quality;
+in this way, the process of evaluating and comparing R packages is no
+different than other decisions. In fact, as you become more immersed in
+the R community, you'll find that name recognition is a factor, among
+many, that helps you establish trust in certain tools more quickly than
+others {[}73{]}.
 
 Information about the package authors can be found in the metadata of
 the package. If you're looking at the source code of the package, there
@@ -1232,16 +1226,16 @@ such as author \texttt{{[}aut{]}}, creator/maintainer
 webpage, with some metadata at the top of the page, including the
 maintainer and other authors along with their roles (see Rule 3).
 
-\textbf{(BEGIN KEEP)} You can assess the credibility and commitment of R
-package developers through direct and indirect signals. Who made the
-package? Consider whether expertise in a certain domain is vital to the
-design and creation of the tool. Research the authors' associations in
-academia, government, and/or industry and gauge the extent to which they
-have a primary role in R development. \textbf{(END KEEP)} Sometimes,
-it's possible to deduce author affiliations by simply looking at their
-domain name on their email addresses. Affiliations may serve as a proxy
-for package quality and sophistication insofar as standards, on average,
-tend to be higher in regulated settings. R packages produced by the
+You can assess the credibility and commitment of R package developers
+through direct and indirect signals. Who made the package? Consider
+whether expertise in a certain domain is vital to the design and
+creation of the tool. Research the authors' associations in academia,
+government, and/or industry and gauge the extent to which they have a
+primary role in R development. Sometimes, it's possible to deduce author
+affiliations by simply looking at their domain name on their email
+addresses. Affiliations may serve as a proxy for package quality and
+sophistication insofar as standards, on average, tend to be higher in
+regulated settings. R packages produced by the
 \href{https://owi.usgs.gov/R/}{United States Geological Survey (USGS)},
 for instance, are maintained by domain experts that know field-specific
 data sources and algorithms very well. Moreover, authors with
@@ -1269,29 +1263,28 @@ uncommon for packages to be created and maintained by more than one
 person and, in many cases, large teams. Roles within these teams can
 shift as the package evolves. As an example, \texttt{ggplot2} has no
 small team of authors and its original maintainer isn't the same as its
-current one {[}29{]}. \textbf{(BEGIN KEEP)} Oftentimes, existence of a
-large team can give you clues (although not guaranteed) about how the
-package is evolving in the R ecosystem. For one, it could indicate that
-a package is very useful and has generated rich community involvement,
-as is the case for \texttt{ggplot2}---many of its authors were added
-after the first release {[}29{]}. This might reveal that a package is
-part of a larger-scale and more organized project. \textbf{(END KEEP)}
-Also, a sizeable team could imply that the package grew out of a
-substantial collaboration, like a funded grant with a multi-person team,
-which happens a lot for specific methods packages. The \texttt{flowCore}
-package is one example of such a case {[}79,80{]}. This might suggest
-that a package has a certain level of review and investment from several
-R programmers (the authors), not just one, as in a solo-authored
-project. It's also useful to examine the full list of authors (even if
-it's long) because you might not recognize the maintainer's name, but
-you might recognize another author's name. This can happen if the
-maintainer is a student or someone else that's up-and-coming; sometimes,
-more senior authors don't assume the role of maintainer, even though
-they're quite invested in the project. It's worth looking to see, for
-example, if someone who is well-known for excellence in methods
-development is one of the non-maintaining authors, which may help you
-gauge the quality of the fundamental algorithms and techniques in the
-package code.
+current one {[}29{]}. Oftentimes, existence of a large team can give you
+clues (although not guaranteed) about how the package is evolving in the
+R ecosystem. For one, it could indicate that a package is very useful
+and has generated rich community involvement, as is the case for
+\texttt{ggplot2}---many of its authors were added after the first
+release {[}29{]}. This might reveal that a package is part of a
+larger-scale and more organized project. Also, a sizeable team could
+imply that the package grew out of a substantial collaboration, like a
+funded grant with a multi-person team, which happens a lot for specific
+methods packages. The \texttt{flowCore} package is one example of such a
+case {[}79,80{]}. This might suggest that a package has a certain level
+of review and investment from several R programmers (the authors), not
+just one, as in a solo-authored project. It's also useful to examine the
+full list of authors (even if it's long) because you might not recognize
+the maintainer's name, but you might recognize another author's name.
+This can happen if the maintainer is a student or someone else that's
+up-and-coming; sometimes, more senior authors don't assume the role of
+maintainer, even though they're quite invested in the project. It's
+worth looking to see, for example, if someone who is well-known for
+excellence in methods development is one of the non-maintaining authors,
+which may help you gauge the quality of the fundamental algorithms and
+techniques in the package code.
 
 \hypertarget{rule-8-see-how-its-developed}{%
 \section{Rule 8: See how it's
@@ -1338,16 +1331,15 @@ testing, \texttt{testthat} is a popular, integrative R package that
 helps developers create reliable functions, minimize error, and
 visualize progress through automatic code testing {[}83,84{]}.
 Developers are also interested in quantifying the amount of code in
-their package that has been tested. \textbf{(BEGIN KEEP)} Test coverage,
-a measurement of the proportion of code that has undergone unit testing,
-is an objective metric for package developers, contributors, and users
-to evaluate code quality. \textbf{(END KEEP)} Many developers use the
-\texttt{covr} package to generate reports and determine the magnitude of
-coverage on the function, script, and package levels {[}85{]}. You can
-look at the source code for a package to confirm it has a testing suite;
-for instance, if you're on a package's GitHub page, you can navigate to
-the main Code page and look for a folder labeled \texttt{tests} or
-something similar.
+their package that has been tested. Test coverage, a measurement of the
+proportion of code that has undergone unit testing, is an objective
+metric for package developers, contributors, and users to evaluate code
+quality. Many developers use the \texttt{covr} package to generate
+reports and determine the magnitude of coverage on the function, script,
+and package levels {[}85{]}. You can look at the source code for a
+package to confirm it has a testing suite; for instance, if you're on a
+package's GitHub page, you can navigate to the main Code page and look
+for a folder labeled \texttt{tests} or something similar.
 
 Relatedly, developers who host their packages on GitHub often post
 status badges in the overview (\texttt{README}) section of the
@@ -1412,58 +1404,56 @@ failures {[}90{]}.
 \hypertarget{rule-9-put-it-to-the-test}{%
 \section{Rule 9: Put it to the test}\label{rule-9-put-it-to-the-test}}
 
-\textbf{(BEGIN KEEP)} If you're unable to decide whether to use a
-package based on prior Rules, test it out. Similarly, if you have
-narrowed your options, work with each to highlight differences.
-Exploring the package and engaging in trial and error using your skills
-in context of your goal will illuminate technical details and solidify
-any doubts. \textbf{(END KEEP)}
+If you're unable to decide whether to use a package based on prior
+Rules, test it out. Similarly, if you have narrowed your options, work
+with each to highlight differences. Exploring the package and engaging
+in trial and error using your skills in context of your goal will
+illuminate technical details and solidify any doubts.
 
-\textbf{(BEGIN KEEP)} At this point, what you've learned about the
-package should be quite helpful. If the package has a vignette, this is
-a great place to start experimenting with code. Vignettes include many
-common data science problems with solutions; you can run the code
-examples, tweak them, and compare the outputs. \textbf{(END KEEP)}
-First, try some examples with the example data provided by the package,
-then see if you can translate that to working with your own data.
-Sometimes, package functions will require inputs to be in a specific
-data type (e.g., a dataframe, or a certain type of S4 object) or to have
-a specific format (e.g., if it's in a dataframe, to have certain columns
-with certain names). By moving from the example data to your own, you
-can gauge the effort it will take to transform your data to fit these
-formats. You can also be on the lookout for whether certain
-characteristics of your data (e.g., fields with missing values) cause
-complications when using the package's functions. You can continue by
-looking through the collection of help files for the package. Help files
-often include executable examples, and you can again start by testing
-these with the example data provided by the package, then move on to
-trying them with your own data and within your own workflow.
+At this point, what you've learned about the package should be quite
+helpful. If the package has a vignette, this is a great place to start
+experimenting with code. Vignettes include many common data science
+problems with solutions; you can run the code examples, tweak them, and
+compare the outputs. First, try some examples with the example data
+provided by the package, then see if you can translate that to working
+with your own data. Sometimes, package functions will require inputs to
+be in a specific data type (e.g., a dataframe, or a certain type of S4
+object) or to have a specific format (e.g., if it's in a dataframe, to
+have certain columns with certain names). By moving from the example
+data to your own, you can gauge the effort it will take to transform
+your data to fit these formats. You can also be on the lookout for
+whether certain characteristics of your data (e.g., fields with missing
+values) cause complications when using the package's functions. You can
+continue by looking through the collection of help files for the
+package. Help files often include executable examples, and you can again
+start by testing these with the example data provided by the package,
+then move on to trying them with your own data and within your own
+workflow.
 
 Sometimes packages don't interact well with other packages; a recipe
-prepared with an odd combination of tools won't turn out. \textbf{(BEGIN
-KEEP)} You should therefore test the \emph{interoperability} of all the
-packages you want to use. \textbf{(END KEEP)} There are some packages
-that are masterful at doing what they're made to do, yet incongruous
-with other packages. Such packages might, for example, use S3 or S4
-objects, which are two main approaches developers use to implement
-object-oriented programming in R. Many packages for spatial analysis, as
-well as those from Bioconductor, tend to use S4 objects to represent
-data {[}8{]}. On the other hand, the \texttt{tidyverse}, a unified suite
-of packages with an grammatical structure employed within a
-``pipeline'', expects dataframe objects {[}77{]}. Because of this, when
-you're working in the \texttt{tidyverse}, you may need to take extra
-steps to extract components from S3/S4 objects to re-frame the data into
-a dataframe. Some packages already exist to help with this interfacing
-task between S3/S4 objects and \texttt{tidyverse} tools. The
-\texttt{broom} package, and the bioinformatics analog,
-\texttt{biobroom}, aim to alleviate these disruptions by converting
-``untidy'' objects in S3/S4 objects into ``tidy'' data in dataframes,
-thereby making it easier to integrate statistical functions into the
-structure of the \texttt{tidyverse} workflow {[}77,91,92{]}. Similarly,
-the \texttt{caret} package facilitates interoperability for machine
-learning packages by providing a uniform interface for modeling with
-various algorithms from different packages that would otherwise have
-independent syntax {[}60{]}.
+prepared with an odd combination of tools won't turn out. You should
+therefore test the \emph{interoperability} of all the packages you want
+to use. There are some packages that are masterful at doing what they're
+made to do, yet incongruous with other packages. Such packages might,
+for example, use S3 or S4 objects, which are two main approaches
+developers use to implement object-oriented programming in R. Many
+packages for spatial analysis, as well as those from Bioconductor, tend
+to use S4 objects to represent data {[}8{]}. On the other hand, the
+\texttt{tidyverse}, a unified suite of packages with an grammatical
+structure employed within a ``pipeline'', expects dataframe objects
+{[}77{]}. Because of this, when you're working in the
+\texttt{tidyverse}, you may need to take extra steps to extract
+components from S3/S4 objects to re-frame the data into a dataframe.
+Some packages already exist to help with this interfacing task between
+S3/S4 objects and \texttt{tidyverse} tools. The \texttt{broom} package,
+and the bioinformatics analog, \texttt{biobroom}, aim to alleviate these
+disruptions by converting ``untidy'' objects in S3/S4 objects into
+``tidy'' data in dataframes, thereby making it easier to integrate
+statistical functions into the structure of the \texttt{tidyverse}
+workflow {[}77,91,92{]}. Similarly, the \texttt{caret} package
+facilitates interoperability for machine learning packages by providing
+a uniform interface for modeling with various algorithms from different
+packages that would otherwise have independent syntax {[}60{]}.
 
 \hypertarget{rule-10-develop-your-own-package}{%
 \section{Rule 10: Develop your own
@@ -1481,25 +1471,24 @@ re-used; an R package is basically a collection of one or more of these
 functions. The reasons why you might want to create a package are
 abundant: necessity, innovation, standardization, automation, specialty,
 containment, organization, sharing, collaboration, extensibility, and
-more. \textbf{(BEGIN KEEP)} Whatever your motivation, packages are
-simply sets of tools; you can create a package out of any collection of
-specialty functions. A key tenant of efficient programming is the
-``DRY'' principle---Don't Repeat Yourself. Functions help with this and
-are warranted when you copy and paste code while making slight
-modifications after each iteration {[}70{]}. \textbf{(BEGIN KEEP)} You
-should use a function when you want to replace repetitive code with a
-defined, compact piece of code defined only once in your script, which
-you can call throughout in shorthand. Since R packages are just sets of
-these functions, they're not solely reserved for large-scale,
-comprehensive methods; rather, package development can also help you
-learn how to apply proper coding techniques to writing functions and
-documentation with reproducibility and collaboration in mind {[}93{]}.
-\textbf{(END KEEP)} Packages need not be formal nor entirely cohesive.
-For instance, personal R packages such as \texttt{Hmisc} and
+more. Whatever your motivation, packages are simply sets of tools; you
+can create a package out of any collection of specialty functions. A key
+tenant of efficient programming is the ``DRY'' principle---Don't Repeat
+Yourself. Functions help with this and are warranted when you copy and
+paste code while making slight modifications after each iteration
+{[}70{]}. You should use a function when you want to replace repetitive
+code with a defined, compact piece of code defined only once in your
+script, which you can call throughout in shorthand. Since R packages are
+just sets of these functions, they're not solely reserved for
+large-scale, comprehensive methods; rather, package development can also
+help you learn how to apply proper coding techniques to writing
+functions and documentation with reproducibility and collaboration in
+mind {[}93{]}. Packages need not be formal nor entirely cohesive. For
+instance, personal R packages such as \texttt{Hmisc} and
 \texttt{broman}, are comprised of miscellaneous functions which the
 creator has developed and frequently uses {[}94,95{]}. They're like the
 collection of little tried-and-true tricks and tools you've made to cook
-your own recipes in your kitchen. \textbf{(END KEEP)}
+your own recipes in your kitchen.
 
 While personal R packages are virtually unbounded, we'll describe some
 of their immediate uses. If you often do the same specific,
@@ -1588,17 +1577,17 @@ become R makers by adding their own contributions so not only they, but
 new and existing users and makers, can do more in R. This plays an
 essential role in the lifecycle of R's beloved shared tools.
 
-\textbf{(BEGIN KEEP)} R packages are a defining feature of the language
-insofar as many are robust, user-friendly, and richly extend R's core
-functionality. Some of the most prominent R packages are a result of the
-developer abstracting common elements of a data science problem into a
-workflow that can be shared and accompanied by thorough descriptions of
-the process and purpose. In this way, R packages have effectively
-transformed how we interact with data in the modern day in, perhaps, a
-more impactful manner than several revered contributions to theoretical
-statistics {[}6{]}. Packages greatly enhance the user experience and
-enable you to be more efficient and effective when working with data,
-regardless of prior experience. \textbf{(END KEEP)}
+R packages are a defining feature of the language insofar as many are
+robust, user-friendly, and richly extend R's core functionality. Some of
+the most prominent R packages are a result of the developer abstracting
+common elements of a data science problem into a workflow that can be
+shared and accompanied by thorough descriptions of the process and
+purpose. In this way, R packages have effectively transformed how we
+interact with data in the modern day in, perhaps, a more impactful
+manner than several revered contributions to theoretical statistics
+{[}6{]}. Packages greatly enhance the user experience and enable you to
+be more efficient and effective when working with data, regardless of
+prior experience.
 
 Nonetheless, the sheer quantity and potential complexity of available R
 packages can undermine their collective benefits. Finding and choosing
