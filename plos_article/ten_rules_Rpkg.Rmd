@@ -18,18 +18,7 @@ address:
   - code: ERHS
     address: Department of Environmental & Radiological Health Sciences, Colorado State University, Fort Collins, Colorado, United States of America   
 abstract: |
-  R is an increasingly preferred software environment for data analytics and statistical computing among scientists and practitioners. Packages markedly extend R’s utility and ameliorate inefficient solutions. We outline ten simple rules for finding relevant packages and determining which package is best for your desired use:
-  
-  1. Consider your purpose
-  2. Find and collect options
-  3. Check how it's shared
-  4. Explore the availability and quality of help
-  5. Quantify how established it is
-  6. Seek evidence of peer acceptance and review
-  7. Find out who developed it
-  8. See how it's developed
-  9. Put it to the test
-  10. Develop your own package
+  R is an increasingly preferred software environment for data analytics and statistical computing among scientists and practitioners. Packages markedly extend R’s utility and ameliorate inefficient solutions. We outline ten simple rules for finding relevant packages and determining which package is best for your desired use. We begin in Rule 1 with tips on how to consider your purpose, which will guide your search to follow, where, in Rule 2, you'll learn best practices for finding and collecting options. Rules 3 through 8 will help you navigate packages' profiles and investigate development processes, so you can assess their quality and merit. We end in Rules 9 and 10 with more hands-on approaches, which involve digging into package code.
   
 author_summary: |
   Write the author summary here. Do we want to include and author summary?
@@ -346,26 +335,15 @@ pkg_table <- kable(gen_pkgs, format = "latex", booktabs = TRUE,
                notation = "symbol")
 # print table
 pkg_table
-
-## trying to separate color; striped by group
-#  row_spec(1:3 - 1, extra_latex_after = "\\rowcolor{gray!6}")
-#  row_spec(0:3, extra_latex_after = "\\rowcolor{orange!6}") %>% 
-#  row_spec(4:6, extra_latex_after = "\\rowcolor{gray!6}") %>% 
-#  row_spec(7:11, extra_latex_after = "\\rowcolor{gray!6}")
 ```
 
 ## Table questions
 
 - Code font for package names in code in " "? `\texttt{}`?
-- How do you repeat same symbol on multiple items with one footnote?
-- How do you separate colors and stripe by group?
-- Add title
-- Add caption
 - Cite packages in bib and add references in table?
 - Embed url link to package documentation? Do we want to link cheatsheets?
 - How do you add link/reference to Table 1 in text in the template?
-- Title for column 2: description/purpose/usage?
-- Length of description/purpose/usage for each package?
+- Title ideas for column 2: Description or Purpose?
 
 # Figures
 
