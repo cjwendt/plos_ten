@@ -20,8 +20,6 @@ address:
 abstract: |
   R is an increasingly preferred software environment for data analytics and statistical computing among scientists and practitioners. Packages markedly extend R’s utility and ameliorate inefficient solutions. We outline ten simple rules for finding relevant packages and determining which package is best for your desired use. We begin in Rule 1 with tips on how to consider your purpose, which will guide your search to follow, where, in Rule 2, you'll learn best practices for finding and collecting options. Rules 3 through 8 will help you navigate packages' profiles and investigate development processes, so you can assess their quality and merit. We end in Rules 9 and 10 with more hands-on approaches, which involve digging into package code.
   
-author_summary: |
-  Write the author summary here. Do we want to include and author summary?
 bibliography: plos_bib.bib
 output: rticles::plos_article
 csl: plos.csl
@@ -41,9 +39,6 @@ header-includes:
 - \usepackage{makecell}
 - \usepackage{xcolor}
 ---
-
-_Text based on plos sample manuscript, see [http://journals.plos.org/ploscompbiol/s/latex](http://journals.plos.org/ploscompbiol/s/latex)_
-
 
 # Disclaimer?
 
@@ -381,10 +376,6 @@ knitr::include_graphics("../figures/packagemetrics.png")
 - (See Figure `\@ref(fig:biocViews)`)
 - Do we need to add a YAML?
 - `\@ref(fig:chunk-label)`
-
-# Supporting information
-
-Do we want to include any supporting information?
 
 # Acknowledgements
 
