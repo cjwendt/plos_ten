@@ -332,14 +332,6 @@ pkg_table <- kable(gen_pkgs, format = "latex", booktabs = TRUE,
 pkg_table
 ```
 
-## Table questions
-
-- Code font for package names in code in " "? `\texttt{}`?
-- Cite packages in bib and add references in table?
-- Embed url link to package documentation? Lnk cheatsheets?
-- How do you add link/reference to Table 1 in text in the template?
-- Title ideas for column 2: Description or Purpose?
-
 # Figures
 
 ```{r cran_task_views, echo=FALSE, fig.cap = "A snapshot of CRAN Task Views", out.width = "100%"}
