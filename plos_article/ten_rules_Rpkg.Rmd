@@ -40,7 +40,7 @@ header-includes:
 - \usepackage{xcolor}
 ---
 
-# Disclaimer?
+# Disclaimer
 
 Do we need to include a disclaimer in the margin like the one from @perez2016 that states:
 "**Competing Interests**: The authors have no affiliation
