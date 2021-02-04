@@ -388,11 +388,7 @@ Do we want to include any supporting information?
 
 # Acknowledgements
 
-[Acknowledgment of people who have helped; suggestions from colleagues, etc.]
-
-- Therese Kondash
-- Matthew Hughes
-- Bailey Fosdick
+The authors wish to thank Bailey Fosdick, Matthew Hughes, Therese Kondash, and Kathleen Wendt for their contributions to this work.
 
 # References {#references .unnumbered}
 
