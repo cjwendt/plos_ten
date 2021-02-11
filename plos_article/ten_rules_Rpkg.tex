@@ -299,10 +299,10 @@ teams, and a massive community of developers contribute extensions
 through open-source packages that build on the language's basic
 framework. This process has facilitated an expansive set of tools
 available to researchers who learn R. However, many researchers new to R
-may find it difficult to navigate the available packages, choosing one
-that is robust, well-tested and well-documented, and suited to their
-task. In this article, we present 10 simple rules to help researchers
-new to R as they navigate this vast ecosystem of available R packages.
+may find it difficult to navigate the available packages, to choose one
+that is robust, well-documented, and suited to their task. In this
+article, we present 10 simple rules to help researchers new to R as they
+navigate this vast ecosystem of available R packages.
 
 \hypertarget{disclaimer}{%
 \section{Disclaimer}\label{disclaimer}}
@@ -554,8 +554,8 @@ concentrate on topics from certain disciplines or methodological
 approaches (e.g., Econometrics, Genetics, Optimization, Spatial). In the
 HTML version, you can browse alphabetized subcategories of packages
 within each Task View and read concise descriptions to find tools with
-specific functionality (see \textbf{Fig 1}). Alternatively, you can
-access Task Views directly from the R console with
+specific functionality (Fig\textasciitilde{}\ref{fig1}). Alternatively,
+you can access Task Views directly from the R console with
 \texttt{ctv::CRAN.views()} {[}17{]} (note that here and throughout, we
 use this compact \texttt{package::function()} notation to indicate a
 function from a specific package). There are currently 41 Task Views
@@ -568,17 +568,35 @@ maintenance, and quality control, CRAN Task Views address several major
 user-end issues that have arisen due to the sheer quantity of available
 packages {[}18{]}.
 
+\begin{figure}[!h]
+\caption{{\bf A snapshot of CRAN Task Views.}
+CRAN Task Views offer listings of available R packages within specific
+topic areas, like time series, optimization, medical imaging, genetics, 
+and high-performance computing.}
+\label{fig1}
+\end{figure}
+
 The computational biology and bioinformatics analogs of CRAN Task Views,
 \href{https://www.bioconductor.org/packages/release/BiocViews.html\#___Software}{biocViews},
 are lists of packages available through the Bioconductor repository that
-provide tools for analyzing biological data (see \textbf{Fig 2}). Your
-keywords from Rule 1 will come in handy here, too; for instance, you can
-search ``RNA-seq'' to find all packages related to high-throughput
-sequencing methods for analyzing RNA populations. You can also browse
-the biocViews tree menu to narrow your search based on which general and
-specific categories describe your task. The list includes each package's
-name linked to information and documentation, its maintainer, a short
-description, and its rank relative to other Bioconductor packages.
+provide tools for analyzing biological data
+(Fig\textasciitilde{}\ref{fig2}). Your keywords from Rule 1 will come in
+handy here, too; for instance, you can search ``RNA-seq'' to find all
+packages related to high-throughput sequencing methods for analyzing RNA
+populations. You can also browse the biocViews tree menu to narrow your
+search based on which general and specific categories describe your
+task. The list includes each package's name linked to information and
+documentation, its maintainer, a short description, and its rank
+relative to other Bioconductor packages.
+
+\begin{figure}[!h]
+\caption{{\bf A snapshot of BiocViews.}
+Bioconductor---which serves as a repository for packages focused on
+high-throughput genomic data---offers similar curated lists of packages through
+BiocViews, including listings by assay domain, by biological question, and by
+statistical method.}
+\label{fig2}
+\end{figure}
 
 Other curated collections and topically-linked lists of packages are
 also available.
@@ -588,7 +606,14 @@ packages from CRAN. Another place to find well-maintained tools is
 \href{https://ropensci.org/packages/}{rOpenSci packages}. These
 filterable and searchable peer-reviewed (see Rule 6) R packages are
 organized by name, maintainer, description, and status markers based on
-activity, association, and review (see \textbf{Fig 3}).
+activity, association, and review (Fig\textasciitilde{}\ref{fig3}).
+
+\begin{figure}[!h]
+\caption{{\bf An example of the CRAN page for the ggplot2 package.}
+Each package on CRAN has its own webpage, which can be used to follow several of the rules highlighted in this article. This snapshot of the page for the 
+\texttt{ggplot2} package indicates where information related to several of the Rules can be found on the package's CRAN page.}
+\label{fig3}
+\end{figure}
 
 You'll also find tips on R packages by joining in R's vibrant
 international community. An inclusive and collaborative community is an
@@ -1635,52 +1660,6 @@ valuable page in your computing cookbook---one that will evolve into
 intuition and yet remain a reliable reference. May searching for and
 selecting proper tools no longer spoil your appetite and dissuade you
 from discovering, trying, creating, and sharing new recipes.
-
-\hypertarget{figures}{%
-\section{Figures}\label{figures}}
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/cran_task_views} \caption{A snapshot of CRAN Task Views}\label{fig:cran_task_views}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/biocViews} \caption{A snapshot of biocViews}\label{fig:biocViews}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/cran_ggplot2} \caption{An example of the CRAN page for the ggplot2 package}\label{fig:cran_ggplot2}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/bioc_deseq2} \caption{An example of the Bioconductor page for the DESeq2 package}\label{fig:bioc_deseq2}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/github_bookdown} \caption{An example of the GitHub page for the bookdown package}\label{fig:github_bookdown}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/ropensci_imgproc} \caption{An example of the rOpenSci package search page, filtered to image processing packages}\label{fig:ropensci_imgproc}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/packagemetrics} \caption{Output from the packagemetrics package, used here to compare data visualization packages}\label{fig:packagemetrics}
-\end{figure}
-
-\hypertarget{figure-questions}{%
-\section{Figure questions}\label{figure-questions}}
-
-\begin{itemize}
-\tightlist
-\item
-  References to figures won't knit properly
-\item
-  (See Figure \texttt{\textbackslash{}@ref(fig:biocViews)})
-\item
-  Do we need to add a YAML?
-\item
-  \texttt{\textbackslash{}@ref(fig:chunk-label)}
-\end{itemize}
 
 \hypertarget{acknowledgements}{%
 \section{Acknowledgements}\label{acknowledgements}}

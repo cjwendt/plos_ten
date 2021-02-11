@@ -193,12 +193,35 @@ When learning how to program in R, you are typically introduced to some of the m
 
 You can also browse online to look for R packages. Search engines such as Google return ample pages related to anything `"… in R"`. This can  be a good place to start, especially if you use the list of terms you developed for Rule 1. For a more directed approach, you can search the package lists on repositories including the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/), [Bioconductor](https://www.bioconductor.org/), and [rOpenSci](https://ropensci.org/) or browse packages available on code-sharing websites like [GitHub](https://github.com/) and [GitLab](https://about.gitlab.com/) (see Rule 3), with language filters for finding repositories that heavily rely on R code.
 
-You can also search with a more targeted approach by starting from a curated list of R packages on a particular topic. [CRAN Task Views](https://cran.r-project.org/web/views/) concentrate on topics from certain disciplines or methodological approaches (e.g., Econometrics, Genetics, Optimization, Spatial). In the HTML version, you can browse alphabetized subcategories of packages within each Task View and read concise descriptions to find tools with specific functionality (see **Fig 1**). Alternatively, you can access Task Views directly from the R console with `ctv::CRAN.views()` [@ctv] (note that here and throughout, we use this compact `package::function()` notation to indicate a function from a specific package). There are currently 41 Task Views that collectively contain thousands of packages, all curated and regularly tested. Moreover, CRAN Task Views provide tools that enable you to automatically install all packages within a targeted area of interest. Ultimately, by providing task-based organization, easy simultaneous installation of related packages, meta-information, ensured maintenance, and quality control, CRAN Task Views address several major user-end issues that have arisen due to the sheer quantity of available packages [@zeileis2005]. 
+You can also search with a more targeted approach by starting from a curated list of R packages on a particular topic. [CRAN Task Views](https://cran.r-project.org/web/views/) concentrate on topics from certain disciplines or methodological approaches (e.g., Econometrics, Genetics, Optimization, Spatial). In the HTML version, you can browse alphabetized subcategories of packages within each Task View and read concise descriptions to find tools with specific functionality (Fig~\ref{fig1}). Alternatively, you can access Task Views directly from the R console with `ctv::CRAN.views()` [@ctv] (note that here and throughout, we use this compact `package::function()` notation to indicate a function from a specific package). There are currently 41 Task Views that collectively contain thousands of packages, all curated and regularly tested. Moreover, CRAN Task Views provide tools that enable you to automatically install all packages within a targeted area of interest. Ultimately, by providing task-based organization, easy simultaneous installation of related packages, meta-information, ensured maintenance, and quality control, CRAN Task Views address several major user-end issues that have arisen due to the sheer quantity of available packages [@zeileis2005].
 
-The computational biology and bioinformatics analogs of CRAN Task Views, [biocViews](https://www.bioconductor.org/packages/release/BiocViews.html#___Software), are lists of packages available through the Bioconductor repository that provide tools for analyzing biological data (see **Fig 2**). Your keywords from Rule 1 will come in handy here, too; for instance, you can search "RNA-seq" to find all packages related to high-throughput sequencing methods for analyzing RNA populations. You can also browse the biocViews tree menu to narrow your search based on which general and specific categories describe your task. The list includes each package’s name linked to information and documentation, its maintainer, a short description, and its rank relative to other Bioconductor packages. 
+\begin{figure}[!h]
+\caption{{\bf A snapshot of CRAN Task Views.}
+CRAN Task Views offer listings of available R packages within specific
+topic areas, like time series, optimization, medical imaging, genetics, 
+and high-performance computing.}
+\label{fig1}
+\end{figure}
 
-Other curated collections and topically-linked lists of packages are also available. [CRANberries](http://dirk.eddelbuettel.com/cranberries/index.html), for example, is a hub of information about new, updated, and removed packages from CRAN. Another place to find well-maintained tools is [rOpenSci packages](https://ropensci.org/packages/). These filterable and searchable peer-reviewed (see Rule 6) R packages are organized by name, maintainer, description, and status markers based on activity, association, and review (see **Fig 3**).
+The computational biology and bioinformatics analogs of CRAN Task Views, [biocViews](https://www.bioconductor.org/packages/release/BiocViews.html#___Software), are lists of packages available through the Bioconductor repository that provide tools for analyzing biological data (Fig~\ref{fig2}). Your keywords from Rule 1 will come in handy here, too; for instance, you can search "RNA-seq" to find all packages related to high-throughput sequencing methods for analyzing RNA populations. You can also browse the biocViews tree menu to narrow your search based on which general and specific categories describe your task. The list includes each package’s name linked to information and documentation, its maintainer, a short description, and its rank relative to other Bioconductor packages. 
 
+\begin{figure}[!h]
+\caption{{\bf A snapshot of BiocViews.}
+Bioconductor---which serves as a repository for packages focused on
+high-throughput genomic data---offers similar curated lists of packages through
+BiocViews, including listings by assay domain, by biological question, and by
+statistical method.}
+\label{fig2}
+\end{figure}
+
+Other curated collections and topically-linked lists of packages are also available. [CRANberries](http://dirk.eddelbuettel.com/cranberries/index.html), for example, is a hub of information about new, updated, and removed packages from CRAN. Another place to find well-maintained tools is [rOpenSci packages](https://ropensci.org/packages/). These filterable and searchable peer-reviewed (see Rule 6) R packages are organized by name, maintainer, description, and status markers based on activity, association, and review (Fig~\ref{fig3}).
+
+\begin{figure}[!h]
+\caption{{\bf An example of the CRAN page for the ggplot2 package.}
+Each package on CRAN has its own webpage, which can be used to follow several of the rules highlighted in this article. This snapshot of the page for the 
+\texttt{ggplot2} package indicates where information related to several of the Rules can be found on the package's CRAN page.}
+\label{fig3}
+\end{figure}
 
 You'll also find tips on R packages by joining in R's vibrant international community. An inclusive and collaborative community is an overlooked, yet integral, aspect of a software’s success [@smith2017]. The R community has a widespread internet presence across various platforms; however, members are markedly active on Twitter, a place where R users seek help, share ideas, and stay informed on `#rstats` happenings, including releases of new packages [@ellis2017]. R-related blogs serve as another informal, up-to-date, and more detailed avenue for communicating and promoting R-related information. For example, Joseph Rickert, Ambassador at Large for RStudio, writes monthly posts on the [R Views](https://rviews.rstudio.com/) blog highlighting interesting new R packages. Rickert also features special articles about recently released packages and lists of top packages within certain categories, including: Computational Methods, Data, Machine Learning, Medicine, Science, Statistics, Time Series, Utilities, and Visualization.
 
@@ -336,42 +359,35 @@ R packages are a defining feature of the language insofar as many are robust, us
 
 Nonetheless, the sheer quantity and potential complexity of available R packages can undermine their collective benefits. Finding and choosing packages, particularly for beginners, can be daunting and difficult. R users often struggle to sift through the tools at their disposal and wonder how to distinguish appropriate usage. These ten simple rules for navigating the shared code in the R community are intended to serve as a valuable page in your computing cookbook---one that will evolve into intuition and yet remain a reliable reference. May searching for and selecting proper tools no longer spoil your appetite and dissuade you from discovering, trying, creating, and sharing new recipes.
 
-# Figures
+<!-- # Figures -->
 
-```{r cran_task_views, echo=FALSE, fig.cap = "A snapshot of CRAN Task Views", out.width = "100%"}
-knitr::include_graphics("../figures/cran_task_views.png")
-```
+<!-- ```{r cran_task_views, echo=FALSE, fig.cap = "\\textbf{A snapshot of CRAN Task Views.} CRAN Task Views offer listings of available R packages within specific topic areas, like time series, optimization, medical imaging, genetics, and high-performance computing.", out.width = "100%"} -->
+<!-- knitr::include_graphics("../figures/cran_task_views.png") -->
+<!-- ``` -->
 
-```{r biocViews, echo=FALSE, fig.cap = "A snapshot of biocViews", out.width = "100%"}
-knitr::include_graphics("../figures/biocViews.png")
-```
+<!-- ```{r biocViews, echo=FALSE, fig.cap = "A snapshot of biocViews", out.width = "100%"} -->
+<!-- knitr::include_graphics("../figures/biocViews.png") -->
+<!-- ``` -->
 
-```{r cran_ggplot2, echo=FALSE, fig.cap = "An example of the CRAN page for the ggplot2 package", out.width = "100%"}
-knitr::include_graphics("../figures/cran_ggplot2.png")
-```
+<!-- ```{r cran_ggplot2, echo=FALSE, fig.cap = "An example of the CRAN page for the ggplot2 package", out.width = "100%"} -->
+<!-- knitr::include_graphics("../figures/cran_ggplot2.png") -->
+<!-- ``` -->
 
-```{r bioc_deseq2, echo=FALSE, fig.cap = "An example of the Bioconductor page for the DESeq2 package", out.width = "100%"}
-knitr::include_graphics("../figures/bioc_deseq2.png")
-```
+<!-- ```{r bioc_deseq2, echo=FALSE, fig.cap = "An example of the Bioconductor page for the DESeq2 package", out.width = "100%"} -->
+<!-- knitr::include_graphics("../figures/bioc_deseq2.png") -->
+<!-- ``` -->
 
-```{r github_bookdown, echo=FALSE, fig.cap = "An example of the GitHub page for the bookdown package", out.width = "100%"}
-knitr::include_graphics("../figures/github_bookdown.png")
-```
+<!-- ```{r github_bookdown, echo=FALSE, fig.cap = "An example of the GitHub page for the bookdown package", out.width = "100%"} -->
+<!-- knitr::include_graphics("../figures/github_bookdown.png") -->
+<!-- ``` -->
 
-```{r ropensci_imgproc, echo=FALSE, fig.cap = "An example of the rOpenSci package search page, filtered to image processing packages", out.width = "100%"}
-knitr::include_graphics("../figures/ropensci_imgproc.png")
-```
+<!-- ```{r ropensci_imgproc, echo=FALSE, fig.cap = "An example of the rOpenSci package search page, filtered to image processing packages", out.width = "100%"} -->
+<!-- knitr::include_graphics("../figures/ropensci_imgproc.png") -->
+<!-- ``` -->
 
-```{r packagemetrics, echo=FALSE, fig.cap = "Output from the packagemetrics package, used here to compare data visualization packages", out.width = "100%"}
-knitr::include_graphics("../figures/packagemetrics.png")
-```
-
-# Figure questions
-
-- References to figures won't knit properly
-- (See Figure `\@ref(fig:biocViews)`)
-- Do we need to add a YAML?
-- `\@ref(fig:chunk-label)`
+<!-- ```{r packagemetrics, echo=FALSE, fig.cap = "Output from the packagemetrics package, used here to compare data visualization packages", out.width = "100%"} -->
+<!-- knitr::include_graphics("../figures/packagemetrics.png") -->
+<!-- ``` -->
 
 # Acknowledgements
 
