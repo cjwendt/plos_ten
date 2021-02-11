@@ -56,18 +56,10 @@ R as they navigate this vast ecosystem of available R packages.
 
 # Disclaimer
 
-Do we need to include a disclaimer in the margin like the one from @perez2016 that states:
-"**Competing Interests**: The authors have no affiliation
-with GitHub, nor with any other commercial entity
-mentioned in this article. The views described here
-reflect their own views without input from any third
-party organization."
-
-- RStudio
-- ROpenSci
-- GitHub
-
-I am an editor at ROpenSci, so we could mention that in the disclaimer. I do not have any financial interests from that position (it's volunteer, as are many journal editing positions in academics). If we keep in mention of Coursera (and even if not), we should probably also add in my links with Coursera and Leanpub.
+Dr. Anderson is a volunteer associate editor at ROpenSci and is an instructor
+through the Coursera platform, both of which are mentioned as potential
+resources in this article. The views described here reflect the authors' own
+views without input from any third party organization.
 
 # Funding acknowledgment
 
