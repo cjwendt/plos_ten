@@ -380,7 +380,7 @@ knitr::include_graphics("../figures/packagemetrics.png")
 
 # Acknowledgements
 
-The authors wish to thank Bailey Fosdick, Matthew Hughes, Therese Kondash, and Kathleen Wendt for their contributions to this work.
+The authors wish to thank Bailey Fosdick, Matthew Hughes, Therese Kondash, and Kathleen Wendt for their helpful input on the manuscript.
 
 # References {#references .unnumbered}
 
