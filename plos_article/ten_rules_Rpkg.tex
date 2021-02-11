@@ -170,6 +170,32 @@
 \newcommand{\ipsum}{{\bf IPSUM}}
 
 
+% Pandoc citation processing
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+% for Pandoc 2.8 to 2.10.1
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+% For Pandoc 2.11+
+\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc} % for calculating minipage widths
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -223,7 +249,8 @@
 % Title must be 250 characters or less.
 \begin{flushleft}
 {\Large
-\textbf\newline{Ten simple rules for finding and selecting R packages} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+\textbf\newline{Ten simple rules for finding and selecting R
+packages} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
 }
 \newline
 % Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
@@ -231,12 +258,13 @@
 Caroline J. Wendt\textsuperscript{\getAff{Stats}, \getAff{Math}},
 G. Brooke Anderson\textsuperscript{\getAff{ERHS}}\textsuperscript{*}\\
 \bigskip
-\textbf{\getAff{Stats}}Department of Statistics, Colorado State University, Fort Collins,
-Colorado, United States of America\\
-\textbf{\getAff{Math}}Department of Mathematics, Colorado State University, Fort Collins,
-Colorado, United States of America\\
-\textbf{\getAff{ERHS}}Department of Environmental \& Radiological Health Sciences, Colorado
-State University, Fort Collins, Colorado, United States of America\\
+\textbf{\getAff{Stats}}Department of Statistics, Colorado State
+University, Fort Collins, Colorado, United States of America\\
+\textbf{\getAff{Math}}Department of Mathematics, Colorado State
+University, Fort Collins, Colorado, United States of America\\
+\textbf{\getAff{ERHS}}Department of Environmental \& Radiological Health
+Sciences, Colorado State University, Fort Collins, Colorado, United
+States of America\\
 \bigskip
 * Corresponding author: Brooke.Anderson@colostate.edu\\
 \end{flushleft}
@@ -246,22 +274,23 @@ R is an increasingly preferred software environment for data analytics
 and statistical computing among scientists and practitioners. Packages
 markedly extend R's utility and ameliorate inefficient solutions. We
 outline ten simple rules for finding relevant packages and determining
-which package is best for your desired use.
+which package is best for your desired use. We begin in Rule 1 with tips
+on how to consider your purpose, which will guide your search to follow,
+where, in Rule 2, you'll learn best practices for finding and collecting
+options. Rules 3 through 8 will help you navigate packages' profiles and
+investigate development processes, so you can assess their quality and
+merit. We end in Rules 9 and 10 with more hands-on approaches, which
+involve digging into package code.
 
 % Please keep the Author Summary between 150 and 200 words
 % Use first person. PLOS ONE authors please skip this step.
 % Author Summary not valid for PLOS ONE submissions.
-\section*{Author summary}
-Write the author summary here. Do we want to include and author summary?
 
 \linenumbers
 
 % Use "Eq" instead of "Equation" for equation citations.
-\emph{Text based on plos sample manuscript, see
-\url{http://journals.plos.org/ploscompbiol/s/latex}}
-
 \hypertarget{disclaimer}{%
-\section{Disclaimer?}\label{disclaimer}}
+\section{Disclaimer}\label{disclaimer}}
 
 Do we need to include a disclaimer in the margin like the one from
 {[}1{]} that states: ``\textbf{Competing Interests}: The authors have no
@@ -329,15 +358,14 @@ heavy-duty data analysis tools that (ideally) support reproducibility
 
 R was developed by statisticians, and its base software is
 collaboratively maintained by an international group of core
-contributors {[}10{]}. \textbf{(BEGIN KEEP)} The language has an
-ecosystem of extensions beyond this base software; unlike several
-classic proprietary languages such as MATLAB and SAS, an R user can
-access, alter, and extend base R software, then share their work with
-other users in a formalized way through extensions called
-\emph{packages} (as a note, ``package'' is not perfectly synonymous with
-``extension'' because some packages come with base R and technically
-aren't extending the base software, but we'll use ``package'' throughout
-as the commonly recognized colloquial term). \textbf{(END KEEP)} An R
+contributors {[}10{]}. The language has an ecosystem of extensions
+beyond this base software; unlike several classic proprietary languages
+such as MATLAB and SAS, an R user can access, alter, and extend base R
+software, then share their work with other users in a formalized way
+through extensions called \emph{packages} (as a note, ``package'' is not
+perfectly synonymous with ``extension'' because some packages come with
+base R and technically aren't extending the base software, but we'll use
+``package'' throughout as the commonly recognized colloquial term). An R
 package is a fundamental unit of shareable code. There are numerous
 analogies in computing between programming and culinary arts: recipe
 structures, coding cookbooks, and the like. To conceptualize packages,
@@ -416,8 +444,8 @@ frameworks with several functions that form a cohesive package or even a
 suite of related packages. Data manipulation is one such common task
 that has been streamlined by packages such as \texttt{dplyr} and
 \texttt{tidyr} {[}12,13{]}, both part of the \texttt{tidyverse} suite
-(see Table 1). Nevertheless, don't be discouraged if you have a task
-that seems too unusual for a package. There are indeed packages for
+(see \textbf{Table 1}). Nevertheless, don't be discouraged if you have a
+task that seems too unusual for a package. There are indeed packages for
 seemingly singular tasks, which you may favor over coding from scratch.
 You can use an R package to access the Twitter API, send emails from R,
 and there is even a package for converting English letters to numbers as
@@ -496,30 +524,32 @@ concentrate on topics from certain disciplines or methodological
 approaches (e.g., Econometrics, Genetics, Optimization, Spatial). In the
 HTML version, you can browse alphabetized subcategories of packages
 within each Task View and read concise descriptions to find tools with
-specific functionality. Alternatively, you can access Task Views
-directly from the R console with \texttt{ctv::CRAN.views()} {[}18{]}
-(note that here and throughout, we use this compact
-\texttt{package::function()} notation to indicate a function from a
-specific package). There are currently 41 Task Views that collectively
-contain thousands of packages, all curated and regularly tested.
-Moreover, CRAN Task Views provide tools that enable you to automatically
-install all packages within a targeted area of interest. Ultimately, by
-providing task-based organization, easy simultaneous installation of
-related packages, meta-information, ensured maintenance, and quality
-control, CRAN Task Views address several major user-end issues that have
-arisen due to the sheer quantity of available packages {[}19{]}.
+specific functionality (see \textbf{Figure 1}). Alternatively, you can
+access Task Views directly from the R console with
+\texttt{ctv::CRAN.views()} {[}18{]} (note that here and throughout, we
+use this compact \texttt{package::function()} notation to indicate a
+function from a specific package). There are currently 41 Task Views
+that collectively contain thousands of packages, all curated and
+regularly tested. Moreover, CRAN Task Views provide tools that enable
+you to automatically install all packages within a targeted area of
+interest. Ultimately, by providing task-based organization, easy
+simultaneous installation of related packages, meta-information, ensured
+maintenance, and quality control, CRAN Task Views address several major
+user-end issues that have arisen due to the sheer quantity of available
+packages {[}19{]}.
 
 The computational biology and bioinformatics analogs of CRAN Task Views,
 \href{https://www.bioconductor.org/packages/release/BiocViews.html\#___Software}{biocViews},
 are lists of packages available through the Bioconductor repository that
-provide tools for analyzing biological data. Your keywords from Rule 1
-will come in handy here, too; for instance, you can search ``RNA-seq''
-to find all packages related to high-throughput sequencing methods for
-analyzing RNA populations. You can also browse the biocViews tree menu
-to narrow your search based on which general and specific categories
-describe your task. The list includes each package's name linked to
-information and documentation, its maintainer, a short description, and
-its rank relative to other Bioconductor packages.
+provide tools for analyzing biological data (see \textbf{Figure 2}).
+Your keywords from Rule 1 will come in handy here, too; for instance,
+you can search ``RNA-seq'' to find all packages related to
+high-throughput sequencing methods for analyzing RNA populations. You
+can also browse the biocViews tree menu to narrow your search based on
+which general and specific categories describe your task. The list
+includes each package's name linked to information and documentation,
+its maintainer, a short description, and its rank relative to other
+Bioconductor packages.
 
 Other curated collections and topically-linked lists of packages are
 also available.
@@ -529,19 +559,18 @@ packages from CRAN. Another place to find well-maintained tools is
 \href{https://ropensci.org/packages/}{rOpenSci packages}. These
 filterable and searchable peer-reviewed (see Rule 6) R packages are
 organized by name, maintainer, description, and status markers based on
-activity, association, and review.
+activity, association, and review (see \textbf{Figure 3}).
 
-\textbf{(BEGIN KEEP)} You'll also find tips on R packages by joining in
-R's vibrant international community. An inclusive and collaborative
-community is an overlooked, yet integral, aspect of a software's success
-{[}20{]}. The R community has a widespread internet presence across
-various platforms; however, members are markedly active on Twitter, a
-place where R users seek help, share ideas, and stay informed on
-\texttt{\#rstats} happenings, including releases of new packages
-{[}21{]}. R-related blogs serve as another informal, up-to-date, and
-more detailed avenue for communicating and promoting R-related
-information. For example, Joseph Rickert, Ambassador at Large for
-RStudio, writes monthly posts on the
+You'll also find tips on R packages by joining in R's vibrant
+international community. An inclusive and collaborative community is an
+overlooked, yet integral, aspect of a software's success {[}20{]}. The R
+community has a widespread internet presence across various platforms;
+however, members are markedly active on Twitter, a place where R users
+seek help, share ideas, and stay informed on \texttt{\#rstats}
+happenings, including releases of new packages {[}21{]}. R-related blogs
+serve as another informal, up-to-date, and more detailed avenue for
+communicating and promoting R-related information. For example, Joseph
+Rickert, Ambassador at Large for RStudio, writes monthly posts on the
 \href{https://rviews.rstudio.com/}{R Views} blog highlighting
 interesting new R packages. Rickert also features special articles about
 recently released packages and lists of top packages within certain
@@ -580,7 +609,7 @@ Don't forget, a developer of an R package may intend for it to be
 private (exclusively for personal or professional use) or public (at no
 cost and available for use by anyone) {[}22{]}. If your task is specific
 to a line of research, consult colleagues to see if they have a relevant
-(private) package they'd be willing to share. \textbf{(END KEEP)}
+(private) package they'd be willing to share.
 
 \hypertarget{rule-3-check-how-its-shared}{%
 \section{Rule 3: Check how it's
@@ -593,16 +622,15 @@ before they are shipped to your kitchen; in computing terms, a
 repository provides a central online location in which packages are
 stored and managed. Some repositories provide vetting mechanisms that
 tame unwieldy aspects of the R ecosystem by regularly checking
-underlying code and managing corresponding webs of dependencies.
-\textbf{(BEGIN KEEP)} Two traditional repositories for R packages are
-CRAN and Bioconductor; however, there are lesser-known repositories to
-explore. Developers can also share their R packages through large
-code-sharing sites, including public version control platforms like
-GitHub and GitLab; these have fewer restrictions on the format or
-content of shared code compared to repositories. For more private
-sharing, rather than making packages accessible to everyone via internet
-repositories, some developers share their code in zipped files directly
-with collaborators (see Rule 2). \textbf{(END KEEP)}
+underlying code and managing corresponding webs of dependencies. Two
+traditional repositories for R packages are CRAN and Bioconductor;
+however, there are lesser-known repositories to explore. Developers can
+also share their R packages through large code-sharing sites, including
+public version control platforms like GitHub and GitLab; these have
+fewer restrictions on the format or content of shared code compared to
+repositories. For more private sharing, rather than making packages
+accessible to everyone via internet repositories, some developers share
+their code in zipped files directly with collaborators (see Rule 2).
 
 The CRAN repository is the most established R package repository, and it
 serves as the primary source from which you'll likely install R
@@ -659,14 +687,15 @@ roles that are accompanied by comprehensive documentation. For example,
 the page for the package \texttt{DESeq2} can be found at
 \url{https://bioconductor.org/packages/release/bioc/html/DESeq2.html};
 you can view pages corresponding to other Bioconductor packages by
-altering the web address as previously described {[}31{]}. Accessibility
-is a pillar of the Bioconductor project; all forms of documentation,
-including courses, vignettes, and interactive documents, are curated for
-individuals with expertise in adjacent disciplines and minimal
-experience with R (see Rule 4) {[}8{]}. Bioconductor packages also
-integrate well with base R by different means than CRAN packages; you
-should use \texttt{BiocManager::install()} to install Bioconductor
-packages with their corresponding dependencies {[}32{]}.
+altering the web address as previously described (see \textbf{Figure 5})
+{[}31{]}. Accessibility is a pillar of the Bioconductor project; all
+forms of documentation, including courses, vignettes, and interactive
+documents, are curated for individuals with expertise in adjacent
+disciplines and minimal experience with R (see Rule 4) {[}8{]}.
+Bioconductor packages also integrate well with base R by different means
+than CRAN packages; you should use \texttt{BiocManager::install()} to
+install Bioconductor packages with their corresponding dependencies
+{[}32{]}.
 
 Bioconductor has a structured release schedule and thus a unique package
 management system that automatically loads your Bioconductor packages in
@@ -716,16 +745,16 @@ platforms allow for continuous integration and continuous deployment for
 testing data and code to ensure a stable end-product.
 
 One particularly popular and effective platform for sharing R packages
-is GitHub. An increasing number of packages are hosted on GitHub during
-the development stages---it will often be the first place you can find
-up-and-coming packages (see Rule 2). \textbf{(BEGIN KEEP)} If stable
+is GitHub (see \textbf{Figure 6}). An increasing number of packages are
+hosted on GitHub during the development stages---it will often be the
+first place you can find up-and-coming packages (see Rule 2). If stable
 release versions of these packages are published on CRAN or Bioconductor
 {[}41{]}, GitHub is still a good place to explore planned changes for
 the next version that the developer will soon release. GitHub provides R
 users with open access to package code, a timeline of help resources
 (see Rule 4), and a direct line of communication to developers. Both R
 users and package developers benefit from interactive feedback channels
-through GitHub Issues and the Star rating system. \textbf{(END KEEP)}
+through GitHub Issues and the Star rating system.
 
 It's straightforward to install the latest version of a package you want
 to use from GitHub via
@@ -826,14 +855,13 @@ accompanies functions within packages is critical; the fact that anyone
 can read it anytime and use it to guide their own work facilitates
 extensibility. The extent and quality of content in these help files
 will vary; ideally, packages should have thorough documentation at the
-function level. \textbf{(BEGIN KEEP)} If the help pages alone leave you
-wanting, it may be less likely that the package has further (quality)
-documentation and therefore you might reconsider whether that package
-should be your first choice, if comparable options exist. In short, if
-the developer cannot initially communicate how their tool works, then
-you probably won't want to use it in your kitchen (read: if the
-instruction manual is useless, don't use the blender). \textbf{(END
-KEEP)}
+function level. If the help pages alone leave you wanting, it may be
+less likely that the package has further (quality) documentation and
+therefore you might reconsider whether that package should be your first
+choice, if comparable options exist. In short, if the developer cannot
+initially communicate how their tool works, then you probably won't want
+to use it in your kitchen (read: if the instruction manual is useless,
+don't use the blender).
 
 Fortunately, plenty of R packages include additional documentation
 beyond this minimum. While the function-level help files can be rather
@@ -844,18 +872,17 @@ then illustrates applications through clear examples of code with
 coordination of functions and explanations of outcomes. See, for
 example, the extensive vignette for the
 \href{https://cran.r-project.org/web/packages/sf/vignettes/sf1.html}{\texttt{sf}
-package}{[}45{]}. \textbf{(BEGIN KEEP)} Packages can have multiple
-vignettes; you can view or edit a specific vignette or obtain a list of
-all vignettes for a package via the \texttt{vignette()} function from
-base R {[}27{]}. For a package shared through CRAN or Bioconductor, a
-list of the package's vignettes can also be found on the respective
-homepage for the package. \textbf{(END KEEP)} Particularly for packages
-hosted on GitHub, developers often create a mini-vignette in the
-\texttt{README} to provide a high-level overview of their package and
-its components, along with a basic introduction and short tutorial for
-its usage. This mini-vignette, displayed on the package repository's
-main page, should simply tell you why you should use it, how to use it,
-and how to install it {[}26{]}.
+package}{[}45{]}. Packages can have multiple vignettes; you can view or
+edit a specific vignette or obtain a list of all vignettes for a package
+via the \texttt{vignette()} function from base R {[}27{]}. For a package
+shared through CRAN or Bioconductor, a list of the package's vignettes
+can also be found on the respective homepage for the package.
+Particularly for packages hosted on GitHub, developers often create a
+mini-vignette in the \texttt{README} to provide a high-level overview of
+their package and its components, along with a basic introduction and
+short tutorial for its usage. This mini-vignette, displayed on the
+package repository's main page, should simply tell you why you should
+use it, how to use it, and how to install it {[}26{]}.
 
 Interactive tutorials, most commonly those powered by the
 \href{https://rstudio.github.io/learnr/}{\texttt{learnr} package}, are
@@ -1034,11 +1061,11 @@ refer to the number of versions and updates (more is better) in addition
 to the date of the most recent versions and updates (newer is typically
 better, as an indication of active maintenance, although in some cases a
 package with a stable algorithm and few dependencies may not need many
-updates). \textbf{(BEGIN KEEP)} You can also see, on a package's CRAN or
-GitHub page, the number of reverse dependencies it has. When a package
-has numerous reverse dependencies, the code underlying many other R
-packages incorporates functions from that package, which can indicate
-that other R developers find that package useful. \textbf{(END KEEP)}
+updates). You can also see, on a package's CRAN or GitHub page, the
+number of reverse dependencies it has. When a package has numerous
+reverse dependencies, the code underlying many other R packages
+incorporates functions from that package, which can indicate that other
+R developers find that package useful.
 
 RDocumentation (see Rule 4) is rich with stats on R packages, uniting
 many of the previously discussed metrics, while also providing
@@ -1056,11 +1083,11 @@ downloaded as automatic downloads with those packages, don't skew the
 calculation {[}74{]}. You can research stats on corresponding
 dependencies for a more holistic picture.
 
-\textbf{(BEGIN KEEP)} Most of the above-mentioned resources will help
-you learn more about packages on an individual basis. Wouldn't it be
-nice if you could compare related packages that may have features that
-overlap? Some clever R users at an Unconference thought so, too, and
-developed a package called
+Most of the above-mentioned resources will help you learn more about
+packages on an individual basis. Wouldn't it be nice if you could
+compare related packages that may have features that overlap? Some
+clever R users at an Unconference thought so, too, and developed a
+package called
 \href{https://docs.ropensci.org/packagemetrics/}{\texttt{packagemetrics}:
 A Package for Helping You Choose Which Package to Use}, hosted at
 rOpenSci {[}75,76{]}. You can install \texttt{packagemetrics} via
@@ -1071,8 +1098,7 @@ a vector of packages of interest, by name {[}42,75{]}. Then, you can use
 information that includes each package's respective number of downloads,
 GitHub Star rating, \texttt{tidyverse} compatibility, and several more
 indicators to help you decide which package is most established and
-widely used (\textbf{Figure of table output}) {[}75,77{]}.\textbf{(END
-KEEP)}
+widely used (see \textbf{Figure 7}) {[}75,77{]}.
 
 An important caveat to consider: several of the metrics introduced in
 this Rule are based on how often a package is downloaded; however, it's
@@ -1120,23 +1146,23 @@ for a package or, similarly, an article about a package, can also help
 serve as a metric for a package's impact on scientific research and
 utility in research contexts (see Rule 5).
 
-\textbf{(BEGIN KEEP)} For an R package featured in a peer-reviewed
-journal article, you can be assured that the ideas and principles behind
-the package have been evaluated by outside reviewers. However, such a
-review may not have included a fine-grained peer review of the
-underlying code in the package itself. \textbf{(END KEEP)} There's an
-expanding movement toward direct peer review of R packages and other
-open-source scientific software at the code level. More specifically,
-rOpenSci is a unique example of an ecosystem of open source tools with
-peer reviewed R packages (see Rule 3) {[}34{]}. The rOpenSci
-organization oversees peer review of R packages at a highly detailed
-level that's increasingly desired by scientists; packages published
-through their repository have passed external review of the code. They
-limit their scope to packages that help scientists implement
-reproducible research practices and manage the data lifecycle {[}35{]}.
-Their review process is conducted openly on GitHub and, as a result, the
-scientific community can view the discussions between package
-maintainers and peer reviewers that form this transparent process.
+For an R package featured in a peer-reviewed journal article, you can be
+assured that the ideas and principles behind the package have been
+evaluated by outside reviewers. However, such a review may not have
+included a fine-grained peer review of the underlying code in the
+package itself. There's an expanding movement toward direct peer review
+of R packages and other open-source scientific software at the code
+level. More specifically, rOpenSci is a unique example of an ecosystem
+of open source tools with peer reviewed R packages (see Rule 3)
+{[}34{]}. The rOpenSci organization oversees peer review of R packages
+at a highly detailed level that's increasingly desired by scientists;
+packages published through their repository have passed external review
+of the code. They limit their scope to packages that help scientists
+implement reproducible research practices and manage the data lifecycle
+{[}35{]}. Their review process is conducted openly on GitHub and, as a
+result, the scientific community can view the discussions between
+package maintainers and peer reviewers that form this transparent
+process.
 
 You can also seek evidence of a package's peer acceptance by determining
 how often researchers have used it within scientific papers describing
@@ -1177,12 +1203,12 @@ There's variation in R users' backgrounds and skills, and the same is
 true for R developers. That said, the R community prides itself on
 embracing newcomers at all levels of involvement. This Rule doesn't
 imply that worthwhile packages are exclusively written by well-known
-authors. \textbf{(BEGIN KEEP)} Rather, associations and reputation can
-be a proxy for quality; in this way, the process of evaluating and
-comparing R packages is no different than other decisions. In fact, as
-you become more immersed in the R community, you'll find that name
-recognition is a factor, among many, that helps you establish trust in
-certain tools more quickly than others {[}73{]}. \textbf{(END KEEP)}
+authors. Rather, associations and reputation can be a proxy for quality;
+in this way, the process of evaluating and comparing R packages is no
+different than other decisions. In fact, as you become more immersed in
+the R community, you'll find that name recognition is a factor, among
+many, that helps you establish trust in certain tools more quickly than
+others {[}73{]}.
 
 Information about the package authors can be found in the metadata of
 the package. If you're looking at the source code of the package, there
@@ -1207,16 +1233,16 @@ such as author \texttt{{[}aut{]}}, creator/maintainer
 webpage, with some metadata at the top of the page, including the
 maintainer and other authors along with their roles (see Rule 3).
 
-\textbf{(BEGIN KEEP)} You can assess the credibility and commitment of R
-package developers through direct and indirect signals. Who made the
-package? Consider whether expertise in a certain domain is vital to the
-design and creation of the tool. Research the authors' associations in
-academia, government, and/or industry and gauge the extent to which they
-have a primary role in R development. \textbf{(END KEEP)} Sometimes,
-it's possible to deduce author affiliations by simply looking at their
-domain name on their email addresses. Affiliations may serve as a proxy
-for package quality and sophistication insofar as standards, on average,
-tend to be higher in regulated settings. R packages produced by the
+You can assess the credibility and commitment of R package developers
+through direct and indirect signals. Who made the package? Consider
+whether expertise in a certain domain is vital to the design and
+creation of the tool. Research the authors' associations in academia,
+government, and/or industry and gauge the extent to which they have a
+primary role in R development. Sometimes, it's possible to deduce author
+affiliations by simply looking at their domain name on their email
+addresses. Affiliations may serve as a proxy for package quality and
+sophistication insofar as standards, on average, tend to be higher in
+regulated settings. R packages produced by the
 \href{https://owi.usgs.gov/R/}{United States Geological Survey (USGS)},
 for instance, are maintained by domain experts that know field-specific
 data sources and algorithms very well. Moreover, authors with
@@ -1244,29 +1270,28 @@ uncommon for packages to be created and maintained by more than one
 person and, in many cases, large teams. Roles within these teams can
 shift as the package evolves. As an example, \texttt{ggplot2} has no
 small team of authors and its original maintainer isn't the same as its
-current one {[}29{]}. \textbf{(BEGIN KEEP)} Oftentimes, existence of a
-large team can give you clues (although not guaranteed) about how the
-package is evolving in the R ecosystem. For one, it could indicate that
-a package is very useful and has generated rich community involvement,
-as is the case for \texttt{ggplot2}---many of its authors were added
-after the first release {[}29{]}. This might reveal that a package is
-part of a larger-scale and more organized project. \textbf{(END KEEP)}
-Also, a sizeable team could imply that the package grew out of a
-substantial collaboration, like a funded grant with a multi-person team,
-which happens a lot for specific methods packages. The \texttt{flowCore}
-package is one example of such a case {[}79,80{]}. This might suggest
-that a package has a certain level of review and investment from several
-R programmers (the authors), not just one, as in a solo-authored
-project. It's also useful to examine the full list of authors (even if
-it's long) because you might not recognize the maintainer's name, but
-you might recognize another author's name. This can happen if the
-maintainer is a student or someone else that's up-and-coming; sometimes,
-more senior authors don't assume the role of maintainer, even though
-they're quite invested in the project. It's worth looking to see, for
-example, if someone who is well-known for excellence in methods
-development is one of the non-maintaining authors, which may help you
-gauge the quality of the fundamental algorithms and techniques in the
-package code.
+current one {[}29{]}. Oftentimes, existence of a large team can give you
+clues (although not guaranteed) about how the package is evolving in the
+R ecosystem. For one, it could indicate that a package is very useful
+and has generated rich community involvement, as is the case for
+\texttt{ggplot2}---many of its authors were added after the first
+release {[}29{]}. This might reveal that a package is part of a
+larger-scale and more organized project. Also, a sizeable team could
+imply that the package grew out of a substantial collaboration, like a
+funded grant with a multi-person team, which happens a lot for specific
+methods packages. The \texttt{flowCore} package is one example of such a
+case {[}79,80{]}. This might suggest that a package has a certain level
+of review and investment from several R programmers (the authors), not
+just one, as in a solo-authored project. It's also useful to examine the
+full list of authors (even if it's long) because you might not recognize
+the maintainer's name, but you might recognize another author's name.
+This can happen if the maintainer is a student or someone else that's
+up-and-coming; sometimes, more senior authors don't assume the role of
+maintainer, even though they're quite invested in the project. It's
+worth looking to see, for example, if someone who is well-known for
+excellence in methods development is one of the non-maintaining authors,
+which may help you gauge the quality of the fundamental algorithms and
+techniques in the package code.
 
 \hypertarget{rule-8-see-how-its-developed}{%
 \section{Rule 8: See how it's
@@ -1311,25 +1336,24 @@ efficient workflow, and robust code that's not sensitive to major
 changes in the future {[}26{]}. To alleviate the burdens of unit
 testing, \texttt{testthat} is a popular, integrative R package that
 helps developers create reliable functions, minimize error, and
-visualize progress through automatic code testing {[}83,84{]}.
+visualize progress through automatic code testing {[}83,85{]}.
 Developers are also interested in quantifying the amount of code in
-their package that has been tested. \textbf{(BEGIN KEEP)} Test coverage,
-a measurement of the proportion of code that has undergone unit testing,
-is an objective metric for package developers, contributors, and users
-to evaluate code quality. \textbf{(END KEEP)} Many developers use the
-\texttt{covr} package to generate reports and determine the magnitude of
-coverage on the function, script, and package levels {[}85{]}. You can
-look at the source code for a package to confirm it has a testing suite;
-for instance, if you're on a package's GitHub page, you can navigate to
-the main Code page and look for a folder labeled \texttt{tests} or
-something similar.
+their package that has been tested. Test coverage, a measurement of the
+proportion of code that has undergone unit testing, is an objective
+metric for package developers, contributors, and users to evaluate code
+quality. Many developers use the \texttt{covr} package to generate
+reports and determine the magnitude of coverage on the function, script,
+and package levels {[}86{]}. You can look at the source code for a
+package to confirm it has a testing suite; for instance, if you're on a
+package's GitHub page, you can navigate to the main Code page and look
+for a folder labeled \texttt{tests} or something similar.
 
 Relatedly, developers who host their packages on GitHub often post
 status badges in the overview (\texttt{README}) section of the
 repository webpage for the master branch. GitHub badges are a common
 self-imposed method to signal use of best practices and motivate
 developers to produce software that's high in quality and transparency
-{[}86{]}. They're easily visible, interactive, and increase readability
+{[}87{]}. They're easily visible, interactive, and increase readability
 of the \texttt{README}. You might see, for example, license
 (\texttt{license}), version (\texttt{release}), dependency
 (\texttt{dependencies}), code coverage (\texttt{codecov}), or build
@@ -1349,20 +1373,20 @@ the package. You can refer to special badges like \texttt{CRAN},
 repository (or repositories) a package is shared on (See Rule 3).
 
 As we mentioned in Rule 3, version control has an essential role in
-package development and computational literacy more broadly {[}26,87{]}.
+package development and computational literacy more broadly {[}26,88{]}.
 Version control is like a time capsule for your workflow because it
 monitors and tracks changes to files as a project evolves, and stores
 them as previous versions to be recovered if necessary. In other words,
 ``version control is as fundamental to programming as accurate notes
-about lab procedures are to experimental science'' {[}{[}87{]}; p6{]}.
+about lab procedures are to experimental science'' {[}{[}88{]}; p6{]}.
 Git is a decentralized open source version control system that's useful
 regardless of whether a project is independent or collaborative
-{[}88{]}. GitHub works in conjunction with Git to provide a powerful
+{[}89{]}. GitHub works in conjunction with Git to provide a powerful
 structured system to organize and manage components of a project for
 others and your future self. A growing number of scientists have
 research programs based in GitHub, which has become a revolutionary tool
 for productive team science and distributed development efforts
-{[}1,89{]}. As you may expect, Git coupled with GitHub is the version
+{[}1,90{]}. As you may expect, Git coupled with GitHub is the version
 control duo of choice among serious R package developers {[}26{]}. Thus,
 if the package you're interested in using is among the thousands hosted
 on GitHub, this is evidence that the developer is at least committed to
@@ -1382,63 +1406,61 @@ is particularly important for packages with a multi-person development
 team, but also an indicator of quality for single-author packages. Use
 of CI is a strong sign that the components of the package are regularly
 checked to ensure that code passes tests and the package builds without
-failures {[}90{]}.
+failures {[}91{]}.
 
 \hypertarget{rule-9-put-it-to-the-test}{%
 \section{Rule 9: Put it to the test}\label{rule-9-put-it-to-the-test}}
 
-\textbf{(BEGIN KEEP)} If you're unable to decide whether to use a
-package based on prior Rules, test it out. Similarly, if you have
-narrowed your options, work with each to highlight differences.
-Exploring the package and engaging in trial and error using your skills
-in context of your goal will illuminate technical details and solidify
-any doubts. \textbf{(END KEEP)}
+If you're unable to decide whether to use a package based on prior
+Rules, test it out. Similarly, if you have narrowed your options, work
+with each to highlight differences. Exploring the package and engaging
+in trial and error using your skills in context of your goal will
+illuminate technical details and solidify any doubts.
 
-\textbf{(BEGIN KEEP)} At this point, what you've learned about the
-package should be quite helpful. If the package has a vignette, this is
-a great place to start experimenting with code. Vignettes include many
-common data science problems with solutions; you can run the code
-examples, tweak them, and compare the outputs. \textbf{(END KEEP)}
-First, try some examples with the example data provided by the package,
-then see if you can translate that to working with your own data.
-Sometimes, package functions will require inputs to be in a specific
-data type (e.g., a dataframe, or a certain type of S4 object) or to have
-a specific format (e.g., if it's in a dataframe, to have certain columns
-with certain names). By moving from the example data to your own, you
-can gauge the effort it will take to transform your data to fit these
-formats. You can also be on the lookout for whether certain
-characteristics of your data (e.g., fields with missing values) cause
-complications when using the package's functions. You can continue by
-looking through the collection of help files for the package. Help files
-often include executable examples, and you can again start by testing
-these with the example data provided by the package, then move on to
-trying them with your own data and within your own workflow.
+At this point, what you've learned about the package should be quite
+helpful. If the package has a vignette, this is a great place to start
+experimenting with code. Vignettes include many common data science
+problems with solutions; you can run the code examples, tweak them, and
+compare the outputs. First, try some examples with the example data
+provided by the package, then see if you can translate that to working
+with your own data. Sometimes, package functions will require inputs to
+be in a specific data type (e.g., a dataframe, or a certain type of S4
+object) or to have a specific format (e.g., if it's in a dataframe, to
+have certain columns with certain names). By moving from the example
+data to your own, you can gauge the effort it will take to transform
+your data to fit these formats. You can also be on the lookout for
+whether certain characteristics of your data (e.g., fields with missing
+values) cause complications when using the package's functions. You can
+continue by looking through the collection of help files for the
+package. Help files often include executable examples, and you can again
+start by testing these with the example data provided by the package,
+then move on to trying them with your own data and within your own
+workflow.
 
 Sometimes packages don't interact well with other packages; a recipe
-prepared with an odd combination of tools won't turn out. \textbf{(BEGIN
-KEEP)} You should therefore test the \emph{interoperability} of all the
-packages you want to use. \textbf{(END KEEP)} There are some packages
-that are masterful at doing what they're made to do, yet incongruous
-with other packages. Such packages might, for example, use S3 or S4
-objects, which are two main approaches developers use to implement
-object-oriented programming in R. Many packages for spatial analysis, as
-well as those from Bioconductor, tend to use S4 objects to represent
-data {[}8{]}. On the other hand, the \texttt{tidyverse}, a unified suite
-of packages with an grammatical structure employed within a
-``pipeline'', expects dataframe objects {[}77{]}. Because of this, when
-you're working in the \texttt{tidyverse}, you may need to take extra
-steps to extract components from S3/S4 objects to re-frame the data into
-a dataframe. Some packages already exist to help with this interfacing
-task between S3/S4 objects and \texttt{tidyverse} tools. The
-\texttt{broom} package, and the bioinformatics analog,
-\texttt{biobroom}, aim to alleviate these disruptions by converting
-``untidy'' objects in S3/S4 objects into ``tidy'' data in dataframes,
-thereby making it easier to integrate statistical functions into the
-structure of the \texttt{tidyverse} workflow {[}77,91,92{]}. Similarly,
-the \texttt{caret} package facilitates interoperability for machine
-learning packages by providing a uniform interface for modeling with
-various algorithms from different packages that would otherwise have
-independent syntax {[}60{]}.
+prepared with an odd combination of tools won't turn out. You should
+therefore test the \emph{interoperability} of all the packages you want
+to use. There are some packages that are masterful at doing what they're
+made to do, yet incongruous with other packages. Such packages might,
+for example, use S3 or S4 objects, which are two main approaches
+developers use to implement object-oriented programming in R. Many
+packages for spatial analysis, as well as those from Bioconductor, tend
+to use S4 objects to represent data {[}8{]}. On the other hand, the
+\texttt{tidyverse}, a unified suite of packages with an grammatical
+structure employed within a ``pipeline,'' expects dataframe objects
+{[}77{]}. Because of this, when you're working in the
+\texttt{tidyverse}, you may need to take extra steps to extract
+components from S3/S4 objects to re-frame the data into a dataframe.
+Some packages already exist to help with this interfacing task between
+S3/S4 objects and \texttt{tidyverse} tools. The \texttt{broom} package,
+and the bioinformatics analog, \texttt{biobroom}, aim to alleviate these
+disruptions by converting ``untidy'' objects in S3/S4 objects into
+``tidy'' data in dataframes, thereby making it easier to integrate
+statistical functions into the structure of the \texttt{tidyverse}
+workflow {[}77,92,93{]}. Similarly, the \texttt{caret} package
+facilitates interoperability for machine learning packages by providing
+a uniform interface for modeling with various algorithms from different
+packages that would otherwise have independent syntax {[}60{]}.
 
 \hypertarget{rule-10-develop-your-own-package}{%
 \section{Rule 10: Develop your own
@@ -1456,25 +1478,24 @@ re-used; an R package is basically a collection of one or more of these
 functions. The reasons why you might want to create a package are
 abundant: necessity, innovation, standardization, automation, specialty,
 containment, organization, sharing, collaboration, extensibility, and
-more. \textbf{(BEGIN KEEP)} Whatever your motivation, packages are
-simply sets of tools; you can create a package out of any collection of
-specialty functions. A key tenant of efficient programming is the
-``DRY'' principle---Don't Repeat Yourself. Functions help with this and
-are warranted when you copy and paste code while making slight
-modifications after each iteration {[}70{]}. \textbf{(BEGIN KEEP)} You
-should use a function when you want to replace repetitive code with a
-defined, compact piece of code defined only once in your script, which
-you can call throughout in shorthand. Since R packages are just sets of
-these functions, they're not solely reserved for large-scale,
-comprehensive methods; rather, package development can also help you
-learn how to apply proper coding techniques to writing functions and
-documentation with reproducibility and collaboration in mind {[}93{]}.
-\textbf{(END KEEP)} Packages need not be formal nor entirely cohesive.
-For instance, personal R packages such as \texttt{Hmisc} and
+more. Whatever your motivation, packages are simply sets of tools; you
+can create a package out of any collection of specialty functions. A key
+tenant of efficient programming is the ``DRY'' principle---Don't Repeat
+Yourself. Functions help with this and are warranted when you copy and
+paste code while making slight modifications after each iteration
+{[}70{]}. You should use a function when you want to replace repetitive
+code with a defined, compact piece of code defined only once in your
+script, which you can call throughout in shorthand. Since R packages are
+just sets of these functions, they're not solely reserved for
+large-scale, comprehensive methods; rather, package development can also
+help you learn how to apply proper coding techniques to writing
+functions and documentation with reproducibility and collaboration in
+mind {[}94{]}. Packages need not be formal nor entirely cohesive. For
+instance, personal R packages such as \texttt{Hmisc} and
 \texttt{broman}, are comprised of miscellaneous functions which the
-creator has developed and frequently uses {[}94,95{]}. They're like the
+creator has developed and frequently uses {[}95,96{]}. They're like the
 collection of little tried-and-true tricks and tools you've made to cook
-your own recipes in your kitchen. \textbf{(END KEEP)}
+your own recipes in your kitchen.
 
 While personal R packages are virtually unbounded, we'll describe some
 of their immediate uses. If you often do the same specific,
@@ -1491,7 +1512,7 @@ a dataframe as the standard input, not these more complex object types
 functions that extract what you need from the S3/S4 objects and convert
 them into a dataframe input type so they're compatible with
 \texttt{ggplot2}. Interestingly, this type of occurrence is the precise
-motivation behind the widely used \texttt{broom} package {[}91,96{]}.
+motivation behind the widely used \texttt{broom} package {[}92,97{]}.
 You can also create visualization tools that are tailored to your
 research and include them in your personal R package. If you frequently
 design a certain type of plot with your data, you can encode that
@@ -1500,7 +1521,7 @@ other packages. For instance, this could happen if you implement
 particular tweaks whenever you make scatterplots with your data; many R
 users build custom themes within \texttt{ggplot2} for purposes like
 personal or professional branding, which can be wrapped into functions
-and contained in a personal R package {[}29,90{]}.
+and contained in a personal R package {[}29,91{]}.
 
 Although you may not anticipate that anyone else will use your tools,
 following best practices for package development is still a good idea.
@@ -1515,12 +1536,12 @@ package; all your newfound special tools paired with others' shared
 tools can help you make exquisite recipes. There are R packages that aid
 in package development (e.g., \texttt{devtools}, \texttt{usethis},
 \texttt{testthat}, \texttt{roxygen2}, \texttt{rlang}, \texttt{drat})
-{[}36,42,84,97--99{]}---while these packages can provide
+{[}36,42,85,98--100{]}---while these packages can provide
 industrial-strength support for developing large and complex packages,
 they also prove useful even in developing small, private packages. They
 make it easier and more efficient, for example, to write help
 documentation and unit tests for functions in your package. RStudio's
-IDE has a framework called ``Projects'', which can help you establish an
+IDE has a framework called ``Projects,'' which can help you establish an
 organized framework of directories within an R Project
 (\texttt{.Rproj})---specifically designed for creating R
 packages---that's straightforward to navigate throughout the package
@@ -1530,7 +1551,7 @@ like \href{https://r-pkgs.org/}{\emph{R Packages}} by Hadley Wickham
 {[}26{]}, while the official resource on writing packages to share
 through CRAN is the manual,
 \href{https://cran.r-project.org/doc/manuals/r-release/R-exts.html}{\emph{Writing
-R Extensions}} {[}100{]}.
+R Extensions}} {[}101{]}.
 
 Regardless of whether you're writing a package to share, or one for your
 own use that you don't plan to publish through a repository, consider
@@ -1563,17 +1584,17 @@ become R makers by adding their own contributions so not only they, but
 new and existing users and makers, can do more in R. This plays an
 essential role in the lifecycle of R's beloved shared tools.
 
-\textbf{(BEGIN KEEP)} R packages are a defining feature of the language
-insofar as many are robust, user-friendly, and richly extend R's core
-functionality. Some of the most prominent R packages are a result of the
-developer abstracting common elements of a data science problem into a
-workflow that can be shared and accompanied by thorough descriptions of
-the process and purpose. In this way, R packages have effectively
-transformed how we interact with data in the modern day in, perhaps, a
-more impactful manner than several revered contributions to theoretical
-statistics {[}6{]}. Packages greatly enhance the user experience and
-enable you to be more efficient and effective when working with data,
-regardless of prior experience. \textbf{(END KEEP)}
+R packages are a defining feature of the language insofar as many are
+robust, user-friendly, and richly extend R's core functionality. Some of
+the most prominent R packages are a result of the developer abstracting
+common elements of a data science problem into a workflow that can be
+shared and accompanied by thorough descriptions of the process and
+purpose. In this way, R packages have effectively transformed how we
+interact with data in the modern day in, perhaps, a more impactful
+manner than several revered contributions to theoretical statistics
+{[}6{]}. Packages greatly enhance the user experience and enable you to
+be more efficient and effective when working with data, regardless of
+prior experience.
 
 Nonetheless, the sheer quantity and potential complexity of available R
 packages can undermine their collective benefits. Finding and choosing
@@ -1586,13 +1607,15 @@ intuition and yet remain a reliable reference. May searching for and
 selecting proper tools no longer spoil your appetite and dissuade you
 from discovering, trying, creating, and sharing new recipes.
 
-\hypertarget{table-1-general-packages}{%
-\section{Table 1 (general packages)}\label{table-1-general-packages}}
+\hypertarget{table-1}{%
+\section{Table 1}\label{table-1}}
 
-\begin{table}[H]
+\begin{table}
+
+\caption{\label{tab:pkg_table}Common R packages for general purposes}
 \centering
 \resizebox{\linewidth}{!}{
-\begin{tabular}{>{\raggedright\arraybackslash}p{10em}>{\raggedright\arraybackslash}p{20em}lll}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{10em}>{\raggedright\arraybackslash}p{20em}lll}
 \toprule
 \textbf{Package} & \textbf{Description} & \textbf{Year} & \textbf{Author} & \textbf{Documentation}\\
 \midrule
@@ -1616,67 +1639,35 @@ from discovering, trying, creating, and sharing new recipes.
 \end{tabular}}
 \end{table}
 
-\hypertarget{table-questions}{%
-\subsection{Table questions}\label{table-questions}}
-
-\begin{itemize}
-\tightlist
-\item
-  Code font for package names in code in " "?
-  \texttt{\textbackslash{}texttt\{\}}?
-\item
-  How do you repeat same symbol on multiple items with one footnote?
-\item
-  How do you separate colors and stripe by group?
-\item
-  Add title
-\item
-  Add caption
-\item
-  Cite packages in bib and add references in table?
-\item
-  Embed url link to package documentation? Do we want to link
-  cheatsheets?
-\item
-  How do you add link/reference to Table 1 in text in the template?
-\item
-  How do you hide code for table in knitted pdf\ldots include=FALSE
-  errors?
-\item
-  Title for column 2: description/purpose/usage?
-\item
-  Length of description/purpose/usage for each package?
-\end{itemize}
-
 \hypertarget{figures}{%
 \section{Figures}\label{figures}}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/bioc_deseq2} \caption{Add caption}\label{fig:bioc_deseq2}
+\includegraphics[width=1\linewidth]{../figures/cran_task_views} \caption{A snapshot of CRAN Task Views}\label{fig:cran_task_views}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/biocViews} \caption{Add caption}\label{fig:biocViews}
+\includegraphics[width=1\linewidth]{../figures/biocViews} \caption{A snapshot of biocViews}\label{fig:biocViews}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/cran_ggplot2} \caption{Add caption}\label{fig:cran_ggplot2}
+\includegraphics[width=1\linewidth]{../figures/cran_ggplot2} \caption{An example of the CRAN page for the ggplot2 package}\label{fig:cran_ggplot2}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/cran_task_views} \caption{Add caption}\label{fig:cran_task_views}
+\includegraphics[width=1\linewidth]{../figures/bioc_deseq2} \caption{An example of the Bioconductor page for the DESeq2 package}\label{fig:bioc_deseq2}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/github_bookdown} \caption{Add caption}\label{fig:github_bookdown}
+\includegraphics[width=1\linewidth]{../figures/github_bookdown} \caption{An example of the GitHub page for the bookdown package}\label{fig:github_bookdown}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/ropensci_imgproc} \caption{Add caption}\label{fig:ropensci_imgproc}
+\includegraphics[width=1\linewidth]{../figures/ropensci_imgproc} \caption{An example of the rOpenSci package search page, filtered to image processing packages}\label{fig:ropensci_imgproc}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/packagemetrics} \caption{Add caption}\label{fig:packagemetrics}
+\includegraphics[width=1\linewidth]{../figures/packagemetrics} \caption{Output from the packagemetrics package, used here to compare data visualization packages}\label{fig:packagemetrics}
 \end{figure}
 
 \hypertarget{figure-questions}{%
@@ -1687,515 +1678,631 @@ from discovering, trying, creating, and sharing new recipes.
 \item
   References to figures won't knit properly
 \item
-  (See Figure @ref(fig:biocViews))
+  (See Figure \texttt{\textbackslash{}@ref(fig:biocViews)})
 \item
   Do we need to add a YAML?
+\item
+  \texttt{\textbackslash{}@ref(fig:chunk-label)}
 \end{itemize}
-
-\hypertarget{supporting-information}{%
-\section{Supporting information}\label{supporting-information}}
-
-Do we want to include any supporting information?
 
 \hypertarget{acknowledgements}{%
 \section{Acknowledgements}\label{acknowledgements}}
 
-{[}Acknowledgment of people who have helped; suggestions from
-colleagues, etc.{]}
-
-\begin{itemize}
-\tightlist
-\item
-  Therese Kondash
-\item
-  Matthew Hughes
-\end{itemize}
+The authors wish to thank Bailey Fosdick, Matthew Hughes, Therese
+Kondash, and Kathleen Wendt for their contributions to this work.
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
 \leavevmode\hypertarget{ref-perez2016}{}%
-1. Perez-Riverol Y, Gatto L, Wang R, Sachsenberg T, Uszkoreit J, Veiga
-Leprevost F da, et al. Ten simple rules for taking advantage of git and
-github. PLoS computational biology. Public Library of Science; 2016;12.
+\CSLLeftMargin{1. }
+\CSLRightInline{Perez-Riverol Y, Gatto L, Wang R, Sachsenberg T,
+Uszkoreit J, Veiga Leprevost F da, et al. {Ten Simple Rules for Taking
+Advantage of Git and GitHub}. PLoS Computational Biology. Public Library
+of Science; 2016;12. }
 
 \leavevmode\hypertarget{ref-rehman2012}{}%
-2. Rehman J. Open science and access to medical research {[}Internet{]}.
-Scientific American; 2012. Available:
-\url{https://blogs.scientificamerican.com/guest-blog/open-science-and-access-to-medical-research/}
+\CSLLeftMargin{2. }
+\CSLRightInline{Rehman J. {Open Science and Access to Medical Research}
+{[}Internet{]}. Scientific American; 2012. Available:
+\url{https://blogs.scientificamerican.com/guest-blog/open-science-and-access-to-medical-research/}}
 
 \leavevmode\hypertarget{ref-peng2011}{}%
-3. Peng RD. Reproducible research in computational science. Science.
-American Association for the Advancement of Science; 2011;334:
-1226--1227.
+\CSLLeftMargin{3. }
+\CSLRightInline{Peng RD. {Reproducible Research in Computational
+Science}. Science. American Association for the Advancement of Science;
+2011;334: 1226--1227. }
 
 \leavevmode\hypertarget{ref-goodman2016}{}%
-4. Goodman SN, Fanelli D, Ioannidis JP. What does research
-reproducibility mean? Science translational medicine. American
-Association for the Advancement of Science; 2016;8: 341ps12--341ps12.
+\CSLLeftMargin{4. }
+\CSLRightInline{Goodman SN, Fanelli D, Ioannidis JP. {What Does Research
+Reproducibility Mean?} Science translational medicine. American
+Association for the Advancement of Science; 2016;8: 341ps12--341ps12. }
 
 \leavevmode\hypertarget{ref-stodden2013}{}%
-5. Stodden V, Miguez S. Best practices for computational science:
-Software infrastructure and environments for reproducible and extensible
-research. Available at SSRN 2322276. 2013;
+\CSLLeftMargin{5. }
+\CSLRightInline{Stodden V, Miguez S. {Best Practices for Computational
+Science: Software Infrastructure and Environments for Reproducible and
+Extensible Research}. Available at SSRN 2322276. 2013; }
 
 \leavevmode\hypertarget{ref-donoho2017}{}%
-6. Donoho D. 50 years of data science. Journal of Computational and
-Graphical Statistics. Taylor \& Francis; 2017;26: 745--766.
+\CSLLeftMargin{6. }
+\CSLRightInline{Donoho D. {50 Years of Data Science}. Journal of
+Computational and Graphical Statistics. Taylor \& Francis; 2017;26:
+745--766. }
 
 \leavevmode\hypertarget{ref-robinson2017}{}%
-7. Robinson D. The impressive growth of r {[}Internet{]}. Stack
-Overflow; 2017. Available:
-\url{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}
+\CSLLeftMargin{7. }
+\CSLRightInline{Robinson D. {The Impressive Growth of R} {[}Internet{]}.
+Stack Overflow; 2017. Available:
+\url{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}}
 
 \leavevmode\hypertarget{ref-gentleman2004}{}%
-8. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
-al. Bioconductor: Open software development for computational biology
-and bioinformatics. Genome biology. Springer; 2004;5: R80.
+\CSLLeftMargin{8. }
+\CSLRightInline{Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M,
+Dudoit S, et al. {Bioconductor: Open Software Development for
+Computational Biology and Bioinformatics}. Genome Biology. Springer;
+2004;5: R80. }
 
 \leavevmode\hypertarget{ref-holmes2018}{}%
-9. Holmes S, Huber W. Modern statistics for modern biology
-{[}Internet{]}. Cambridge University Press; 2018. Available:
-\url{https://web.stanford.edu/class/bios221/book/index.html}
+\CSLLeftMargin{9. }
+\CSLRightInline{Holmes S, Huber W. {Modern Statistics for Modern
+Biology} {[}Internet{]}. Cambridge University Press; 2018. Available:
+\url{https://web.stanford.edu/class/bios221/book/index.html}}
 
 \leavevmode\hypertarget{ref-Rproject2020}{}%
-10. Team RC. The r project for statistical computing {[}Internet{]}. The
-R Foundation; 2020. Available: \url{https://www.r-project.org/}
+\CSLLeftMargin{10. }
+\CSLRightInline{Team RC. {The R Project for Statistical Computing}
+{[}Internet{]}. The R Foundation; 2020. Available:
+\url{https://www.r-project.org/}}
 
 \leavevmode\hypertarget{ref-hornik2012}{}%
-11. Hornik K. Are there too many r packages? Austrian Journal of
-Statistics. 2012;41: 59--66.
+\CSLLeftMargin{11. }
+\CSLRightInline{Hornik K. {Are there too many R Packages?} Austrian
+Journal of Statistics. 2012;41: 59--66. }
 
 \leavevmode\hypertarget{ref-dplyr}{}%
-12. Wickham H, François R, Henry L, Müller K. Dplyr: A grammar of data
-manipulation {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=dplyr}
+\CSLLeftMargin{12. }
+\CSLRightInline{Wickham H, François R, Henry L, Müller K. {dplyr: A
+Grammar of Data Manipulation} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=dplyr}}
 
 \leavevmode\hypertarget{ref-tidyr}{}%
-13. Wickham H, Henry L. Tidyr: Tidy messy data {[}Internet{]}. 2020.
-Available: \url{https://CRAN.R-project.org/package=tidyr}
+\CSLLeftMargin{13. }
+\CSLRightInline{Wickham H, Henry L. {tidyr: Tidy Messy Data}
+{[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=tidyr}}
 
 \leavevmode\hypertarget{ref-twitteR}{}%
-14. Gentry J. TwitteR: R based twitter client {[}Internet{]}. 2015.
-Available: \url{https://CRAN.R-project.org/package=twitteR}
+\CSLLeftMargin{14. }
+\CSLRightInline{Gentry J. {twitteR: R Based Twitter Client}
+{[}Internet{]}. 2015. Available:
+\url{https://CRAN.R-project.org/package=twitteR}}
 
 \leavevmode\hypertarget{ref-mailR}{}%
-15. Premraj R. MailR: A utility to send emails from r {[}Internet{]}.
-2015. Available: \url{https://CRAN.R-project.org/package=mailR}
+\CSLLeftMargin{15. }
+\CSLRightInline{Premraj R. {mailR: A Utility to Send Emails from R}
+{[}Internet{]}. 2015. Available:
+\url{https://CRAN.R-project.org/package=mailR}}
 
 \leavevmode\hypertarget{ref-phonenumber}{}%
-16. Myles S. Phonenumber: Convert letters to numbers and back as on a
-telephone keypad {[}Internet{]}. 2015. Available:
-\url{https://CRAN.R-project.org/package=phonenumber}
+\CSLLeftMargin{16. }
+\CSLRightInline{Myles S. {phonenumber: Convert Letters to Numbers and
+Back as on a Telephone Keypad} {[}Internet{]}. 2015. Available:
+\url{https://CRAN.R-project.org/package=phonenumber}}
 
 \leavevmode\hypertarget{ref-bioCproject}{}%
-17. Huber W, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS, et
-al. Orchestrating high-throughput genomic analysis with Bioconductor.
-Nature Methods. 2015;12: 115--121. Available:
-\url{http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html}
+\CSLLeftMargin{17. }
+\CSLRightInline{Huber W, Carey VJ, Gentleman R, Anders S, Carlson M,
+Carvalho BS, et al. {Orchestrating High-Throughput Genomic Analysis with
+Bioconductor}. Nature Methods. 2015;12: 115--121. Available:
+\url{http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html}}
 
 \leavevmode\hypertarget{ref-ctv}{}%
-18. Zeileis A. CRAN task views. R News. 2005;5: 39--40. Available:
-\url{https://CRAN.R-project.org/doc/Rnews/}
+\CSLLeftMargin{18. }
+\CSLRightInline{Zeileis A. {CRAN Task Views}. R News. 2005;5: 39--40.
+Available: \url{https://CRAN.R-project.org/doc/Rnews/}}
 
 \leavevmode\hypertarget{ref-zeileis2005}{}%
-19. Zeileis A. CRAN task views. R News. 2005;5: 39--40.
+\CSLLeftMargin{19. }
+\CSLRightInline{Zeileis A. {CRAN Task Views}. R News. 2005;5: 39--40. }
 
 \leavevmode\hypertarget{ref-smith2017}{}%
-20. Smith D. The r community is one of r's best features {[}Internet{]}.
-Revolutions. Microsoft; 2017. Available:
-\url{https://blog.revolutionanalytics.com/2017/06/r-community.html}
+\CSLLeftMargin{20. }
+\CSLRightInline{Smith D. {The R Community is One of R's Best Features}
+{[}Internet{]}. Revolutions. Microsoft; 2017. Available:
+\url{https://blog.revolutionanalytics.com/2017/06/r-community.html}}
 
 \leavevmode\hypertarget{ref-ellis2017}{}%
-21. Ellis SE. Hey! You there! You are welcome here {[}Internet{]}.
-rOpenSci. NumFOCUS; 2017. Available:
-\url{https://ropensci.org/blog/2017/06/23/community/}
+\CSLLeftMargin{21. }
+\CSLRightInline{Ellis SE. {Hey! You There! You are Welcome Here}
+{[}Internet{]}. rOpenSci. NumFOCUS; 2017. Available:
+\url{https://ropensci.org/blog/2017/06/23/community/}}
 
 \leavevmode\hypertarget{ref-rickert2018}{}%
-22. Rickert J. What makes a great r package? {[}Internet{]}. RStudio;
-2018. Available:
-\url{https://rstudio.com/resources/rstudioconf-2018/what-makes-a-great-r-package-joseph-rickert/}
+\CSLLeftMargin{22. }
+\CSLRightInline{Rickert J. {What Makes a Great R Package?}
+{[}Internet{]}. RStudio; 2018. Available:
+\url{https://rstudio.com/resources/rstudioconf-2018/what-makes-a-great-r-package-joseph-rickert/}}
 
 \leavevmode\hypertarget{ref-randomforest}{}%
-23. Liaw A, Wiener M. Classification and regression by randomForest. R
-News. 2002;2: 18--22. Available:
-\url{https://CRAN.R-project.org/doc/Rnews/}
+\CSLLeftMargin{23. }
+\CSLRightInline{Liaw A, Wiener M. {Classification and Regression by
+randomForest}. R News. 2002;2: 18--22. Available:
+\url{https://CRAN.R-project.org/doc/Rnews/}}
 
 \leavevmode\hypertarget{ref-rayshader}{}%
-24. Morgan-Wall T. Rayshader: Create maps and visualize data in 2D and
-3D {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=rayshader}
+\CSLLeftMargin{24. }
+\CSLRightInline{Morgan-Wall T. {rayshader: Create Maps and Visualize
+Data in 2D and 3D} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=rayshader}}
 
 \leavevmode\hypertarget{ref-broman2020}{}%
-25. Broman K. Getting your r package on cran {[}Internet{]}. 2020.
-Available: \url{https://kbroman.org/pkg_primer/pages/cran.html}
+\CSLLeftMargin{25. }
+\CSLRightInline{Broman K. {Getting your R package on CRAN}
+{[}Internet{]}. 2020. Available:
+\url{https://kbroman.org/pkg_primer/pages/cran.html}}
 
 \leavevmode\hypertarget{ref-wickham2015}{}%
-26. Wickham H. R packages: Organize, test, document, and share your
-code. "O'Reilly Media, Inc."; 2015.
+\CSLLeftMargin{26. }
+\CSLRightInline{Wickham H. {R Packages: Organize, Test, Document, and
+Share your Code}. "O'Reilly Media, Inc."; 2015. }
 
 \leavevmode\hypertarget{ref-baseR}{}%
-27. R Core Team. R: A language and environment for statistical computing
-{[}Internet{]}. Vienna, Austria: R Foundation for Statistical Computing;
-2019. Available: \url{https://www.R-project.org/}
+\CSLLeftMargin{27. }
+\CSLRightInline{R Core Team. {R: A Language and Environment for
+Statistical Computing} {[}Internet{]}. Vienna, Austria: R Foundation for
+Statistical Computing; 2019. Available:
+\url{https://www.R-project.org/}}
 
 \leavevmode\hypertarget{ref-cranpolicy2020}{}%
-28. CRAN repository policy {[}Internet{]}. The R Foundation; 2020.
-Available:
-\url{https://cran.r-project.org/web/packages/policies.html\#Submission}
+\CSLLeftMargin{28. }
+\CSLRightInline{{CRAN Repository Policy} {[}Internet{]}. The R
+Foundation; 2020. Available:
+\url{https://cran.r-project.org/web/packages/policies.html\#Submission}}
 
 \leavevmode\hypertarget{ref-ggplot2}{}%
-29. Wickham H. Ggplot2: Elegant graphics for data analysis
+\CSLLeftMargin{29. }
+\CSLRightInline{Wickham H. {ggplot2: Elegant Graphics for Data Analysis}
 {[}Internet{]}. Springer-Verlag New York; 2016. Available:
-\url{https://ggplot2.tidyverse.org}
+\url{https://ggplot2.tidyverse.org}}
 
 \leavevmode\hypertarget{ref-bioconductor}{}%
-30. Bioconductor: Open source software for bioinformatics
+\CSLLeftMargin{30. }
+\CSLRightInline{{Bioconductor: Open source Software for Bioinformatics}
 {[}Internet{]}. Bioconductor; 2020. Available:
-\url{https://www.bioconductor.org/}
+\url{https://www.bioconductor.org/}}
 
 \leavevmode\hypertarget{ref-DESeq2}{}%
-31. Love MI, Huber W, Anders S. Moderated estimation of fold change and
-dispersion for rna-seq data with deseq2. Genome Biology. 2014;15: 550.
-doi:\href{https://doi.org/10.1186/s13059-014-0550-8}{10.1186/s13059-014-0550-8}
+\CSLLeftMargin{31. }
+\CSLRightInline{Love MI, Huber W, Anders S. {Moderated Estimation of
+Fold Change and Dispersion for RNA-seq Data with DESeq2}. Genome
+Biology. 2014;15: 550.
+doi:\href{https://doi.org/10.1186/s13059-014-0550-8}{10.1186/s13059-014-0550-8}}
 
 \leavevmode\hypertarget{ref-BiocManager}{}%
-32. Morgan M. BiocManager: Access the bioconductor project package
-repository {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=BiocManager}
+\CSLLeftMargin{32. }
+\CSLRightInline{Morgan M. {BiocManager: Access the Bioconductor Project
+Package Repository} {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=BiocManager}}
 
 \leavevmode\hypertarget{ref-biocpkgsub2020}{}%
-33. Package submission {[}Internet{]}. Bioconductor; 2020. Available:
-\url{https://www.bioconductor.org/developers/package-submission/}
+\CSLLeftMargin{33. }
+\CSLRightInline{{Package Submission} {[}Internet{]}. Bioconductor; 2020.
+Available:
+\url{https://www.bioconductor.org/developers/package-submission/}}
 
 \leavevmode\hypertarget{ref-ropensci2020}{}%
-34. Transforming science through open data and software {[}Internet{]}.
-rOpenSci; 2020. Available: \url{https://ropensci.org/}
+\CSLLeftMargin{34. }
+\CSLRightInline{{Transforming Science through Open Data and Software}
+{[}Internet{]}. rOpenSci; 2020. Available: \url{https://ropensci.org/}}
 
 \leavevmode\hypertarget{ref-ropenscidev2020}{}%
-35. rOpenSci, Anderson B, Chamberlain S, Krystalli A, Mullen L, Ram K,
-et al. Ropensci/dev\_guide: Fourth release {[}Internet{]}. Zenodo; 2020.
-doi:\href{https://doi.org/10.5281/zenodo.3749013}{10.5281/zenodo.3749013}
+\CSLLeftMargin{35. }
+\CSLRightInline{rOpenSci, Anderson B, Chamberlain S, Krystalli A, Mullen
+L, Ram K, et al. {ropensci/dev\_guide: Fourth Release} {[}Internet{]}.
+Zenodo; 2020.
+doi:\href{https://doi.org/10.5281/zenodo.3749013}{10.5281/zenodo.3749013}}
 
 \leavevmode\hypertarget{ref-drat}{}%
-36. Carl Boettiger DE with contributions by, Fultz N, Gibb S, Gillespie
-C, Górecki J, Jones M, et al. Drat: 'Drat' r archive template
-{[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=drat}
+\CSLLeftMargin{36. }
+\CSLRightInline{Carl Boettiger DE with contributions by, Fultz N, Gibb
+S, Gillespie C, Górecki J, Jones M, et al. {drat: Drat R Archive
+Template} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=drat}}
 
 \leavevmode\hypertarget{ref-anderson2017}{}%
-37. Anderson GB, Eddelbuettel D. Hosting data packages via drat: A case
-study with hurricane exposure data. R Journal. 2017;9.
+\CSLLeftMargin{37. }
+\CSLRightInline{Anderson GB, Eddelbuettel D. {Hosting Data Packages via
+drat: A Case Study with Hurricane Exposure Data}. R Journal. 2017;9. }
 
 \leavevmode\hypertarget{ref-theussl2009}{}%
-38. Theußl S, Zeileis A. Collaborative software development using
-r-forge. Special invited paper on" the future of r". The R Journal. The
-R Foundation for Statistical Computing; 2009;1: 9--14.
+\CSLLeftMargin{38. }
+\CSLRightInline{Theußl S, Zeileis A. {Collaborative Software Development
+Using R-Forge. Special Invited Paper on "The Future of R"}. The R
+Journal. The R Foundation for Statistical Computing; 2009;1: 9--14. }
 
 \leavevmode\hypertarget{ref-lang2000}{}%
-39. Lang DT. The omegahat environment: New possibilities for statistical
-computing. Journal of Computational and Graphical Statistics. Taylor \&
-Francis; 2000;9: 423--451.
+\CSLLeftMargin{39. }
+\CSLRightInline{Lang DT. {The Omegahat Environment: New Possibilities
+for Statistical Computing}. Journal of Computational and Graphical
+Statistics. Taylor \& Francis; 2000;9: 423--451. }
 
 \leavevmode\hypertarget{ref-mcelreath2020}{}%
-40. McElreath R. Statistical rethinking: A bayesian course with examples
-in r and stan. CRC press; 2020.
+\CSLLeftMargin{40. }
+\CSLRightInline{McElreath R. {Statistical Rethinking: A Bayesian Course
+with Examples in R and Stan}. CRC press; 2020. }
 
 \leavevmode\hypertarget{ref-decan2015}{}%
-41. Decan A, Mens T, Claes M, Grosjean P. On the development and
-distribution of r packages: An empirical analysis of the r ecosystem.
-Proceedings of the 2015 european conference on software architecture
-workshops. 2015. pp. 1--6.
+\CSLLeftMargin{41. }
+\CSLRightInline{Decan A, Mens T, Claes M, Grosjean P. {On the
+Development and Distribution of R packages: An Empirical Analysis of the
+R Ecosystem}. Proceedings of the 2015 european conference on software
+architecture workshops. 2015. pp. 1--6. }
 
 \leavevmode\hypertarget{ref-devtools}{}%
-42. Wickham H, Hester J, Chang W. Devtools: Tools to make developing r
-packages easier {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=devtools}
+\CSLLeftMargin{42. }
+\CSLRightInline{Wickham H, Hester J, Chang W. {devtools: Tools to Make
+Developing R Packages Easier} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=devtools}}
 
 \leavevmode\hypertarget{ref-decan2016}{}%
-43. Decan A, Mens T, Claes M, Grosjean P. When github meets cran: An
-analysis of inter-repository package dependency problems. 2016 ieee 23rd
-international conference on software analysis, evolution, and
-reengineering (saner). IEEE; 2016. pp. 493--504.
+\CSLLeftMargin{43. }
+\CSLRightInline{Decan A, Mens T, Claes M, Grosjean P. {When GitHub meets
+CRAN: An Analysis of Inter-Repository Package Dependency Problems}. 2016
+IEEE 23rd international conference on software analysis, evolution, and
+reengineering (SANER). IEEE; 2016. pp. 493--504. }
 
 \leavevmode\hypertarget{ref-pkgdown}{}%
-44. Wickham H, Hesselberth J. Pkgdown: Make static html documentation
-for a package {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=pkgdown}
+\CSLLeftMargin{44. }
+\CSLRightInline{Wickham H, Hesselberth J. {pkgdown: Make Static HTML
+Documentation for a Package} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=pkgdown}}
 
 \leavevmode\hypertarget{ref-sf}{}%
-45. Pebesma E. Simple Features for R: Standardized Support for Spatial
-Vector Data. The R Journal. 2018;10: 439--446.
-doi:\href{https://doi.org/10.32614/RJ-2018-009}{10.32614/RJ-2018-009}
+\CSLLeftMargin{45. }
+\CSLRightInline{Pebesma E. {Simple Features for R: Standardized Support
+for Spatial Vector Data}. {The R Journal}. 2018;10: 439--446.
+doi:\href{https://doi.org/10.32614/RJ-2018-009}{10.32614/RJ-2018-009}}
 
 \leavevmode\hypertarget{ref-learnr}{}%
-46. Schloerke B, Allaire J, Borges B. Learnr: Interactive tutorials for
-r {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=learnr}
+\CSLLeftMargin{46. }
+\CSLRightInline{Schloerke B, Allaire J, Borges B. {learnr: Interactive
+Tutorials for R} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=learnr}}
 
 \leavevmode\hypertarget{ref-ushey2020}{}%
-47. Ushey K. RStudio 1.3 preview: Integrated tutorials {[}Internet{]}.
-RStudio; 2020. Available:
-\url{https://blog.rstudio.com/2020/02/25/rstudio-1-3-integrated-tutorials/}
+\CSLLeftMargin{47. }
+\CSLRightInline{Ushey K. {RStudio 1.3 Preview: Integrated Tutorials}
+{[}Internet{]}. RStudio; 2020. Available:
+\url{https://blog.rstudio.com/2020/02/25/rstudio-1-3-integrated-tutorials/}}
 
 \leavevmode\hypertarget{ref-pkgdownweb}{}%
-48. Wickham H, Hesselberth J. Pkgdown {[}Internet{]}. RStudio; 2018.
-Available: \url{https://pkgdown.r-lib.org/}
+\CSLLeftMargin{48. }
+\CSLRightInline{Wickham H, Hesselberth J. {pkgdown} {[}Internet{]}.
+RStudio; 2018. Available: \url{https://pkgdown.r-lib.org/}}
 
 \leavevmode\hypertarget{ref-naniar}{}%
-49. Tierney N, Cook D, McBain M, Fay C. Naniar: Data structures,
-summaries, and visualisations for missing data {[}Internet{]}. 2020.
-Available: \url{https://CRAN.R-project.org/package=naniar}
+\CSLLeftMargin{49. }
+\CSLRightInline{Tierney N, Cook D, McBain M, Fay C. {naniar: Data
+Structures, Summaries, and Visualisations for Missing Data}
+{[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=naniar}}
 
 \leavevmode\hypertarget{ref-valr}{}%
-50. Riemondy KA, Sheridan RM, Gillen A, Yu Y, Bennett CG, Hesselberth
-JR. Valr: Reproducible genome interval arithmetic in r. F1000Research.
-2017;
-doi:\href{https://doi.org/10.12688/f1000research.11997.1}{10.12688/f1000research.11997.1}
+\CSLLeftMargin{50. }
+\CSLRightInline{Riemondy KA, Sheridan RM, Gillen A, Yu Y, Bennett CG,
+Hesselberth JR. {valr: Reproducible Genome Interval Arithmetic in R}.
+F1000Research. 2017;
+doi:\href{https://doi.org/10.12688/f1000research.11997.1}{10.12688/f1000research.11997.1}}
 
 \leavevmode\hypertarget{ref-TransPhylo}{}%
-51. Didelot, Xavier, Fraser, Christophe, Gardy, Jennifer, et al. Genomic
-infectious disease epidemiology in partially sampled and ongoing
-outbreaks. Molecular Biology and Evolution. 2017;34: 997--1007.
-doi:\href{https://doi.org/10.1093/molbev/msw275}{10.1093/molbev/msw275}
+\CSLLeftMargin{51. }
+\CSLRightInline{Didelot, Xavier, Fraser, Christophe, Gardy, Jennifer, et
+al. {Genomic Infectious Disease Epidemiology in Partially Sampled and
+Ongoing Outbreaks}. Molecular Biology and Evolution. 2017;34: 997--1007.
+doi:\href{https://doi.org/10.1093/molbev/msw275}{10.1093/molbev/msw275}}
 
 \leavevmode\hypertarget{ref-rdocumentation}{}%
-52. RDocumentation {[}Internet{]}. DataCamp Inc. 2020. Available:
-\url{https://www.rdocumentation.org/}
+\CSLLeftMargin{52. }
+\CSLRightInline{{RDocumentation} {[}Internet{]}. DataCamp Inc.; 2020.
+Available: \url{https://www.rdocumentation.org/}}
 
 \leavevmode\hypertarget{ref-bookdown}{}%
-53. Xie Y. Bookdown: Authoring books and technical documents with r
-markdown {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=bookdown}
+\CSLLeftMargin{53. }
+\CSLRightInline{Xie Y. {bookdown: Authoring Books and Technical
+Documents with R Markdown} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=bookdown}}
 
 \leavevmode\hypertarget{ref-xie2016}{}%
-54. Xie Y. Bookdown: Authoring books and technical documents with r
-markdown. Chapman; Hall/CRC; 2016.
+\CSLLeftMargin{54. }
+\CSLRightInline{Xie Y. {bookdown: Authoring Books and Technical
+Documents with R Markdown}. Chapman; Hall/CRC; 2016. }
 
 \leavevmode\hypertarget{ref-mgcv}{}%
-55. Wood SN. Fast stable restricted maximum likelihood and marginal
-likelihood estimation of semiparametric generalized linear models.
-Journal of the Royal Statistical Society (B). 2011;73: 3--36.
+\CSLLeftMargin{55. }
+\CSLRightInline{Wood SN. {Fast Stable Restricted Maximum Likelihood and
+Marginal Likelihood Estimation of Semiparametric Generalized Linear
+Models}. Journal of the Royal Statistical Society (B). 2011;73: 3--36. }
 
 \leavevmode\hypertarget{ref-tidymodels}{}%
-56. Kuhn M, Wickham H. Tidymodels: A collection of packages for modeling
-and machine learning using tidyverse principles. {[}Internet{]}. 2020.
-Available: \url{https://www.tidymodels.org}
+\CSLLeftMargin{56. }
+\CSLRightInline{Kuhn M, Wickham H. {Tidymodels: A Collection of Packages
+for Modeling and Machine Learning using Tidyverse Principles}
+{[}Internet{]}. 2020. Available: \url{https://www.tidymodels.org}}
 
 \leavevmode\hypertarget{ref-shiny}{}%
-57. Chang W, Cheng J, Allaire J, Xie Y, McPherson J. Shiny: Web
-application framework for r {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=shiny}
+\CSLLeftMargin{57. }
+\CSLRightInline{Chang W, Cheng J, Allaire J, Xie Y, McPherson J. {shiny:
+Web Application Framework for R} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=shiny}}
 
 \leavevmode\hypertarget{ref-htmlwidgets}{}%
-58. Vaidyanathan R, Xie Y, Allaire J, Cheng J, Russell K. Htmlwidgets:
-HTML widgets for r {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=htmlwidgets}
+\CSLLeftMargin{58. }
+\CSLRightInline{Vaidyanathan R, Xie Y, Allaire J, Cheng J, Russell K.
+{htmlwidgets: HTML Widgets for R} {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=htmlwidgets}}
 
 \leavevmode\hypertarget{ref-Rcpp}{}%
-59. Eddelbuettel D, François R. Rcpp: Seamless R and C++ integration.
-Journal of Statistical Software. 2011;40: 1--18.
-doi:\href{https://doi.org/10.18637/jss.v040.i08}{10.18637/jss.v040.i08}
+\CSLLeftMargin{59. }
+\CSLRightInline{Eddelbuettel D, François R. {Rcpp: Seamless R and C++
+Integration}. Journal of Statistical Software. 2011;40: 1--18.
+doi:\href{https://doi.org/10.18637/jss.v040.i08}{10.18637/jss.v040.i08}}
 
 \leavevmode\hypertarget{ref-caret}{}%
-60. Kuhn M. Caret: Classification and regression training
+\CSLLeftMargin{60. }
+\CSLRightInline{Kuhn M. {caret: Classification and Regression Training}
 {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=caret}
+\url{https://CRAN.R-project.org/package=caret}}
 
 \leavevmode\hypertarget{ref-datatable}{}%
-61. Dowle M, Srinivasan A. Data.table: Extension of `data.frame`
-{[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=data.table}
+\CSLLeftMargin{61. }
+\CSLRightInline{Dowle M, Srinivasan A. {data.table: Extension of
+data.frame} {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=data.table}}
 
 \leavevmode\hypertarget{ref-leaflet}{}%
-62. Cheng J, Karambelkar B, Xie Y. Leaflet: Create interactive web maps
-with the javascript 'leaflet' library {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=leaflet}
+\CSLLeftMargin{62. }
+\CSLRightInline{Cheng J, Karambelkar B, Xie Y. {leaflet: Create
+Interactive Web Maps with the JavaScript Leaflet Library}
+{[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=leaflet}}
 
 \leavevmode\hypertarget{ref-randomizr}{}%
-63. Coppock A. Randomizr: Easy-to-use tools for common forms of random
-assignment and sampling {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=randomizr}
+\CSLLeftMargin{63. }
+\CSLRightInline{Coppock A. {randomizr: Easy-to-Use Tools for Common
+Forms of Random Assignment and Sampling} {[}Internet{]}. 2019.
+Available: \url{https://CRAN.R-project.org/package=randomizr}}
 
 \leavevmode\hypertarget{ref-stringr}{}%
-64. Wickham H. Stringr: Simple, consistent wrappers for common string
-operations {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=stringr}
+\CSLLeftMargin{64. }
+\CSLRightInline{Wickham H. {stringr: Simple, Consistent Wrappers for
+Common String Operations} {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=stringr}}
 
 \leavevmode\hypertarget{ref-survminer}{}%
-65. Kassambara A, Kosinski M, Biecek P. Survminer: Drawing survival
-curves using 'ggplot2' {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=survminer}
+\CSLLeftMargin{65. }
+\CSLRightInline{Kassambara A, Kosinski M, Biecek P. {survminer: Drawing
+Survival Curves using ggplot2} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=survminer}}
 
 \leavevmode\hypertarget{ref-Rmail2020}{}%
-66. Team RC. Mailing lists {[}Internet{]}. The R Foundation; 2020.
-Available: \url{https://www.r-project.org/mail.html}
+\CSLLeftMargin{66. }
+\CSLRightInline{Team RC. {Mailing Lists} {[}Internet{]}. The R
+Foundation; 2020. Available: \url{https://www.r-project.org/mail.html}}
 
 \leavevmode\hypertarget{ref-chase2020}{}%
-67. Chase W. Dataviz and the 20th anniversary of r, an interview with
-hadley wickham {[}Internet{]}. Medium; 2020. Available:
-\url{https://medium.com/nightingale/dataviz-and-the-20th-anniversary-of-r-an-interview-with-hadley-wickham-ea245078fc8a}
+\CSLLeftMargin{67. }
+\CSLRightInline{Chase W. {Dataviz and the 20th Anniversary of R, an
+Interview With Hadley Wickham} {[}Internet{]}. Medium; 2020. Available:
+\url{https://medium.com/nightingale/dataviz-and-the-20th-anniversary-of-r-an-interview-with-hadley-wickham-ea245078fc8a}}
 
 \leavevmode\hypertarget{ref-statnet}{}%
-68. Handcock MS, Hunter DR, Butts CT, Goodreau SM, Krivitsky PN, Morris
-M. Ergm: Fit, simulate and diagnose exponential-family models for
-networks {[}Internet{]}. The Statnet Project
+\CSLLeftMargin{68. }
+\CSLRightInline{Handcock MS, Hunter DR, Butts CT, Goodreau SM, Krivitsky
+PN, Morris M. {ergm: Fit, Simulate and Diagnose Exponential-Family
+Models for Networks} {[}Internet{]}. The Statnet Project
 (\url{http://www.statnet.org}); 2018. Available:
-\url{https://CRAN.R-project.org/package=ergm}
+\url{https://CRAN.R-project.org/package=ergm}}
 
 \leavevmode\hypertarget{ref-muenchen2012}{}%
-69. Muenchen RA. The popularity of data analysis software. URL
-http://r4statscom/popularity. 2012;
+\CSLLeftMargin{69. }
+\CSLRightInline{Muenchen RA. {The Popularity of Data Analysis Software}.
+URL http://r4statscom/popularity. 2012; }
 
 \leavevmode\hypertarget{ref-wickham2019}{}%
-70. Wickham H. Advanced r. CRC press; 2019.
+\CSLLeftMargin{70. }
+\CSLRightInline{Wickham H. {Advanced R}. CRC press; 2019. }
 
 \leavevmode\hypertarget{ref-eddelbuettel2013}{}%
-71. Eddelbuettel D. Seamless r and c++ integration with rcpp. Springer;
-2013.
+\CSLLeftMargin{71. }
+\CSLRightInline{Eddelbuettel D. {Seamless R and C++ Integration with
+Rcpp}. Springer; 2013. }
 
 \leavevmode\hypertarget{ref-githubdocs}{}%
-72. GitHub docs {[}Internet{]}. GitHub, Inc. 2020. Available:
-\url{https://docs.github.com/en}
+\CSLLeftMargin{72. }
+\CSLRightInline{{GitHub Docs} {[}Internet{]}. GitHub, Inc.; 2020.
+Available: \url{https://docs.github.com/en}}
 
 \leavevmode\hypertarget{ref-leek2015}{}%
-73. Leek J. How i decide when to trust an r package {[}Internet{]}.
-2015. Available:
-\url{https://simplystatistics.org/2015/11/06/how-i-decide-when-to-trust-an-r-package/}
+\CSLLeftMargin{73. }
+\CSLRightInline{Leek J. {How I Decide When to Trust an R Package}
+{[}Internet{]}. 2015. Available:
+\url{https://simplystatistics.org/2015/11/06/how-i-decide-when-to-trust-an-r-package/}}
 
 \leavevmode\hypertarget{ref-vannoorenberghe2017}{}%
-74. Vannoorenberghe L. RDocumentation: Scoring and ranking
+\CSLLeftMargin{74. }
+\CSLRightInline{Vannoorenberghe L. {RDocumentation: Scoring and Ranking}
 {[}Internet{]}. DataCamp; 2017. Available:
-\url{https://www.datacamp.com/community/blog/rdocumentation-ranking-scoring}
+\url{https://www.datacamp.com/community/blog/rdocumentation-ranking-scoring}}
 
 \leavevmode\hypertarget{ref-packagemetrics}{}%
-75. Firke S, Krouse B, Grand E, Shepherd L, Ampeh W, Frick H.
-Packagemetrics: A package for helping you choose which package to use
-{[}Internet{]}. 2017. Available:
-\url{https://github.com/ropenscilabs/packagemetrics}
+\CSLLeftMargin{75. }
+\CSLRightInline{Firke S, Krouse B, Grand E, Shepherd L, Ampeh W, Frick
+H. {packagemetrics: A Package for Helping You Choose Which Package to
+Use} {[}Internet{]}. 2017. Available:
+\url{https://github.com/ropenscilabs/packagemetrics}}
 
 \leavevmode\hypertarget{ref-packagemetricsblog}{}%
-76. Becca Krouse HF Erin Grand. Packagemetrics - helping you choose a
-package since runconf17 {[}Internet{]}. rOpenSci; 2017. Available:
-\url{https://ropensci.org/blog/2017/06/27/packagemetrics/}
+\CSLLeftMargin{76. }
+\CSLRightInline{Becca Krouse HF Erin Grand. {packagemetrics - Helping
+you Choose a Package Since runconf17} {[}Internet{]}. rOpenSci; 2017.
+Available: \url{https://ropensci.org/blog/2017/06/27/packagemetrics/}}
 
 \leavevmode\hypertarget{ref-tidyverse}{}%
-77. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
-al. Welcome to the tidyverse. Journal of Open Source Software. 2019;4:
-1686.
-doi:\href{https://doi.org/10.21105/joss.01686}{10.21105/joss.01686}
+\CSLLeftMargin{77. }
+\CSLRightInline{Wickham H, Averick M, Bryan J, Chang W, McGowan LD,
+François R, et al. {Welcome to the Tidyverse}. Journal of Open Source
+Software. 2019;4: 1686.
+doi:\href{https://doi.org/10.21105/joss.01686}{10.21105/joss.01686}}
 
 \leavevmode\hypertarget{ref-smith2014}{}%
-78. Smith A. Improving github for science {[}Internet{]}. GitHub, Inc.
-2014. Available:
-\url{https://github.blog/2014-05-14-improving-github-for-science/}
+\CSLLeftMargin{78. }
+\CSLRightInline{Smith A. {Improving GitHub for Science} {[}Internet{]}.
+GitHub, Inc.; 2014. Available:
+\url{https://github.blog/2014-05-14-improving-github-for-science/}}
 
 \leavevmode\hypertarget{ref-flowCore}{}%
-79. Ellis B, Haaland P, Hahne F, Le Meur N, Gopalakrishnan N, Spidlen J,
-et al. FlowCore: FlowCore: Basic structures for flow cytometry data.
-2019.
+\CSLLeftMargin{79. }
+\CSLRightInline{Ellis B, Haaland P, Hahne F, Le Meur N, Gopalakrishnan
+N, Spidlen J, et al. {flowCore: Basic Structures for Flow Cytometry
+Data}. 2019. }
 
 \leavevmode\hypertarget{ref-hahne2009}{}%
-80. Hahne F, LeMeur N, Brinkman RR, Ellis B, Haaland P, Sarkar D, et al.
-FlowCore: A bioconductor package for high throughput flow cytometry. BMC
-bioinformatics. BioMed Central; 2009;10: 1--8.
+\CSLLeftMargin{80. }
+\CSLRightInline{Hahne F, LeMeur N, Brinkman RR, Ellis B, Haaland P,
+Sarkar D, et al. {flowCore: A Bioconductor Package for High Throughput
+Flow Cytometry}. BMC bioinformatics. BioMed Central; 2009;10: 1--8. }
 
 \leavevmode\hypertarget{ref-taschuk2017}{}%
-81. Taschuk M, Wilson G. Ten simple rules for making research software
-more robust. PLoS computational biology. Public Library of Science;
-2017;13.
+\CSLLeftMargin{81. }
+\CSLRightInline{Taschuk M, Wilson G. {Ten Simple Rules for Making
+Research Software more Robust}. PLoS Computational Biology. Public
+Library of Science; 2017;13. }
 
 \leavevmode\hypertarget{ref-hester2020}{}%
-82. Hester J. How does covr work anyway? {[}Internet{]}. The R
-Foundation; 2020. Available:
-\url{https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html}
+\CSLLeftMargin{82. }
+\CSLRightInline{Hester J. {How Does covr Work Anyway?} {[}Internet{]}.
+The R Foundation; 2020. Available:
+\url{https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html}}
 
 \leavevmode\hypertarget{ref-wickham2011}{}%
-83. Wickham H. Testthat: Get started with testing. The R Journal.
-2011;3: 5--10. Available:
-\url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
+\CSLLeftMargin{83. }
+\CSLRightInline{Wickham H. {testthat: Get Started with Testing}. The R
+Journal. 2011;3: 5--10. Available:
+\url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}}
 
 \leavevmode\hypertarget{ref-testthat}{}%
-84. Wickham H. Testthat: Get started with testing. The R Journal.
-2011;3: 5--10. Available:
-\url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
+\CSLLeftMargin{85. }
+\CSLRightInline{Wickham H. {testthat: Get Started with Testing}. The R
+Journal. 2011;3: 5--10. Available:
+\url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}}
+
+\leavevmode\hypertarget{ref-testthat}{}%
+\CSLLeftMargin{85. }
+\CSLRightInline{Wickham H. {testthat: Get Started with Testing}. The R
+Journal. 2011;3: 5--10. Available:
+\url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}}
 
 \leavevmode\hypertarget{ref-covr}{}%
-85. Hester J. Covr: Test coverage for packages {[}Internet{]}. 2020.
-Available: \url{https://CRAN.R-project.org/package=covr}
+\CSLLeftMargin{86. }
+\CSLRightInline{Hester J. {covr: Test Coverage for Packages}
+{[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=covr}}
 
 \leavevmode\hypertarget{ref-barts2018}{}%
-86. Barts C. How to use github badges to stop feeling like a noob
-{[}Internet{]}. freeCodeCamp; 2018. Available:
-\url{https://www.freecodecamp.org/news/how-to-use-badges-to-stop-feeling-like-a-noob-d4e6600d37d2/}
+\CSLLeftMargin{87. }
+\CSLRightInline{Barts C. {How to use GitHub Badges to Stop Feeling Like
+a Noob} {[}Internet{]}. freeCodeCamp; 2018. Available:
+\url{https://www.freecodecamp.org/news/how-to-use-badges-to-stop-feeling-like-a-noob-d4e6600d37d2/}}
 
 \leavevmode\hypertarget{ref-wilson2006}{}%
-87. Wilson GV. Where's the real bottleneck in scientific computing?
-American Scientist. 2006;94: 5.
+\CSLLeftMargin{88. }
+\CSLRightInline{Wilson GV. {Where's the Real Bottleneck in Scientific
+Computing?} American Scientist. 2006;94: 5. }
 
 \leavevmode\hypertarget{ref-bryan2018}{}%
-88. Bryan J. Excuse me, do you have a moment to talk about version
-control? The American Statistician. Taylor \& Francis; 2018;72: 20--27.
+\CSLLeftMargin{89. }
+\CSLRightInline{Bryan J. {Excuse Me, Do You Have a Moment to Talk about
+Version Control?} The American Statistician. Taylor \& Francis; 2018;72:
+20--27. }
 
 \leavevmode\hypertarget{ref-perkel2016}{}%
-89. Perkel J. Democratic databases: Science on github. Nature News.
-2016;538: 127.
+\CSLLeftMargin{90. }
+\CSLRightInline{Perkel J. {Democratic Databases: Science on GitHub}.
+Nature News. 2016;538: 127. }
 
 \leavevmode\hypertarget{ref-peng2017}{}%
-90. Mastering software development in r {[}Internet{]}. 2017. Available:
-\url{https://rdpeng.github.io/RProgDA/}
+\CSLLeftMargin{91. }
+\CSLRightInline{{Mastering Software Development in R} {[}Internet{]}.
+2017. Available: \url{https://rdpeng.github.io/RProgDA/}}
 
 \leavevmode\hypertarget{ref-broom}{}%
-91. Robinson D, Hayes A. Broom: Convert statistical analysis objects
-into tidy tibbles {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=broom}
+\CSLLeftMargin{92. }
+\CSLRightInline{Robinson D, Hayes A. {broom: Convert Statistical
+Analysis Objects into Tidy Tibbles} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=broom}}
 
 \leavevmode\hypertarget{ref-biobroom}{}%
-92. Andrew J. Bass SL David G. Robinson. Biobroom: Turn bioconductor
-objects into tidy data frames {[}Internet{]}. 2020. Available:
-\url{https://github.com/StoreyLab/biobroom}
+\CSLLeftMargin{93. }
+\CSLRightInline{Andrew J. Bass SL David G. Robinson. {biobroom: Turn
+Bioconductor Objects into Tidy Data Frames} {[}Internet{]}. 2020.
+Available: \url{https://github.com/StoreyLab/biobroom}}
 
 \leavevmode\hypertarget{ref-parker2013}{}%
-93. Parker H. Personal r packages {[}Internet{]}. 2013. Available:
-\url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
+\CSLLeftMargin{94. }
+\CSLRightInline{Parker H. {Personal R Packages} {[}Internet{]}. 2013.
+Available:
+\url{https://hilaryparker.com/2013/04/03/personal-r-packages/}}
 
 \leavevmode\hypertarget{ref-Hmisc}{}%
-94. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell miscellaneous
-{[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=Hmisc}
+\CSLLeftMargin{95. }
+\CSLRightInline{Harrell Jr FE, Charles Dupont with contributions from,
+others. many. {Hmisc: Harrell Miscellaneous} {[}Internet{]}. 2020.
+Available: \url{https://CRAN.R-project.org/package=Hmisc}}
 
 \leavevmode\hypertarget{ref-broman}{}%
-95. Broman KW. Broman: Karl broman's r code {[}Internet{]}. 2020.
-Available: \url{https://CRAN.R-project.org/package=broman}
+\CSLLeftMargin{96. }
+\CSLRightInline{Broman KW. {broman: Karl Broman's R Code}
+{[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=broman}}
 
 \leavevmode\hypertarget{ref-robinson2014}{}%
-96. Robinson D. Broom: An r package for converting statistical analysis
-objects into tidy data frames. arXiv preprint arXiv:14123565. 2014;
+\CSLLeftMargin{97. }
+\CSLRightInline{Robinson D. {broom: An R package for Converting
+Statistical Analysis Objects into Tidy Data Frames}. arXiv preprint
+arXiv:14123565. 2014; }
 
 \leavevmode\hypertarget{ref-usethis}{}%
-97. Wickham H, Bryan J. Usethis: Automate package and project setup
-{[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=usethis}
+\CSLLeftMargin{98. }
+\CSLRightInline{Wickham H, Bryan J. {usethis: Automate Package and
+Project Setup} {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=usethis}}
 
 \leavevmode\hypertarget{ref-roxygen2}{}%
-98. Wickham H, Danenberg P, Csárdi G, Eugster M. Roxygen2: In-line
-documentation for r {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=roxygen2}
+\CSLLeftMargin{99. }
+\CSLRightInline{Wickham H, Danenberg P, Csárdi G, Eugster M. {roxygen2:
+In-Line Documentation for R} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=roxygen2}}
 
 \leavevmode\hypertarget{ref-rlang}{}%
-99. Henry L, Wickham H. Rlang: Functions for base types and core r and
-'tidyverse' features {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=rlang}
+\CSLLeftMargin{100. }
+\CSLRightInline{Henry L, Wickham H. {rlang: Functions for Base Types and
+Core R and Tidyverse Features} {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=rlang}}
 
 \leavevmode\hypertarget{ref-Rcore2020}{}%
-100. Team RC. Writing r extensions {[}Internet{]}. The R Foundation;
-2020. Available:
-\url{https://cran.r-project.org/doc/manuals/R-exts.html}
+\CSLLeftMargin{101. }
+\CSLRightInline{Team RC. {Writing R Extensions} {[}Internet{]}. The R
+Foundation; 2020. Available:
+\url{https://cran.r-project.org/doc/manuals/R-exts.html}}
+
+\end{CSLReferences}
 
 \nolinenumbers
 
 
 \end{document}
-
