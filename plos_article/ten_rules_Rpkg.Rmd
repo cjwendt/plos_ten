@@ -40,6 +40,20 @@ header-includes:
 - \usepackage{xcolor}
 ---
 
+# Author Summary
+
+Open-source software provides powerful and free tools to facilitate
+scientific research, including computational biology. Open-source
+programming languages like R are created and maintained by international
+teams, and a massive community of developers contribute extensions through
+open-source packages that build on the language's basic framework. 
+This process has facilitated an expansive set of tools available to 
+researchers who learn R. However, many researchers new to R may find it
+difficult to navigate the available packages, choosing one that is 
+robust, well-tested and well-documented, and suited to their task. 
+In this article, we present 10 simple rules to help researchers new to 
+R as they navigate this vast ecosystem of available R packages. 
+
 # Disclaimer
 
 Do we need to include a disclaimer in the margin like the one from @perez2016 that states:
