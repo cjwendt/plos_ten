@@ -250,7 +250,7 @@ Other curated collections and topically-linked lists of packages are also availa
 
 \begin{figure}[!h]
 \caption{{\bf An example of the rOpenSci package search page, filtered to image processing packages.}
-**More description.**}
+rOpenSci is a non-profit initiative committed to the advancement of open science practices through the development, maintenance, and promotion of peer-reviewed R packages, which are easily searchable on their webpage.}
 \label{fig3}
 \end{figure}
 
@@ -271,8 +271,8 @@ CRAN imposes some regulations on the submission and maintenance of its hosted pa
 
 \begin{figure}[!h]
 \caption{{\bf An example of the CRAN page for the \texttt{ggplot2} package.}
-Each package on CRAN has its own webpage, which can be used to follow several of the rules highlighted in this article. This snapshot of the page for the 
-\texttt{ggplot2} package indicates where information related to several of the Rules can be found on the package's CRAN page.}
+Each package on CRAN has its own webpage, which can be used to follow several of the Rules highlighted in this article. This snapshot of the page for the 
+\texttt{ggplot2} package indicates where information related to numerous Rules can be found on the package's CRAN page.}
 \label{fig4}
 \end{figure}
 
@@ -280,7 +280,7 @@ If you’re looking for tools specifically designed for high-throughput genomic 
 
 \begin{figure}[!h]
 \caption{{\bf An example of the Bioconductor page for the \texttt{DESeq2} package}
-Each package on Bioconductor has its own webpage, which can be used to follow several of the rules highlighted in this article. This snapshot of the page for the \texttt{DESeq2} package indicates where information related to several of the Rules can be found on the package's Bioconductor page.}
+Each package on Bioconductor has its own webpage, which can be used to follow many Rules discussed in this article. This snapshot of the page for the \texttt{DESeq2} package indicates where information related to several of the Rules can be found on the package's Bioconductor page.}
 \label{fig5}
 \end{figure}
 
@@ -294,7 +294,7 @@ One particularly popular and effective platform for sharing R packages is GitHub
 
 \begin{figure}[!h]
 \caption{{\bf An example of the GitHub page for the \texttt{bookdown} package.}
-More description.}
+Developers utilize the GitHub platform to share their packages in real-time for public use and feedback. This snapshot of the page for the \texttt{bookdown} package labels where information related to several of the Rules can be found on the package's GitHub page.}
 \label{fig6}
 \end{figure}
 
@@ -340,7 +340,7 @@ Most of the above-mentioned resources will help you learn more about packages on
 
 \begin{figure}[!h]
 \caption{{\bf Output from the \texttt{packagemetrics} package, used here to compare data visualization packages}
-More description.}
+The R package, \texttt{packagemetrics}, is a convenient tool for directly comparing currently available packages in an area of interest, using metrics related to package development, documentation, and compatibility with other packages.}
 \label{fig7}
 \end{figure}
 
