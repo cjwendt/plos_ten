@@ -170,32 +170,6 @@
 \newcommand{\ipsum}{{\bf IPSUM}}
 
 
-% Pandoc citation processing
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-% for Pandoc 2.8 to 2.10.1
-\newenvironment{cslreferences}%
-  {}%
-  {\par}
-% For Pandoc 2.11+
-\newenvironment{CSLReferences}[3] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
-  % set entry spacing
-  \ifnum #2 > 0
-  \setlength{\parskip}{#2\baselineskip}
-  \fi
- }%
- {}
-\usepackage{calc} % for calculating minipage widths
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage{booktabs}
 \usepackage{longtable}
@@ -250,8 +224,7 @@
 % Title must be 250 characters or less.
 \begin{flushleft}
 {\Large
-\textbf\newline{Ten simple rules for finding and selecting R
-packages} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
+\textbf\newline{Ten simple rules for finding and selecting R packages} % Please use "sentence case" for title and headings (capitalize only the first word in a title (or heading), the first word in a subtitle (or subheading), and any proper nouns).
 }
 \newline
 % Insert author names, affiliations and corresponding author email (do not include titles, positions, or degrees).
@@ -259,13 +232,12 @@ packages} % Please use "sentence case" for title and headings (capitalize only t
 Caroline J. Wendt\textsuperscript{\getAff{Stats}, \getAff{Math}},
 G. Brooke Anderson\textsuperscript{\getAff{ERHS}}\textsuperscript{*}\\
 \bigskip
-\textbf{\getAff{Stats}}Department of Statistics, Colorado State
-University, Fort Collins, Colorado, United States of America\\
-\textbf{\getAff{Math}}Department of Mathematics, Colorado State
-University, Fort Collins, Colorado, United States of America\\
-\textbf{\getAff{ERHS}}Department of Environmental \& Radiological Health
-Sciences, Colorado State University, Fort Collins, Colorado, United
-States of America\\
+\textbf{\getAff{Stats}}Department of Statistics, Colorado State University, Fort Collins,
+Colorado, United States of America\\
+\textbf{\getAff{Math}}Department of Mathematics, Colorado State University, Fort Collins,
+Colorado, United States of America\\
+\textbf{\getAff{ERHS}}Department of Environmental \& Radiological Health Sciences, Colorado
+State University, Fort Collins, Colorado, United States of America\\
 \bigskip
 * Corresponding author: Brooke.Anderson@colostate.edu\\
 \end{flushleft}
@@ -446,12 +418,12 @@ frameworks with several functions that form a cohesive package or even a
 suite of related packages. Data manipulation is one such common task
 that has been streamlined by packages such as \texttt{dplyr} and
 \texttt{tidyr} {[}11,12{]}, both part of the \texttt{tidyverse} suite
-(Table\textasciitilde{}\ref{table1}). Nevertheless, don't be discouraged
-if you have a task that seems too unusual for a package. There are
-indeed packages for seemingly singular tasks, which you may favor over
-coding from scratch. You can use an R package to access the Twitter API,
-send emails from R, and there is even a package for converting English
-letters to numbers as on a telephone keypad {[}13--15{]}.
+(Table \ref{table1}). Nevertheless, don't be discouraged if you have a
+task that seems too unusual for a package. There are indeed packages for
+seemingly singular tasks, which you may favor over coding from scratch.
+You can use an R package to access the Twitter API, send emails from R,
+and there is even a package for converting English letters to numbers as
+on a telephone keypad {[}13--15{]}.
 
 \begin{table}[!t]
 \begin{adjustwidth}{-2.25in}{0in} % Comment out/remove adjustwidth environment if table fits in text column.
@@ -520,7 +492,7 @@ community of R users.
 
 When learning how to program in R, you are typically introduced to some
 of the most common packages, which tend to have more general purposes.
-\textbf{Table 1} gives some examples of popular packages you may have
+Table \ref{table1} gives some examples of popular packages you may have
 learned about in an introductory R course or book, particularly if it
 focused on the \texttt{tidyverse} approach to coding in R. In addition,
 reputable online tutorials, courses, and books are helpful resources for
@@ -557,19 +529,18 @@ concentrate on topics from certain disciplines or methodological
 approaches (e.g., Econometrics, Genetics, Optimization, Spatial). In the
 HTML version, you can browse alphabetized subcategories of packages
 within each Task View and read concise descriptions to find tools with
-specific functionality (Fig\textasciitilde{}\ref{fig1}). Alternatively,
-you can access Task Views directly from the R console with
-\texttt{ctv::CRAN.views()} {[}17{]} (note that here and throughout, we
-use this compact \texttt{package::function()} notation to indicate a
-function from a specific package). There are currently 41 Task Views
-that collectively contain thousands of packages, all curated and
-regularly tested. Moreover, CRAN Task Views provide tools that enable
-you to automatically install all packages within a targeted area of
-interest. Ultimately, by providing task-based organization, easy
-simultaneous installation of related packages, meta-information, ensured
-maintenance, and quality control, CRAN Task Views address several major
-user-end issues that have arisen due to the sheer quantity of available
-packages {[}17{]}.
+specific functionality (Fig \ref{fig1}). Alternatively, you can access
+Task Views directly from the R console with \texttt{ctv::CRAN.views()}
+{[}17{]} (note that here and throughout, we use this compact
+\texttt{package::function()} notation to indicate a function from a
+specific package). There are currently 41 Task Views that collectively
+contain thousands of packages, all curated and regularly tested.
+Moreover, CRAN Task Views provide tools that enable you to automatically
+install all packages within a targeted area of interest. Ultimately, by
+providing task-based organization, easy simultaneous installation of
+related packages, meta-information, ensured maintenance, and quality
+control, CRAN Task Views address several major user-end issues that have
+arisen due to the sheer quantity of available packages {[}17{]}.
 
 \begin{figure}[!h]
 \caption{{\bf A snapshot of CRAN Task Views.}
@@ -582,21 +553,20 @@ and high-performance computing.}
 The computational biology and bioinformatics analogs of CRAN Task Views,
 \href{https://www.bioconductor.org/packages/release/BiocViews.html\#___Software}{biocViews},
 are lists of packages available through the Bioconductor repository that
-provide tools for analyzing biological data
-(Fig\textasciitilde{}\ref{fig2}). Your keywords from Rule 1 will come in
-handy here, too; for instance, you can search ``RNA-seq'' to find all
-packages related to high-throughput sequencing methods for analyzing RNA
-populations. You can also browse the biocViews tree menu to narrow your
-search based on which general and specific categories describe your
-task. The list includes each package's name linked to information and
-documentation, its maintainer, a short description, and its rank
-relative to other Bioconductor packages.
+provide tools for analyzing biological data (Fig \ref{fig2}). Your
+keywords from Rule 1 will come in handy here, too; for instance, you can
+search ``RNA-seq'' to find all packages related to high-throughput
+sequencing methods for analyzing RNA populations. You can also browse
+the biocViews tree menu to narrow your search based on which general and
+specific categories describe your task. The list includes each package's
+name linked to information and documentation, its maintainer, a short
+description, and its rank relative to other Bioconductor packages.
 
 \begin{figure}[!h]
-\caption{{\bf A snapshot of BiocViews.}
+\caption{{\bf A snapshot of biocViews.}
 Bioconductor---which serves as a repository for packages focused on
 high-throughput genomic data---offers similar curated lists of packages through
-BiocViews, including listings by assay domain, by biological question, and by
+biocViews, including listings by assay domain, by biological question, and by
 statistical method.}
 \label{fig2}
 \end{figure}
@@ -609,12 +579,11 @@ packages from CRAN. Another place to find well-maintained tools is
 \href{https://ropensci.org/packages/}{rOpenSci packages}. These
 filterable and searchable peer-reviewed (see Rule 6) R packages are
 organized by name, maintainer, description, and status markers based on
-activity, association, and review (Fig\textasciitilde{}\ref{fig3}).
+activity, association, and review (Fig \ref{fig3}).
 
 \begin{figure}[!h]
-\caption{{\bf An example of the CRAN page for the ggplot2 package.}
-Each package on CRAN has its own webpage, which can be used to follow several of the rules highlighted in this article. This snapshot of the page for the 
-\texttt{ggplot2} package indicates where information related to several of the Rules can be found on the package's CRAN page.}
+\caption{{\bf An example of the rOpenSci package search page, filtered to image processing packages.}
+**More description.**}
 \label{fig3}
 \end{figure}
 
@@ -704,7 +673,7 @@ that the repository integrates easily with your base R installation
 with default values to install a package from CRAN, along with all of
 the packages it depends on; source and/or binary code are automatically
 saved to your computer in a designated package library
-{[}24,\textbf{baseR?}{]}. When you want to use a particular package, you
+{[}{\textbf{???}},24{]}. When you want to use a particular package, you
 load it to your R session via the \texttt{library()} function from base
 R {[}9{]}. These features ensure that integration of a new package with
 your version of the base R software is typically silent and seamless.
@@ -725,7 +694,15 @@ don't uphold these publication quality standards. For instance, to see
 the metadata page for the \texttt{ggplot2} package, you can go to
 \url{https://CRAN.R-project.org/package=ggplot2}; replace the package
 name at the end of the web address with the name of any other CRAN
-package to access analogous package-specific metadata {[}26{]}.
+package to access analogous package-specific metadata (Fig \ref{fig4})
+{[}26{]}.
+
+\begin{figure}[!h]
+\caption{{\bf An example of the CRAN page for the \texttt{ggplot2} package.}
+Each package on CRAN has its own webpage, which can be used to follow several of the rules highlighted in this article. This snapshot of the page for the 
+\texttt{ggplot2} package indicates where information related to several of the Rules can be found on the package's CRAN page.}
+\label{fig4}
+\end{figure}
 
 If you're looking for tools specifically designed for high-throughput
 genomic data, the Bioconductor repository is a more specialized
@@ -744,7 +721,7 @@ roles that are accompanied by comprehensive documentation. For example,
 the page for the package \texttt{DESeq2} can be found at
 \url{https://bioconductor.org/packages/release/bioc/html/DESeq2.html};
 you can view pages corresponding to other Bioconductor packages by
-altering the web address as previously described (see \textbf{Fig 5})
+altering the web address as previously described (Fig \ref{fig5})
 {[}28{]}. Accessibility is a pillar of the Bioconductor project; all
 forms of documentation, including courses, vignettes, and interactive
 documents, are curated for individuals with expertise in adjacent
@@ -753,6 +730,12 @@ Bioconductor packages also integrate well with base R by different means
 than CRAN packages; you should use \texttt{BiocManager::install()} to
 install Bioconductor packages with their corresponding dependencies
 {[}29{]}.
+
+\begin{figure}[!h]
+\caption{{\bf An example of the Bioconductor page for the \texttt{DESeq2} package}
+Each package on Bioconductor has its own webpage, which can be used to follow several of the rules highlighted in this article. This snapshot of the page for the \texttt{DESeq2} package indicates where information related to several of the Rules can be found on the package's Bioconductor page.}
+\label{fig5}
+\end{figure}
 
 Bioconductor has a structured release schedule and thus a unique package
 management system that automatically loads your Bioconductor packages in
@@ -802,9 +785,9 @@ platforms allow for continuous integration and continuous deployment for
 testing data and code to ensure a stable end-product.
 
 One particularly popular and effective platform for sharing R packages
-is GitHub (see \textbf{Fig 6}). An increasing number of packages are
-hosted on GitHub during the development stages---it will often be the
-first place you can find up-and-coming packages (see Rule 2). If stable
+is GitHub (Fig \ref{fig6}). An increasing number of packages are hosted
+on GitHub during the development stages---it will often be the first
+place you can find up-and-coming packages (see Rule 2). If stable
 release versions of these packages are published on CRAN or Bioconductor
 {[}38{]}, GitHub is still a good place to explore planned changes for
 the next version that the developer will soon release. GitHub provides R
@@ -812,6 +795,12 @@ users with open access to package code, a timeline of help resources
 (see Rule 4), and a direct line of communication to developers. Both R
 users and package developers benefit from interactive feedback channels
 through GitHub Issues and the Star rating system.
+
+\begin{figure}[!h]
+\caption{{\bf An example of the GitHub page for the \texttt{bookdown} package.}
+More description.}
+\label{fig6}
+\end{figure}
 
 It's straightforward to install the latest version of a package you want
 to use from GitHub via
@@ -907,11 +896,11 @@ underlying algorithm was based. They often contain executable examples
 to help you get a feel for how to use the function in practice. If you'd
 like to check all help documentation for a package, you can access an
 index of help pages from the console via
-\texttt{help(package\ =\ "...")} {[}\textbf{baseR?}{]}. The
-documentation that accompanies functions within packages is critical;
-the fact that anyone can read it anytime and use it to guide their own
-work facilitates extensibility. The extent and quality of content in
-these help files will vary; ideally, packages should have thorough
+\texttt{help(package\ =\ "...")} {[}{\textbf{???}}{]}. The documentation
+that accompanies functions within packages is critical; the fact that
+anyone can read it anytime and use it to guide their own work
+facilitates extensibility. The extent and quality of content in these
+help files will vary; ideally, packages should have thorough
 documentation at the function level. If the help pages alone leave you
 wanting, it may be less likely that the package has further (quality)
 documentation and therefore you might reconsider whether that package
@@ -931,7 +920,7 @@ example, the extensive vignette for the
 \href{https://cran.r-project.org/web/packages/sf/vignettes/sf1.html}{\texttt{sf}
 package}{[}42{]}. Packages can have multiple vignettes; you can view or
 edit a specific vignette or obtain a list of all vignettes for a package
-via the \texttt{vignette()} function from base R {[}\textbf{baseR?}{]}.
+via the \texttt{vignette()} function from base R {[}{\textbf{???}}{]}.
 For a package shared through CRAN or Bioconductor, a list of the
 package's vignettes can also be found on the respective homepage for the
 package. Particularly for packages hosted on GitHub, developers often
@@ -981,7 +970,7 @@ a searchable \href{https://www.rdocumentation.org/}{website}, package
 (\texttt{install.packages("RDocumentation")}), and
 \href{https://www.rdocumentation.org/docs/}{JSON API} for obtaining
 integrated documentation for packages that are on CRAN, Bioconductor,
-and GitHub {[}49,\textbf{baseR?}{]}. RDocumentation may include: an
+and GitHub {[}{\textbf{???}},49{]}. RDocumentation may include: an
 overview, installation instructions, examples of usage, functions,
 guides, and vignettes. This is a subsidiary reason why is may be useful
 to look for packages shared on these platforms (see Rule 3).
@@ -1155,7 +1144,13 @@ a vector of packages of interest, by name {[}39,72{]}. Then, you can use
 information that includes each package's respective number of downloads,
 GitHub Star rating, \texttt{tidyverse} compatibility, and several more
 indicators to help you decide which package is most established and
-widely used (see \textbf{Fig 7}) {[}72,74{]}.
+widely used (Fig \ref{fig7}) {[}72,74{]}.
+
+\begin{figure}[!h]
+\caption{{\bf Output from the \texttt{packagemetrics} package, used here to compare data visualization packages}
+More description.}
+\label{fig7}
+\end{figure}
 
 An important caveat to consider: several of the metrics introduced in
 this Rule are based on how often a package is downloaded; however, it's
@@ -1227,7 +1222,7 @@ research, rather than package-focused papers. Useful packages may be
 mentioned in the Methods and/or References sections of such papers.
 Packages hosted on CRAN or Bioconductor have a standardized format for
 citation, and a call to \texttt{citation("package")} will print the
-suggested citation for the package {[}\textbf{baseR?}{]}. Further, in
+suggested citation for the package {[}{\textbf{???}}{]}. Further, in
 response to the rising number of researchers creating tools and software
 to work with their data, GitHub has granted developers the ability to
 obtain a Digital Object Identifier (DOI) for any GitHub repository
@@ -1505,7 +1500,7 @@ developers use to implement object-oriented programming in R. Many
 packages for spatial analysis, as well as those from Bioconductor, tend
 to use S4 objects to represent data {[}7{]}. On the other hand, the
 \texttt{tidyverse}, a unified suite of packages with an grammatical
-structure employed within a ``pipeline,'' expects dataframe objects
+structure employed within a ``pipeline'', expects dataframe objects
 {[}74{]}. Because of this, when you're working in the
 \texttt{tidyverse}, you may need to take extra steps to extract
 components from S3/S4 objects to re-frame the data into a dataframe.
@@ -1599,7 +1594,7 @@ industrial-strength support for developing large and complex packages,
 they also prove useful even in developing small, private packages. They
 make it easier and more efficient, for example, to write help
 documentation and unit tests for functions in your package. RStudio's
-IDE has a framework called ``Projects,'' which can help you establish an
+IDE has a framework called ``Projects'', which can help you establish an
 organized framework of directories within an R Project
 (\texttt{.Rproj})---specifically designed for creating R
 packages---that's straightforward to navigate throughout the package
@@ -1676,588 +1671,471 @@ Kondash, and Kathleen Wendt for their helpful input on the manuscript.
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
 \leavevmode\hypertarget{ref-rehman2012}{}%
-\CSLLeftMargin{1. }
-\CSLRightInline{Rehman J. {Open Science and Access to Medical Research}
-{[}Internet{]}. Scientific American; 2012. Available:
-\url{https://blogs.scientificamerican.com/guest-blog/open-science-and-access-to-medical-research/}}
+1. Rehman J. Open Science and Access to Medical Research {[}Internet{]}.
+Scientific American; 2012. Available:
+\url{https://blogs.scientificamerican.com/guest-blog/open-science-and-access-to-medical-research/}
 
 \leavevmode\hypertarget{ref-peng2011}{}%
-\CSLLeftMargin{2. }
-\CSLRightInline{Peng RD. {Reproducible Research in Computational
-Science}. Science. 2011;334: 1226--1227. }
+2. Peng RD. Reproducible Research in Computational Science. Science.
+2011;334: 1226--1227.
 
 \leavevmode\hypertarget{ref-goodman2016}{}%
-\CSLLeftMargin{3. }
-\CSLRightInline{Goodman SN, Fanelli D, Ioannidis JP. {What Does Research
-Reproducibility Mean?} Science Translational Medicine. 2016;8:
-341ps12--341ps12. }
+3. Goodman SN, Fanelli D, Ioannidis JP. What Does Research
+Reproducibility Mean? Science Translational Medicine. 2016;8:
+341ps12--341ps12.
 
 \leavevmode\hypertarget{ref-stodden2013}{}%
-\CSLLeftMargin{4. }
-\CSLRightInline{Stodden V, Miguez S. Best practices for computational
-science: Software infrastructure and environments for reproducible and
-extensible research. Journal of Open Research Software. Ubiquity Press;
-2014;2. }
+4. Stodden V, Miguez S. Best practices for computational science:
+Software infrastructure and environments for reproducible and extensible
+research. Journal of Open Research Software. Ubiquity Press; 2014;2.
 
 \leavevmode\hypertarget{ref-donoho2017}{}%
-\CSLLeftMargin{5. }
-\CSLRightInline{Donoho D. {50 Years of Data Science}. Journal of
-Computational and Graphical Statistics. 2017;26: 745--766. }
+5. Donoho D. 50 Years of Data Science. Journal of Computational and
+Graphical Statistics. 2017;26: 745--766.
 
 \leavevmode\hypertarget{ref-robinson2017}{}%
-\CSLLeftMargin{6. }
-\CSLRightInline{Robinson D. {The Impressive Growth of R} {[}Internet{]}.
-Stack Overflow; 2017. Available:
-\url{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}}
+6. Robinson D. The Impressive Growth of R {[}Internet{]}. Stack
+Overflow; 2017. Available:
+\url{https://stackoverflow.blog/2017/10/10/impressive-growth-r/}
 
 \leavevmode\hypertarget{ref-gentleman2004}{}%
-\CSLLeftMargin{7. }
-\CSLRightInline{Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M,
-Dudoit S, et al. {Bioconductor: Open Software Development for
-Computational Biology and Bioinformatics}. Genome Biology. 2004;5: R80.
-}
+7. Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, et
+al. Bioconductor: Open Software Development for Computational Biology
+and Bioinformatics. Genome Biology. 2004;5: R80.
 
 \leavevmode\hypertarget{ref-holmes2018}{}%
-\CSLLeftMargin{8. }
-\CSLRightInline{Holmes S, Huber W. {Modern Statistics for Modern
-Biology} {[}Internet{]}. Cambridge University Press; 2018. Available:
-\url{https://web.stanford.edu/class/bios221/book/index.html}}
+8. Holmes S, Huber W. Modern Statistics for Modern Biology
+{[}Internet{]}. Cambridge University Press; 2018. Available:
+\url{https://web.stanford.edu/class/bios221/book/index.html}
 
 \leavevmode\hypertarget{ref-Rproject2020}{}%
-\CSLLeftMargin{9. }
-\CSLRightInline{R Core Team. R: A language and environment for
-statistical computing {[}Internet{]}. Vienna, Austria: R Foundation for
-Statistical Computing; 2020. Available:
-\url{https://www.R-project.org/}}
+9. R Core Team. R: A language and environment for statistical computing
+{[}Internet{]}. Vienna, Austria: R Foundation for Statistical Computing;
+2020. Available: \url{https://www.R-project.org/}
 
 \leavevmode\hypertarget{ref-hornik2012}{}%
-\CSLLeftMargin{10. }
-\CSLRightInline{Hornik K. {Are there too many R Packages?} Austrian
-Journal of Statistics. 2012;41: 59--66. }
+10. Hornik K. Are there too many R Packages? Austrian Journal of
+Statistics. 2012;41: 59--66.
 
 \leavevmode\hypertarget{ref-dplyr}{}%
-\CSLLeftMargin{11. }
-\CSLRightInline{Wickham H, François R, Henry L, Müller K. {dplyr: A
-Grammar of Data Manipulation} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=dplyr}}
+11. Wickham H, François R, Henry L, Müller K. dplyr: A Grammar of Data
+Manipulation {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=dplyr}
 
 \leavevmode\hypertarget{ref-tidyr}{}%
-\CSLLeftMargin{12. }
-\CSLRightInline{Wickham H, Henry L. {tidyr: Tidy Messy Data}
-{[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=tidyr}}
+12. Wickham H, Henry L. tidyr: Tidy Messy Data {[}Internet{]}. 2020.
+Available: \url{https://CRAN.R-project.org/package=tidyr}
 
 \leavevmode\hypertarget{ref-twitteR}{}%
-\CSLLeftMargin{13. }
-\CSLRightInline{Gentry J. {twitteR: R Based Twitter Client}
-{[}Internet{]}. 2015. Available:
-\url{https://CRAN.R-project.org/package=twitteR}}
+13. Gentry J. twitteR: R Based Twitter Client {[}Internet{]}. 2015.
+Available: \url{https://CRAN.R-project.org/package=twitteR}
 
 \leavevmode\hypertarget{ref-mailR}{}%
-\CSLLeftMargin{14. }
-\CSLRightInline{Premraj R. {mailR: A Utility to Send Emails from R}
-{[}Internet{]}. 2015. Available:
-\url{https://CRAN.R-project.org/package=mailR}}
+14. Premraj R. mailR: A Utility to Send Emails from R {[}Internet{]}.
+2015. Available: \url{https://CRAN.R-project.org/package=mailR}
 
 \leavevmode\hypertarget{ref-phonenumber}{}%
-\CSLLeftMargin{15. }
-\CSLRightInline{Myles S. {phonenumber: Convert Letters to Numbers and
-Back as on a Telephone Keypad} {[}Internet{]}. 2015. Available:
-\url{https://CRAN.R-project.org/package=phonenumber}}
+15. Myles S. phonenumber: Convert Letters to Numbers and Back as on a
+Telephone Keypad {[}Internet{]}. 2015. Available:
+\url{https://CRAN.R-project.org/package=phonenumber}
 
 \leavevmode\hypertarget{ref-bioCproject}{}%
-\CSLLeftMargin{16. }
-\CSLRightInline{Huber W, Carey VJ, Gentleman R, Anders S, Carlson M,
-Carvalho BS, et al. {Orchestrating High-Throughput Genomic Analysis with
-Bioconductor}. Nature Methods. 2015;12: 115--121. Available:
-\url{http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html}}
+16. Huber W, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS, et
+al. Orchestrating High-Throughput Genomic Analysis with Bioconductor.
+Nature Methods. 2015;12: 115--121. Available:
+\url{http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html}
 
 \leavevmode\hypertarget{ref-ctv}{}%
-\CSLLeftMargin{17. }
-\CSLRightInline{Zeileis A. {CRAN Task Views}. R News. 2005;5: 39--40.
-Available: \url{https://CRAN.R-project.org/doc/Rnews/}}
+17. Zeileis A. CRAN Task Views. R News. 2005;5: 39--40. Available:
+\url{https://CRAN.R-project.org/doc/Rnews/}
 
 \leavevmode\hypertarget{ref-smith2017}{}%
-\CSLLeftMargin{18. }
-\CSLRightInline{Smith D. {The R Community is One of R's Best Features}
-{[}Internet{]}. Revolutions. Microsoft; 2017. Available:
-\url{https://blog.revolutionanalytics.com/2017/06/r-community.html}}
+18. Smith D. The R Community is One of R's Best Features {[}Internet{]}.
+Revolutions. Microsoft; 2017. Available:
+\url{https://blog.revolutionanalytics.com/2017/06/r-community.html}
 
 \leavevmode\hypertarget{ref-ellis2017}{}%
-\CSLLeftMargin{19. }
-\CSLRightInline{Ellis SE. {Hey! You There! You are Welcome Here}
-{[}Internet{]}. rOpenSci. NumFOCUS; 2017. Available:
-\url{https://ropensci.org/blog/2017/06/23/community/}}
+19. Ellis SE. Hey! You There! You are Welcome Here {[}Internet{]}.
+rOpenSci. NumFOCUS; 2017. Available:
+\url{https://ropensci.org/blog/2017/06/23/community/}
 
 \leavevmode\hypertarget{ref-rickert2018}{}%
-\CSLLeftMargin{20. }
-\CSLRightInline{Rickert J. {What Makes a Great R Package?}
-{[}Internet{]}. RStudio; 2018. Available:
-\url{https://rstudio.com/resources/rstudioconf-2018/what-makes-a-great-r-package-joseph-rickert/}}
+20. Rickert J. What Makes a Great R Package? {[}Internet{]}. RStudio;
+2018. Available:
+\url{https://rstudio.com/resources/rstudioconf-2018/what-makes-a-great-r-package-joseph-rickert/}
 
 \leavevmode\hypertarget{ref-randomforest}{}%
-\CSLLeftMargin{21. }
-\CSLRightInline{Liaw A, Wiener M. {Classification and Regression by
-randomForest}. R News. 2002;2: 18--22. Available:
-\url{https://CRAN.R-project.org/doc/Rnews/}}
+21. Liaw A, Wiener M. Classification and Regression by randomForest. R
+News. 2002;2: 18--22. Available:
+\url{https://CRAN.R-project.org/doc/Rnews/}
 
 \leavevmode\hypertarget{ref-rayshader}{}%
-\CSLLeftMargin{22. }
-\CSLRightInline{Morgan-Wall T. {rayshader: Create Maps and Visualize
-Data in 2D and 3D} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=rayshader}}
+22. Morgan-Wall T. rayshader: Create Maps and Visualize Data in 2D and
+3D {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=rayshader}
 
 \leavevmode\hypertarget{ref-broman2020}{}%
-\CSLLeftMargin{23. }
-\CSLRightInline{Broman K. {Getting your R package on CRAN}
-{[}Internet{]}. 2020. Available:
-\url{https://kbroman.org/pkg_primer/pages/cran.html}}
+23. Broman K. Getting your R package on CRAN {[}Internet{]}. 2020.
+Available: \url{https://kbroman.org/pkg_primer/pages/cran.html}
 
 \leavevmode\hypertarget{ref-wickham2015}{}%
-\CSLLeftMargin{24. }
-\CSLRightInline{Wickham H. {R Packages: Organize, Test, Document, and
-Share your Code}. O'Reilly Media, Inc.; 2015. }
+24. Wickham H. R Packages: Organize, Test, Document, and Share your
+Code. O'Reilly Media, Inc. 2015.
 
 \leavevmode\hypertarget{ref-cranpolicy2020}{}%
-\CSLLeftMargin{25. }
-\CSLRightInline{{CRAN Repository Policy} {[}Internet{]}. The R
-Foundation; 2020. Available:
-\url{https://cran.r-project.org/web/packages/policies.html\#Submission}}
+25. CRAN Repository Policy {[}Internet{]}. The R Foundation; 2020.
+Available:
+\url{https://cran.r-project.org/web/packages/policies.html\#Submission}
 
 \leavevmode\hypertarget{ref-ggplot2}{}%
-\CSLLeftMargin{26. }
-\CSLRightInline{Wickham H. {ggplot2: Elegant Graphics for Data Analysis}
+26. Wickham H. ggplot2: Elegant Graphics for Data Analysis
 {[}Internet{]}. Springer-Verlag New York; 2016. Available:
-\url{https://ggplot2.tidyverse.org}}
+\url{https://ggplot2.tidyverse.org}
 
 \leavevmode\hypertarget{ref-bioconductor}{}%
-\CSLLeftMargin{27. }
-\CSLRightInline{{Bioconductor: Open source Software for Bioinformatics}
+27. Bioconductor: Open source Software for Bioinformatics
 {[}Internet{]}. Bioconductor; 2020. Available:
-\url{https://www.bioconductor.org/}}
+\url{https://www.bioconductor.org/}
 
 \leavevmode\hypertarget{ref-DESeq2}{}%
-\CSLLeftMargin{28. }
-\CSLRightInline{Love MI, Huber W, Anders S. {Moderated Estimation of
-Fold Change and Dispersion for RNA-seq Data with DESeq2}. Genome
-Biology. 2014;15: 550.
-doi:\href{https://doi.org/10.1186/s13059-014-0550-8}{10.1186/s13059-014-0550-8}}
+28. Love MI, Huber W, Anders S. Moderated Estimation of Fold Change and
+Dispersion for RNA-seq Data with DESeq2. Genome Biology. 2014;15: 550.
+doi:\href{https://doi.org/10.1186/s13059-014-0550-8}{10.1186/s13059-014-0550-8}
 
 \leavevmode\hypertarget{ref-BiocManager}{}%
-\CSLLeftMargin{29. }
-\CSLRightInline{Morgan M. {BiocManager: Access the Bioconductor Project
-Package Repository} {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=BiocManager}}
+29. Morgan M. BiocManager: Access the Bioconductor Project Package
+Repository {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=BiocManager}
 
 \leavevmode\hypertarget{ref-biocpkgsub2020}{}%
-\CSLLeftMargin{30. }
-\CSLRightInline{{Package Submission} {[}Internet{]}. Bioconductor; 2020.
-Available:
-\url{https://www.bioconductor.org/developers/package-submission/}}
+30. Package Submission {[}Internet{]}. Bioconductor; 2020. Available:
+\url{https://www.bioconductor.org/developers/package-submission/}
 
 \leavevmode\hypertarget{ref-ropensci2020}{}%
-\CSLLeftMargin{31. }
-\CSLRightInline{{Transforming Science through Open Data and Software}
-{[}Internet{]}. rOpenSci; 2020. Available: \url{https://ropensci.org/}}
+31. Transforming Science through Open Data and Software {[}Internet{]}.
+rOpenSci; 2020. Available: \url{https://ropensci.org/}
 
 \leavevmode\hypertarget{ref-ropenscidev2020}{}%
-\CSLLeftMargin{32. }
-\CSLRightInline{rOpenSci, Anderson B, Chamberlain S, Krystalli A, Mullen
-L, Ram K, et al. {ropensci/dev\_guide: Fourth Release} {[}Internet{]}.
-Zenodo; 2020.
-doi:\href{https://doi.org/10.5281/zenodo.3749013}{10.5281/zenodo.3749013}}
+32. rOpenSci, Anderson B, Chamberlain S, Krystalli A, Mullen L, Ram K,
+et al. ropensci/dev\_guide: Fourth Release {[}Internet{]}. Zenodo; 2020.
+doi:\href{https://doi.org/10.5281/zenodo.3749013}{10.5281/zenodo.3749013}
 
 \leavevmode\hypertarget{ref-drat}{}%
-\CSLLeftMargin{33. }
-\CSLRightInline{Carl Boettiger DE with contributions by, Fultz N, Gibb
-S, Gillespie C, Górecki J, Jones M, et al. {drat: Drat R Archive
-Template} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=drat}}
+33. Carl Boettiger DE with contributions by, Fultz N, Gibb S, Gillespie
+C, Górecki J, Jones M, et al. drat: Drat R Archive Template
+{[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=drat}
 
 \leavevmode\hypertarget{ref-anderson2017}{}%
-\CSLLeftMargin{34. }
-\CSLRightInline{Anderson GB, Eddelbuettel D. {Hosting Data Packages via
-drat: A Case Study with Hurricane Exposure Data}. R Journal. 2017;9. }
+34. Anderson GB, Eddelbuettel D. Hosting Data Packages via drat: A Case
+Study with Hurricane Exposure Data. R Journal. 2017;9.
 
 \leavevmode\hypertarget{ref-theussl2009}{}%
-\CSLLeftMargin{35. }
-\CSLRightInline{Theußl S, Zeileis A. {Collaborative Software Development
-Using R-Forge. Special Invited Paper on "The Future of R"}. The R
-Journal. The R Foundation for Statistical Computing; 2009;1: 9--14. }
+35. Theußl S, Zeileis A. Collaborative Software Development Using
+R-Forge. Special Invited Paper on "The Future of R". The R Journal. The
+R Foundation for Statistical Computing; 2009;1: 9--14.
 
 \leavevmode\hypertarget{ref-lang2000}{}%
-\CSLLeftMargin{36. }
-\CSLRightInline{Lang DT. {The Omegahat Environment: New Possibilities
-for Statistical Computing}. Journal of Computational and Graphical
-Statistics. 2000;9: 423--451. }
+36. Lang DT. The Omegahat Environment: New Possibilities for Statistical
+Computing. Journal of Computational and Graphical Statistics. 2000;9:
+423--451.
 
 \leavevmode\hypertarget{ref-mcelreath2020}{}%
-\CSLLeftMargin{37. }
-\CSLRightInline{McElreath R. {Statistical Rethinking: A Bayesian Course
-with Examples in R and Stan}. CRC Press; 2020. }
+37. McElreath R. Statistical Rethinking: A Bayesian Course with Examples
+in R and Stan. CRC Press; 2020.
 
 \leavevmode\hypertarget{ref-decan2015}{}%
-\CSLLeftMargin{38. }
-\CSLRightInline{Decan A, Mens T, Claes M, Grosjean P. {On the
-Development and Distribution of R packages: An Empirical Analysis of the
-R Ecosystem}. {Proceedings of the 2015 European Conference on Software
-Architecture Workshops}. 2015. pp. 1--6. }
+38. Decan A, Mens T, Claes M, Grosjean P. On the Development and
+Distribution of R packages: An Empirical Analysis of the R Ecosystem.
+Proceedings of the 2015 European Conference on Software Architecture
+Workshops. 2015. pp. 1--6.
 
 \leavevmode\hypertarget{ref-devtools}{}%
-\CSLLeftMargin{39. }
-\CSLRightInline{Wickham H, Hester J, Chang W. {devtools: Tools to Make
-Developing R Packages Easier} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=devtools}}
+39. Wickham H, Hester J, Chang W. devtools: Tools to Make Developing R
+Packages Easier {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=devtools}
 
 \leavevmode\hypertarget{ref-decan2016}{}%
-\CSLLeftMargin{40. }
-\CSLRightInline{Decan A, Mens T, Claes M, Grosjean P. {When GitHub meets
-CRAN: An Analysis of Inter-Repository Package Dependency Problems}.
-{2016 IEEE 23rd International Conference on Software Analysis,
-Evolution, and Reengineering (SANER)}. IEEE; 2016. pp. 493--504. }
+40. Decan A, Mens T, Claes M, Grosjean P. When GitHub meets CRAN: An
+Analysis of Inter-Repository Package Dependency Problems. 2016 IEEE 23rd
+International Conference on Software Analysis, Evolution, and
+Reengineering (SANER). IEEE; 2016. pp. 493--504.
 
 \leavevmode\hypertarget{ref-pkgdown}{}%
-\CSLLeftMargin{41. }
-\CSLRightInline{Wickham H, Hesselberth J. {pkgdown: Make Static HTML
-Documentation for a Package} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=pkgdown}}
+41. Wickham H, Hesselberth J. pkgdown: Make Static HTML Documentation
+for a Package {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=pkgdown}
 
 \leavevmode\hypertarget{ref-sf}{}%
-\CSLLeftMargin{42. }
-\CSLRightInline{Pebesma E. {Simple Features for R: Standardized Support
-for Spatial Vector Data}. {The R Journal}. 2018;10: 439--446.
-doi:\href{https://doi.org/10.32614/RJ-2018-009}{10.32614/RJ-2018-009}}
+42. Pebesma E. Simple Features for R: Standardized Support for Spatial
+Vector Data. The R Journal. 2018;10: 439--446.
+doi:\href{https://doi.org/10.32614/RJ-2018-009}{10.32614/RJ-2018-009}
 
 \leavevmode\hypertarget{ref-learnr}{}%
-\CSLLeftMargin{43. }
-\CSLRightInline{Schloerke B, Allaire J, Borges B. {learnr: Interactive
-Tutorials for R} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=learnr}}
+43. Schloerke B, Allaire J, Borges B. learnr: Interactive Tutorials for
+R {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=learnr}
 
 \leavevmode\hypertarget{ref-ushey2020}{}%
-\CSLLeftMargin{44. }
-\CSLRightInline{Ushey K. {RStudio 1.3 Preview: Integrated Tutorials}
-{[}Internet{]}. RStudio; 2020. Available:
-\url{https://blog.rstudio.com/2020/02/25/rstudio-1-3-integrated-tutorials/}}
+44. Ushey K. RStudio 1.3 Preview: Integrated Tutorials {[}Internet{]}.
+RStudio; 2020. Available:
+\url{https://blog.rstudio.com/2020/02/25/rstudio-1-3-integrated-tutorials/}
 
 \leavevmode\hypertarget{ref-pkgdownweb}{}%
-\CSLLeftMargin{45. }
-\CSLRightInline{Wickham H, Hesselberth J. {pkgdown} {[}Internet{]}.
-RStudio; 2018. Available: \url{https://pkgdown.r-lib.org/}}
+45. Wickham H, Hesselberth J. pkgdown {[}Internet{]}. RStudio; 2018.
+Available: \url{https://pkgdown.r-lib.org/}
 
 \leavevmode\hypertarget{ref-naniar}{}%
-\CSLLeftMargin{46. }
-\CSLRightInline{Tierney N, Cook D, McBain M, Fay C. {naniar: Data
-Structures, Summaries, and Visualisations for Missing Data}
-{[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=naniar}}
+46. Tierney N, Cook D, McBain M, Fay C. naniar: Data Structures,
+Summaries, and Visualisations for Missing Data {[}Internet{]}. 2020.
+Available: \url{https://CRAN.R-project.org/package=naniar}
 
 \leavevmode\hypertarget{ref-valr}{}%
-\CSLLeftMargin{47. }
-\CSLRightInline{Riemondy KA, Sheridan RM, Gillen A, Yu Y, Bennett CG,
-Hesselberth JR. {valr: Reproducible Genome Interval Arithmetic in R}.
-F1000Research. 2017;
-doi:\href{https://doi.org/10.12688/f1000research.11997.1}{10.12688/f1000research.11997.1}}
+47. Riemondy KA, Sheridan RM, Gillen A, Yu Y, Bennett CG, Hesselberth
+JR. valr: Reproducible Genome Interval Arithmetic in R. F1000Research.
+2017;
+doi:\href{https://doi.org/10.12688/f1000research.11997.1}{10.12688/f1000research.11997.1}
 
 \leavevmode\hypertarget{ref-TransPhylo}{}%
-\CSLLeftMargin{48. }
-\CSLRightInline{Didelot, Xavier, Fraser, Christophe, Gardy, Jennifer, et
-al. {Genomic Infectious Disease Epidemiology in Partially Sampled and
-Ongoing Outbreaks}. Molecular Biology and Evolution. 2017;34: 997--1007.
-doi:\href{https://doi.org/10.1093/molbev/msw275}{10.1093/molbev/msw275}}
+48. Didelot, Xavier, Fraser, Christophe, Gardy, Jennifer, et al. Genomic
+Infectious Disease Epidemiology in Partially Sampled and Ongoing
+Outbreaks. Molecular Biology and Evolution. 2017;34: 997--1007.
+doi:\href{https://doi.org/10.1093/molbev/msw275}{10.1093/molbev/msw275}
 
 \leavevmode\hypertarget{ref-rdocumentation}{}%
-\CSLLeftMargin{49. }
-\CSLRightInline{{RDocumentation} {[}Internet{]}. DataCamp Inc.; 2020.
-Available: \url{https://www.rdocumentation.org/}}
+49. RDocumentation {[}Internet{]}. DataCamp Inc. 2020. Available:
+\url{https://www.rdocumentation.org/}
 
 \leavevmode\hypertarget{ref-bookdown}{}%
-\CSLLeftMargin{50. }
-\CSLRightInline{Xie Y. {bookdown: Authoring Books and Technical
-Documents with R Markdown} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=bookdown}}
+50. Xie Y. bookdown: Authoring Books and Technical Documents with R
+Markdown {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=bookdown}
 
 \leavevmode\hypertarget{ref-xie2016}{}%
-\CSLLeftMargin{51. }
-\CSLRightInline{Xie Y. {bookdown: Authoring Books and Technical
-Documents with R Markdown}. Chapman; Hall/CRC; 2016. }
+51. Xie Y. bookdown: Authoring Books and Technical Documents with R
+Markdown. Chapman; Hall/CRC; 2016.
 
 \leavevmode\hypertarget{ref-mgcv}{}%
-\CSLLeftMargin{52. }
-\CSLRightInline{Wood SN. {Fast Stable Restricted Maximum Likelihood and
-Marginal Likelihood Estimation of Semiparametric Generalized Linear
-Models}. Journal of the Royal Statistical Society (B). 2011;73: 3--36. }
+52. Wood SN. Fast Stable Restricted Maximum Likelihood and Marginal
+Likelihood Estimation of Semiparametric Generalized Linear Models.
+Journal of the Royal Statistical Society (B). 2011;73: 3--36.
 
 \leavevmode\hypertarget{ref-tidymodels}{}%
-\CSLLeftMargin{53. }
-\CSLRightInline{Kuhn M, Wickham H. {Tidymodels: A Collection of Packages
-for Modeling and Machine Learning using Tidyverse Principles}
-{[}Internet{]}. 2020. Available: \url{https://www.tidymodels.org}}
+53. Kuhn M, Wickham H. Tidymodels: A Collection of Packages for Modeling
+and Machine Learning using Tidyverse Principles {[}Internet{]}. 2020.
+Available: \url{https://www.tidymodels.org}
 
 \leavevmode\hypertarget{ref-shiny}{}%
-\CSLLeftMargin{54. }
-\CSLRightInline{Chang W, Cheng J, Allaire J, Xie Y, McPherson J. {shiny:
-Web Application Framework for R} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=shiny}}
+54. Chang W, Cheng J, Allaire J, Xie Y, McPherson J. shiny: Web
+Application Framework for R {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=shiny}
 
 \leavevmode\hypertarget{ref-htmlwidgets}{}%
-\CSLLeftMargin{55. }
-\CSLRightInline{Vaidyanathan R, Xie Y, Allaire J, Cheng J, Russell K.
-{htmlwidgets: HTML Widgets for R} {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=htmlwidgets}}
+55. Vaidyanathan R, Xie Y, Allaire J, Cheng J, Russell K. htmlwidgets:
+HTML Widgets for R {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=htmlwidgets}
 
 \leavevmode\hypertarget{ref-Rcpp}{}%
-\CSLLeftMargin{56. }
-\CSLRightInline{Eddelbuettel D, François R. {Rcpp: Seamless R and C++
-Integration}. Journal of Statistical Software. 2011;40: 1--18.
-doi:\href{https://doi.org/10.18637/jss.v040.i08}{10.18637/jss.v040.i08}}
+56. Eddelbuettel D, François R. Rcpp: Seamless R and C++ Integration.
+Journal of Statistical Software. 2011;40: 1--18.
+doi:\href{https://doi.org/10.18637/jss.v040.i08}{10.18637/jss.v040.i08}
 
 \leavevmode\hypertarget{ref-caret}{}%
-\CSLLeftMargin{57. }
-\CSLRightInline{Kuhn M. {caret: Classification and Regression Training}
+57. Kuhn M. caret: Classification and Regression Training
 {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=caret}}
+\url{https://CRAN.R-project.org/package=caret}
 
 \leavevmode\hypertarget{ref-datatable}{}%
-\CSLLeftMargin{58. }
-\CSLRightInline{Dowle M, Srinivasan A. {data.table: Extension of
-data.frame} {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=data.table}}
+58. Dowle M, Srinivasan A. data.table: Extension of data.frame
+{[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=data.table}
 
 \leavevmode\hypertarget{ref-leaflet}{}%
-\CSLLeftMargin{59. }
-\CSLRightInline{Cheng J, Karambelkar B, Xie Y. {leaflet: Create
-Interactive Web Maps with the JavaScript Leaflet Library}
-{[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=leaflet}}
+59. Cheng J, Karambelkar B, Xie Y. leaflet: Create Interactive Web Maps
+with the JavaScript Leaflet Library {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=leaflet}
 
 \leavevmode\hypertarget{ref-randomizr}{}%
-\CSLLeftMargin{60. }
-\CSLRightInline{Coppock A. {randomizr: Easy-to-Use Tools for Common
-Forms of Random Assignment and Sampling} {[}Internet{]}. 2019.
-Available: \url{https://CRAN.R-project.org/package=randomizr}}
+60. Coppock A. randomizr: Easy-to-Use Tools for Common Forms of Random
+Assignment and Sampling {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=randomizr}
 
 \leavevmode\hypertarget{ref-stringr}{}%
-\CSLLeftMargin{61. }
-\CSLRightInline{Wickham H. {stringr: Simple, Consistent Wrappers for
-Common String Operations} {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=stringr}}
+61. Wickham H. stringr: Simple, Consistent Wrappers for Common String
+Operations {[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=stringr}
 
 \leavevmode\hypertarget{ref-survminer}{}%
-\CSLLeftMargin{62. }
-\CSLRightInline{Kassambara A, Kosinski M, Biecek P. {survminer: Drawing
-Survival Curves using ggplot2} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=survminer}}
+62. Kassambara A, Kosinski M, Biecek P. survminer: Drawing Survival
+Curves using ggplot2 {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=survminer}
 
 \leavevmode\hypertarget{ref-Rmail2020}{}%
-\CSLLeftMargin{63. }
-\CSLRightInline{R Core Team. {Mailing Lists} {[}Internet{]}. The R
-Foundation; 2020. Available: \url{https://www.r-project.org/mail.html}}
+63. R Core Team. Mailing Lists {[}Internet{]}. The R Foundation; 2020.
+Available: \url{https://www.r-project.org/mail.html}
 
 \leavevmode\hypertarget{ref-chase2020}{}%
-\CSLLeftMargin{64. }
-\CSLRightInline{Chase W. {Dataviz and the 20th Anniversary of R, an
-Interview With Hadley Wickham} {[}Internet{]}. Medium; 2020. Available:
-\url{https://medium.com/nightingale/dataviz-and-the-20th-anniversary-of-r-an-interview-with-hadley-wickham-ea245078fc8a}}
+64. Chase W. Dataviz and the 20th Anniversary of R, an Interview With
+Hadley Wickham {[}Internet{]}. Medium; 2020. Available:
+\url{https://medium.com/nightingale/dataviz-and-the-20th-anniversary-of-r-an-interview-with-hadley-wickham-ea245078fc8a}
 
 \leavevmode\hypertarget{ref-statnet}{}%
-\CSLLeftMargin{65. }
-\CSLRightInline{Handcock MS, Hunter DR, Butts CT, Goodreau SM, Krivitsky
-PN, Morris M. {ergm: Fit, Simulate and Diagnose Exponential-Family
-Models for Networks} {[}Internet{]}. The Statnet Project
+65. Handcock MS, Hunter DR, Butts CT, Goodreau SM, Krivitsky PN, Morris
+M. ergm: Fit, Simulate and Diagnose Exponential-Family Models for
+Networks {[}Internet{]}. The Statnet Project
 (\url{http://www.statnet.org}); 2018. Available:
-\url{https://CRAN.R-project.org/package=ergm}}
+\url{https://CRAN.R-project.org/package=ergm}
 
 \leavevmode\hypertarget{ref-muenchen2012}{}%
-\CSLLeftMargin{66. }
-\CSLRightInline{Muenchen RA. {The Popularity of Data Analysis Software}.
-URL http://r4statscom/popularity. 2012; }
+66. Muenchen RA. The Popularity of Data Analysis Software. URL
+http://r4statscom/popularity. 2012;
 
 \leavevmode\hypertarget{ref-wickham2019}{}%
-\CSLLeftMargin{67. }
-\CSLRightInline{Wickham H. {Advanced R}. CRC Press; 2019. }
+67. Wickham H. Advanced R. CRC Press; 2019.
 
 \leavevmode\hypertarget{ref-eddelbuettel2013}{}%
-\CSLLeftMargin{68. }
-\CSLRightInline{Eddelbuettel D. {Seamless R and C++ Integration with
-Rcpp}. Springer; 2013. }
+68. Eddelbuettel D. Seamless R and C++ Integration with Rcpp. Springer;
+2013.
 
 \leavevmode\hypertarget{ref-githubdocs}{}%
-\CSLLeftMargin{69. }
-\CSLRightInline{{GitHub Docs} {[}Internet{]}. GitHub, Inc.; 2020.
-Available: \url{https://docs.github.com/en}}
+69. GitHub Docs {[}Internet{]}. GitHub, Inc. 2020. Available:
+\url{https://docs.github.com/en}
 
 \leavevmode\hypertarget{ref-leek2015}{}%
-\CSLLeftMargin{70. }
-\CSLRightInline{Leek J. {How I Decide When to Trust an R Package}
-{[}Internet{]}. 2015. Available:
-\url{https://simplystatistics.org/2015/11/06/how-i-decide-when-to-trust-an-r-package/}}
+70. Leek J. How I Decide When to Trust an R Package {[}Internet{]}.
+2015. Available:
+\url{https://simplystatistics.org/2015/11/06/how-i-decide-when-to-trust-an-r-package/}
 
 \leavevmode\hypertarget{ref-vannoorenberghe2017}{}%
-\CSLLeftMargin{71. }
-\CSLRightInline{Vannoorenberghe L. {RDocumentation: Scoring and Ranking}
+71. Vannoorenberghe L. RDocumentation: Scoring and Ranking
 {[}Internet{]}. DataCamp; 2017. Available:
-\url{https://www.datacamp.com/community/blog/rdocumentation-ranking-scoring}}
+\url{https://www.datacamp.com/community/blog/rdocumentation-ranking-scoring}
 
 \leavevmode\hypertarget{ref-packagemetrics}{}%
-\CSLLeftMargin{72. }
-\CSLRightInline{Firke S, Krouse B, Grand E, Shepherd L, Ampeh W, Frick
-H. {packagemetrics: A Package for Helping You Choose Which Package to
-Use} {[}Internet{]}. 2017. Available:
-\url{https://github.com/ropenscilabs/packagemetrics}}
+72. Firke S, Krouse B, Grand E, Shepherd L, Ampeh W, Frick H.
+packagemetrics: A Package for Helping You Choose Which Package to Use
+{[}Internet{]}. 2017. Available:
+\url{https://github.com/ropenscilabs/packagemetrics}
 
 \leavevmode\hypertarget{ref-packagemetricsblog}{}%
-\CSLLeftMargin{73. }
-\CSLRightInline{Becca Krouse HF Erin Grand. {packagemetrics - Helping
-you Choose a Package Since runconf17} {[}Internet{]}. rOpenSci; 2017.
-Available: \url{https://ropensci.org/blog/2017/06/27/packagemetrics/}}
+73. Becca Krouse HF Erin Grand. packagemetrics - Helping you Choose a
+Package Since runconf17 {[}Internet{]}. rOpenSci; 2017. Available:
+\url{https://ropensci.org/blog/2017/06/27/packagemetrics/}
 
 \leavevmode\hypertarget{ref-tidyverse}{}%
-\CSLLeftMargin{74. }
-\CSLRightInline{Wickham H, Averick M, Bryan J, Chang W, McGowan LD,
-François R, et al. {Welcome to the Tidyverse}. Journal of Open Source
-Software. 2019;4: 1686.
-doi:\href{https://doi.org/10.21105/joss.01686}{10.21105/joss.01686}}
+74. Wickham H, Averick M, Bryan J, Chang W, McGowan LD, François R, et
+al. Welcome to the Tidyverse. Journal of Open Source Software. 2019;4:
+1686.
+doi:\href{https://doi.org/10.21105/joss.01686}{10.21105/joss.01686}
 
 \leavevmode\hypertarget{ref-smith2014}{}%
-\CSLLeftMargin{75. }
-\CSLRightInline{Smith A. {Improving GitHub for Science} {[}Internet{]}.
-GitHub, Inc.; 2014. Available:
-\url{https://github.blog/2014-05-14-improving-github-for-science/}}
+75. Smith A. Improving GitHub for Science {[}Internet{]}. GitHub, Inc.
+2014. Available:
+\url{https://github.blog/2014-05-14-improving-github-for-science/}
 
 \leavevmode\hypertarget{ref-flowCore}{}%
-\CSLLeftMargin{76. }
-\CSLRightInline{Ellis B, Haaland P, Hahne F, Le Meur N, Gopalakrishnan
-N, Spidlen J, et al. {flowCore: Basic Structures for Flow Cytometry
-Data}. 2019. }
+76. Ellis B, Haaland P, Hahne F, Le Meur N, Gopalakrishnan N, Spidlen J,
+et al. flowCore: Basic Structures for Flow Cytometry Data. 2019.
 
 \leavevmode\hypertarget{ref-hahne2009}{}%
-\CSLLeftMargin{77. }
-\CSLRightInline{Hahne F, LeMeur N, Brinkman RR, Ellis B, Haaland P,
-Sarkar D, et al. {flowCore: A Bioconductor Package for High Throughput
-Flow Cytometry}. BMC bioinformatics. BioMed Central; 2009;10: 1--8. }
+77. Hahne F, LeMeur N, Brinkman RR, Ellis B, Haaland P, Sarkar D, et al.
+flowCore: A Bioconductor Package for High Throughput Flow Cytometry. BMC
+bioinformatics. BioMed Central; 2009;10: 1--8.
 
 \leavevmode\hypertarget{ref-taschuk2017}{}%
-\CSLLeftMargin{78. }
-\CSLRightInline{Taschuk M, Wilson G. {Ten Simple Rules for Making
-Research Software more Robust}. PLoS Computational Biology. 2017;13. }
+78. Taschuk M, Wilson G. Ten Simple Rules for Making Research Software
+more Robust. PLoS Computational Biology. 2017;13.
 
 \leavevmode\hypertarget{ref-perez2016}{}%
-\CSLLeftMargin{79. }
-\CSLRightInline{Perez-Riverol Y, Gatto L, Wang R, Sachsenberg T,
-Uszkoreit J, Veiga Leprevost F da, et al. {Ten Simple Rules for Taking
-Advantage of Git and GitHub}. PLoS Computational Biology. 2016;12. }
+79. Perez-Riverol Y, Gatto L, Wang R, Sachsenberg T, Uszkoreit J, Veiga
+Leprevost F da, et al. Ten Simple Rules for Taking Advantage of Git and
+GitHub. PLoS Computational Biology. 2016;12.
 
 \leavevmode\hypertarget{ref-hester2020}{}%
-\CSLLeftMargin{80. }
-\CSLRightInline{Hester J. {How Does covr Work Anyway?} {[}Internet{]}.
-The R Foundation; 2020. Available:
-\url{https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html}}
+80. Hester J. How Does covr Work Anyway? {[}Internet{]}. The R
+Foundation; 2020. Available:
+\url{https://cran.r-project.org/web/packages/covr/vignettes/how_it_works.html}
 
 \leavevmode\hypertarget{ref-wickham2011}{}%
-\CSLLeftMargin{81. }
-\CSLRightInline{Wickham H. {testthat: Get Started with Testing}. The R
-Journal. 2011;3: 5--10. Available:
-\url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}}
+81. Wickham H. testthat: Get Started with Testing. The R Journal.
+2011;3: 5--10. Available:
+\url{https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf}
 
 \leavevmode\hypertarget{ref-covr}{}%
-\CSLLeftMargin{82. }
-\CSLRightInline{Hester J. {covr: Test Coverage for Packages}
-{[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=covr}}
+82. Hester J. covr: Test Coverage for Packages {[}Internet{]}. 2020.
+Available: \url{https://CRAN.R-project.org/package=covr}
 
 \leavevmode\hypertarget{ref-barts2018}{}%
-\CSLLeftMargin{83. }
-\CSLRightInline{Barts C. {How to use GitHub Badges to Stop Feeling Like
-a Noob} {[}Internet{]}. freeCodeCamp; 2018. Available:
-\url{https://www.freecodecamp.org/news/how-to-use-badges-to-stop-feeling-like-a-noob-d4e6600d37d2/}}
+83. Barts C. How to use GitHub Badges to Stop Feeling Like a Noob
+{[}Internet{]}. freeCodeCamp; 2018. Available:
+\url{https://www.freecodecamp.org/news/how-to-use-badges-to-stop-feeling-like-a-noob-d4e6600d37d2/}
 
 \leavevmode\hypertarget{ref-wilson2006}{}%
-\CSLLeftMargin{84. }
-\CSLRightInline{Wilson GV. {Where's the Real Bottleneck in Scientific
-Computing?} American Scientist. 2006;94: 5. }
+84. Wilson GV. Where's the Real Bottleneck in Scientific Computing?
+American Scientist. 2006;94: 5.
 
 \leavevmode\hypertarget{ref-bryan2018}{}%
-\CSLLeftMargin{85. }
-\CSLRightInline{Bryan J. {Excuse Me, Do You Have a Moment to Talk about
-Version Control?} The American Statistician. Taylor \& Francis; 2018;72:
-20--27. }
+85. Bryan J. Excuse Me, Do You Have a Moment to Talk about Version
+Control? The American Statistician. Taylor \& Francis; 2018;72: 20--27.
 
 \leavevmode\hypertarget{ref-perkel2016}{}%
-\CSLLeftMargin{86. }
-\CSLRightInline{Perkel J. {Democratic Databases: Science on GitHub}.
-Nature News. 2016;538: 127. }
+86. Perkel J. Democratic Databases: Science on GitHub. Nature News.
+2016;538: 127.
 
 \leavevmode\hypertarget{ref-peng2017}{}%
-\CSLLeftMargin{87. }
-\CSLRightInline{Roger D. Peng Sean Kross, Anderson B. {Mastering
-Software Development in R}. https://rdpeng.github.io/RProgDA/; 2017. }
+87. Roger D. Peng Sean Kross, Anderson B. Mastering Software Development
+in R. https://rdpeng.github.io/RProgDA/; 2017.
 
 \leavevmode\hypertarget{ref-broom}{}%
-\CSLLeftMargin{88. }
-\CSLRightInline{Robinson D, Hayes A. {broom: Convert Statistical
-Analysis Objects into Tidy Tibbles} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=broom}}
+88. Robinson D, Hayes A. broom: Convert Statistical Analysis Objects
+into Tidy Tibbles {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=broom}
 
 \leavevmode\hypertarget{ref-biobroom}{}%
-\CSLLeftMargin{89. }
-\CSLRightInline{Andrew J. Bass SL David G. Robinson. {biobroom: Turn
-Bioconductor Objects into Tidy Data Frames} {[}Internet{]}. 2020.
-Available: \url{https://github.com/StoreyLab/biobroom}}
+89. Andrew J. Bass SL David G. Robinson. biobroom: Turn Bioconductor
+Objects into Tidy Data Frames {[}Internet{]}. 2020. Available:
+\url{https://github.com/StoreyLab/biobroom}
 
 \leavevmode\hypertarget{ref-parker2013}{}%
-\CSLLeftMargin{90. }
-\CSLRightInline{Parker H. {Personal R Packages} {[}Internet{]}. 2013.
-Available:
-\url{https://hilaryparker.com/2013/04/03/personal-r-packages/}}
+90. Parker H. Personal R Packages {[}Internet{]}. 2013. Available:
+\url{https://hilaryparker.com/2013/04/03/personal-r-packages/}
 
 \leavevmode\hypertarget{ref-Hmisc}{}%
-\CSLLeftMargin{91. }
-\CSLRightInline{Harrell Jr FE, Charles Dupont with contributions from,
-others. many. {Hmisc: Harrell Miscellaneous} {[}Internet{]}. 2020.
-Available: \url{https://CRAN.R-project.org/package=Hmisc}}
+91. Harrell Jr FE, Charles Dupont, others. Hmisc: Harrell Miscellaneous
+{[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=Hmisc}
 
 \leavevmode\hypertarget{ref-broman}{}%
-\CSLLeftMargin{92. }
-\CSLRightInline{Broman KW. {broman: Karl Broman's R Code}
-{[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=broman}}
+92. Broman KW. broman: Karl Broman's R Code {[}Internet{]}. 2020.
+Available: \url{https://CRAN.R-project.org/package=broman}
 
 \leavevmode\hypertarget{ref-robinson2014}{}%
-\CSLLeftMargin{93. }
-\CSLRightInline{Robinson D. {broom: An R package for Converting
-Statistical Analysis Objects into Tidy Data Frames}. arXiv preprint
-arXiv:14123565. 2014; }
+93. Robinson D. broom: An R package for Converting Statistical Analysis
+Objects into Tidy Data Frames. arXiv preprint arXiv:14123565. 2014;
 
 \leavevmode\hypertarget{ref-usethis}{}%
-\CSLLeftMargin{94. }
-\CSLRightInline{Wickham H, Bryan J. {usethis: Automate Package and
-Project Setup} {[}Internet{]}. 2019. Available:
-\url{https://CRAN.R-project.org/package=usethis}}
+94. Wickham H, Bryan J. usethis: Automate Package and Project Setup
+{[}Internet{]}. 2019. Available:
+\url{https://CRAN.R-project.org/package=usethis}
 
 \leavevmode\hypertarget{ref-roxygen2}{}%
-\CSLLeftMargin{95. }
-\CSLRightInline{Wickham H, Danenberg P, Csárdi G, Eugster M. {roxygen2:
-In-Line Documentation for R} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=roxygen2}}
+95. Wickham H, Danenberg P, Csárdi G, Eugster M. roxygen2: In-Line
+Documentation for R {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=roxygen2}
 
 \leavevmode\hypertarget{ref-rlang}{}%
-\CSLLeftMargin{96. }
-\CSLRightInline{Henry L, Wickham H. {rlang: Functions for Base Types and
-Core R and Tidyverse Features} {[}Internet{]}. 2020. Available:
-\url{https://CRAN.R-project.org/package=rlang}}
+96. Henry L, Wickham H. rlang: Functions for Base Types and Core R and
+Tidyverse Features {[}Internet{]}. 2020. Available:
+\url{https://CRAN.R-project.org/package=rlang}
 
 \leavevmode\hypertarget{ref-Rcore2020}{}%
-\CSLLeftMargin{97. }
-\CSLRightInline{R Core Team. {Writing R Extensions} {[}Internet{]}. The
-R Foundation; 2020. Available:
-\url{https://cran.r-project.org/doc/manuals/R-exts.html}}
-
-\end{CSLReferences}
+97. R Core Team. Writing R Extensions {[}Internet{]}. The R Foundation;
+2020. Available:
+\url{https://cran.r-project.org/doc/manuals/R-exts.html}
 
 \nolinenumbers
 
 
 \end{document}
+
