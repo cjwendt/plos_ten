@@ -57,7 +57,7 @@ header-includes:
 
 # Disclaimer
 
-G.B. Anderson is a volunteer associate editor at ROpenSci and is an instructor
+G.B. Anderson is a volunteer associate editor at rOpenSci and is an instructor
 through the Coursera platform, both of which are mentioned as potential
 resources in this article. The views described here reflect the authors' own
 views without input from any third party organization.
@@ -194,21 +194,21 @@ pkg_table <- kable(gen_pkgs, format = "latex", booktabs = TRUE,
 \midrule
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Data Manipulation}}\\
-\hspace{1em}readr & Read rectangular data (e.g., csv, tsv, and fwf) & 2015 & Wickham et al. \cite{readr} & https://readr.tidyverse.org/\\
-\hspace{1em}dplyr & Grammar of tidy data manipulation & 2014 & Wickham et al. \cite{dplyr} & https://dplyr.tidyverse.org/\\
-\hspace{1em}tidyr & Tidy messy data & 2014 & Wickham \& Henry \cite{tidyr} & https://tidyr.tidyverse.org/\\
+\hspace{1em}readr & Read rectangular data (e.g., csv, tsv, and fwf) & 2015 & Wickham et al. & https://readr.tidyverse.org/\\
+\hspace{1em}dplyr & Grammar of tidy data manipulation & 2014 & Wickham et al. & https://dplyr.tidyverse.org/\\
+\hspace{1em}tidyr & Tidy messy data & 2014 & Wickham \& Henry & https://tidyr.tidyverse.org/\\
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Statistical Modeling}}\\
-\hspace{1em}broom\textsuperscript{*} & Tidy model output; convert statistical objects into tidy tibbles & 2014 & Robinson \& Hayes \cite{broom} & https://broom.tidymodels.org/\\
-\hspace{1em}purrr & Functional programming tools for functions and vectors & 2015 & Henry \& Wickham \cite{purrr} & https://purrr.tidyverse.org/\\
-\hspace{1em}caret & Framework for predictive modeling & 2007 & Kuhn \cite{caret} & https://topepo.github.io/caret/index.html\\
+\hspace{1em}broom\textsuperscript{*} & Tidy model output; convert statistical objects into tidy tibbles & 2014 & Robinson \& Hayes & https://broom.tidymodels.org/\\
+\hspace{1em}purrr & Functional programming tools for functions and vectors & 2015 & Henry \& Wickham & https://purrr.tidyverse.org/\\
+\hspace{1em}caret & Framework for predictive modeling & 2007 & Kuhn & https://topepo.github.io/caret/index.html\\
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Data Visualization}}\\
-\hspace{1em}ggplot2 & System for data visualization & 2007 & Wickham et al. \cite{ggplot2} & https://ggplot2.tidyverse.org/\\
-\hspace{1em}kableExtra & Build complex tables and manipulate styles & 2017 & Zhu \cite{kableExtra} & https://haozhu233.github.io/kableExtra/\\
-\hspace{1em}rmarkdown & Authoring framework for data science and reproducible research & 2014 & Allaire et al. \cite{rmarkdown} & https://rmarkdown.rstudio.com/lesson-1.html\\
+\hspace{1em}ggplot2 & System for data visualization & 2007 & Wickham et al. & https://ggplot2.tidyverse.org/\\
+\hspace{1em}kableExtra & Build complex tables and manipulate styles & 2017 & Zhu & https://haozhu233.github.io/kableExtra/\\
+\hspace{1em}rmarkdown & Authoring framework for data science and reproducible research & 2014 & Allaire et al. & https://rmarkdown.rstudio.com/lesson-1.html\\
 \bottomrule
-\multicolumn{5}{l}{\textsuperscript{*} See the biobroom \cite{biobroom} analog in Bioconductor}\\
+\multicolumn{5}{l}{\textsuperscript{*} See the biobroom analog in Bioconductor}\\
 \end{tabular}}
 \label{table1}
 \end{adjustwidth}
