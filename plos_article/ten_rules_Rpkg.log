@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  18 FEB 2021 10:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  18 FEB 2021 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -740,34 +740,34 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 [3]
 
-LaTeX Warning: Citation `@readr' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `readr' on page 4 undefined on input line 488.
 
 
-LaTeX Warning: Citation `@dplyr' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `dplyr' on page 4 undefined on input line 488.
 
 
-LaTeX Warning: Citation `@tidyr' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `tidyr' on page 4 undefined on input line 488.
 
 
-LaTeX Warning: Citation `@broom' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `broom' on page 4 undefined on input line 488.
 
 
-LaTeX Warning: Citation `@purrr' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `purrr' on page 4 undefined on input line 488.
 
 
-LaTeX Warning: Citation `@caert' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `caert' on page 4 undefined on input line 488.
 
 
-LaTeX Warning: Citation `@ggplot2' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `ggplot2' on page 4 undefined on input line 488.
 
 
-LaTeX Warning: Citation `@kableExtra' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `kableExtra' on page 4 undefined on input line 488.
 
 
-LaTeX Warning: Citation `@rmarkdown' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `rmarkdown' on page 4 undefined on input line 488.
 
 
-LaTeX Warning: Citation `@biobroom' on page 4 undefined on input line 488.
+LaTeX Warning: Citation `biobroom' on page 4 undefined on input line 488.
 
 [4] [5] [6] (/usr/local/texlive/2019/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
