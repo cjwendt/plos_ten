@@ -201,7 +201,7 @@ pkg_table <- kable(gen_pkgs, format = "latex", booktabs = TRUE,
 \multicolumn{5}{l}{\textbf{Statistical Modeling}}\\
 \hspace{1em}broom\textsuperscript{*} & Tidy model output; convert statistical objects into tidy tibbles & 2014 & Robinson \& Hayes \cite{broom} & https://broom.tidymodels.org/\\
 \hspace{1em}purrr & Functional programming tools for functions and vectors & 2015 & Henry \& Wickham \cite{purrr} & https://purrr.tidyverse.org/\\
-\hspace{1em}caret & Framework for predictive modeling & 2007 & Kuhn \cite{caert} & https://topepo.github.io/caret/index.html\\
+\hspace{1em}caret & Framework for predictive modeling & 2007 & Kuhn \cite{caret} & https://topepo.github.io/caret/index.html\\
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Data Visualization}}\\
 \hspace{1em}ggplot2 & System for data visualization & 2007 & Wickham et al. \cite{ggplot2} & https://ggplot2.tidyverse.org/\\
