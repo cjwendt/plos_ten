@@ -57,7 +57,7 @@ header-includes:
 
 # Disclaimer
 
-G.B. Anderson is a volunteer associate editor at ROpenSci and is an instructor
+GBA is a volunteer associate editor at ROpenSci and is an instructor
 through the Coursera platform, both of which are mentioned as potential
 resources in this article. The views described here reflect the authors' own
 views without input from any third party organization.
